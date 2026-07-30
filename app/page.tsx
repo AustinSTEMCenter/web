@@ -72,12 +72,20 @@ export default function Home() {
           <p className="mt-1 text-[16px] text-ink-soft">
             {site.address.street} · {site.address.cityStateZip}
           </p>
-          <div className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-3">
+          <div className="mt-7">
+            <Link
+              href="/rsvp"
+              className="inline-block rounded-[3px] bg-rust px-[26px] py-3.5 text-[16px] font-semibold text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+            >
+              RSVP — save your spot →
+            </Link>
+          </div>
+          <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-3">
             <a
               href={googleCalendarUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-block rounded-[3px] bg-rust px-[22px] py-3 text-[15px] text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+              className="inline-block rounded-[3px] border border-ink/25 bg-card px-[22px] py-3 text-[15px] shadow-[2px_2px_0_rgba(56,52,42,0.08)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
             >
               Add to Google Calendar
             </a>
