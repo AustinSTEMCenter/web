@@ -1,18 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-paper: #fbf8ee;
-  --color-card: #fffdf6;
+  /* experiment 2026-07-30: white canvas instead of cream (#fbf8ee / #fffdf6)
+     to see if the brand accents feel sharper */
+  --color-paper: #ffffff;
+  --color-card: #ffffff;
   --color-ink: #38342a;
   --color-ink-soft: #5c564a;
   --color-brand-blue: #435c7e;
-  --color-rust: #c93d12;
+  --color-rust: #e64519;
   --color-gold: #ddb13a;
-  /* accent colors sampled from the logo's interlocking rings */
-  --color-ring-teal: #2eb999;
-  --color-ring-green: #93ac72;
-  --color-ring-purple: #8a5e91;
-  --color-ring-orange: #ef7f3a;
+  /* accent colors straight from the brand palette (BRANDING.md) */
+  --color-ring-teal: #1cc2a0;
+  --color-ring-green: #41e0a3;
+  --color-ring-purple: #8e5283;
+  --color-ring-orange: #f28c1e;
   --font-serif: "Iowan Old Style", Palatino, Georgia, serif;
   --font-hand: var(--font-caveat), "Bradley Hand", "Segoe Print", cursive;
 }
@@ -50,7 +52,7 @@ body {
   bottom: 0;
   left: 56px;
   width: 2px;
-  background: rgba(201, 61, 18, 0.4);
+  background: rgba(230, 69, 25, 0.5);
 }
 @media (max-width: 640px) {
   .notebook-rule::before {
@@ -73,16 +75,16 @@ body {
 
 /* hand-drawn highlighter behind key words — one stroke per marker color */
 .hl {
-  background: linear-gradient(transparent 68%, rgba(221, 177, 58, 0.55) 68%);
+  background: linear-gradient(transparent 68%, rgba(221, 177, 58, 0.65) 68%);
 }
 .hl-teal {
-  background: linear-gradient(transparent 68%, rgba(46, 185, 153, 0.35) 68%);
+  background: linear-gradient(transparent 68%, rgba(28, 194, 160, 0.45) 68%);
 }
 .hl-green {
-  background: linear-gradient(transparent 68%, rgba(147, 172, 114, 0.45) 68%);
+  background: linear-gradient(transparent 68%, rgba(65, 224, 163, 0.5) 68%);
 }
 .hl-purple {
-  background: linear-gradient(transparent 68%, rgba(138, 94, 145, 0.3) 68%);
+  background: linear-gradient(transparent 68%, rgba(142, 82, 131, 0.35) 68%);
 }
 
 /* mobile menu card entrance */
@@ -164,7 +166,7 @@ body {
 .prose-note blockquote {
   margin: 1.4em 0;
   padding-left: 16px;
-  border-left: 3px solid rgba(201, 61, 18, 0.4);
+  border-left: 3px solid rgba(230, 69, 25, 0.5);
   font-style: italic;
   color: var(--color-ink-soft);
 }

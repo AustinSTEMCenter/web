@@ -1,3 +1,10 @@
+export type PricingRow = {
+  option: string;
+  duration?: string;
+  price: string;
+  description: string;
+};
+
 export type Program = {
   title: string;
   slug: string;
@@ -9,6 +16,7 @@ export type Program = {
   experience: string[];
   why?: string;
   inquiry?: string;
+  pricing?: { heading: string; rows: PricingRow[] };
 };
 
 export const programs: Program[] = [
@@ -32,6 +40,32 @@ export const programs: Program[] = [
     ],
     why: "ASC offers access to tools and environments students rarely see in traditional classrooms. Our field trips are built around real equipment, real processes, and real-world relevance, helping students connect learning to future opportunities.",
     inquiry: "Interested in scheduling an experience with ASC?",
+    pricing: {
+      heading: "Experiences & pricing",
+      rows: [
+        {
+          option: "Field Trip",
+          duration: "2 hours",
+          price: "$15 / student",
+          description:
+            "A hands-on STEM experience designed for school groups and organizations.",
+        },
+        {
+          option: "Field Trip + Mini Lab",
+          duration: "4 hours",
+          price: "$40 / student",
+          description:
+            "An extended, immersive STEM experience with deeper project work and exploration.",
+        },
+        {
+          option: "Full-Day Experience",
+          duration: "6 hours",
+          price: "$75 / student",
+          description:
+            "A full-day engineering and innovation experience featuring STEM activities and a level-appropriate project. Includes the field trip (optional).",
+        },
+      ],
+    },
   },
   {
     title: "Summer Camps",
@@ -53,43 +87,41 @@ export const programs: Program[] = [
     ],
   },
   {
-    title: "Pre-Apprentice Program",
-    slug: "pre-apprentice",
-    href: "/programs/pre-apprentice",
-    image: "/images/programs/pre-apprentice.jpg",
+    title: "After-School STEM Clubs",
+    slug: "after-school-clubs",
+    href: "/programs/after-school-clubs",
+    image: "/images/programs/after-school-clubs.jpg",
     teaser:
-      "Practical, real-world training that builds confidence, capability, and connection to modern tools and processes.",
+      "Flexible after-school enrichment focused on hands-on STEM learning.",
     about: [
-      "The Austin STEM Center (ASC) pre-apprenticeship programs are designed for high school students and young adults eager to explore careers in robotics, automation, advanced manufacturing, and other technical fields. These programs emphasize hands-on learning, practical skill development, and exposure to the in-demand technologies shaping today's workforce.",
-      "ASC pre-apprenticeships help individuals build foundational technical skills and identify the career pathways that best fit their interests and strengths.",
+      "After-school STEM clubs at the Austin STEM Center (ASC) give students a regular place to build, tinker, and explore beyond the school day. On scheduled club days, students take on hands-on projects across robotics, engineering, and making — guided by ASC staff in our real shops, labs, and maker spaces.",
+      "Come session by session, or join as a monthly member for unlimited participation during scheduled club days.",
     ],
-    experienceHeading: "What participants experience",
+    experienceHeading: "What club members experience",
     experience: [
-      "Hands-on training with industry-relevant equipment",
-      "Exposure to real manufacturing and technical workflows",
-      "Skill development aligned with workforce needs",
-      "A clear bridge between education and employment",
+      "Hands-on STEM projects in ASC's maker spaces and labs",
+      "Flexible enrichment that fits after-school schedules",
+      "Consistent mentorship and a community of fellow makers",
+      "New challenges across robotics, engineering, and design",
     ],
-    inquiry: "Interested in the pre-apprentice program?",
-  },
-  {
-    title: "Professional Development",
-    slug: "professional-development",
-    href: "/programs/professional-development",
-    image: "/images/programs/professional-development.jpg",
-    teaser:
-      "Hands-on learning experiences for educators, teams, and organizations.",
-    about: [
-      "The professional development programs at the Austin STEM Center (ASC) are designed for educators, corporate teams, and organizations looking to build practical skills, improve problem-solving, and better understand modern tools and processes. These experiences move beyond lectures and theory, focusing instead on hands-on learning and real-world application.",
-    ],
-    experienceHeading: "What participants experience",
-    experience: [
-      "Interactive workshops using real tools",
-      "Training that connects theory to practice",
-      "Opportunities to explore how learning, making, and innovation intersect",
-      "Experiences tailored to educators, teams, or industry partners",
-    ],
-    inquiry: "Interested in professional development programming?",
+    inquiry: "Interested in joining a STEM club?",
+    pricing: {
+      heading: "Pricing",
+      rows: [
+        {
+          option: "Single session",
+          price: "$60 / session",
+          description:
+            "Flexible after-school enrichment focused on hands-on STEM learning.",
+        },
+        {
+          option: "Monthly membership",
+          price: "$200 / month",
+          description:
+            "Unlimited participation in our after-school club program during scheduled club days.",
+        },
+      ],
+    },
   },
 ];
 

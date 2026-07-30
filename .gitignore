@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# claude instructions + local design scratch (kept local-only)
+CLAUDE.md
+.claude/
+/design/

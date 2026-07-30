@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Bolt, Gear, PaperPlane } from "@/components/doodles";
-import { Annotation, SectionHeading, Stamp } from "@/components/notebook";
+import { Gear } from "@/components/doodles";
+import { Annotation, SectionHeading } from "@/components/notebook";
 import { camps } from "@/lib/data/camps";
 import { facilities } from "@/lib/data/facilities";
-import { formatDate, getPublishedPosts } from "@/lib/data/posts";
 import { programs } from "@/lib/data/programs";
+import { site } from "@/lib/data/site";
 
 /* one logo-ring color per facility chip, in facilities-data order */
 const chipAccents = [
@@ -17,58 +17,90 @@ const chipAccents = [
   "border-l-ring-green",
 ];
 
-export default function Home() {
-  const posts = getPublishedPosts().slice(0, 3);
+const googleCalendarUrl =
+  "https://calendar.google.com/calendar/render?" +
+  new URLSearchParams({
+    action: "TEMPLATE",
+    text: "Grand Opening — Austin STEM Center",
+    dates: "20260822T130000/20260822T180000",
+    ctz: "America/Chicago",
+    location: `${site.address.street}, ${site.address.cityStateZip}`,
+    details:
+      "Be a part of making something new. Tour all six spaces, meet the crew, and see where STEM education meets the moment. https://austinstemcenter.org",
+  }).toString();
 
+export default function Home() {
   return (
     <>
-      <Stamp className="absolute top-[46px] right-5 z-10 rotate-[7deg] max-md:static max-md:mt-5 max-md:-rotate-2 max-md:px-2 max-md:py-1 max-md:text-[10px]">
-        Grand opening · Aug 22
-      </Stamp>
+      {/* grand-opening hero — the flyer leads, taped in big on the left;
+          the event details ride alongside */}
+      <div className="grid grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-center gap-12 pt-[58px] max-md:grid-cols-1">
+        <a
+          href="/images/grand-opening-flyer.jpg"
+          target="_blank"
+          rel="noreferrer"
+          className="tape relative block w-full -rotate-[1.2deg] border border-ink/18 bg-card p-2.5 pb-1 shadow-[4px_5px_0_rgba(56,52,42,0.12)] transition-transform duration-200 ease-out hover:rotate-0"
+        >
+          <Image
+            src="/images/grand-opening-flyer.jpg"
+            alt="Grand opening save-the-date flyer — Saturday, August 22, 1–6 PM at 11525 Stonehollow Dr, Suite A100"
+            width={1200}
+            height={1600}
+            priority
+            className="w-full border border-ink/10"
+          />
+          <p className="py-1.5 text-center font-hand text-[17px] text-rust">
+            the official flyer — pass it along, bring a friend!
+          </p>
+        </a>
 
-      <div className="grid grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-start gap-11 pt-[58px] max-md:grid-cols-1">
         <div>
           <p className="mb-2.5 font-hand text-[18px] text-brand-blue">
-            field notes — Stonehollow Dr., Austin, TX
+            save the date — grand opening!
           </p>
-          <h1 className="text-[clamp(34px,5vw,58px)] leading-[1.08] font-bold tracking-[-0.01em] text-balance">
-            Turning questions into <span className="hl">joyful discovery.</span>
+          <h1 className="text-[clamp(30px,3.6vw,44px)] leading-[1.1] font-bold tracking-[-0.01em] text-balance">
+            Be a part of making <span className="hl">something new.</span>
           </h1>
-          <p className="mt-5 max-w-[48ch] text-[17px] text-ink-soft">
-            Hands-on experiences in science, art, engineering, and creative
-            exploration — a nonprofit innovation hub where students, educators,
-            and professionals all learn by making real things.
+          <p className="mt-4 max-w-[48ch] text-[17px] text-ink-soft">
+            We&rsquo;re opening the doors to Austin&rsquo;s new STEM innovation
+            hub. Tour all six spaces, meet the crew, and see where STEM
+            education meets the moment.
           </p>
-          <Link
-            href="/programs/field-trips"
-            className="mt-7 inline-block rounded-[3px] bg-brand-blue px-[22px] py-3 text-[15px] text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-          >
-            Book a field trip →
-          </Link>
+          <p className="mt-6 text-[20px] font-bold">
+            Saturday, August 22 · 1–6 PM
+          </p>
+          <p className="mt-1 text-[16px] text-ink-soft">
+            {site.address.street} · {site.address.cityStateZip}
+          </p>
+          <div className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-3">
+            <a
+              href={googleCalendarUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-block rounded-[3px] bg-rust px-[22px] py-3 text-[15px] text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+            >
+              Add to Google Calendar
+            </a>
+            <a
+              href={site.mapUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-block rounded-[3px] border border-ink/25 bg-card px-[22px] py-3 text-[15px] shadow-[2px_2px_0_rgba(56,52,42,0.08)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+            >
+              Get directions →
+            </a>
+          </div>
           <br />
           <Annotation className="mt-[26px]">
-            ↳ ask about the <Link href="/facilities" className="underline">FIRST Arena</Link> — it&rsquo;s the good stuff!
+            ↳ can&rsquo;t make it? <Link href="/contact" className="underline">drop us a line</Link> — we&rsquo;ll save you a tour.
           </Annotation>
-        </div>
-
-        <div className="tape relative max-w-[380px] rotate-[1.2deg] justify-self-end border border-ink/18 bg-card px-6 pt-[26px] pb-[22px] shadow-[3px_4px_0_rgba(56,52,42,0.12)] max-md:justify-self-start">
-          <h3 className="mb-2.5 text-[15px] font-semibold italic">
-            Today at the center
-          </h3>
-          <ul className="list-disc pl-5 text-[15px] leading-[1.8]">
-            {facilities.slice(0, 4).map(({ name, slug, note }) => (
-              <li key={slug}>
-                <b className="font-semibold">{name}</b> — {note}
-              </li>
-            ))}
-          </ul>
-          <p className="mt-3.5 text-right font-hand text-[17px] text-brand-blue">
-            — the ASC crew
-          </p>
         </div>
       </div>
 
-      {/* programs */}
+      {/* "who we are" — original tagline copy, parked until after the grand
+          opening. To restore, uncomment and re-add PaperPlane to the doodles
+          import above.
+
       <section className="relative pt-24">
         <span
           aria-hidden
@@ -76,17 +108,45 @@ export default function Home() {
         >
           <PaperPlane className="h-11 -rotate-6 text-brand-blue/50" />
         </span>
+        <p className="mb-2 font-hand text-[18px] text-brand-blue">
+          field notes — Stonehollow Dr., Austin, TX
+        </p>
+        <SectionHeading>
+          Turning questions into <span className="hl">joyful discovery.</span>
+        </SectionHeading>
+        <p className="mt-4 max-w-[56ch] text-[17px] text-ink-soft">
+          Hands-on experiences in science, art, engineering, and creative
+          exploration — a nonprofit innovation hub where students, educators,
+          and professionals all learn by making real things.
+        </p>
+        <Link
+          href="/programs/field-trips"
+          className="mt-6 inline-block rounded-[3px] bg-brand-blue px-[22px] py-3 text-[15px] text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+        >
+          Book a field trip →
+        </Link>
+        <br />
+        <Annotation className="mt-6">
+          ↳ ask about the <Link href="/facilities" className="underline">FIRST Arena</Link> — it&rsquo;s the good stuff!
+        </Annotation>
+      </section>
+      */}
+
+      {/* programs */}
+      <section className="relative pt-24">
         <p className="mb-2 font-hand text-[18px] text-brand-blue">what we do</p>
         <SectionHeading>
-          Programs for students, educators, and&nbsp;teams.
+          Programs for students, schools, and&nbsp;families.
         </SectionHeading>
-        <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-12 max-md:grid-cols-1">
+        <div className="mt-10 grid grid-cols-3 gap-7 max-md:grid-cols-1 max-md:gap-y-10">
           {programs.map((p, i) => (
             <Link
               key={p.slug}
               href={p.href}
-              className={`tape relative block border border-ink/18 bg-card p-5 pb-4 shadow-[3px_4px_0_rgba(56,52,42,0.12)] transition-transform duration-200 ease-out hover:-translate-y-1 hover:rotate-0 ${
-                i % 2 ? "rotate-[0.8deg]" : "-rotate-[0.6deg]"
+              className={`tape relative flex flex-col border border-ink/18 bg-card p-4 pb-3.5 shadow-[3px_4px_0_rgba(56,52,42,0.12)] transition-transform duration-200 ease-out hover:-translate-y-1 hover:rotate-0 ${
+                ["-rotate-[0.8deg]", "rotate-[0.7deg]", "-rotate-[0.5deg]"][
+                  i % 3
+                ]
               }`}
             >
               <Image
@@ -96,13 +156,22 @@ export default function Home() {
                 height={400}
                 className="aspect-[8/5] w-full border border-ink/10 object-cover"
               />
-              <h3 className="mt-4 text-[19px] font-bold">{p.title}</h3>
-              <p className="mt-1.5 text-[15px] leading-relaxed text-ink-soft">
+              <h3 className="mt-3.5 text-[18px] leading-snug font-bold">
+                {p.title}
+              </h3>
+              <p className="mt-1.5 text-[14.5px] leading-relaxed text-ink-soft">
                 {p.teaser}
               </p>
-              <p className="mt-3 text-[15px] italic text-brand-blue">
-                read more →
-              </p>
+              <div className="mt-auto flex items-baseline justify-between gap-3 pt-3.5">
+                <span className="text-[14px] italic text-brand-blue">
+                  read more →
+                </span>
+                {p.pricing && (
+                  <span className="font-hand text-[17px] text-rust">
+                    from {p.pricing.rows[0].price}
+                  </span>
+                )}
+              </div>
             </Link>
           ))}
         </div>
@@ -139,7 +208,12 @@ export default function Home() {
         </Annotation>
       </section>
 
-      {/* blog */}
+      {/* blog — removed for now (2026-07-30). To restore: git-restore app/blog/,
+          re-add the "blog" navLink in lib/data/site.ts, re-add Bolt to the
+          doodles import, `formatDate, getPublishedPosts` from lib/data/posts,
+          and `const posts = getPublishedPosts().slice(0, 3)` above, then
+          uncomment this section.
+
       <section className="relative pt-24">
         <span
           aria-hidden
@@ -175,6 +249,7 @@ export default function Home() {
           </Link>
         </p>
       </section>
+      */}
     </>
   );
 }

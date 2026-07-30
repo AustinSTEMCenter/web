@@ -20,6 +20,5 @@ export const navLinks = [
   { label: "facilities", href: "/facilities" },
   { label: "programs", href: "/programs" },
   { label: "camps", href: "/programs/summer-camps" },
-  { label: "blog", href: "/blog" },
   { label: "contact", href: "/contact" },
 ];

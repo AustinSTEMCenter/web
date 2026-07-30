@@ -32,6 +32,36 @@ export function ProgramPage({ program }: { program: Program }) {
             ))}
           </ul>
 
+          {program.pricing && (
+            <>
+              <h2 className="mt-10 text-[15px] font-semibold tracking-[0.08em] uppercase text-ink-soft">
+                {program.pricing.heading}
+              </h2>
+              <div className="mt-2 max-w-[62ch]">
+                {program.pricing.rows.map((row) => (
+                  <div key={row.option} className="border-b border-ink/20 py-4">
+                    <div className="flex flex-wrap items-baseline justify-between gap-x-6">
+                      <h3 className="text-[17px] font-bold">
+                        {row.option}{" "}
+                        {row.duration && (
+                          <span className="ml-2 text-[14px] font-normal italic text-ink-soft">
+                            {row.duration}
+                          </span>
+                        )}
+                      </h3>
+                      <p className="font-hand text-[20px] text-rust">
+                        {row.price}
+                      </p>
+                    </div>
+                    <p className="mt-1 text-[15px] leading-relaxed text-ink-soft">
+                      {row.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+
           {program.why && (
             <>
               <h2 className="mt-10 text-[15px] font-semibold tracking-[0.08em] uppercase text-ink-soft">

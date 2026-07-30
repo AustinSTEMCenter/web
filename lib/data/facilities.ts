@@ -34,7 +34,7 @@ export const facilities: Facility[] = [
     note: "fiber laser + CNC mill",
     paragraphs: [
       "Our full-scale metal shop gives learners rare access to the tools and processes used in modern manufacturing. The space is equipped for metal forming, machining, and cutting, including advanced equipment such as a CNC mill, fiber laser, multiple CO₂ lasers, and manual machining tools. As the shop continues to grow, it will also include a CNC press brake and professional-grade welding equipment capable of handling multiple materials and processes.",
-      "This shop serves as a core support space for field trips, workforce development, and pre-apprenticeship programs. Students will have the opportunity to safely interact with large-scale machines during structured experiences. The goal is exposure, understanding, and hands-on engagement that demystifies manufacturing and connects learning directly to real industry practices.",
+      "This shop serves as a core support space for field trips, camps, and structured workshops. Students will have the opportunity to safely interact with large-scale machines during structured experiences. The goal is exposure, understanding, and hands-on engagement that demystifies manufacturing and connects learning directly to real industry practices.",
     ],
   },
   {
