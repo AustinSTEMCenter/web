@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import Link from "next/link";
 import { Gear } from "@/components/doodles";
 import { Annotation, SectionHeading } from "@/components/notebook";
@@ -29,81 +29,117 @@ const googleCalendarUrl =
       "Be a part of making something new. Tour all six spaces, meet the crew, and see where STEM education meets the moment. https://austinstemcenter.org",
   }).toString();
 
+const flyerAlt =
+  "Grand opening flyer — be a part of making something new. Saturday, August 22, 1–6 PM";
+
 export default function Home() {
+  /* art-directed flyer: landscape on md+ screens, portrait below */
+  const {
+    props: { srcSet: flyerWideSrcSet },
+  } = getImageProps({
+    src: "/images/grand-opening-flyer-wide.jpg",
+    alt: flyerAlt,
+    width: 1800,
+    height: 1350,
+    priority: true,
+    sizes: "992px",
+  });
+  const { props: flyerPortraitProps } = getImageProps({
+    src: "/images/grand-opening-flyer.jpg",
+    alt: flyerAlt,
+    width: 1350,
+    height: 1800,
+    priority: true,
+    sizes: "100vw",
+  });
+
   return (
     <>
-      {/* grand-opening hero — the flyer leads, taped in big on the left;
-          the event details ride alongside */}
-      <div className="grid grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-center gap-12 pt-[58px] max-md:grid-cols-1">
-        <a
-          href="/images/grand-opening-flyer.jpg"
-          target="_blank"
-          rel="noreferrer"
-          className="tape relative block w-full -rotate-[1.2deg] border border-ink/18 bg-card p-2.5 pb-1 shadow-[4px_5px_0_rgba(56,52,42,0.12)] transition-transform duration-200 ease-out hover:rotate-0"
-        >
-          <Image
-            src="/images/grand-opening-flyer.jpg"
-            alt="Grand opening save-the-date flyer — Saturday, August 22, 1–6 PM at 11525 Stonehollow Dr, Suite A100"
-            width={1200}
-            height={1600}
-            priority
-            className="w-full border border-ink/10"
-          />
-          <p className="py-1.5 text-center font-hand text-[17px] text-rust">
-            the official flyer — pass it along, bring a friend!
-          </p>
-        </a>
+      {/* grand-opening hero — one taped-in flyer, sized to fit the first
+          screen: masthead title on top, poster in the middle, and a compact
+          RSVP strip below a dashed perforation */}
+      <section className="pt-5">
+        <div className="tape-corners relative -rotate-[0.4deg] border border-ink/18 bg-card px-6 pt-6 pb-5 shadow-[4px_5px_0_rgba(56,52,42,0.12)] max-md:px-4">
+          <div className="text-center">
+            <p className="font-hand text-[18px] text-brand-blue">
+              save the date — you&rsquo;re invited!
+            </p>
+            <h1 className="mt-1 text-[clamp(24px,2.6vw,32px)] leading-[1.15] font-bold tracking-[-0.01em] text-balance">
+              Be a part of making <span className="hl">something new.</span>
+            </h1>
+          </div>
 
-        <div>
-          <p className="mb-2.5 font-hand text-[18px] text-brand-blue">
-            save the date — grand opening!
-          </p>
-          <h1 className="text-[clamp(30px,3.6vw,44px)] leading-[1.1] font-bold tracking-[-0.01em] text-balance">
-            Be a part of making <span className="hl">something new.</span>
-          </h1>
-          <p className="mt-4 max-w-[48ch] text-[17px] text-ink-soft">
-            We&rsquo;re opening the doors to Austin&rsquo;s new STEM innovation
-            hub. Tour all six spaces, meet the crew, and see where STEM
-            education meets the moment.
-          </p>
-          <p className="mt-6 text-[20px] font-bold">
-            Saturday, August 22 · 1–6 PM
-          </p>
-          <p className="mt-1 text-[16px] text-ink-soft">
-            {site.address.street} · {site.address.cityStateZip}
-          </p>
-          <div className="mt-7">
-            <Link
-              href="/rsvp"
-              className="inline-block rounded-[3px] bg-rust px-[26px] py-3.5 text-[16px] font-semibold text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-            >
-              RSVP — save your spot →
-            </Link>
+          <a
+            href="/images/grand-opening-flyer.jpg"
+            target="_blank"
+            rel="noreferrer"
+            title="Open the full-size flyer"
+            className="mx-auto mt-4 block w-fit transition-opacity duration-150 hover:opacity-95"
+          >
+            <picture>
+              <source
+                media="(min-width: 768px)"
+                srcSet={flyerWideSrcSet}
+                sizes="992px"
+                width={1800}
+                height={1350}
+              />
+              {/* eslint-disable-next-line jsx-a11y/alt-text -- alt comes via getImageProps */}
+              <img
+                {...flyerPortraitProps}
+                className="mx-auto h-auto max-h-[max(calc(100svh-435px),300px)] w-auto max-w-full border border-ink/10"
+              />
+            </picture>
+          </a>
+
+          {/* the RSVP strip, below the perforation */}
+          <div className="mt-5 border-t border-dashed border-ink/30 pt-4 text-center">
+            <p className="text-[15.5px] leading-snug text-ink-soft">
+              Tour all six spaces, meet the crew, and see where STEM education
+              meets the moment.
+            </p>
+            <p className="mt-1 text-[14.5px] text-ink-soft">
+              {site.address.street} · {site.address.cityStateZip}
+            </p>
+            <div className="mt-3.5 flex flex-wrap items-center justify-center gap-4 max-md:flex-col max-md:items-stretch">
+              <p className="inline-block -rotate-[1.5deg] rounded-[3px] bg-ring-purple px-4 py-2 text-center text-[16.5px] font-bold text-paper shadow-[2px_2px_0_rgba(56,52,42,0.2)]">
+                Sat, August 22 · 1–6 PM
+              </p>
+              <Link
+                href="/rsvp"
+                className="inline-block rounded-[3px] bg-rust px-7 py-3.5 text-center text-[16.5px] font-semibold text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+              >
+                RSVP — save your spot →
+              </Link>
+            </div>
+            <p className="mt-2.5 text-[14px] text-ink-soft">
+              <a
+                href={site.mapUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="italic text-brand-blue underline decoration-brand-blue/50 underline-offset-[3px]"
+              >
+                get directions
+              </a>{" "}
+              ·{" "}
+              <a
+                href={googleCalendarUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="italic text-brand-blue underline decoration-brand-blue/50 underline-offset-[3px]"
+              >
+                add to calendar
+              </a>
+            </p>
           </div>
-          <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-3">
-            <a
-              href={googleCalendarUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-block rounded-[3px] border border-ink/25 bg-card px-[22px] py-3 text-[15px] shadow-[2px_2px_0_rgba(56,52,42,0.08)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-            >
-              Add to Google Calendar
-            </a>
-            <a
-              href={site.mapUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-block rounded-[3px] border border-ink/25 bg-card px-[22px] py-3 text-[15px] shadow-[2px_2px_0_rgba(56,52,42,0.08)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-            >
-              Get directions →
-            </a>
-          </div>
-          <br />
-          <Annotation className="mt-[26px]">
+        </div>
+
+        <div className="mt-4 text-center">
+          <Annotation>
             ↳ can&rsquo;t make it? <Link href="/contact" className="underline">drop us a line</Link> — we&rsquo;ll save you a tour.
           </Annotation>
         </div>
-      </div>
+      </section>
 
       {/* "who we are" — original tagline copy, parked until after the grand
           opening. To restore, uncomment and re-add PaperPlane to the doodles

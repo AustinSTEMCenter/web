@@ -73,6 +73,27 @@ body {
   border: 1px solid rgba(56, 52, 42, 0.08);
 }
 
+/* diagonal tape across both top corners — for big taped-in pieces (the
+   grand-opening poster) where one small center strip looks undersized */
+.tape-corners::before,
+.tape-corners::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  width: 108px;
+  height: 26px;
+  background: rgba(221, 177, 58, 0.4);
+  border: 1px solid rgba(56, 52, 42, 0.08);
+}
+.tape-corners::before {
+  left: -30px;
+  transform: rotate(-45deg);
+}
+.tape-corners::after {
+  right: -30px;
+  transform: rotate(45deg);
+}
+
 /* hand-drawn highlighter behind key words — one stroke per marker color */
 .hl {
   background: linear-gradient(transparent 68%, rgba(221, 177, 58, 0.65) 68%);
