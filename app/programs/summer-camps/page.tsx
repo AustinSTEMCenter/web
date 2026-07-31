@@ -37,7 +37,7 @@ export default function SummerCampsPage() {
         </p>
       </PageIntro>
 
-      <div className="tape relative mt-10 max-w-[560px] -rotate-[0.5deg] border border-ink/18 bg-card px-6 pt-6 pb-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)]">
+      <div className="tape relative mx-auto mt-10 max-w-[560px] -rotate-[0.5deg] border border-ink/18 bg-card px-6 pt-6 pb-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)]">
         <h2 className="text-[17px] font-bold">
           Summer 2026 has concluded — thanks for an amazing first season!
         </h2>
@@ -55,7 +55,7 @@ export default function SummerCampsPage() {
         {camps.map((camp, i) => (
           <section
             key={camp.slug}
-            className="grid grid-cols-[minmax(0,2fr)_minmax(0,3fr)] items-start gap-x-10 gap-y-5 max-md:grid-cols-1"
+            className={`grid items-start gap-x-10 gap-y-5 max-md:grid-cols-1 ${i % 2 ? "grid-cols-[minmax(0,3fr)_minmax(0,2fr)]" : "grid-cols-[minmax(0,2fr)_minmax(0,3fr)]"}`}
           >
             <figure
               className={`photo max-w-[380px] transition-transform duration-200 ease-out hover:rotate-0 ${i % 2 ? "rotate-[0.9deg] md:order-2 md:justify-self-end" : "-rotate-[0.8deg]"}`}

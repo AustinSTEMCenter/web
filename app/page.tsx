@@ -69,11 +69,9 @@ export default function Home() {
             </h1>
           </div>
 
-          <a
-            href="/images/grand-opening-flyer.jpg"
-            target="_blank"
-            rel="noreferrer"
-            title="Open the full-size flyer"
+          <Link
+            href="/rsvp"
+            title="RSVP for the grand opening"
             className="mx-auto mt-4 block w-fit transition-opacity duration-150 hover:opacity-95"
           >
             <picture>
@@ -90,7 +88,7 @@ export default function Home() {
                 className="mx-auto h-auto max-h-[max(calc(100svh-435px),300px)] w-auto max-w-full border border-ink/10"
               />
             </picture>
-          </a>
+          </Link>
 
           {/* the RSVP strip, below the perforation */}
           <div className="mt-5 border-t border-dashed border-ink/30 pt-4 text-center">

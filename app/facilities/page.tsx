@@ -35,7 +35,7 @@ export default function FacilitiesPage() {
           <section
             key={f.slug}
             id={f.slug}
-            className="grid grid-cols-[minmax(0,2fr)_minmax(0,3fr)] items-start gap-x-10 gap-y-5 max-md:grid-cols-1"
+            className={`grid items-start gap-x-10 gap-y-5 max-md:grid-cols-1 ${i % 2 ? "grid-cols-[minmax(0,3fr)_minmax(0,2fr)]" : "grid-cols-[minmax(0,2fr)_minmax(0,3fr)]"}`}
           >
             <figure
               className={`photo max-w-[420px] ${i % 2 ? "rotate-[0.8deg] md:order-2 md:justify-self-end" : "-rotate-[0.7deg]"}`}
@@ -99,7 +99,7 @@ export default function FacilitiesPage() {
         </Annotation>
       </section>
 
-      <div className="pt-16 pb-4">
+      <div className="pt-6 pb-4">
         <Annotation>
           ↳ want to see it in person?{" "}
           <Link href="/programs/field-trips" className="underline">

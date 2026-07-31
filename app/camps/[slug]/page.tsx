@@ -27,12 +27,23 @@ export default async function CampPage({ params }: Props) {
         {camp.season} · logged
       </Stamp>
 
-      <PageIntro note={`field notes — camps / ${camp.season.toLowerCase()}`} title={camp.name}>
-        <p className="mt-5 max-w-[54ch] text-[17px] text-ink-soft">
-          {camp.pitch}
-        </p>
-      </PageIntro>
+      <PageIntro note={`field notes — camps / ${camp.season.toLowerCase()}`} title={camp.name} />
 
+      {/* description beside the banner image */}
+      <div className="mt-8 grid grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-start gap-x-12 gap-y-8 max-md:grid-cols-1">
+        <p className="max-w-[54ch] text-[17px] text-ink-soft">{camp.pitch}</p>
+        <figure className="photo max-w-[400px] rotate-[0.9deg]">
+          <Image
+            src={camp.image}
+            alt={`${camp.name} camp artwork`}
+            width={800}
+            height={600}
+            className="w-full object-cover"
+          />
+        </figure>
+      </div>
+
+      {/* "what to expect" beside the at-a-glance card */}
       <div className="mt-12 grid grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-start gap-x-12 gap-y-8 max-md:grid-cols-1">
         <div>
           <h2 className="text-[15px] font-semibold tracking-[0.08em] uppercase text-ink-soft">
@@ -59,45 +70,34 @@ export default async function CampPage({ params }: Props) {
           </div>
         </div>
 
-        <div className="max-md:order-first">
-          <figure className="photo max-w-[400px] rotate-[0.9deg]">
-            <Image
-              src={camp.image}
-              alt={`${camp.name} camp artwork`}
-              width={800}
-              height={600}
-              className="w-full object-cover"
-            />
-          </figure>
-          <div className="mt-10 max-w-[400px] border border-ink/18 bg-card px-6 py-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)]">
-            <h3 className="text-[15px] font-semibold italic">At a glance</h3>
-            <dl className="mt-3 space-y-2 text-[15px]">
-              <div className="flex justify-between gap-4">
-                <dt className="text-ink-soft">Ages</dt>
-                <dd className="font-semibold">{camp.ageRange.replace("Ages ", "")}</dd>
-              </div>
-              <div className="flex justify-between gap-4">
-                <dt className="text-ink-soft">Daily schedule</dt>
-                <dd className="font-semibold">{camp.schedule}</dd>
-              </div>
-              <div className="flex justify-between gap-4">
-                <dt className="text-ink-soft">Cost</dt>
-                <dd className="font-semibold">{camp.price}</dd>
-              </div>
-            </dl>
-            <h4 className="mt-4 text-[13px] font-semibold tracking-[0.08em] uppercase text-ink-soft">
-              {camp.season} sessions
-            </h4>
-            <ul className="mt-2 space-y-1 text-[15px]">
-              {camp.sessions.map((s) => (
-                <li key={s}>{s}</li>
-              ))}
-            </ul>
-            <p className="mt-4 font-hand text-[16px] text-brand-blue">
-              payment plans, sibling & multi-camp discounts, and scholarships
-              were available — same goes next season!
-            </p>
-          </div>
+        <div className="max-w-[400px] border border-ink/18 bg-card px-6 py-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)]">
+          <h3 className="text-[15px] font-semibold italic">At a glance</h3>
+          <dl className="mt-3 space-y-2 text-[15px]">
+            <div className="flex justify-between gap-4">
+              <dt className="text-ink-soft">Ages</dt>
+              <dd className="font-semibold">{camp.ageRange.replace("Ages ", "")}</dd>
+            </div>
+            <div className="flex justify-between gap-4">
+              <dt className="text-ink-soft">Daily schedule</dt>
+              <dd className="font-semibold">{camp.schedule}</dd>
+            </div>
+            <div className="flex justify-between gap-4">
+              <dt className="text-ink-soft">Cost</dt>
+              <dd className="font-semibold">{camp.price}</dd>
+            </div>
+          </dl>
+          <h4 className="mt-4 text-[13px] font-semibold tracking-[0.08em] uppercase text-ink-soft">
+            {camp.season} sessions
+          </h4>
+          <ul className="mt-2 space-y-1 text-[15px]">
+            {camp.sessions.map((s) => (
+              <li key={s}>{s}</li>
+            ))}
+          </ul>
+          <p className="mt-4 font-hand text-[16px] text-brand-blue">
+            payment plans, sibling & multi-camp discounts, and scholarships
+            were available — same goes next season!
+          </p>
         </div>
       </div>
     </>

@@ -34,7 +34,7 @@ export default function ProgramsPage() {
         {programs.map((p, i) => (
           <section
             key={p.slug}
-            className="grid grid-cols-[minmax(0,2fr)_minmax(0,3fr)] items-start gap-x-10 gap-y-5 max-md:grid-cols-1"
+            className={`grid items-start gap-x-10 gap-y-5 max-md:grid-cols-1 ${i % 2 ? "grid-cols-[minmax(0,3fr)_minmax(0,2fr)]" : "grid-cols-[minmax(0,2fr)_minmax(0,3fr)]"}`}
           >
             <figure
               className={`photo max-w-[380px] transition-transform duration-200 ease-out hover:rotate-0 ${i % 2 ? "rotate-[0.8deg] md:order-2 md:justify-self-end" : "-rotate-[0.7deg]"}`}

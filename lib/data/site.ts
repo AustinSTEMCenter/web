@@ -7,8 +7,7 @@ export const site = {
     street: "11525 Stonehollow Dr., Suite A100",
     cityStateZip: "Austin, TX 78758",
   },
-  mapUrl:
-    "https://maps.google.com/?q=11525+Stonehollow+Dr+Suite+A100+Austin+TX+78758",
+  mapUrl: "https://maps.app.goo.gl/jPFUhc7qek9uUA2cA",
   scholarshipFormUrl:
     "https://docs.google.com/forms/d/e/1FAIpQLScxH5eiP_jgKMv51MsGVG7Oz_f-mNBaxzIr7iaBlu6Hkjo_hQ/viewform",
   footerBlurb:
@@ -19,6 +18,6 @@ export const navLinks = [
   { label: "about", href: "/about" },
   { label: "facilities", href: "/facilities" },
   { label: "programs", href: "/programs" },
-  { label: "camps", href: "/programs/summer-camps" },
+  { label: "field trips", href: "/programs/field-trips" },
   { label: "contact", href: "/contact" },
 ];

@@ -70,7 +70,7 @@ export default function AboutPage() {
               {group}
             </h3>
             {members.some((m) => m.image) ? (
-              <div className="mt-5 flex flex-wrap gap-x-10 gap-y-8">
+              <div className="mt-5 flex flex-wrap justify-evenly gap-x-6 gap-y-8">
                 {members.map((m) => (
                   <div key={m.name} className="w-[150px]">
                     {m.image && (
