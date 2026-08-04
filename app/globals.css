@@ -44,19 +44,20 @@ body {
   scroll-margin-top: 96px;
 }
 
-/* red margin rule down the left edge of the notebook page */
+/* red margin rule down the left edge of the notebook page — sits on a
+   vertical line of the 26px graph grid drawn on body/.header-bar */
 .notebook-rule::before {
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 56px;
+  left: 52px;
   width: 2px;
   background: rgba(230, 69, 25, 0.5);
 }
 @media (max-width: 640px) {
   .notebook-rule::before {
-    left: 30px;
+    left: 26px;
   }
 }
 
