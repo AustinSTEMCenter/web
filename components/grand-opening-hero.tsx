@@ -32,13 +32,30 @@ const infoLinkClass =
 
 function EventDescription({ className }: { className: string }) {
   return (
-    <p className={className}>
-      Join us as we celebrate the grand opening of Austin STEM Center &mdash;
-      explore our makerspaces and workshops, tour the facility, try hands-on
-      STEM activities and live demos, enjoy local food trucks, and connect
-      with educators, students, and families. Admission is free &mdash; just
-      register in advance so we can plan for everyone.
-    </p>
+    <div className={`space-y-3 ${className}`}>
+      <p>
+        Join us <strong>August 22, 1:00&ndash;6:00 PM</strong> at 11525
+        Stonehollow Dr., Austin as we officially celebrate the Grand Opening
+        of Austin STEM Center!
+      </p>
+      <p>
+        We&rsquo;re excited to open our doors and invite the community to
+        experience everything Austin STEM Center has to offer. Spend the
+        afternoon exploring our makerspaces and workshops, touring our
+        facility, participating in hands-on STEM activities, watching
+        interactive demonstrations, enjoying local food trucks, and connecting
+        with educators, students, families, and community partners.
+      </p>
+      <p>
+        Admission is free, but we kindly ask that you register in advance so
+        we can plan accordingly and ensure we have enough activities and
+        refreshments for everyone.
+      </p>
+      <p className="font-hand text-[18px] leading-tight text-rust">
+        we can&rsquo;t wait to welcome you and celebrate the future of STEM
+        education together!
+      </p>
+    </div>
   );
 }
 
@@ -103,11 +120,8 @@ function HeroSideBySide() {
         </Link>
 
         <div className="text-center md:min-w-0 md:flex-1 md:text-left max-md:mt-5 max-md:border-t max-md:border-dashed max-md:border-ink/30 max-md:pt-4">
-          <EventDescription className="mx-auto max-w-[64ch] text-[15.5px] leading-snug text-ink-soft md:mx-0 md:text-[16.5px] md:leading-relaxed" />
-          <p className="mt-1.5 text-[14.5px] text-ink-soft md:mt-3.5">
-            {site.address.street} · {site.address.cityStateZip}
-          </p>
-          <div className="mt-3.5 flex flex-wrap items-center justify-center gap-4 max-md:flex-col max-md:items-stretch md:mt-6 md:justify-start">
+          <EventDescription className="mx-auto max-w-[64ch] text-[15.5px] leading-snug text-ink-soft md:mx-0 md:leading-relaxed" />
+          <div className="mt-3.5 flex flex-wrap items-center justify-center gap-4 max-md:flex-col max-md:items-stretch md:mt-5 md:justify-start">
             <DateStamp />
             <RsvpButton />
           </div>
@@ -164,16 +178,13 @@ function HeroStacked() {
           {/* eslint-disable-next-line jsx-a11y/alt-text -- alt comes via getImageProps */}
           <img
             {...flyerPortraitProps}
-            className="mx-auto h-auto max-h-[max(calc(100svh-470px),300px)] w-auto max-w-full border border-ink/10"
+            className="mx-auto h-auto max-h-[max(calc(100svh-560px),300px)] w-auto max-w-full border border-ink/10"
           />
         </picture>
       </Link>
 
       <div className="mt-5 border-t border-dashed border-ink/30 pt-4 text-center">
         <EventDescription className="mx-auto max-w-[64ch] text-[15.5px] leading-snug text-ink-soft" />
-        <p className="mt-1.5 text-[14.5px] text-ink-soft">
-          {site.address.street} · {site.address.cityStateZip}
-        </p>
         <div className="mt-3.5 flex flex-wrap items-center justify-center gap-4 max-md:flex-col max-md:items-stretch">
           <DateStamp />
           <RsvpButton />
@@ -196,12 +207,8 @@ function HeroMarquee() {
           <h1 className="mt-2 text-[clamp(28px,3.2vw,42px)] leading-[1.1] font-bold tracking-[-0.01em] text-balance">
             Come see what <span className="hl">we&rsquo;re building.</span>
           </h1>
-          <EventDescription className="mt-4 max-w-[52ch] text-[16.5px] leading-relaxed text-ink-soft max-md:mx-auto" />
-          <p className="mt-3 text-[15px] text-ink-soft">
-            <strong>1&ndash;6 PM</strong> · {site.address.street} ·{" "}
-            {site.address.cityStateZip}
-          </p>
-          <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 max-md:justify-center">
+          <EventDescription className="mt-4 max-w-[56ch] text-[15.5px] leading-relaxed text-ink-soft max-md:mx-auto" />
+          <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3 max-md:justify-center">
             <RsvpButton />
             <InfoLinks className="text-[14px] text-ink-soft" />
           </div>
