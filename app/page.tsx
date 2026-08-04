@@ -17,6 +17,8 @@ const chipAccents = [
   "border-l-ring-green",
 ];
 
+const lumaEventUrl = "https://luma.com/w5ay1e1w";
+
 const googleCalendarUrl =
   "https://calendar.google.com/calendar/render?" +
   new URLSearchParams({
@@ -26,7 +28,7 @@ const googleCalendarUrl =
     ctz: "America/Chicago",
     location: `${site.address.street}, ${site.address.cityStateZip}`,
     details:
-      "Officially celebrate the Grand Opening of Austin STEM Center — explore makerspaces and workshops, tour the facility, enjoy hands-on STEM activities, live demos, and local food trucks. Admission is free; please register in advance at https://austinstemcenter.org/rsvp",
+      `Officially celebrate the Grand Opening of Austin STEM Center — explore makerspaces and workshops, tour the facility, enjoy hands-on STEM activities, live demos, and local food trucks. Admission is free; please register in advance at ${lumaEventUrl}`,
   }).toString();
 
 const flyerAlt =
@@ -77,12 +79,14 @@ export default function Home() {
                 </p>
               </div>
               <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3 max-md:justify-center">
-                <Link
-                  href="/rsvp"
+                <a
+                  href={lumaEventUrl}
+                  target="_blank"
+                  rel="noreferrer"
                   className="inline-block rounded-[3px] bg-rust px-7 py-3.5 text-center text-[16.5px] font-semibold text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
                 >
                   RSVP — save your spot →
-                </Link>
+                </a>
                 <p className="text-[14px] text-ink-soft">
                   <a
                     href={site.mapUrl}
