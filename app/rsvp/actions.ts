@@ -8,7 +8,7 @@ export type RsvpState =
   | { status: "error"; message: string };
 
 const fallbackMessage =
-  `Something went wrong on our end — sorry! Give us a call at ${site.phone} ` +
+  `Something went wrong on our end, sorry! Give us a call at ${site.phone} ` +
   "and we'll put you on the list the old-fashioned way.";
 
 export async function submitRsvp(
@@ -28,7 +28,7 @@ export async function submitRsvp(
     return {
       status: "error",
       message:
-        "We need at least a first name and a working email — mind checking those two?",
+        "We need at least a first name and a working email. Mind checking those two?",
     };
   }
 

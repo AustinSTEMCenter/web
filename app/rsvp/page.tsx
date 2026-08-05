@@ -5,9 +5,9 @@ import { RsvpForm } from "@/components/rsvp-form";
 import { site } from "@/lib/data/site";
 
 export const metadata: Metadata = {
-  title: "RSVP — Grand Opening",
+  title: "Grand Opening RSVP",
   description:
-    "RSVP for the Austin STEM Center grand opening — Saturday, August 22, 1–6 PM at 11525 Stonehollow Dr., Suite A100, Austin, TX. Free and open to everyone.",
+    "RSVP for the Austin STEM Center grand opening on Saturday, August 22, 1–6 PM at 11525 Stonehollow Dr., Suite A100, Austin, TX. Free and open to everyone.",
 };
 
 export default function RsvpPage() {
@@ -25,9 +25,9 @@ export default function RsvpPage() {
         <p className="mt-5 max-w-[54ch] text-[17px] text-ink-soft">
           We&rsquo;re opening the doors{" "}
           <strong>Saturday, August 22, 1&ndash;6 PM</strong> at{" "}
-          {site.address.street}, {site.address.cityStateZip}. Free and open to
-          everyone &mdash; drop your info below so we know to expect you, and
-          so we can keep you in the loop as ASC grows.
+          {site.address.street}, {site.address.cityStateZip}. It&rsquo;s free
+          and open to everyone. Drop your info below so we know to expect you
+          and can keep you in the loop as ASC grows.
         </p>
       </PageIntro>
 
@@ -37,7 +37,7 @@ export default function RsvpPage() {
 
       <div className="pt-10 pb-4">
         <Annotation>
-          ↳ no ticket, no cost — this just helps us plan (and say hi properly!)
+          ↳ no ticket, no cost. this just helps us plan (and say hi properly!)
         </Annotation>
       </div>
     </>

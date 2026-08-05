@@ -27,9 +27,9 @@ export default function AboutPage() {
           <p>
             At the Austin STEM Center (ASC), we create the space and
             opportunity for learning to leave the classroom and come to life in
-            the real world. We believe that when learning is hands-on, applied,
-            and connected to real challenges, that is where true impact is
-            made. ASC is innovating how STEM is taught by making learning
+            the real world. We believe learning has the most impact when it is
+            hands-on, applied, and connected to real challenges. ASC is
+            innovating how STEM is taught by making learning
             active, accessible, and grounded in real tools, systems, and
             problem-solving.
           </p>
@@ -40,9 +40,9 @@ export default function AboutPage() {
             a wide range of learning experiences, including robotics,
             engineering, manufacturing, and emerging technologies. With spaces
             like our in-house FIRST Robotics arena alongside fabrication labs
-            and learning environments, ASC functions as a support community
-            where learners can explore interests, build skills, and discover
-            pathways connected to real-world applications.
+            and learning environments, ASC is a community where learners can
+            explore their interests, build skills, and discover where those
+            skills can take them.
           </p>
         </div>
       </PageIntro>
@@ -96,7 +96,7 @@ export default function AboutPage() {
                 {members.map((m) => (
                   <span key={m.name}>
                     <b className="font-bold">{m.name}</b>
-                    <span className="italic text-ink-soft"> — {m.title}</span>
+                    <span className="italic text-ink-soft"> · {m.title}</span>
                   </span>
                 ))}
               </p>
@@ -116,9 +116,9 @@ export default function AboutPage() {
             In 2025, Peter Wang, Evan Marchman, and Ken Hawthorn came
             together with a shared vision: to create a place where students
             could truly experience STEM through hands-on learning, innovation,
-            and real-world opportunity. Each founder brought a unique set of
-            skills, experience, and perspective to the table, alongside the
-            foundational support and investment provided by Peter Wang.
+            and real-world opportunity. Each founder brought different
+            skills, experience, and perspective to the table, along with
+            foundational support and investment from Peter Wang.
           </p>
           <p>
             Within just a few short months, a building was secured, an
@@ -142,10 +142,10 @@ export default function AboutPage() {
         <div className="tape relative max-w-[560px] rotate-[0.6deg] border border-ink/18 bg-card px-7 pt-8 pb-7 shadow-[3px_4px_0_rgba(56,52,42,0.12)]">
           <h2 className="text-[21px] font-bold">Support this work</h2>
           <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">
-            If our mission resonates with you, we invite you to support this
-            work. Your donation helps expand access to high-impact STEM
-            learning experiences and ensures that more learners have the
-            opportunity to explore, build, and discover what is possible.
+            If our mission resonates with you, we&rsquo;d love your support.
+            Your donation expands access to hands-on STEM learning and gives
+            more learners the chance to explore, build, and discover
+            what&rsquo;s possible.
           </p>
           <Link
             href="/donate"

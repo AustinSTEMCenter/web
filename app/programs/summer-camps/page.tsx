@@ -8,7 +8,7 @@ import { getProgram } from "@/lib/data/programs";
 export const metadata: Metadata = {
   title: "Summer Camps",
   description:
-    "Immersive, multi-day STEM summer camps at the Austin STEM Center. Summer 2026 has concluded — join the list to hear about fall programming.",
+    "Immersive, multi-day STEM summer camps at the Austin STEM Center. Summer 2026 has concluded. Join the list to hear about fall programming.",
 };
 
 export default function SummerCampsPage() {
@@ -39,11 +39,11 @@ export default function SummerCampsPage() {
 
       <div className="tape relative mx-auto mt-10 max-w-[560px] -rotate-[0.5deg] border border-ink/18 bg-card px-6 pt-6 pb-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)]">
         <h2 className="text-[17px] font-bold">
-          Summer 2026 has concluded — thanks for an amazing first season!
+          Summer 2026 is a wrap. Thanks for an amazing first season!
         </h2>
         <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
           The camps below are what we ran this summer. Fall programming is in
-          the works —{" "}
+          the works, so{" "}
           <Link href="/contact" className="text-brand-blue underline decoration-brand-blue/50 underline-offset-[3px]">
             get in touch
           </Link>{" "}
@@ -101,7 +101,7 @@ export default function SummerCampsPage() {
           <Link href="/contact" className="underline">
             contact us
           </Link>{" "}
-          — happy to help
+          anytime, we&rsquo;re happy to help
         </Annotation>
       </div>
     </>

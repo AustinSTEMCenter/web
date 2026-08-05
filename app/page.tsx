@@ -23,16 +23,16 @@ const googleCalendarUrl =
   "https://calendar.google.com/calendar/render?" +
   new URLSearchParams({
     action: "TEMPLATE",
-    text: "Grand Opening — Austin STEM Center",
+    text: "Austin STEM Center Grand Opening",
     dates: "20260822T130000/20260822T180000",
     ctz: "America/Chicago",
     location: `${site.address.street}, ${site.address.cityStateZip}`,
     details:
-      `Officially celebrate the Grand Opening of Austin STEM Center — explore makerspaces and workshops, tour the facility, enjoy hands-on STEM activities, live demos, and local food trucks. Admission is free; please register in advance at ${lumaEventUrl}`,
+      `Celebrate the Grand Opening of Austin STEM Center! Tour the facility, explore the makerspaces and workshops, and enjoy hands-on STEM activities, live demos, and local food trucks. Admission is free, but please register in advance at ${lumaEventUrl}`,
   }).toString();
 
 const flyerAlt =
-  "Grand opening flyer — be a part of making something new. Saturday, August 22, 1–6 PM";
+  "Grand opening flyer: be a part of making something new. Saturday, August 22, 1–6 PM";
 
 const infoLinkClass =
   "italic text-brand-blue underline decoration-brand-blue/50 underline-offset-[3px]";
@@ -60,22 +60,18 @@ export default function Home() {
                   Grand Opening of Austin STEM Center!
                 </p>
                 <p>
-                  We&rsquo;re excited to open our doors and invite the
-                  community to experience everything Austin STEM Center has to
-                  offer. Spend the afternoon exploring our makerspaces and
-                  workshops, touring our facility, participating in hands-on
-                  STEM activities, watching interactive demonstrations,
-                  enjoying local food trucks, and connecting with educators,
-                  students, families, and community partners.
+                  We&rsquo;re excited to finally open our doors. Spend the
+                  afternoon touring the facility, exploring the makerspaces
+                  and workshops, trying hands-on STEM activities, and catching
+                  live demos. There will be local food trucks too, plus plenty
+                  of educators, students, and families to meet.
                 </p>
                 <p>
-                  Admission is free, but we kindly ask that you register in
-                  advance so we can plan accordingly and ensure we have enough
-                  activities and refreshments for everyone.
+                  Admission is free, but please register ahead of time so we
+                  know how many people to expect.
                 </p>
                 <p className="font-hand text-[18px] leading-tight text-rust">
-                  we can&rsquo;t wait to welcome you and celebrate the future
-                  of STEM education together!
+                  we can&rsquo;t wait to show you around!
                 </p>
               </div>
               <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3 max-md:justify-center">
@@ -85,7 +81,7 @@ export default function Home() {
                   rel="noreferrer"
                   className="inline-block rounded-[3px] bg-rust px-7 py-3.5 text-center text-[16.5px] font-semibold text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
                 >
-                  RSVP — save your spot →
+                  Save your spot →
                 </a>
                 <p className="text-[14px] text-ink-soft">
                   <a
@@ -131,7 +127,8 @@ export default function Home() {
 
         <div className="mt-4 text-center">
           <Annotation>
-            ↳ can&rsquo;t make it? <Link href="/contact" className="underline">drop us a line</Link> — we&rsquo;ll save you a tour.
+            ↳ can&rsquo;t make it? <Link href="/contact" className="underline">drop us a line</Link>{" "}
+            and we&rsquo;ll save you a tour.
           </Annotation>
         </div>
       </section>
@@ -155,7 +152,7 @@ export default function Home() {
         </SectionHeading>
         <p className="mt-4 max-w-[56ch] text-[17px] text-ink-soft">
           Hands-on experiences in science, art, engineering, and creative
-          exploration — a nonprofit innovation hub where students, educators,
+          exploration: a nonprofit innovation hub where students, educators,
           and professionals all learn by making real things.
         </p>
         <Link
@@ -166,7 +163,7 @@ export default function Home() {
         </Link>
         <br />
         <Annotation className="mt-6">
-          ↳ ask about the <Link href="/facilities" className="underline">FIRST Arena</Link> — it&rsquo;s the good stuff!
+          ↳ ask about the <Link href="/facilities" className="underline">FIRST Arena</Link>, it&rsquo;s the good stuff!
         </Annotation>
       </section>
       */}
@@ -228,7 +225,7 @@ export default function Home() {
         <SectionHeading>A connected learning ecosystem.</SectionHeading>
         <p className="mt-4 max-w-[56ch] text-[17px] text-ink-soft">
           The ASC facility is designed to support robotics, engineering, and
-          hands-on learning at every stage — six real spaces under one roof.
+          hands-on learning at every stage: six real spaces under one roof.
         </p>
         <ul className="mt-6 flex flex-wrap gap-x-2.5 gap-y-3">
           {facilities.map(({ name, slug }, i) => (
@@ -243,7 +240,7 @@ export default function Home() {
           ))}
         </ul>
         <Annotation className="mt-6">
-          ↳ {camps.length} summer camps ran here this year — <Link href="/programs/summer-camps" className="underline">see what we run</Link>
+          ↳ {camps.length} summer camps ran here this year · <Link href="/programs/summer-camps" className="underline">see what we ran</Link>
         </Annotation>
       </section>
 

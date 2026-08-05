@@ -14,7 +14,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const camp = getCamp((await params).slug);
   if (!camp) return {};
-  return { title: `${camp.name} — Summer Camp`, description: camp.pitch };
+  return { title: `${camp.name} Summer Camp`, description: camp.pitch };
 }
 
 export default async function CampPage({ params }: Props) {
@@ -34,11 +34,12 @@ export default async function CampPage({ params }: Props) {
         <p className="max-w-[54ch] text-[17px] text-ink-soft">{camp.pitch}</p>
         <figure className="photo max-w-[400px] rotate-[0.9deg]">
           <Image
-            src={camp.image}
-            alt={`${camp.name} camp artwork`}
-            width={800}
-            height={600}
-            className="w-full object-cover"
+            src={camp.photos[0].src}
+            alt={camp.photos[0].alt}
+            width={1600}
+            height={1067}
+            className="aspect-[3/2] w-full object-cover"
+            priority
           />
         </figure>
       </div>
@@ -60,8 +61,9 @@ export default async function CampPage({ params }: Props) {
               {camp.season} has concluded
             </h3>
             <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
-              This page shows what we ran — registration for this season is
-              closed. Want to hear about the next one before anyone else?{" "}
+              This page shows what we ran. Registration for this season is
+              closed, but want to hear about the next one before anyone
+              else?{" "}
               <Link href="/contact" className="text-brand-blue underline decoration-brand-blue/50 underline-offset-[3px]">
                 Get in touch
               </Link>
@@ -96,10 +98,36 @@ export default async function CampPage({ params }: Props) {
           </ul>
           <p className="mt-4 font-hand text-[16px] text-brand-blue">
             payment plans, sibling & multi-camp discounts, and scholarships
-            were available — same goes next season!
+            were available, and the same goes next season!
           </p>
         </div>
       </div>
+
+      {/* photo log — the rest of the roll, taped in */}
+      <section className="mt-16">
+        <h2 className="text-[15px] font-semibold tracking-[0.08em] uppercase text-ink-soft">
+          From the field
+        </h2>
+        <p className="mt-1 font-hand text-[18px] text-brand-blue">
+          shots from this summer&apos;s sessions ↓
+        </p>
+        <div className="mt-6 grid grid-cols-2 gap-x-10 gap-y-12 max-md:grid-cols-1">
+          {camp.photos.slice(1).map((photo, i) => (
+            <figure
+              key={photo.src}
+              className={`photo ${i % 2 === 0 ? "rotate-[0.7deg]" : "-rotate-[0.6deg]"}`}
+            >
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                width={1600}
+                height={1067}
+                className="aspect-[3/2] w-full object-cover"
+              />
+            </figure>
+          ))}
+        </div>
+      </section>
     </>
   );
 }

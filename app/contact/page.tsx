@@ -6,7 +6,7 @@ import { site } from "@/lib/data/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with the Austin STEM Center — programs, partnerships, parent questions, and everything else.",
+    "Get in touch with the Austin STEM Center about programs, partnerships, parent questions, and everything else.",
 };
 
 /*
@@ -32,7 +32,7 @@ export default function ContactPage() {
         <h2 className="text-[21px] font-bold">How to reach us right now</h2>
         <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">
           A contact form is on its way. In the meantime, the fastest way to
-          reach us is by phone — or just come by and say hi.
+          reach us is by phone, or just come by and say hi.
         </p>
         <p className="mt-4 text-[17px]">
           <a
@@ -55,14 +55,13 @@ export default function ContactPage() {
           </a>
         </p>
         <p className="mt-4 font-hand text-[17px] text-brand-blue">
-          come by and see the FIRST Arena — worth the trip
+          come by and see the FIRST Arena, it&rsquo;s worth the trip
         </p>
       </div>
 
       <div className="pt-10 pb-4">
         <Annotation>
-          ↳ the form&rsquo;s almost wired up — until then, the phone works
-          great!
+          ↳ until the form&rsquo;s wired up, the phone works great!
         </Annotation>
       </div>
     </>

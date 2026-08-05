@@ -40,8 +40,8 @@ export function ContactForm() {
           name="topic"
           className="mt-1.5 w-full border border-ink/25 bg-card px-3 py-2.5 shadow-[2px_2px_0_rgba(56,52,42,0.08)] outline-none focus:border-brand-blue"
         >
-          <option>Programs — field trips, camps, or after-school clubs</option>
-          <option>Facility rentals — event space or classrooms</option>
+          <option>Programs (field trips, camps, or after-school clubs)</option>
+          <option>Facility rentals (event space or classrooms)</option>
           <option>Partnerships</option>
           <option>Interested Parent</option>
           <option>Other (please leave more information below)</option>

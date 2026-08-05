@@ -13,10 +13,10 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   title: {
     default: "Austin STEM Center",
-    template: "%s — Austin STEM Center",
+    template: "%s · Austin STEM Center",
   },
   description:
-    "A nonprofit innovation hub in Austin, TX — hands-on experiences in science, art, engineering, and creative exploration for students, educators, and professionals.",
+    "A nonprofit innovation hub in Austin, TX, with hands-on experiences in science, art, engineering, and creative exploration for students, educators, and professionals.",
 };
 
 export default function RootLayout({

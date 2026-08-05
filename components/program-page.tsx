@@ -88,8 +88,8 @@ export function ProgramPage({ program }: { program: Program }) {
             <div className="tape relative mt-12 max-w-[380px] -rotate-[0.7deg] border border-ink/18 bg-card px-6 pt-6 pb-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)]">
               <h3 className="text-[17px] font-bold">{program.inquiry}</h3>
               <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
-                Tell us about your group and what you&rsquo;re hoping to do —
-                we&rsquo;ll take it from there.
+                Tell us about your group and what you&rsquo;re hoping to do,
+                and we&rsquo;ll take it from there.
               </p>
               <Link
                 href="/contact"

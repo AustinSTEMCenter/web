@@ -24,11 +24,11 @@ export function RsvpForm() {
         </h2>
         <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">
           Saturday, August 22, 1&ndash;6 PM. Tour all six spaces, meet the
-          crew, and see the place for yourself &mdash; no ticket needed, just
-          show up.
+          crew, and see the place for yourself. No ticket needed, just show
+          up.
         </p>
         <p className="mt-4 font-hand text-[19px] text-rust">
-          see you there — bring a friend, too!
+          see you there! bring a friend, too
         </p>
       </div>
     );
@@ -111,7 +111,7 @@ export function RsvpForm() {
           How&rsquo;d you hear about the Austin STEM Center?
         </span>
         <select name="source" defaultValue="" className={inputClass}>
-          <option value="">— pick one —</option>
+          <option value="">pick one…</option>
           <option>Friend or family</option>
           <option>My kid&rsquo;s school or teacher</option>
           <option>Social media</option>

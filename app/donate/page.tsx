@@ -7,7 +7,7 @@ import { site } from "@/lib/data/site";
 export const metadata: Metadata = {
   title: "Donate",
   description:
-    "Support the Austin STEM Center — your donation expands access to high-impact, hands-on STEM learning experiences.",
+    "Support the Austin STEM Center. Your donation expands access to hands-on STEM learning experiences.",
 };
 
 export default function DonatePage() {
@@ -25,10 +25,10 @@ export default function DonatePage() {
       >
         <div className="prose-note mt-6">
           <p>
-            If our mission resonates with you, we invite you to support this
-            work. Your donation helps expand access to high-impact STEM
-            learning experiences and ensures that more learners have the
-            opportunity to explore, build, and discover what is possible.
+            If our mission resonates with you, we&rsquo;d love your support.
+            Your donation expands access to hands-on STEM learning and gives
+            more learners the chance to explore, build, and discover
+            what&rsquo;s possible.
           </p>
           <p>
             Gifts fund things you can walk in and touch: scholarship seats at
@@ -50,10 +50,10 @@ export default function DonatePage() {
           <a href={site.phoneHref} className="text-brand-blue underline decoration-brand-blue/50 underline-offset-[3px]">
             {site.phone}
           </a>{" "}
-          — we&rsquo;ll help you direct your gift where it matters most.
+          and we&rsquo;ll help you direct your gift where it matters most.
         </p>
         <p className="mt-4 font-hand text-[17px] text-brand-blue">
-          every gift puts real tools in real hands — thank you!
+          every gift puts real tools in real hands. thank you!
         </p>
       </div>
     </>

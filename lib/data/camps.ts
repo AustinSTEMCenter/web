@@ -1,7 +1,10 @@
 export type Camp = {
   name: string;
   slug: string;
+  /** illustrated title card — used on the camps listing */
   image: string;
+  /** real photos from camp, lead photo first — used on the detail page */
+  photos: { src: string; alt: string }[];
   season: string;
   ageRange: string;
   schedule: string;
@@ -18,6 +21,24 @@ export const camps: Camp[] = [
     name: "Fort Minecrafters",
     slug: "fort-minecrafters",
     image: "/images/camps/fort-minecrafters.png",
+    photos: [
+      {
+        src: "/images/camps/fort-minecrafters-1.jpg",
+        alt: "Campers building a walk-in fort out of full-size cardboard boxes",
+      },
+      {
+        src: "/images/camps/fort-minecrafters-2.jpg",
+        alt: "Camper in a handmade cardboard dragon helmet crafting at the build table",
+      },
+      {
+        src: "/images/camps/fort-minecrafters-3.jpg",
+        alt: "Young camper assembling a cardboard build at the work table",
+      },
+      {
+        src: "/images/camps/fort-minecrafters-4.jpg",
+        alt: "The whole room mid-build as a cardboard fort wall takes shape",
+      },
+    ],
     season: "Summer 2026",
     ageRange: "Ages 6–11",
     schedule: "9:00am – 12:00pm",
@@ -43,6 +64,32 @@ export const camps: Camp[] = [
     name: "Race Lab",
     slug: "race-lab",
     image: "/images/camps/race-lab.png",
+    photos: [
+      {
+        src: "/images/camps/race-lab-1.jpg",
+        alt: "Campers designing their cars on laptops around the lab table",
+      },
+      {
+        src: "/images/camps/race-lab-2.jpg",
+        alt: "Campers in safety glasses assembling their race car kits",
+      },
+      {
+        src: "/images/camps/race-lab-3.jpg",
+        alt: "Campers lining their cars up on the track on race day",
+      },
+      {
+        src: "/images/camps/race-lab-4.jpg",
+        alt: "CO2 smoke flying as cars launch down the race track",
+      },
+      {
+        src: "/images/camps/race-lab-5.jpg",
+        alt: "Campers building and tuning car parts around the round table",
+      },
+      {
+        src: "/images/camps/race-lab-6.jpg",
+        alt: "Campers watching a run at the track with a model race car up top",
+      },
+    ],
     season: "Summer 2026",
     ageRange: "Ages 8–13",
     schedule: "1:00pm – 4:00pm",
@@ -61,6 +108,24 @@ export const camps: Camp[] = [
     name: "Build-A-Synth",
     slug: "build-a-synth",
     image: "/images/camps/build-a-synth.png",
+    photos: [
+      {
+        src: "/images/camps/build-a-synth-1.jpg",
+        alt: "Campers with headphones on, playing the synthesizers they built",
+      },
+      {
+        src: "/images/camps/build-a-synth-2.jpg",
+        alt: "Close-up of a camper wiring up a breadboard audio circuit",
+      },
+      {
+        src: "/images/camps/build-a-synth-3.jpg",
+        alt: "ASC staff helping campers sort components at the build table",
+      },
+      {
+        src: "/images/camps/build-a-synth-4.jpg",
+        alt: "Campers assembling electronics from parts trays around the table",
+      },
+    ],
     season: "Summer 2026",
     ageRange: "Ages 10–15",
     schedule: "1:00pm – 4:00pm",
@@ -69,7 +134,7 @@ export const camps: Camp[] = [
     pitch:
       "A fun, hands-on, creative crash course where students explore basic electronics and sound synthesis by building, soldering, and experimenting with real audio circuits and instruments.",
     expect: [
-      "Hands-on building from day one — students construct a simple working synthesizer using real electronic components",
+      "Hands-on building from day one: students construct a simple working synthesizer using real electronic components",
       "A guided, step-by-step process, where instructors explain core concepts in ways that kids can understand",
       "All projects use beginner-safe components designed specifically for learning",
       "Immediate results as they turn knobs, change components, and experiment to shape their own sounds",

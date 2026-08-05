@@ -73,7 +73,7 @@ We reserve the right to restrict or terminate access to the Website at our discr
 
 ## 6. Intellectual Property
 
-All content on this Website—including text, images, graphics, logos, videos, curriculum materials, and downloadable resources—is the property of Austin STEM Center or its licensors and is protected by intellectual property laws.
+All content on this Website (including text, images, graphics, logos, videos, curriculum materials, and downloadable resources) is the property of Austin STEM Center or its licensors and is protected by intellectual property laws.
 
 You may:
 

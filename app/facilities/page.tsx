@@ -8,7 +8,7 @@ import { facilities } from "@/lib/data/facilities";
 export const metadata: Metadata = {
   title: "Facilities",
   description:
-    "Six real spaces under one roof: FIRST Robotics arena, wood shop with a 4×8 CNC router, metal shop, electronics lab, makerspace, and teaching kitchen — plus event space and classrooms for rent.",
+    "Six real spaces under one roof: FIRST Robotics arena, wood shop with a 4×8 CNC router, metal shop, electronics lab, makerspace, and teaching kitchen, plus event space and classrooms for rent.",
 };
 
 export default function FacilitiesPage() {
@@ -95,7 +95,7 @@ export default function FacilitiesPage() {
           <Link href="/contact" className="underline">
             tell us about it
           </Link>{" "}
-          — we&rsquo;ll help you find the right room.
+          and we&rsquo;ll help you find the right room.
         </Annotation>
       </section>
 

@@ -24,7 +24,7 @@ export const programs: Program[] = [
     title: "Field Trips",
     slug: "field-trips",
     href: "/programs/field-trips",
-    image: "/images/programs/field-trips.jpg",
+    image: "/images/camps/race-lab-1.jpg",
     teaser:
       "Hands-on STEM experiences that connect classroom learning to real-world tools, careers, and problem-solving.",
     about: [
@@ -71,11 +71,11 @@ export const programs: Program[] = [
     title: "Summer Camps",
     slug: "summer-camps",
     href: "/programs/summer-camps",
-    image: "/images/programs/summer-camps.jpg",
+    image: "/images/camps/fort-minecrafters-1.jpg",
     teaser:
       "Hands-on camps where creativity, STEM, fun, and real-world skills come together.",
     about: [
-      "Summer camps at the Austin STEM Center (ASC) are immersive, multi-day experiences that give students the time and space to explore, build, and create. Camps are designed around hands-on projects, collaboration, and experimentation, giving campers the chance to work with real tools and real materials.",
+      "ASC summer camps are multi-day experiences that give students the time and space to explore, build, and create. Camps are designed around hands-on projects, collaboration, and experimentation, giving campers the chance to work with real tools and real materials.",
       "Camps are available for a range of age groups and interests, with programming rooted in STEM, design, and making.",
     ],
     experienceHeading: "What campers experience",
@@ -90,11 +90,11 @@ export const programs: Program[] = [
     title: "After-School STEM Clubs",
     slug: "after-school-clubs",
     href: "/programs/after-school-clubs",
-    image: "/images/programs/after-school-clubs.jpg",
+    image: "/images/camps/build-a-synth-3.jpg",
     teaser:
       "Flexible after-school enrichment focused on hands-on STEM learning.",
     about: [
-      "After-school STEM clubs at the Austin STEM Center (ASC) give students a regular place to build, tinker, and explore beyond the school day. On scheduled club days, students take on hands-on projects across robotics, engineering, and making — guided by ASC staff in our real shops, labs, and maker spaces.",
+      "Our after-school STEM clubs give students a regular place to build, tinker, and explore beyond the school day. On scheduled club days, students take on hands-on projects across robotics, engineering, and making, guided by ASC staff in our real shops, labs, and maker spaces.",
       "Come session by session, or join as a monthly member for unlimited participation during scheduled club days.",
     ],
     experienceHeading: "What club members experience",
