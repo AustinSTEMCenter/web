@@ -225,10 +225,13 @@ export default function Home() {
           <Gear className="h-12 rotate-12 text-ink/25" />
         </span>
         <p className="mb-2 font-hand text-[21px] text-brand-blue">the space</p>
-        <SectionHeading>A connected learning ecosystem.</SectionHeading>
+        <SectionHeading>Where Learning Comes to Life</SectionHeading>
         <p className="mt-4 max-w-[56ch] text-[17px] text-ink-soft">
-          The ASC facility is designed to support robotics, engineering, and
-          hands-on learning at every stage: six real spaces under one roof.
+        Austin STEM Center was designed to inspire curiosity through
+          hands-on experiences. Under one roof, learners can explore
+          robotics, engineering, fabrication, design, electronics, and more in
+          purpose-built spaces that encourage them to create, experiment,
+          and learn by doing.
         </p>
         <ul className="mt-6 flex flex-wrap gap-x-2.5 gap-y-3">
           {facilities.map(({ name, slug }, i) => (
