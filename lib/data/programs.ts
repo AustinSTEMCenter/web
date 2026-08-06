@@ -33,7 +33,7 @@ export const programs: Program[] = [
     ],
     experienceHeading: "What students experience",
     experience: [
-      "Guided exploration of ASC's metal shop, wood shop, maker spaces, and labs",
+      "Guided exploration of ASC's machine shop, wood shop, makerspaces, and labs",
       "Safe interaction with industry tools and machines",
       "Exposure to careers in STEM, skilled trades, and technical fields",
       "Learning that emphasizes curiosity, problem-solving, and how things are made",
@@ -46,21 +46,21 @@ export const programs: Program[] = [
         {
           option: "Field Trip",
           duration: "2 hours",
-          price: "$XX / student",
+          price: "$15 / student",
           description:
             "A hands-on STEM experience designed for school groups and organizations.",
         },
         {
           option: "Field Trip + Mini Lab",
           duration: "4 hours",
-          price: "$XX / student",
+          price: "$40 / student",
           description:
             "An extended, immersive STEM experience with deeper project work and exploration.",
         },
         {
           option: "Full-Day Experience",
           duration: "6 hours",
-          price: "$XX / student",
+          price: "$75 / student",
           description:
             "A full-day engineering and innovation experience featuring STEM activities and a level-appropriate project. Includes the field trip (optional).",
         },
@@ -110,13 +110,13 @@ export const programs: Program[] = [
       rows: [
         {
           option: "Single session",
-          price: "$XX / session",
+          price: "$60 / session",
           description:
             "Flexible after-school enrichment focused on hands-on STEM learning.",
         },
         {
           option: "Monthly membership",
-          price: "$XX / month",
+          price: "$200 / month",
           description:
             "Unlimited participation in our after-school club program during scheduled club days.",
         },

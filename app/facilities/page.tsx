@@ -8,7 +8,7 @@ import { facilities } from "@/lib/data/facilities";
 export const metadata: Metadata = {
   title: "Facilities",
   description:
-    "Six real spaces under one roof: FIRST Robotics arena, wood shop with a 4×8 CNC router, metal shop, electronics lab, makerspace, and teaching kitchen, plus event space and classrooms for rent.",
+    "Six real spaces under one roof: FIRST Robotics arena, wood shop with a 4×8 CNC router, machine shop, electronics lab, makerspace, and teaching kitchen, plus event space and classrooms for rent.",
 };
 
 export default function FacilitiesPage() {
@@ -18,15 +18,17 @@ export default function FacilitiesPage() {
         note="field notes — the building"
         title={
           <>
-            Six real spaces, one{" "}
-            <span className="hl-purple">connected ecosystem.</span>
+            Where learning <span className="hl-purple">comes to life.</span>
           </>
         }
         doodle={<Atom className="h-14 rotate-12 text-ring-teal/60" />}
       >
         <p className="mt-5 max-w-[56ch] text-[17px] text-ink-soft">
-          The ASC facility is a connected learning ecosystem designed to
-          support robotics, engineering, and hands-on learning at every stage.
+          Austin STEM Center was designed to inspire curiosity through
+          hands-on experiences. Under one roof, learners can explore
+          robotics, engineering, fabrication, design, electronics, and more in
+          purpose-built spaces that encourage them to create, experiment,
+          and learn by doing.
         </p>
       </PageIntro>
 
@@ -35,8 +37,15 @@ export default function FacilitiesPage() {
           <section
             key={f.slug}
             id={f.slug}
-            className={`grid items-start gap-x-10 gap-y-5 max-md:grid-cols-1 ${i % 2 ? "grid-cols-[minmax(0,3fr)_minmax(0,2fr)]" : "grid-cols-[minmax(0,2fr)_minmax(0,3fr)]"}`}
+            className={`relative grid items-start gap-x-10 gap-y-5 max-md:grid-cols-1 ${i % 2 ? "grid-cols-[minmax(0,3fr)_minmax(0,2fr)]" : "grid-cols-[minmax(0,2fr)_minmax(0,3fr)]"}`}
           >
+            {f.legacySlug && (
+              <span
+                id={f.legacySlug}
+                aria-hidden
+                className="absolute top-0"
+              />
+            )}
             <figure
               className={`photo max-w-[420px] ${i % 2 ? "rotate-[0.8deg] md:order-2 md:justify-self-end" : "-rotate-[0.7deg]"}`}
             >
@@ -47,7 +56,7 @@ export default function FacilitiesPage() {
                 height={560}
                 className="aspect-[3/2] w-full object-cover"
               />
-              <figcaption className="pt-2 text-center font-hand text-[16px] text-brand-blue">
+              <figcaption className="pt-2 text-center font-hand text-[19px] text-brand-blue">
                 {f.note}
               </figcaption>
             </figure>
@@ -65,8 +74,8 @@ export default function FacilitiesPage() {
 
       {/* facility rentals */}
       <section id="rentals" className="pt-20">
-        <p className="mb-2 font-hand text-[18px] text-brand-blue">
-          rent the space
+        <p className="mb-2 font-hand text-[21px] text-brand-blue">
+          rent our space
         </p>
         <SectionHeading>Facility rentals.</SectionHeading>
         <p className="mt-4 max-w-[56ch] text-[17px] text-ink-soft">
@@ -90,25 +99,15 @@ export default function FacilitiesPage() {
             </p>
           </div>
         </div>
-        <Annotation className="mt-8">
-          ↳ planning something?{" "}
-          <Link href="/contact" className="underline">
-            tell us about it
-          </Link>{" "}
-          and we&rsquo;ll help you find the right room.
-        </Annotation>
       </section>
 
-      <div className="pt-6 pb-4">
+      <div className="pt-10 pb-4">
         <Annotation>
-          ↳ want to see it in person?{" "}
-          <Link href="/programs/field-trips" className="underline">
-            book a field trip
-          </Link>{" "}
-          or{" "}
+          ↳{" "}
           <Link href="/contact" className="underline">
-            come say hi
-          </Link>
+            book a tour
+          </Link>{" "}
+          with us and see it for yourself!
         </Annotation>
       </div>
     </>

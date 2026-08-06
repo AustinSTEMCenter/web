@@ -54,7 +54,7 @@ export default function ContactPage() {
             {site.address.cityStateZip}
           </a>
         </p>
-        <p className="mt-4 font-hand text-[17px] text-brand-blue">
+        <p className="mt-4 font-hand text-[20px] text-brand-blue">
           come by and see the FIRST Arena, it&rsquo;s worth the trip
         </p>
       </div>

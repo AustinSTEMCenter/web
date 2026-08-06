@@ -18,51 +18,65 @@ export default function AboutPage() {
         note="field notes — who we are"
         title={
           <>
-            Learning that <span className="hl">leaves the classroom.</span>
+            Preparing today&rsquo;s learners for{" "}
+            <span className="hl">tomorrow&rsquo;s challenges.</span>
           </>
         }
         doodle={<Lightbulb className="h-16 rotate-6 text-gold/70" />}
       >
         <div className="prose-note mt-6">
           <p>
-            At the Austin STEM Center (ASC), we create the space and
-            opportunity for learning to leave the classroom and come to life in
-            the real world. We believe learning has the most impact when it is
-            hands-on, applied, and connected to real challenges. ASC is
-            innovating how STEM is taught by making learning
-            active, accessible, and grounded in real tools, systems, and
-            problem-solving.
+            Austin STEM Center (ASC) is a nonprofit STEM education and
+            innovation hub dedicated to making STEM accessible, exciting, and
+            hands-on for learners of all ages.
           </p>
           <p>
-            As a nonprofit innovation hub partnered with ATX Robotics Inc., ASC
-            brings together schools, companies, and communities to grow real
-            talent and solve real problems. Our facilities and programs support
-            a wide range of learning experiences, including robotics,
-            engineering, manufacturing, and emerging technologies. With spaces
-            like our in-house FIRST Robotics arena alongside fabrication labs
-            and learning environments, ASC is a community where learners can
-            explore their interests, build skills, and discover where those
-            skills can take them.
+            We believe the most meaningful learning happens through experience.
+            When people are given the opportunity to explore, build,
+            experiment, and solve real-world challenges, they don&rsquo;t
+            just gain technical skills &mdash; they develop confidence,
+            creativity, curiosity, and the ability to think critically.
+          </p>
+          <p>
+            That&rsquo;s why everything we do is designed to move beyond
+            traditional instruction and into authentic, hands-on learning
+            experiences that inspire lifelong learning.
+          </p>
+          <p>
+            Working alongside educators, schools, families, industry partners,
+            and our robotics affiliate ATX Robotics Inc., we&rsquo;re building a
+            community where learners discover their passions, develop practical
+            skills, and prepare for the opportunities of tomorrow.
+          </p>
+          <p>
+            From robotics and engineering to manufacturing, digital
+            fabrication, and emerging technologies, Austin STEM Center provides
+            access to professional learning environments where ideas become
+            reality and curiosity becomes capability.
+          </p>
+          <p>
+            Together, we&rsquo;re creating a future where more people have the
+            confidence to build, innovate, and shape the world around them.
           </p>
         </div>
       </PageIntro>
 
-      <figure className="photo mt-10 max-w-[560px] -rotate-[0.8deg]">
+      <figure className="photo mt-10 max-w-[480px] -rotate-[0.8deg]">
         <Image
-          src="/images/about/workshop.jpg"
-          alt="Hands-on learning at the Austin STEM Center"
-          width={1200}
-          height={900}
+          src="/images/about/team.jpg"
+          alt="The Austin STEM Center team"
+          width={1246}
+          height={1188}
           className="w-full"
         />
-        <figcaption className="pt-2 text-center font-hand text-[16px] text-brand-blue">
-          real tools, real problems
+        <figcaption className="pt-2 text-center font-hand text-[19px] text-brand-blue">
+          the people who make it happen
         </figcaption>
       </figure>
 
       {/* team */}
       <section className="pt-20">
-        <p className="mb-2 font-hand text-[18px] text-brand-blue">the crew</p>
+        <p className="mb-2 font-hand text-[21px] text-brand-blue">the crew</p>
         <SectionHeading>Meet the team.</SectionHeading>
         {teamGroups.map(({ group, members }) => (
           <div key={group} className="pt-10">
@@ -77,9 +91,9 @@ export default function AboutPage() {
                       <Image
                         src={m.image}
                         alt={m.name}
-                        width={300}
+                        width={270}
                         height={300}
-                        className="w-full border border-ink/10 [filter:grayscale(1)_sepia(0.22)_brightness(1.03)]"
+                        className="h-auto w-full border border-ink/10 [filter:grayscale(1)_sepia(0.22)_brightness(1.03)]"
                       />
                     )}
                     <p className="mt-2 text-[16px] leading-tight font-bold">
@@ -107,7 +121,7 @@ export default function AboutPage() {
 
       {/* history */}
       <section className="pt-20">
-        <p className="mb-2 font-hand text-[18px] text-brand-blue">
+        <p className="mb-2 font-hand text-[21px] text-brand-blue">
           how it started
         </p>
         <SectionHeading>The history of the Austin STEM Center.</SectionHeading>

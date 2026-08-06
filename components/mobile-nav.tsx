@@ -72,7 +72,7 @@ export function MobileNav() {
                 </Link>
               </li>
             </ul>
-            <p className="pt-2 pb-1 text-right font-hand text-[16px] text-brand-blue">
+            <p className="pt-2 pb-1 text-right font-hand text-[19px] text-brand-blue">
               — see you at the center
             </p>
           </div>

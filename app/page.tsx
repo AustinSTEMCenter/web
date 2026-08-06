@@ -40,18 +40,16 @@ const infoLinkClass =
 export default function Home() {
   return (
     <>
-      {/* grand-opening hero — marquee card: text-led invitation with a
-          taped-on flyer at right, stacked text-then-flyer below md
-          (picked 2026-08-04 from the tabbed design lab) */}
       <section className="pt-5">
         <div className="tape-corners relative rotate-[0.3deg] border border-ink/18 bg-card px-8 py-7 shadow-[4px_5px_0_rgba(56,52,42,0.12)] max-md:px-4">
           <div className="md:grid md:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] md:items-center md:gap-10">
             <div className="max-md:text-center">
-              <p className="font-hand text-[19px] text-brand-blue">
+              <p className="font-hand text-[22px] text-brand-blue">
                 grand opening — saturday, august 22
               </p>
               <h1 className="mt-2 text-[clamp(28px,3.2vw,42px)] leading-[1.1] font-bold tracking-[-0.01em] text-balance">
-                Come see what <span className="hl">we&rsquo;re building.</span>
+                The future of STEM education{" "}
+                <span className="hl">starts here.</span>
               </h1>
               <div className="mt-4 max-w-[56ch] space-y-3 text-[15.5px] leading-relaxed text-ink-soft max-md:mx-auto">
                 <p>
@@ -60,17 +58,22 @@ export default function Home() {
                   Grand Opening of Austin STEM Center!
                 </p>
                 <p>
-                  We&rsquo;re excited to finally open our doors. Spend the
-                  afternoon touring the facility, exploring the makerspaces
-                  and workshops, trying hands-on STEM activities, and catching
-                  live demos. There will be local food trucks too, plus plenty
-                  of educators, students, and families to meet.
+                  Be among the first to explore our brand-new facility, step
+                  inside our professional makerspaces and fabrication shop,
+                  experience hands-on STEM activities for all ages, watch
+                  live demonstrations, meet our incredible team, and see how
+                  we&rsquo;re inspiring the next generation of creators and
+                  problem solvers.
                 </p>
                 <p>
-                  Admission is free, but please register ahead of time so we
-                  know how many people to expect.
+                  Enjoy local food trucks, connect with the community, and
+                  discover everything Austin STEM Center has to offer.
                 </p>
-                <p className="font-hand text-[18px] leading-tight text-rust">
+                <p>
+                  Admission is free, but registration is encouraged so we can
+                  plan for everyone attending.
+                </p>
+                <p className="font-hand text-[21px] leading-tight text-rust">
                   we can&rsquo;t wait to show you around!
                 </p>
               </div>
@@ -144,7 +147,7 @@ export default function Home() {
         >
           <PaperPlane className="h-11 -rotate-6 text-brand-blue/50" />
         </span>
-        <p className="mb-2 font-hand text-[18px] text-brand-blue">
+        <p className="mb-2 font-hand text-[21px] text-brand-blue">
           field notes — Stonehollow Dr., Austin, TX
         </p>
         <SectionHeading>
@@ -170,7 +173,7 @@ export default function Home() {
 
       {/* programs */}
       <section className="relative pt-24">
-        <p className="mb-2 font-hand text-[18px] text-brand-blue">what we do</p>
+        <p className="mb-2 font-hand text-[21px] text-brand-blue">what we do</p>
         <SectionHeading>
           Programs for students, schools, and&nbsp;families.
         </SectionHeading>
@@ -203,7 +206,7 @@ export default function Home() {
                   read more →
                 </span>
                 {p.pricing && (
-                  <span className="font-hand text-[17px] text-rust">
+                  <span className="font-hand text-[20px] text-rust">
                     from {p.pricing.rows[0].price}
                   </span>
                 )}
@@ -221,7 +224,7 @@ export default function Home() {
         >
           <Gear className="h-12 rotate-12 text-ink/25" />
         </span>
-        <p className="mb-2 font-hand text-[18px] text-brand-blue">the space</p>
+        <p className="mb-2 font-hand text-[21px] text-brand-blue">the space</p>
         <SectionHeading>A connected learning ecosystem.</SectionHeading>
         <p className="mt-4 max-w-[56ch] text-[17px] text-ink-soft">
           The ASC facility is designed to support robotics, engineering, and
@@ -257,7 +260,7 @@ export default function Home() {
         >
           <Bolt className="h-11 rotate-6 text-gold/80" />
         </span>
-        <p className="mb-2 font-hand text-[18px] text-brand-blue">
+        <p className="mb-2 font-hand text-[21px] text-brand-blue">
           from the notebook
         </p>
         <SectionHeading>Field notes.</SectionHeading>
@@ -268,7 +271,7 @@ export default function Home() {
         <div className="mt-8 space-y-7">
           {posts.map((post) => (
             <article key={post.slug} className="max-w-[64ch]">
-              <p className="font-hand text-[16px] text-brand-blue">
+              <p className="font-hand text-[19px] text-brand-blue">
                 {formatDate(post.date)} · {post.author}
               </p>
               <h3 className="mt-1 text-[19px] leading-snug font-bold">

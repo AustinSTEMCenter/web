@@ -49,7 +49,7 @@ export function ProgramPage({ program }: { program: Program }) {
                           </span>
                         )}
                       </h3>
-                      <p className="font-hand text-[20px] text-rust">
+                      <p className="font-hand text-[23px] text-rust">
                         {row.price}
                       </p>
                     </div>

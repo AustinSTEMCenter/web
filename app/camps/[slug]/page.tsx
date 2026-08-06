@@ -96,7 +96,7 @@ export default async function CampPage({ params }: Props) {
               <li key={s}>{s}</li>
             ))}
           </ul>
-          <p className="mt-4 font-hand text-[16px] text-brand-blue">
+          <p className="mt-4 font-hand text-[19px] text-brand-blue">
             payment plans, sibling & multi-camp discounts, and scholarships
             were available, and the same goes next season!
           </p>
@@ -108,7 +108,7 @@ export default async function CampPage({ params }: Props) {
         <h2 className="text-[15px] font-semibold tracking-[0.08em] uppercase text-ink-soft">
           From the field
         </h2>
-        <p className="mt-1 font-hand text-[18px] text-brand-blue">
+        <p className="mt-1 font-hand text-[21px] text-brand-blue">
           shots from this summer&apos;s sessions ↓
         </p>
         <div className="mt-6 grid grid-cols-2 gap-x-10 gap-y-12 max-md:grid-cols-1">

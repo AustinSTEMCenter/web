@@ -25,7 +25,7 @@ export function Annotation({
 }) {
   return (
     <span
-      className={`inline-block -rotate-3 font-hand text-[19px] text-rust ${className}`}
+      className={`inline-block -rotate-3 font-hand text-[22px] text-rust ${className}`}
     >
       {children}
     </span>
@@ -53,7 +53,7 @@ export function PageIntro({
           {doodle}
         </span>
       )}
-      <p className="mb-2.5 font-hand text-[18px] text-brand-blue">{note}</p>
+      <p className="mb-2.5 font-hand text-[21px] text-brand-blue">{note}</p>
       <h1 className="text-[clamp(30px,4.2vw,46px)] leading-[1.1] font-bold tracking-[-0.01em] text-balance">
         {title}
       </h1>

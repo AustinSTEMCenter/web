@@ -20,7 +20,7 @@ export function SiteFooter() {
           <p className="mt-2 max-w-[52ch] text-[15px] text-ink-soft">
             {site.footerBlurb}
           </p>
-          <p className="mt-4 font-hand text-[17px] text-brand-blue">
+          <p className="mt-4 font-hand text-[20px] text-brand-blue">
             — see you at the center
           </p>
         </div>

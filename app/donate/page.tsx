@@ -17,8 +17,11 @@ export default function DonatePage() {
         note="field notes — support the work"
         title={
           <>
-            Help more learners{" "}
-            <span className="hl-green">build real things.</span>
+            Austin STEM Center exists because every person deserves the
+            opportunity to{" "}
+            <span className="hl-green">
+              discover what they&rsquo;re capable of.
+            </span>
           </>
         }
         doodle={<Heart className="h-12 -rotate-6 text-rust/50" />}
@@ -31,9 +34,10 @@ export default function DonatePage() {
             what&rsquo;s possible.
           </p>
           <p>
-            Gifts fund things you can walk in and touch: scholarship seats at
-            camps, fully-funded field trips for Title I schools, and the tools
-            and materials that keep the shops running.
+            Your gift funds impact you can see and experiences you can feel.
+            From scholarship opportunities and fully funded field trips to the
+            tools, materials, and equipment that bring hands-on STEM
+            learning to life every day.
           </p>
         </div>
       </PageIntro>
@@ -52,7 +56,7 @@ export default function DonatePage() {
           </a>{" "}
           and we&rsquo;ll help you direct your gift where it matters most.
         </p>
-        <p className="mt-4 font-hand text-[17px] text-brand-blue">
+        <p className="mt-4 font-hand text-[20px] text-brand-blue">
           every gift puts real tools in real hands. thank you!
         </p>
       </div>

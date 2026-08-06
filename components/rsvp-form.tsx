@@ -27,7 +27,7 @@ export function RsvpForm() {
           crew, and see the place for yourself. No ticket needed, just show
           up.
         </p>
-        <p className="mt-4 font-hand text-[19px] text-rust">
+        <p className="mt-4 font-hand text-[22px] text-rust">
           see you there! bring a friend, too
         </p>
       </div>

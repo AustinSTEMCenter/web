@@ -69,7 +69,7 @@ export default function SummerCampsPage() {
                   className="w-full object-cover"
                 />
               </Link>
-              <figcaption className="pt-2 text-center font-hand text-[16px] text-brand-blue">
+              <figcaption className="pt-2 text-center font-hand text-[19px] text-brand-blue">
                 {camp.ageRange.toLowerCase()} · {camp.schedule}
               </figcaption>
             </figure>
