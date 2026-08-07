@@ -3,19 +3,19 @@
 import { site } from "@/lib/data/site";
 import { postToFormsWebhook } from "@/lib/forms-webhook";
 
-export type RsvpState =
+export type ContactState =
   | { status: "idle" }
   | { status: "success"; firstName: string }
   | { status: "error"; message: string };
 
 const fallbackMessage =
   `Something went wrong on our end, sorry! Give us a call at ${site.phone} ` +
-  "and we'll put you on the list the old-fashioned way.";
+  "and we'll help you out the old-fashioned way.";
 
-export async function submitRsvp(
-  _prev: RsvpState,
+export async function submitContact(
+  _prev: ContactState,
   formData: FormData,
-): Promise<RsvpState> {
+): Promise<ContactState> {
   const get = (name: string) => (formData.get(name) ?? "").toString().trim();
 
   // honeypot — bots fill every field; humans never see this one
@@ -25,32 +25,31 @@ export async function submitRsvp(
 
   const firstName = get("firstName");
   const email = get("email");
-  if (!firstName || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+  const message = get("message");
+  if (!firstName || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !message) {
     return {
       status: "error",
       message:
-        "We need at least a first name and a working email. Mind checking those two?",
+        "We need at least a first name, a working email, and a message. Mind checking those?",
     };
   }
 
   const payload = {
-    formType: "grand-opening-rsvp",
+    formType: "contact",
     firstName,
     lastName: get("lastName"),
     email,
     phone: get("phone"),
-    partySize: get("partySize"),
-    kidsAges: get("kidsAges"),
+    topic: get("topic"),
     source: get("source"),
-    note: get("note"),
-    mailingList: formData.get("mailingList") === "on",
+    message,
     submittedAt: new Date().toISOString(),
   };
 
   try {
     await postToFormsWebhook(payload);
   } catch (err) {
-    console.error("RSVP webhook failed:", err, payload);
+    console.error("Contact webhook failed:", err, payload);
     return { status: "error", message: fallbackMessage };
   }
 
