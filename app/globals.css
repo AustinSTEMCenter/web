@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  /* experiment 2026-07-30: white canvas instead of cream (#fbf8ee / #fffdf6)
-     to see if the brand accents feel sharper */
+  /* white canvas (decided 2026-07-30): lightened from the original cream
+     (#fbf8ee / #fffdf6) so the brand accents feel sharper */
   --color-paper: #ffffff;
   --color-card: #ffffff;
   --color-ink: #38342a;
