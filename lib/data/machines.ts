@@ -123,6 +123,33 @@ export const machines: Machine[] = [
     related: ["wood-shop"],
   },
   {
+    name: "Haas VF-0E",
+    slug: "vf-0e",
+    kind: "CNC mill",
+    facility: "machine-shop",
+    tagline: "carves solid metal",
+    whatItIs:
+      "The Haas VF-0E is a CNC vertical machining center — a computer-controlled mill that carves finished parts out of solid blocks of metal. It's the heaviest-duty machine in our shop, built for the kind of precision manufacturing real factories run on.",
+    whatItDoes: [
+      "Where the fiber laser cuts flat shapes from sheet metal, the mill works in three dimensions: a cutting tool spinning at up to 7,500 RPM shaves away metal pass by pass until a solid block becomes a finished part — pockets, holes, threads, and curved surfaces included. It swaps between 20 tools automatically, picking the right one for each step of the job in about four seconds.",
+      "Machines like this make the precision parts inside everything — cars, planes, robots, and other machines. Students design a part in CAD, and the mill carves it in aluminum or steel, accurate to a few thousandths of an inch.",
+    ],
+    youCanMake: [
+      "Robot drivetrain parts and gearbox plates",
+      "Precision brackets, mounts, and fixtures",
+      "Molds for casting and vacuum forming",
+      "Engine-style components with pockets and threads",
+      "Parts too thick or complex for the lasers",
+    ],
+    facts: [
+      { label: "Type", value: "vertical machining center" },
+      { label: "Work envelope", value: "30″ × 16″ × 20″" },
+      { label: "Spindle", value: "up to 7,500 RPM" },
+      { label: "Tool changer", value: "swaps 20 tools automatically" },
+    ],
+    related: ["cube-1313", "welding"],
+  },
+  {
     name: "Welding Area",
     slug: "welding",
     kind: "laser welding",
