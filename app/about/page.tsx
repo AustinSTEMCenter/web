@@ -30,32 +30,23 @@ export default function AboutPage() {
             dedicated to making STEM accessible, exciting, and hands-on for learners of all ages.
           </p>
           <p>
-            We believe the most meaningful learning happens through experience.
-            When people are given the opportunity to explore, build,
-            experiment, and solve real-world challenges, they don&rsquo;t
-            just gain technical skills &mdash; they develop confidence,
-            creativity, curiosity, and the ability to think critically.
+            We adamantly believe meaningful learning happens through experience. When people are 
+            given the opportunity to launch curiosity through fearless exploration, they not only 
+            gain technical skills, but also become empowered to think critically, solve problems creatively, 
+            and shape their future. We break down barriers to help every learner discover that STEM is a 
+            mindset that applies to the things they already love.
           </p>
           <p>
-            That&rsquo;s why everything we do is designed to move beyond
-            traditional instruction and into authentic, hands-on learning
-            experiences that inspire lifelong learning.
+            Working alongside educators, schools, families, and industry partners, Austin STEM Center is 
+            building a community where learners discover their passions, develop their skills, and prepare 
+            for the rapidly evolving future of technology and robotics. As the leading robotics hub in Central 
+            Texas, we connect students with competitive robotics, engineering, and hands-on experiences that 
+            inspire innovation and lifelong learning.
           </p>
           <p>
-            Working alongside educators, schools, families, industry partners,
-            and our robotics affiliate ATX Robotics Inc., we&rsquo;re building a
-            community where learners discover their passions, develop practical
-            skills, and prepare for the opportunities of tomorrow.
-          </p>
-          <p>
-            From robotics and engineering to manufacturing, digital
-            fabrication, and emerging technologies, Austin STEM Center provides
-            access to professional learning environments where ideas become
-            reality and curiosity becomes capability.
-          </p>
-          <p>
-            Together, we&rsquo;re creating a future where more people have the
-            confidence to build, innovate, and shape the world around them.
+          Austin STEM Center provides access to professional learning environments where ideas become reality 
+          and curiosity becomes capability. Together, we&rsquo;re creating a future where everyone has the confidence 
+          to build, innovate, and shape the world around them.
           </p>
         </div>
       </PageIntro>
