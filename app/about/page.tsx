@@ -26,9 +26,8 @@ export default function AboutPage() {
       >
         <div className="prose-note mt-6">
           <p>
-            Austin STEM Center (ASC) is a nonprofit STEM education and
-            innovation hub dedicated to making STEM accessible, exciting, and
-            hands-on for learners of all ages.
+            Austin STEM Center (ASC) is a nonprofit STEM education and innovation hub 
+            dedicated to making STEM accessible, exciting, and hands-on for learners of all ages.
           </p>
           <p>
             We believe the most meaningful learning happens through experience.
