@@ -44,9 +44,8 @@ export default function AboutPage() {
             inspire innovation and lifelong learning.
           </p>
           <p>
-          Austin STEM Center provides access to professional learning environments where ideas become reality 
-          and curiosity becomes capability. Together, we&rsquo;re creating a future where everyone has the confidence 
-          to build, innovate, and shape the world around them.
+            Together, we&rsquo;re creating a future where everyone has the confidence 
+            to build, innovate, and shape the world around them.
           </p>
         </div>
       </PageIntro>
@@ -117,23 +116,21 @@ export default function AboutPage() {
         <SectionHeading>The history of the Austin STEM Center.</SectionHeading>
         <div className="prose-note mt-6">
           <p>
-            In 2025, Peter Wang, Evan Marchman, and Ken Hawthorn came
-            together with a shared vision: to create a place where students
-            could truly experience STEM through hands-on learning, innovation,
-            and real-world opportunity. Each founder brought different
-            skills, experience, and perspective to the table, along with
-            foundational support and investment from Peter Wang.
+          Austin STEM Center&rsquo;s history began with ATX Robotics, Inc., a nonprofit organization 
+          founded by Evan Marchman to expand access to robotics, engineering, and hands-on STEAM 
+          education. In 2025, Evan met Peter Wang and Ken Hawthorn, who shared a vision: to create 
+          a place where students could truly experience STEM through hands-on learning, innovation, 
+          and real-world opportunity. Each founder brought different skills, experience, and perspective 
+          to the table, along with foundational support and investment from Peter Wang.
           </p>
           <p>
-            Within just a few short months, a building was secured, an
-            incredible team was assembled, and Austin STEM Center began
-            building programs designed to ignite curiosity, creativity, and
-            confidence in students of all backgrounds.
+          Within just a few short months, ATX Robotics, Inc., d/b/a Austin STEM Center was created. 
+          A building was secured, an incredible team was assembled, and ASC began building programs 
+          designed to ignite curiosity, creativity, and confidence in students of all backgrounds.
           </p>
           <p>
-            Today, Austin STEM Center exists to inspire the next generation of
-            innovators, problem-solvers, engineers, and leaders by making STEM
-            education accessible, engaging, and impactful for the community.
+          Today, Austin STEM Center exists to inspire the next generation of innovators, problem-solvers, 
+          engineers, and leaders by making STEM education accessible, engaging, and impactful for the community.
           </p>
         </div>
         <Annotation className="mt-4">
