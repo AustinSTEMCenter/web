@@ -72,6 +72,16 @@ export default function FacilitiesPage() {
         ))}
       </div>
 
+      <div className="pt-12">
+        <Annotation>
+          ↳ curious what&apos;s in the shop?{" "}
+          <Link href="/machines" className="underline">
+            meet the machines
+          </Link>{" "}
+          one by one.
+        </Annotation>
+      </div>
+
       {/* facility rentals */}
       <section id="rentals" className="pt-20">
         <p className="mb-2 font-hand text-[21px] text-brand-blue">
