@@ -20,6 +20,7 @@ export const teamGroups: { group: string; members: TeamMember[] }[] = [
       { name: "Meason Wiley", title: "Experiential Learning & Design", image: "/images/team/meason-wiley.png" },
       { name: "Rylee Lippenholz", title: "Administrative Specialist", image: "/images/team/rylee-lippenholz.png" },
       { name: "Joseph Williams", title: "IT & Shop Steward", image: "/images/team/joseph-williams.png" },
+      { name: "Zane Lewin", title: "Electrical & Computer Engineer", image: "/images/team/zane-lewin.png" },
     ],
   },
   {
