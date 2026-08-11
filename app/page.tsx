@@ -108,8 +108,10 @@ export default function Home() {
               </div>
             </div>
 
-            <Link
-              href="/rsvp"
+            <a
+              href={lumaEventUrl}
+              target="_blank"
+              rel="noreferrer"
               title="RSVP for the grand opening"
               className="mx-auto mt-7 block max-w-[420px] rotate-[1.6deg] transition-transform duration-200 hover:rotate-0 md:mt-0"
             >
@@ -124,7 +126,7 @@ export default function Home() {
                   className="h-auto w-full border border-ink/10"
                 />
               </span>
-            </Link>
+            </a>
           </div>
         </div>
 
