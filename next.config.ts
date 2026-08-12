@@ -28,7 +28,12 @@ const wpRedirects = [
 
 const nextConfig: NextConfig = {
   async redirects() {
-    return wpRedirects.map((r) => ({ ...r, permanent: true }));
+    return [
+      ...wpRedirects.map((r) => ({ ...r, permanent: true })),
+      // Grand-opening RSVPs live on Luma now; temporary so /rsvp can be
+      // repurposed or dropped after the event.
+      { source: "/rsvp", destination: "https://luma.com/w5ay1e1w", permanent: false },
+    ];
   },
 };
 
