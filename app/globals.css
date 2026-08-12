@@ -130,6 +130,10 @@ body {
   }
 }
 
+a, [onclick] {
+  cursor: pointer;
+}
+
 /* taped-in photograph */
 .photo {
   background: var(--color-card);
