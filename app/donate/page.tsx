@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { DonationCheckout } from "@/components/donation-checkout";
 import { Heart } from "@/components/doodles";
 import { PageIntro } from "@/components/notebook";
 import { site } from "@/lib/data/site";
@@ -42,23 +43,41 @@ export default function DonatePage() {
         </div>
       </PageIntro>
 
-      <div className="tape relative mt-10 max-w-[520px] -rotate-[0.5deg] border border-ink/18 bg-card px-7 pt-7 pb-6 shadow-[3px_4px_0_rgba(56,52,42,0.12)]">
-        <h2 className="text-[17px] font-bold">How to give right now</h2>
-        <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
-          Online giving is on its way. In the meantime, the fastest way to
-          support ASC is to{" "}
-          <Link href="/contact" className="text-brand-blue underline decoration-brand-blue/50 underline-offset-[3px]">
-            reach out directly
-          </Link>{" "}
-          or call{" "}
-          <a href={site.phoneHref} className="text-brand-blue underline decoration-brand-blue/50 underline-offset-[3px]">
-            {site.phone}
-          </a>{" "}
-          and we&rsquo;ll help you direct your gift where it matters most.
-        </p>
-        <p className="mt-4 font-hand text-[20px] text-brand-blue">
-          every gift puts real tools in real hands. thank you!
-        </p>
+      <div className="mt-12 flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-12">
+        <section className="w-full max-w-[640px] flex-none">
+          <div className="tape relative border border-ink/18 bg-card px-3 pt-8 pb-6 shadow-[3px_4px_0_rgba(56,52,42,0.12)] sm:px-7">
+            <div className="flex flex-wrap items-baseline justify-between gap-x-4 px-2 sm:px-0">
+              <h2 className="text-[17px] font-bold">Give online</h2>
+              <span className="-rotate-1 font-hand text-[20px] text-rust">
+                choose any amount
+              </span>
+            </div>
+            <div className="mt-4">
+              <DonationCheckout
+                publishableKey={process.env.STRIPE_PUBLISHABLE_KEY!}
+              />
+            </div>
+          </div>
+        </section>
+
+        <aside className="tape relative max-w-[520px] rotate-[0.8deg] border border-ink/18 bg-card px-7 pt-7 pb-6 shadow-[3px_4px_0_rgba(56,52,42,0.12)] lg:mt-14 lg:max-w-[340px]">
+          <h2 className="text-[17px] font-bold">Other ways to give</h2>
+          <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
+            Prefer to give another way? The fastest way to
+            support ASC is to{" "}
+            <Link href="/contact" className="text-brand-blue underline decoration-brand-blue/50 underline-offset-[3px]">
+              reach out directly
+            </Link>{" "}
+            or call{" "}
+            <a href={site.phoneHref} className="text-brand-blue underline decoration-brand-blue/50 underline-offset-[3px]">
+              {site.phone}
+            </a>{" "}
+            and we&rsquo;ll help you direct your gift where it matters most.
+          </p>
+          <p className="mt-4 font-hand text-[20px] text-brand-blue">
+            every gift puts real tools in real hands. thank you!
+          </p>
+        </aside>
       </div>
     </>
   );
