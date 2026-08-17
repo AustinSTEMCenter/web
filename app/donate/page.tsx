@@ -44,18 +44,16 @@ export default function DonatePage() {
       </PageIntro>
 
       <div className="mt-12 flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-12">
-        <section className="w-full max-w-[640px] flex-none">
+        <section className="w-full max-w-[440px] flex-none">
           <div className="tape relative border border-ink/18 bg-card px-3 pt-8 pb-6 shadow-[3px_4px_0_rgba(56,52,42,0.12)] sm:px-7">
             <div className="flex flex-wrap items-baseline justify-between gap-x-4 px-2 sm:px-0">
-              <h2 className="text-[17px] font-bold">Give online</h2>
+              <h2 className="text-[17px] font-bold">Donate to ATX Robotics d/b/a Austin STEM Center</h2>
               <span className="-rotate-1 font-hand text-[20px] text-rust">
-                choose any amount
+                $10 minimum
               </span>
             </div>
-            <div className="mt-4">
-              <DonationCheckout
-                publishableKey={process.env.STRIPE_PUBLISHABLE_KEY!}
-              />
+            <div className="mt-4 flex justify-center">
+              <DonationCheckout />
             </div>
           </div>
         </section>
