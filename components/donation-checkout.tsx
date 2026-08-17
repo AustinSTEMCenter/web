@@ -26,7 +26,7 @@ declare module "react" {
 export function DonationCheckout() {
   return (
     <>
-      <Script src="https://js.stripe.com/v3/buy-button.js" strategy="lazyOnload" />
+      <Script src="https://js.stripe.com/v3/buy-button.js" />
       <stripe-buy-button
         buy-button-id={BUY_BUTTON_ID}
         publishable-key={PUBLISHABLE_KEY}

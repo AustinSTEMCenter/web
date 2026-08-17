@@ -22,8 +22,8 @@ export default function DonateThanksPage() {
     >
       <div className="prose-note mt-6">
         <p>
-          Your donation went through, and a receipt from Stripe is on its way to
-          your inbox.
+          Thank you for giving. If you completed checkout, a receipt from Stripe
+          is on its way to your inbox.
         </p>
         <p>
           Your support expands access to hands-on STEM learning — scholarships,
