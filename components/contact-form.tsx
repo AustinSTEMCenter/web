@@ -10,10 +10,7 @@ const inputClass =
 const initialState: ContactState = { status: "idle" };
 
 export function ContactForm() {
-  const [state, formAction, pending] = useActionState(
-    submitContact,
-    initialState,
-  );
+  const [state, formAction, pending] = useActionState(submitContact, initialState);
 
   if (state.status === "success") {
     return (
@@ -23,8 +20,7 @@ export function ContactForm() {
           Thanks{state.firstName && `, ${state.firstName}`}!
         </h2>
         <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">
-          Your note is in our inbox — we read every one. Expect to hear back
-          within a day or two.
+          Your note is in our inbox — we read every one. Expect to hear back within a day or two.
         </p>
         <p className="mt-4 font-hand text-[22px] text-rust">talk soon!</p>
       </div>
@@ -54,32 +50,16 @@ export function ContactForm() {
         </label>
         <label className="block text-[15px]">
           <span className="font-semibold">Last name</span>
-          <input
-            type="text"
-            name="lastName"
-            autoComplete="family-name"
-            className={inputClass}
-          />
+          <input type="text" name="lastName" autoComplete="family-name" className={inputClass} />
         </label>
       </div>
       <label className="mt-4 block text-[15px]">
         <span className="font-semibold">Email *</span>
-        <input
-          type="email"
-          name="email"
-          required
-          autoComplete="email"
-          className={inputClass}
-        />
+        <input type="email" name="email" required autoComplete="email" className={inputClass} />
       </label>
       <label className="mt-4 block text-[15px]">
         <span className="font-semibold">Phone</span>
-        <input
-          type="tel"
-          name="phone"
-          autoComplete="tel"
-          className={inputClass}
-        />
+        <input type="tel" name="phone" autoComplete="tel" className={inputClass} />
       </label>
       <label className="mt-4 block text-[15px]">
         <span className="font-semibold">What&rsquo;s this about?</span>
@@ -93,9 +73,7 @@ export function ContactForm() {
         </select>
       </label>
       <label className="mt-4 block text-[15px]">
-        <span className="font-semibold">
-          How&rsquo;d you hear about the Austin STEM Center?
-        </span>
+        <span className="font-semibold">How&rsquo;d you hear about the Austin STEM Center?</span>
         <select name="source" defaultValue="" className={inputClass}>
           <option value="">pick one…</option>
           <option>Friend or family</option>

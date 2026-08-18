@@ -7,8 +7,7 @@ import { programs } from "@/lib/data/programs";
 
 export const metadata: Metadata = {
   title: "Programs",
-  description:
-    "Field trips, summer camps, and after-school STEM clubs at the Austin STEM Center.",
+  description: "Field trips, summer camps, and after-school STEM clubs at the Austin STEM Center.",
 };
 
 export default function ProgramsPage() {
@@ -18,29 +17,25 @@ export default function ProgramsPage() {
         note="field notes — what we run"
         title={
           <>
-            Hands-on learning,{" "}
-            <span className="hl-teal">real-world impact.</span>
+            Hands-on learning, <span className="hl-teal">real-world impact.</span>
           </>
         }
         doodle={<Rocket className="h-16 -rotate-12 text-rust/45" />}
       >
         <div className="prose-note mt-6 max-w-[56ch] text-[17px] text-ink-soft">
           <p>
-            Every program at Austin STEM Center is designed around one simple
-            belief: people learn best by doing.
+            Every program at Austin STEM Center is designed around one simple belief: people learn
+            best by doing.
           </p>
           <p>
-            Whether they&rsquo;re building a robot, designing a prototype,
-            programming electronics, or tackling an engineering challenge,
-            participants gain more than technical skills. They build
-            confidence, strengthen problem-solving abilities, spark
-            curiosity, and discover what&rsquo;s possible when they&rsquo;re
-            given the opportunity to create.
+            Whether they&rsquo;re building a robot, designing a prototype, programming electronics,
+            or tackling an engineering challenge, participants gain more than technical skills. They
+            build confidence, strengthen problem-solving abilities, spark curiosity, and discover
+            what&rsquo;s possible when they&rsquo;re given the opportunity to create.
           </p>
           <p>
-            Our programs don&rsquo;t just teach STEM. They prepare people to
-            think critically, collaborate, and solve the challenges of
-            tomorrow.
+            Our programs don&rsquo;t just teach STEM. They prepare people to think critically,
+            collaborate, and solve the challenges of tomorrow.
           </p>
         </div>
       </PageIntro>
@@ -70,9 +65,7 @@ export default function ProgramsPage() {
                   {p.title}
                 </Link>
               </h2>
-              <p className="mt-3 max-w-[58ch] text-[16px] leading-[1.75]">
-                {p.about[0]}
-              </p>
+              <p className="mt-3 max-w-[58ch] text-[16px] leading-[1.75]">{p.about[0]}</p>
               <p className="mt-4">
                 <Link
                   href={p.href}
@@ -101,22 +94,18 @@ export default function ProgramsPage() {
           </figcaption> */}
         </figure>
         <div className="md:order-1">
-          <p className="mb-2 font-hand text-[21px] text-brand-blue">
-            want to team up?
-          </p>
+          <p className="mb-2 font-hand text-[21px] text-brand-blue">want to team up?</p>
           <SectionHeading>Partnership &amp; collaboration opportunities.</SectionHeading>
           <div className="prose-note mt-6">
             <p>
-              Austin STEM Center welcomes educators, industry professionals,
-              nonprofits, clubs, and organizations interested in bringing
-              high-quality STEM experiences to our community. If you have a
-              program, workshop, club, camp, or class you&rsquo;d like to offer,
+              Austin STEM Center welcomes educators, industry professionals, nonprofits, clubs, and
+              organizations interested in bringing high-quality STEM experiences to our community.
+              If you have a program, workshop, club, camp, or class you&rsquo;d like to offer,
               we&rsquo;d love to explore partnering with you.
             </p>
             <p>
-              Contact us to discuss collaborative programming, facility use,
-              revenue-sharing opportunities, or custom partnership
-              agreements.
+              Contact us to discuss collaborative programming, facility use, revenue-sharing
+              opportunities, or custom partnership agreements.
             </p>
           </div>
           <Link

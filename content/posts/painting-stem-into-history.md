@@ -35,7 +35,7 @@ This is a hands-on make-and-take workshop. Students roll up their sleeves:
 
 - Students also get hands on with A. Gallo historical paints, handmade in Assisi with recipes passed down through centuries.
 
-The end result of every session: each student has a copy of *A Perfect Red* and the practical knowledge to make their own paints, plus a basic understanding of the underlying chemistries of paint and history of our scientific understanding of paints in the artist’s pallet.
+The end result of every session: each student has a copy of _A Perfect Red_ and the practical knowledge to make their own paints, plus a basic understanding of the underlying chemistries of paint and history of our scientific understanding of paints in the artist’s pallet.
 
 **Part 2: Exploring Extraordinary Pigments**
 
@@ -47,10 +47,11 @@ Students also use and compare some of the most extraordinary pigments ever made:
 
 ![YInMn Blue (Image Credit A. Gallo)](https://img1.wsimg.com/isteam/ip/e9c3ebcf-da8b-4794-897e-4d06bdeb813e/paint.webp/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
 
-*
+-
+
 YInMn Blue (Image Credit A. Gallo)*
 
-- Meteorite Brown (Chondrite) — actual meteorite stones, ground into pigment. About 4.5 billion years old, these chondrites came from the asteroid belt between Mars and Jupiter before falling to Earth. Students will literally *paint with the cosmos*, using minerals from beyond our planet.
+- Meteorite Brown (Chondrite) — actual meteorite stones, ground into pigment. About 4.5 billion years old, these chondrites came from the asteroid belt between Mars and Jupiter before falling to Earth. Students will literally _paint with the cosmos_, using minerals from beyond our planet.
 
 Made by hand in Assisi, these paints use raw pigments, gum arabic, honey, and rosemary oil. They are crafted with traditional methods that students explore. This section of the workshop connects chemistry and history, activating new student knowledge beautifully and giving students an experience of color across time and space.
 
@@ -58,7 +59,7 @@ Made by hand in Assisi, these paints use raw pigments, gum arabic, honey, and ro
 
 ASC field trips aren’t one-offs; they’re launchpads. Teachers leave with:
 
-- A curriculum map connecting other chapters of *A Perfect Red* to TEKS objectives in science, history, and art.
+- A curriculum map connecting other chapters of _A Perfect Red_ to TEKS objectives in science, history, and art.
 
 - Detailed lesson supports so students can continue the work in class in groups or at home individually, building depth over weeks instead of hours.
 
@@ -68,7 +69,7 @@ ASC field trips aren’t one-offs; they’re launchpads. Teachers leave with:
 
 Art-oriented students are already comfortable with paintbrushes, palettes, and stories. By meeting them in that medium, we blend in the chemistry of molecules, the physics of light, the economics of global trade, and go further down subjects roads less familiar and often not covered in school at this depth and complexity.
 
-In this *Painting STEM into History* field trip students start with what feels familiar and use that solid foundation as a base to quickly ramp up subject depth and complexity, extracting the science from art. This leaves students with increased agency – the knowledge that they can make, test, and explore for themselves.
+In this _Painting STEM into History_ field trip students start with what feels familiar and use that solid foundation as a base to quickly ramp up subject depth and complexity, extracting the science from art. This leaves students with increased agency – the knowledge that they can make, test, and explore for themselves.
 
 **The ASC Difference**
 
@@ -78,7 +79,7 @@ This is how ASC elevates the depth and complexity of STEM while lowering the age
 
 **Field Trip Outcomes**
 
-- Students: Each student keeps a copy of *A Perfect Red*, their own handmade scarlet paint, and the skill to make more, plus direct experience with extraordinary pigments like YInMn, ultramarine, and meteorite brown, along with the chemical and physical science knowledge of how they are made.
+- Students: Each student keeps a copy of _A Perfect Red_, their own handmade scarlet paint, and the skill to make more, plus direct experience with extraordinary pigments like YInMn, ultramarine, and meteorite brown, along with the chemical and physical science knowledge of how they are made.
 
 - Teachers: TEKS-linked curriculum supports and a practical framework for continued study.
 

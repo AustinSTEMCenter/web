@@ -12,10 +12,7 @@ export default function TermsPage() {
   return (
     <>
       <PageIntro note="field notes — the fine print" title="Terms and conditions." />
-      <div
-        className="prose-note mt-8"
-        dangerouslySetInnerHTML={{ __html: page.html }}
-      />
+      <div className="prose-note mt-8" dangerouslySetInnerHTML={{ __html: page.html }} />
     </>
   );
 }

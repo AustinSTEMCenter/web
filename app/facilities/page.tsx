@@ -24,11 +24,10 @@ export default function FacilitiesPage() {
         doodle={<Atom className="h-14 rotate-12 text-ring-teal/60" />}
       >
         <p className="mt-5 max-w-[56ch] text-[17px] text-ink-soft">
-          Austin STEM Center was designed to inspire curiosity through
-          hands-on experiences. Under one roof, learners can explore
-          robotics, engineering, fabrication, design, electronics, and more in
-          purpose-built spaces that encourage them to create, experiment,
-          and learn by doing.
+          Austin STEM Center was designed to inspire curiosity through hands-on experiences. Under
+          one roof, learners can explore robotics, engineering, fabrication, design, electronics,
+          and more in purpose-built spaces that encourage them to create, experiment, and learn by
+          doing.
         </p>
       </PageIntro>
 
@@ -39,13 +38,7 @@ export default function FacilitiesPage() {
             id={f.slug}
             className={`relative grid items-start gap-x-10 gap-y-5 max-md:grid-cols-1 ${i % 2 ? "grid-cols-[minmax(0,3fr)_minmax(0,2fr)]" : "grid-cols-[minmax(0,2fr)_minmax(0,3fr)]"}`}
           >
-            {f.legacySlug && (
-              <span
-                id={f.legacySlug}
-                aria-hidden
-                className="absolute top-0"
-              />
-            )}
+            {f.legacySlug && <span id={f.legacySlug} aria-hidden className="absolute top-0" />}
             <figure
               className={`photo max-w-[420px] ${i % 2 ? "rotate-[0.8deg] md:order-2 md:justify-self-end" : "-rotate-[0.7deg]"}`}
             >
@@ -84,28 +77,25 @@ export default function FacilitiesPage() {
 
       {/* facility rentals */}
       <section id="rentals" className="pt-20">
-        <p className="mb-2 font-hand text-[21px] text-brand-blue">
-          rent our space
-        </p>
+        <p className="mb-2 font-hand text-[21px] text-brand-blue">rent our space</p>
         <SectionHeading>Facility rentals.</SectionHeading>
         <p className="mt-4 max-w-[56ch] text-[17px] text-ink-soft">
-          Austin STEM Center offers unique spaces for meetings, trainings,
-          educational events, and community gatherings.
+          Austin STEM Center offers unique spaces for meetings, trainings, educational events, and
+          community gatherings.
         </p>
         <div className="mt-9 grid grid-cols-2 gap-x-8 gap-y-10 max-md:grid-cols-1">
           <div className="tape relative border border-ink/18 bg-card px-6 pt-6 pb-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)] -rotate-[0.5deg]">
             <h3 className="text-[19px] font-bold">Event Space Rental</h3>
             <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
-              Ideal for corporate events, meetings, networking events,
-              workshops, and community gatherings.
+              Ideal for corporate events, meetings, networking events, workshops, and community
+              gatherings.
             </p>
           </div>
           <div className="tape relative border border-ink/18 bg-card px-6 pt-6 pb-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)] rotate-[0.6deg]">
             <h3 className="text-[19px] font-bold">Classroom Rental</h3>
             <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
-              Ideal for trainings, classes, tutoring, homeschool groups,
-              meetings, team-building, executive development, and educational
-              programming.
+              Ideal for trainings, classes, tutoring, homeschool groups, meetings, team-building,
+              executive development, and educational programming.
             </p>
           </div>
         </div>

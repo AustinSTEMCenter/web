@@ -57,14 +57,14 @@ export default async function CampPage({ params }: Props) {
           </ul>
 
           <div className="tape relative mt-12 max-w-[480px] -rotate-[0.5deg] border border-ink/18 bg-card px-6 pt-6 pb-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)]">
-            <h3 className="text-[16px] font-bold">
-              {camp.season} has concluded
-            </h3>
+            <h3 className="text-[16px] font-bold">{camp.season} has concluded</h3>
             <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
-              This page shows what we ran. Registration for this season is
-              closed, but want to hear about the next one before anyone
-              else?{" "}
-              <Link href="/contact" className="text-brand-blue underline decoration-brand-blue/50 underline-offset-[3px]">
+              This page shows what we ran. Registration for this season is closed, but want to hear
+              about the next one before anyone else?{" "}
+              <Link
+                href="/contact"
+                className="text-brand-blue underline decoration-brand-blue/50 underline-offset-[3px]"
+              >
                 Get in touch
               </Link>
               .
@@ -97,8 +97,8 @@ export default async function CampPage({ params }: Props) {
             ))}
           </ul>
           <p className="mt-4 font-hand text-[19px] text-brand-blue">
-            payment plans, sibling & multi-camp discounts, and scholarships
-            were available, and the same goes next season!
+            payment plans, sibling & multi-camp discounts, and scholarships were available, and the
+            same goes next season!
           </p>
         </div>
       </div>

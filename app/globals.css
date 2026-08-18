@@ -22,8 +22,7 @@
 body {
   background:
     linear-gradient(rgba(67, 92, 126, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(67, 92, 126, 0.1) 1px, transparent 1px),
-    var(--color-paper);
+    linear-gradient(90deg, rgba(67, 92, 126, 0.1) 1px, transparent 1px), var(--color-paper);
   background-size: 26px 26px;
   color: var(--color-ink);
   font-family: var(--font-serif);
@@ -34,8 +33,7 @@ body {
 .header-bar {
   background:
     linear-gradient(rgba(67, 92, 126, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(67, 92, 126, 0.1) 1px, transparent 1px),
-    var(--color-paper);
+    linear-gradient(90deg, rgba(67, 92, 126, 0.1) 1px, transparent 1px), var(--color-paper);
   background-size: 26px 26px;
 }
 
@@ -130,7 +128,8 @@ body {
   }
 }
 
-a, [onclick] {
+a,
+[onclick] {
   cursor: pointer;
 }
 

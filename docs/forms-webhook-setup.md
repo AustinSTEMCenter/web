@@ -23,8 +23,15 @@ const NOTIFY_EMAIL = "joseph@austinstemcenter.org";
 
 const SHEET_NAME = "Contact";
 const HEADER = [
-  "Submitted", "First name", "Last name", "Email", "Phone",
-  "Topic", "Heard about us", "Message", "Form",
+  "Submitted",
+  "First name",
+  "Last name",
+  "Email",
+  "Phone",
+  "Topic",
+  "Heard about us",
+  "Message",
+  "Form",
 ];
 
 function doPost(e) {
@@ -33,15 +40,23 @@ function doPost(e) {
   const sheet = ss.getSheetByName(SHEET_NAME) || ss.insertSheet(SHEET_NAME);
   if (sheet.getLastRow() === 0) sheet.appendRow(HEADER);
   sheet.appendRow([
-    data.submittedAt, data.firstName, data.lastName, data.email, data.phone,
-    data.topic, data.source, data.message, data.formType,
+    data.submittedAt,
+    data.firstName,
+    data.lastName,
+    data.email,
+    data.phone,
+    data.topic,
+    data.source,
+    data.message,
+    data.formType,
   ]);
   if (NOTIFY_EMAIL) {
     const subject = `ASC contact: ${data.topic || "no topic"} — ${data.firstName} ${data.lastName}`;
     MailApp.sendEmail(NOTIFY_EMAIL, subject, JSON.stringify(data, null, 2));
   }
-  return ContentService.createTextOutput(JSON.stringify({ ok: true }))
-    .setMimeType(ContentService.MimeType.JSON);
+  return ContentService.createTextOutput(JSON.stringify({ ok: true })).setMimeType(
+    ContentService.MimeType.JSON,
+  );
 }
 ```
 

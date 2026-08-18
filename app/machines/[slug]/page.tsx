@@ -41,9 +41,7 @@ export default async function MachinePage({ params }: Props) {
 
       {/* what it is, beside the photo (or the tagline while photos are pending) */}
       <div className="mt-8 grid grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-start gap-x-12 gap-y-8 max-md:grid-cols-1">
-        <p className="max-w-[54ch] text-[17px] text-ink-soft">
-          {machine.whatItIs}
-        </p>
+        <p className="max-w-[54ch] text-[17px] text-ink-soft">{machine.whatItIs}</p>
         {hero ? (
           <figure className="photo max-w-[400px] rotate-[0.9deg]">
             <Image
@@ -118,10 +116,7 @@ export default async function MachinePage({ params }: Props) {
               {room && (
                 <p className="mt-4 font-hand text-[19px] text-brand-blue">
                   you&apos;ll find it in the{" "}
-                  <Link
-                    href={`/facilities#${room.slug}`}
-                    className="underline"
-                  >
+                  <Link href={`/facilities#${room.slug}`} className="underline">
                     {room.name.toLowerCase()}
                   </Link>
                 </p>
@@ -130,9 +125,7 @@ export default async function MachinePage({ params }: Props) {
           )}
 
           <div className="tape relative max-w-[400px] -rotate-[0.5deg] border border-ink/18 bg-card px-6 pt-6 pb-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)]">
-            <h3 className="text-[16px] font-bold">
-              Want to run it, not just read about it?
-            </h3>
+            <h3 className="text-[16px] font-bold">Want to run it, not just read about it?</h3>
             <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
               Machines like this come alive during our{" "}
               <Link

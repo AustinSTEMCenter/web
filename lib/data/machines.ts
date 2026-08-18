@@ -194,7 +194,10 @@ export const machines: Machine[] = [
       { name: "Drill presses", blurb: "perfectly straight holes, exactly where you marked them" },
       { name: "Routers", blurb: "shaped edges, grooves, and joinery" },
       { name: "Spindle sanders", blurb: "smooth curves that hand-sanding can't reach" },
-      { name: "Dust collection", blurb: "a shop-wide system that keeps the air clean while you work" },
+      {
+        name: "Dust collection",
+        blurb: "a shop-wide system that keeps the air clean while you work",
+      },
     ],
     youCanMake: [
       "Boxes, shelves, and small furniture",
@@ -207,5 +210,4 @@ export const machines: Machine[] = [
   },
 ];
 
-export const getMachine = (slug: string) =>
-  machines.find((m) => m.slug === slug);
+export const getMachine = (slug: string) => machines.find((m) => m.slug === slug);

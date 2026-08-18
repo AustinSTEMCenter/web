@@ -13,8 +13,10 @@ const wpRedirects = [
   { source: "/privacy-policy-2", destination: "/privacy-policy" },
   // old blog posts lived at the site root
   {
-    source: "/something-big-just-opened-in-central-texas-and-its-about-to-change-how-your-kids-learn",
-    destination: "/blog/something-big-just-opened-in-central-texas-and-its-about-to-change-how-your-kids-learn",
+    source:
+      "/something-big-just-opened-in-central-texas-and-its-about-to-change-how-your-kids-learn",
+    destination:
+      "/blog/something-big-just-opened-in-central-texas-and-its-about-to-change-how-your-kids-learn",
   },
   { source: "/painting-stem-into-history", destination: "/blog/painting-stem-into-history" },
   { source: "/1259-2", destination: "/blog/discussing-backside-power-with-middle-school-students" },

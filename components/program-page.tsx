@@ -7,9 +7,7 @@ export function ProgramPage({ program }: { program: Program }) {
   return (
     <>
       <PageIntro note="field notes — programs" title={program.title}>
-        <p className="mt-5 max-w-[52ch] text-[17px] text-ink-soft">
-          {program.teaser}
-        </p>
+        <p className="mt-5 max-w-[52ch] text-[17px] text-ink-soft">{program.teaser}</p>
       </PageIntro>
 
       <div className="mt-12 grid grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-start gap-x-12 gap-y-8 max-md:grid-cols-1">
@@ -49,9 +47,7 @@ export function ProgramPage({ program }: { program: Program }) {
                           </span>
                         )}
                       </h3>
-                      <p className="font-hand text-[23px] text-rust">
-                        {row.price}
-                      </p>
+                      <p className="font-hand text-[23px] text-rust">{row.price}</p>
                     </div>
                     <p className="mt-1 text-[15px] leading-relaxed text-ink-soft">
                       {row.description}
@@ -88,8 +84,8 @@ export function ProgramPage({ program }: { program: Program }) {
             <div className="tape relative mt-12 max-w-[380px] -rotate-[0.7deg] border border-ink/18 bg-card px-6 pt-6 pb-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)]">
               <h3 className="text-[17px] font-bold">{program.inquiry}</h3>
               <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
-                Tell us about your group and what you&rsquo;re hoping to do,
-                and we&rsquo;ll take it from there.
+                Tell us about your group and what you&rsquo;re hoping to do, and we&rsquo;ll take it
+                from there.
               </p>
               <Link
                 href="/contact"
