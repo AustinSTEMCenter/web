@@ -47,8 +47,7 @@ export const programs: Program[] = [
           option: "Field Trip",
           duration: "2 hours",
           price: "$15 / student",
-          description:
-            "A hands-on STEM experience designed for school groups and organizations.",
+          description: "A hands-on STEM experience designed for school groups and organizations.",
         },
         {
           option: "Field Trip + Mini Lab",
@@ -72,8 +71,7 @@ export const programs: Program[] = [
     slug: "summer-camps",
     href: "/programs/summer-camps",
     image: "/images/camps/fort-minecrafters-1.jpg",
-    teaser:
-      "Hands-on camps where creativity, STEM, fun, and real-world skills come together.",
+    teaser: "Hands-on camps where creativity, STEM, fun, and real-world skills come together.",
     about: [
       "ASC summer camps are multi-day experiences that give students the time and space to explore, build, and create. Camps are designed around hands-on projects, collaboration, and experimentation, giving campers the chance to work with real tools and real materials.",
       "Camps are available for a range of age groups and interests, with programming rooted in STEM, design, and making.",
@@ -91,8 +89,7 @@ export const programs: Program[] = [
     slug: "after-school-clubs",
     href: "/programs/after-school-clubs",
     image: "/images/camps/build-a-synth-3.jpg",
-    teaser:
-      "Flexible after-school enrichment focused on hands-on STEM learning.",
+    teaser: "Flexible after-school enrichment focused on hands-on STEM learning.",
     about: [
       "Our after-school STEM clubs give students a regular place to build, tinker, and explore beyond the school day. On scheduled club days, students take on hands-on projects across robotics, engineering, and making, guided by ASC staff in our real shops, labs, and maker spaces.",
       "Come session by session, or join as a monthly member for unlimited participation during scheduled club days.",
@@ -111,8 +108,7 @@ export const programs: Program[] = [
         {
           option: "Single session",
           price: "$60 / session",
-          description:
-            "Flexible after-school enrichment focused on hands-on STEM learning.",
+          description: "Flexible after-school enrichment focused on hands-on STEM learning.",
         },
         {
           option: "Monthly membership",
@@ -125,5 +121,4 @@ export const programs: Program[] = [
   },
 ];
 
-export const getProgram = (slug: string) =>
-  programs.find((p) => p.slug === slug);
+export const getProgram = (slug: string) => programs.find((p) => p.slug === slug);

@@ -41,11 +41,7 @@ export function MobileNav() {
 
       {open && (
         <>
-          <div
-            className="fixed inset-0 z-40"
-            onClick={() => setOpen(false)}
-            aria-hidden
-          />
+          <div className="fixed inset-0 z-40" onClick={() => setOpen(false)} aria-hidden />
           <div
             id="mobile-menu"
             className="tape absolute inset-x-0 top-full z-50 mt-4 -rotate-[0.4deg] animate-[menu-in_160ms_ease-out] border border-ink/18 bg-card px-6 pt-5 pb-4 shadow-[3px_4px_0_rgba(56,52,42,0.18)]"

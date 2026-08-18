@@ -19,8 +19,8 @@ export default function ContactPage() {
         doodle={<PaperPlane className="h-12 -rotate-6 text-brand-blue/55" />}
       >
         <p className="mt-5 max-w-[52ch] text-[17px] text-ink-soft">
-          Questions about programs, partnerships, or visiting the center?
-          Drop us a note below and we&rsquo;ll get back to you.
+          Questions about programs, partnerships, or visiting the center? Drop us a note below and
+          we&rsquo;ll get back to you.
         </p>
       </PageIntro>
 
@@ -51,9 +51,7 @@ export default function ContactPage() {
       </div>
 
       <div className="pt-10 pb-4">
-        <Annotation>
-          ↳ come see the FIRST Arena in person, it&rsquo;s worth the trip
-        </Annotation>
+        <Annotation>↳ come see the FIRST Arena in person, it&rsquo;s worth the trip</Annotation>
       </div>
     </>
   );

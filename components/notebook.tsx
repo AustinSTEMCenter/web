@@ -1,12 +1,6 @@
 import type { ReactNode } from "react";
 
-export function Stamp({
-  children,
-  className = "",
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
+export function Stamp({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
     <span
       className={`inline-block rounded border-[3px] border-rust/75 px-[13px] py-[7px] font-sans text-xs font-extrabold tracking-[0.22em] uppercase text-rust/85 ${className}`}
@@ -24,9 +18,7 @@ export function Annotation({
   className?: string;
 }) {
   return (
-    <span
-      className={`inline-block -rotate-3 font-hand text-[22px] text-rust ${className}`}
-    >
+    <span className={`inline-block -rotate-3 font-hand text-[22px] text-rust ${className}`}>
       {children}
     </span>
   );
@@ -46,10 +38,7 @@ export function PageIntro({
   return (
     <header className="relative pt-12">
       {doodle && (
-        <span
-          aria-hidden
-          className="pointer-events-none absolute top-16 right-8 hidden md:block"
-        >
+        <span aria-hidden className="pointer-events-none absolute top-16 right-8 hidden md:block">
           {doodle}
         </span>
       )}
@@ -70,9 +59,7 @@ export function SectionHeading({
   className?: string;
 }) {
   return (
-    <h2
-      className={`text-[clamp(24px,3vw,30px)] leading-tight font-bold text-balance ${className}`}
-    >
+    <h2 className={`text-[clamp(24px,3vw,30px)] leading-tight font-bold text-balance ${className}`}>
       {children}
     </h2>
   );

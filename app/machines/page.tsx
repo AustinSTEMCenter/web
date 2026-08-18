@@ -12,9 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default function MachinesPage() {
-  const rooms = facilities.filter((f) =>
-    machines.some((m) => m.facility === f.slug),
-  );
+  const rooms = facilities.filter((f) => machines.some((m) => m.facility === f.slug));
 
   return (
     <>
@@ -28,9 +26,9 @@ export default function MachinesPage() {
         doodle={<Gear className="h-14 rotate-12 text-ring-teal/60" />}
       >
         <p className="mt-5 max-w-[56ch] text-[17px] text-ink-soft">
-          Every machine in our shop has a story: what it is, how it works,
-          and what you can make with it. Scan the plaque next to any machine
-          and it lands you right here — or browse the whole lineup below.
+          Every machine in our shop has a story: what it is, how it works, and what you can make
+          with it. Scan the plaque next to any machine and it lands you right here — or browse the
+          whole lineup below.
         </p>
       </PageIntro>
 
@@ -53,15 +51,9 @@ export default function MachinesPage() {
                     <p className="text-[12px] font-semibold tracking-[0.14em] uppercase text-ink-soft">
                       {m.kind}
                     </p>
-                    <h3 className="mt-1 text-[19px] font-bold group-hover:underline">
-                      {m.name}
-                    </h3>
-                    <p className="mt-1 font-hand text-[20px] text-brand-blue">
-                      {m.tagline}
-                    </p>
-                    <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
-                      {m.whatItIs}
-                    </p>
+                    <h3 className="mt-1 text-[19px] font-bold group-hover:underline">{m.name}</h3>
+                    <p className="mt-1 font-hand text-[20px] text-brand-blue">{m.tagline}</p>
+                    <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">{m.whatItIs}</p>
                     <p className="mt-3 text-[14px] font-semibold text-brand-blue">
                       read the field notes →
                     </p>

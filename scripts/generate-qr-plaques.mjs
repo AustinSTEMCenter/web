@@ -9,13 +9,8 @@ import QRCode from "qrcode";
 const BASE_URL = "https://www.austinstemcenter.org";
 const OUT_DIR = path.join(import.meta.dirname, "../design/plaques");
 
-const data = await readFile(
-  path.join(import.meta.dirname, "../lib/data/machines.ts"),
-  "utf8",
-);
-const slugs = [...data.matchAll(/^\s*slug: "([a-z0-9-]+)",$/gm)].map(
-  (m) => m[1],
-);
+const data = await readFile(path.join(import.meta.dirname, "../lib/data/machines.ts"), "utf8");
+const slugs = [...data.matchAll(/^\s*slug: "([a-z0-9-]+)",$/gm)].map((m) => m[1]);
 if (slugs.length === 0) throw new Error("no machine slugs found");
 
 await mkdir(OUT_DIR, { recursive: true });

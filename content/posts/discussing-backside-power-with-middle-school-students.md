@@ -18,7 +18,7 @@ Let’s look at the current progression of electrical circuit knowledge as stude
 
 **Warm‑up: flipping on an LED the first time**
 
-Walk into any elementary school makerspace and you’ll spot a classic rite of passage: a young student connects (pinches) two LED legs across two faces of a coin‑cell battery, eyes widen, and suddenly electricity is *real*. Two terminals, one bright result. For the youngest tinkerers (as soon as they’re past the “might‑eat‑the‑battery” stage), that’s impactful.
+Walk into any elementary school makerspace and you’ll spot a classic rite of passage: a young student connects (pinches) two LED legs across two faces of a coin‑cell battery, eyes widen, and suddenly electricity is _real_. Two terminals, one bright result. For the youngest tinkerers (as soon as they’re past the “might‑eat‑the‑battery” stage), that’s impactful.
 
 **Leveling up: switches, gates, and clicky relays**
 
@@ -26,7 +26,7 @@ By upper‑elementary grades, the impactful coin cell/LED experience leads to in
 
 **The solid‑state “aha”**
 
-Somewhere in this progression—whether in a makerspace classroom or during the first 20 minutes of an Austin STEM Center (ASC) field trip—students meet the transistor: a *silent* solid‑state version of the same on/off idea. Once that sinks in, a natural question pops up:* “Okay… if every transistor needs power and signal lines, how do engineers keep shrinking chips without running out of real estate?”*
+Somewhere in this progression—whether in a makerspace classroom or during the first 20 minutes of an Austin STEM Center (ASC) field trip—students meet the transistor: a _silent_ solid‑state version of the same on/off idea. Once that sinks in, a natural question pops up:* “Okay… if every transistor needs power and signal lines, how do engineers keep shrinking chips without running out of real estate?”*
 
 **Enter backside power (and why it’s middle‑school‑friendly)**
 
@@ -48,13 +48,13 @@ Backside power is just the next logical slice—and an eye‑opening segue to th
 
 We can walk students through the above chart and they can understand it (especially with 3D printed model presented as puzzles!). We want them to see:
 
-1) FinFET to Nanosheet (Gate‑All‑Around): stack the channel sideways, wrap the gate on four sides.
+1. FinFET to Nanosheet (Gate‑All‑Around): stack the channel sideways, wrap the gate on four sides.
 
-2) Backside power debut: more room up top, fewer voltage drops.
+2. Backside power debut: more room up top, fewer voltage drops.
 
-3) CFET and 2DFET eras: vertical skyscrapers of stacked transistors and wafer‑thin 2D materials.
+3. CFET and 2DFET eras: vertical skyscrapers of stacked transistors and wafer‑thin 2D materials.
 
-Pair that with this [Anastasi In Tech’s](https://www.youtube.com/watch?v=DXgZ3X8z7eE&t=1099s) explainer video, pause at each milestone, and challenge students to spot the engineering rhyme: *solve one limit, reveal the next*. It’s the same iterative game they play in Minecraft redstone—just at scales measured in Ångströms instead of pixels.
+Pair that with this [Anastasi In Tech’s](https://www.youtube.com/watch?v=DXgZ3X8z7eE&t=1099s) explainer video, pause at each milestone, and challenge students to spot the engineering rhyme: _solve one limit, reveal the next_. It’s the same iterative game they play in Minecraft redstone—just at scales measured in Ångströms instead of pixels.
 
 **Why ASC pushes these conversations now**
 
@@ -64,7 +64,7 @@ Our mission is simple: we raise the bar for depth and complexity in STEM while w
 
 - **Ambition expands.** Suddenly “chip engineer” feels as attainable—and as exciting—as “game developer” or “YouTuber”.** Your turn: what else looks “too complex”… until it isn’t?**
 
-Backside power is only one example. Quantum error correction? Photonic waveguides? Error‑detecting ECC memory? If it unlocks the future, it *belongs on a well‑scaffolded middle‑school roadmap*.
+Backside power is only one example. Quantum error correction? Photonic waveguides? Error‑detecting ECC memory? If it unlocks the future, it _belongs on a well‑scaffolded middle‑school roadmap_.
 
 Email [ken@austinstemcenter.org](mailto:ken@austinstemcenter.org) with your ideas.
 

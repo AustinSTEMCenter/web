@@ -17,16 +17,15 @@ export function SiteFooter() {
               className="h-11 w-auto"
             />
           </Link>
-          <p className="mt-2 max-w-[52ch] text-[15px] text-ink-soft">
-            {site.footerBlurb}
-          </p>
-          <p className="mt-4 font-hand text-[20px] text-brand-blue">
-            — see you at the center
-          </p>
+          <p className="mt-2 max-w-[52ch] text-[15px] text-ink-soft">{site.footerBlurb}</p>
+          <p className="mt-4 font-hand text-[20px] text-brand-blue">— see you at the center</p>
         </div>
         <div className="text-[15px]">
           <p>
-            <a href={site.phoneHref} className="underline decoration-brand-blue/50 underline-offset-[3px]">
+            <a
+              href={site.phoneHref}
+              className="underline decoration-brand-blue/50 underline-offset-[3px]"
+            >
               {site.phone}
             </a>
           </p>
@@ -43,13 +42,22 @@ export function SiteFooter() {
             </a>
           </p>
           <p className="mt-4 flex gap-4 italic">
-            <Link href="/privacy-policy" className="underline decoration-brand-blue/50 underline-offset-[3px]">
+            <Link
+              href="/privacy-policy"
+              className="underline decoration-brand-blue/50 underline-offset-[3px]"
+            >
               privacy
             </Link>
-            <Link href="/terms-and-conditions" className="underline decoration-brand-blue/50 underline-offset-[3px]">
+            <Link
+              href="/terms-and-conditions"
+              className="underline decoration-brand-blue/50 underline-offset-[3px]"
+            >
               terms
             </Link>
-            <Link href="/donate" className="underline decoration-brand-blue/50 underline-offset-[3px]">
+            <Link
+              href="/donate"
+              className="underline decoration-brand-blue/50 underline-offset-[3px]"
+            >
               donate
             </Link>
             <a

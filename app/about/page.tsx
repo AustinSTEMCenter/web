@@ -26,26 +26,26 @@ export default function AboutPage() {
       >
         <div className="prose-note mt-6">
           <p>
-            Austin STEM Center (ASC) is a nonprofit STEM education and innovation hub 
-            dedicated to making STEM accessible, exciting, and hands-on for learners of all ages.
+            Austin STEM Center (ASC) is a nonprofit STEM education and innovation hub dedicated to
+            making STEM accessible, exciting, and hands-on for learners of all ages.
           </p>
           <p>
-            We adamantly believe meaningful learning happens through experience. When people are 
-            given the opportunity to launch curiosity through fearless exploration, they not only 
-            gain technical skills, but also become empowered to think critically, solve problems creatively, 
-            and shape their future. We break down barriers to help every learner discover that STEM is a 
-            mindset that applies to the things they already love.
+            We adamantly believe meaningful learning happens through experience. When people are
+            given the opportunity to launch curiosity through fearless exploration, they not only
+            gain technical skills, but also become empowered to think critically, solve problems
+            creatively, and shape their future. We break down barriers to help every learner
+            discover that STEM is a mindset that applies to the things they already love.
           </p>
           <p>
-            Working alongside educators, schools, families, and industry partners, Austin STEM Center is 
-            building a community where learners discover their passions, develop their skills, and prepare 
-            for the rapidly evolving future of technology and robotics. As the leading robotics hub in Central 
-            Texas, we connect students with competitive robotics, engineering, and hands-on experiences that 
-            inspire innovation and lifelong learning.
+            Working alongside educators, schools, families, and industry partners, Austin STEM
+            Center is building a community where learners discover their passions, develop their
+            skills, and prepare for the rapidly evolving future of technology and robotics. As the
+            leading robotics hub in Central Texas, we connect students with competitive robotics,
+            engineering, and hands-on experiences that inspire innovation and lifelong learning.
           </p>
           <p>
-            Together, we&rsquo;re creating a future where everyone has the confidence 
-            to build, innovate, and shape the world around them.
+            Together, we&rsquo;re creating a future where everyone has the confidence to build,
+            innovate, and shape the world around them.
           </p>
         </div>
       </PageIntro>
@@ -69,9 +69,7 @@ export default function AboutPage() {
         <SectionHeading>Meet the team.</SectionHeading>
         {teamGroups.map(({ group, members }) => (
           <div key={group} className="pt-10">
-            <h3 className="text-[15px] font-semibold italic text-ink-soft">
-              {group}
-            </h3>
+            <h3 className="text-[15px] font-semibold italic text-ink-soft">{group}</h3>
             {members.some((m) => m.image) ? (
               <div className="mt-5 flex flex-wrap justify-evenly gap-x-6 gap-y-8">
                 {members.map((m) => (
@@ -85,9 +83,7 @@ export default function AboutPage() {
                         className="h-auto w-full border border-ink/10 [filter:grayscale(1)_sepia(0.22)_brightness(1.03)]"
                       />
                     )}
-                    <p className="mt-2 text-[16px] leading-tight font-bold">
-                      {m.name}
-                    </p>
+                    <p className="mt-2 text-[16px] leading-tight font-bold">{m.name}</p>
                     <p className="mt-0.5 text-[13px] leading-snug italic text-ink-soft">
                       {m.title}
                     </p>
@@ -110,32 +106,31 @@ export default function AboutPage() {
 
       {/* history */}
       <section className="pt-20">
-        <p className="mb-2 font-hand text-[21px] text-brand-blue">
-          how it started
-        </p>
+        <p className="mb-2 font-hand text-[21px] text-brand-blue">how it started</p>
         <SectionHeading>The history of the Austin STEM Center.</SectionHeading>
         <div className="prose-note mt-6">
           <p>
-          Austin STEM Center&rsquo;s history began with ATX Robotics, Inc., a nonprofit organization 
-          founded by Evan Marchman to expand access to robotics, engineering, and hands-on STEAM 
-          education. In 2025, Evan met Peter Wang and Ken Hawthorn, who shared a vision: to create 
-          a place where students could truly experience STEM through hands-on learning, innovation, 
-          and real-world opportunity. Each founder brought different skills, experience, and perspective 
-          to the table, along with foundational support and investment from Peter Wang.
+            Austin STEM Center&rsquo;s history began with ATX Robotics, Inc., a nonprofit
+            organization founded by Evan Marchman to expand access to robotics, engineering, and
+            hands-on STEAM education. In 2025, Evan met Peter Wang and Ken Hawthorn, who shared a
+            vision: to create a place where students could truly experience STEM through hands-on
+            learning, innovation, and real-world opportunity. Each founder brought different skills,
+            experience, and perspective to the table, along with foundational support and investment
+            from Peter Wang.
           </p>
           <p>
-          Within just a few short months, ATX Robotics, Inc., d/b/a Austin STEM Center was created. 
-          A building was secured, an incredible team was assembled, and ASC began building programs 
-          designed to ignite curiosity, creativity, and confidence in students of all backgrounds.
+            Within just a few short months, ATX Robotics, Inc., d/b/a Austin STEM Center was
+            created. A building was secured, an incredible team was assembled, and ASC began
+            building programs designed to ignite curiosity, creativity, and confidence in students
+            of all backgrounds.
           </p>
           <p>
-          Today, Austin STEM Center exists to inspire the next generation of innovators, problem-solvers, 
-          engineers, and leaders by making STEM education accessible, engaging, and impactful for the community.
+            Today, Austin STEM Center exists to inspire the next generation of innovators,
+            problem-solvers, engineers, and leaders by making STEM education accessible, engaging,
+            and impactful for the community.
           </p>
         </div>
-        <Annotation className="mt-4">
-          ↳ zero to open doors in a few short months!
-        </Annotation>
+        <Annotation className="mt-4">↳ zero to open doors in a few short months!</Annotation>
       </section>
 
       {/* donate */}
@@ -143,10 +138,9 @@ export default function AboutPage() {
         <div className="tape relative max-w-[560px] rotate-[0.6deg] border border-ink/18 bg-card px-7 pt-8 pb-7 shadow-[3px_4px_0_rgba(56,52,42,0.12)]">
           <h2 className="text-[21px] font-bold">Support this work</h2>
           <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">
-            If our mission resonates with you, we&rsquo;d love your support.
-            Your donation expands access to hands-on STEM learning and gives
-            more learners the chance to explore, build, and discover
-            what&rsquo;s possible.
+            If our mission resonates with you, we&rsquo;d love your support. Your donation expands
+            access to hands-on STEM learning and gives more learners the chance to explore, build,
+            and discover what&rsquo;s possible.
           </p>
           <Link
             href="/donate"

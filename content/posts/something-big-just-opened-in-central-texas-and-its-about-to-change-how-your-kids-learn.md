@@ -19,19 +19,19 @@ Austin STEM Center is officially opening and summer camp registration is now LIV
 
 And before you think, “Oh, just another summer camp…” I would encourage you to pause for a second. Because this isn’t that.
 
-This is the kind of place where something shifts for your child. Where learning stops feeling like something they *have* to do and starts feeling like something they* want* to do. Where curiosity turns into confidence, and ideas turn into something they can actually hold in their hands.
+This is the kind of place where something shifts for your child. Where learning stops feeling like something they _have_ to do and starts feeling like something they* want* to do. Where curiosity turns into confidence, and ideas turn into something they can actually hold in their hands.
 
 You know that moment when your child gets really into something, when they stop asking for help and start saying, “Wait, I want to try it myself”? That moment where you can almost see their confidence building in real time?
 
 That’s what we built this place for.
 
-At Austin STEM Center, rather than starting with curriculum we start with the child. Where they are, what they’re naturally drawn to, how they think, how they learn. Because when you meet a child there, instead of forcing them into a box, something powerful happens. They engage. They explore. They start to believe, “Maybe I *am* good at this.”
+At Austin STEM Center, rather than starting with curriculum we start with the child. Where they are, what they’re naturally drawn to, how they think, how they learn. Because when you meet a child there, instead of forcing them into a box, something powerful happens. They engage. They explore. They start to believe, “Maybe I _am_ good at this.”
 
 And when that belief clicks, everything changes.
 
 Our instructors show up knowing they are shaping how kids see themselves. Not just what they can learn, but who they believe they can become. Because when a child builds something real—tests it, breaks it, fixes it, and sees it work—their brain locks onto that experience in a way no worksheet ever could. That’s how kids stop doubting themselves and start trusting what they’re capable of.
 
-We’ve created a space designed to make that happen. A space where your child walks into an electronics lab, a woodshop, a metal shop, a makerspace and instead of just looking around, they’re actually *using* it. They’re learning how to operate real machines. 3D printers, CO₂ and fiber lasers, tools they didn’t even know they could touch yet. This is real-world, hands-on, “I can’t believe I just made that” kind of learning.
+We’ve created a space designed to make that happen. A space where your child walks into an electronics lab, a woodshop, a metal shop, a makerspace and instead of just looking around, they’re actually _using_ it. They’re learning how to operate real machines. 3D printers, CO₂ and fiber lasers, tools they didn’t even know they could touch yet. This is real-world, hands-on, “I can’t believe I just made that” kind of learning.
 
 And our summer camp lineup? It’s built to blow their minds.
 

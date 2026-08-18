@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "oxlint",
-    "fmt":"oxfmt",
-    "fmt:check":"oxfmt --check"
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

@@ -24,17 +24,12 @@ export default function SummerCampsPage() {
         note="field notes — camps"
         title={
           <>
-            Camps where <span className="hl-green">real things</span> get
-            built.
+            Camps where <span className="hl-green">real things</span> get built.
           </>
         }
       >
-        <p className="mt-5 max-w-[54ch] text-[17px] text-ink-soft">
-          {program.about[0]}
-        </p>
-        <p className="mt-4 max-w-[54ch] text-[17px] text-ink-soft">
-          {program.about[1]}
-        </p>
+        <p className="mt-5 max-w-[54ch] text-[17px] text-ink-soft">{program.about[0]}</p>
+        <p className="mt-4 max-w-[54ch] text-[17px] text-ink-soft">{program.about[1]}</p>
       </PageIntro>
 
       <div className="tape relative mx-auto mt-10 max-w-[560px] -rotate-[0.5deg] border border-ink/18 bg-card px-6 pt-6 pb-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)]">
@@ -42,9 +37,11 @@ export default function SummerCampsPage() {
           Summer 2026 is a wrap. Thanks for an amazing first season!
         </h2>
         <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
-          The camps below are what we ran this summer. Fall programming is in
-          the works, so{" "}
-          <Link href="/contact" className="text-brand-blue underline decoration-brand-blue/50 underline-offset-[3px]">
+          The camps below are what we ran this summer. Fall programming is in the works, so{" "}
+          <Link
+            href="/contact"
+            className="text-brand-blue underline decoration-brand-blue/50 underline-offset-[3px]"
+          >
             get in touch
           </Link>{" "}
           and we&rsquo;ll make sure you hear about it first.
@@ -79,9 +76,7 @@ export default function SummerCampsPage() {
                   {camp.name}
                 </Link>
               </h2>
-              <p className="mt-3 max-w-[58ch] text-[16px] leading-[1.75]">
-                {camp.pitch}
-              </p>
+              <p className="mt-3 max-w-[58ch] text-[16px] leading-[1.75]">{camp.pitch}</p>
               <p className="mt-4">
                 <Link
                   href={`/camps/${camp.slug}`}

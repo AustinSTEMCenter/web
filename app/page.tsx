@@ -27,8 +27,7 @@ const googleCalendarUrl =
     dates: "20260822T130000/20260822T180000",
     ctz: "America/Chicago",
     location: `${site.address.street}, ${site.address.cityStateZip}`,
-    details:
-      `Celebrate the Grand Opening of Austin STEM Center! Tour the facility, explore the makerspaces and workshops, and enjoy hands-on STEM activities, live demos, and local food trucks. Admission is free, but please register in advance at ${lumaEventUrl}`,
+    details: `Celebrate the Grand Opening of Austin STEM Center! Tour the facility, explore the makerspaces and workshops, and enjoy hands-on STEM activities, live demos, and local food trucks. Admission is free, but please register in advance at ${lumaEventUrl}`,
   }).toString();
 
 const flyerAlt =
@@ -48,30 +47,26 @@ export default function Home() {
                 grand opening — saturday, august 22
               </p>
               <h1 className="mt-2 text-[clamp(28px,3.2vw,42px)] leading-[1.1] font-bold tracking-[-0.01em] text-balance">
-                The future of STEM education{" "}
-                <span className="hl">starts here.</span>
+                The future of STEM education <span className="hl">starts here.</span>
               </h1>
               <div className="mt-4 max-w-[56ch] space-y-3 text-[15.5px] leading-relaxed text-ink-soft max-md:mx-auto">
                 <p>
-                  Join us <strong>August 22, 1:00&ndash;6:00 PM</strong> at
-                  11525 Stonehollow Dr., Austin as we officially celebrate the
-                  Grand Opening of Austin STEM Center!
+                  Join us <strong>August 22, 1:00&ndash;6:00 PM</strong> at 11525 Stonehollow Dr.,
+                  Austin as we officially celebrate the Grand Opening of Austin STEM Center!
                 </p>
                 <p>
-                  Be among the first to explore our brand-new facility, step
-                  inside our professional makerspaces and fabrication shop,
-                  experience hands-on STEM activities for all ages, watch
-                  live demonstrations, meet our incredible team, and see how
-                  we&rsquo;re inspiring the next generation of creators and
-                  problem solvers.
+                  Be among the first to explore our brand-new facility, step inside our professional
+                  makerspaces and fabrication shop, experience hands-on STEM activities for all
+                  ages, watch live demonstrations, meet our incredible team, and see how we&rsquo;re
+                  inspiring the next generation of creators and problem solvers.
                 </p>
                 <p>
-                  Enjoy local food trucks, connect with the community, and
-                  discover everything Austin STEM Center has to offer.
+                  Enjoy local food trucks, connect with the community, and discover everything
+                  Austin STEM Center has to offer.
                 </p>
                 <p>
-                  Admission is free, but registration is encouraged so we can
-                  plan for everyone attending.
+                  Admission is free, but registration is encouraged so we can plan for everyone
+                  attending.
                 </p>
                 <p className="font-hand text-[21px] leading-tight text-rust">
                   we can&rsquo;t wait to show you around!
@@ -87,12 +82,7 @@ export default function Home() {
                   Save your spot →
                 </a>
                 <p className="text-[14px] text-ink-soft">
-                  <a
-                    href={site.mapUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={infoLinkClass}
-                  >
+                  <a href={site.mapUrl} target="_blank" rel="noreferrer" className={infoLinkClass}>
                     get directions
                   </a>{" "}
                   ·{" "}
@@ -132,7 +122,10 @@ export default function Home() {
 
         <div className="mt-4 text-center">
           <Annotation>
-            ↳ can&rsquo;t make it? <Link href="/contact" className="underline">drop us a line</Link>{" "}
+            ↳ can&rsquo;t make it?{" "}
+            <Link href="/contact" className="underline">
+              drop us a line
+            </Link>{" "}
             and we&rsquo;ll save you a tour.
           </Annotation>
         </div>
@@ -176,18 +169,14 @@ export default function Home() {
       {/* programs */}
       <section className="relative pt-24">
         <p className="mb-2 font-hand text-[21px] text-brand-blue">what we do</p>
-        <SectionHeading>
-          Programs for students, schools, and&nbsp;families.
-        </SectionHeading>
+        <SectionHeading>Programs for students, schools, and&nbsp;families.</SectionHeading>
         <div className="mt-10 grid grid-cols-3 gap-7 max-md:grid-cols-1 max-md:gap-y-10">
           {programs.map((p, i) => (
             <Link
               key={p.slug}
               href={p.href}
               className={`tape relative flex flex-col border border-ink/18 bg-card p-4 pb-3.5 shadow-[3px_4px_0_rgba(56,52,42,0.12)] transition-transform duration-200 ease-out hover:-translate-y-1 hover:rotate-0 ${
-                ["-rotate-[0.8deg]", "rotate-[0.7deg]", "-rotate-[0.5deg]"][
-                  i % 3
-                ]
+                ["-rotate-[0.8deg]", "rotate-[0.7deg]", "-rotate-[0.5deg]"][i % 3]
               }`}
             >
               <Image
@@ -197,16 +186,10 @@ export default function Home() {
                 height={400}
                 className="aspect-[8/5] w-full border border-ink/10 object-cover"
               />
-              <h3 className="mt-3.5 text-[18px] leading-snug font-bold">
-                {p.title}
-              </h3>
-              <p className="mt-1.5 text-[14.5px] leading-relaxed text-ink-soft">
-                {p.teaser}
-              </p>
+              <h3 className="mt-3.5 text-[18px] leading-snug font-bold">{p.title}</h3>
+              <p className="mt-1.5 text-[14.5px] leading-relaxed text-ink-soft">{p.teaser}</p>
               <div className="mt-auto flex items-baseline justify-between gap-3 pt-3.5">
-                <span className="text-[14px] italic text-brand-blue">
-                  read more →
-                </span>
+                <span className="text-[14px] italic text-brand-blue">read more →</span>
                 {p.pricing && (
                   <span className="font-hand text-[20px] text-rust">
                     from {p.pricing.rows[0].price}
@@ -220,20 +203,16 @@ export default function Home() {
 
       {/* facilities */}
       <section className="relative pt-24">
-        <span
-          aria-hidden
-          className="pointer-events-none absolute top-24 right-10 hidden md:block"
-        >
+        <span aria-hidden className="pointer-events-none absolute top-24 right-10 hidden md:block">
           <Gear className="h-12 rotate-12 text-ink/25" />
         </span>
         <p className="mb-2 font-hand text-[21px] text-brand-blue">the space</p>
         <SectionHeading>Where Learning Comes to Life</SectionHeading>
         <p className="mt-4 max-w-[56ch] text-[17px] text-ink-soft">
-        Austin STEM Center was designed to inspire curiosity through
-          hands-on experiences. Under one roof, learners can explore
-          robotics, engineering, fabrication, design, electronics, and more in
-          purpose-built spaces that encourage them to create, experiment,
-          and learn by doing.
+          Austin STEM Center was designed to inspire curiosity through hands-on experiences. Under
+          one roof, learners can explore robotics, engineering, fabrication, design, electronics,
+          and more in purpose-built spaces that encourage them to create, experiment, and learn by
+          doing.
         </p>
         <ul className="mt-6 flex flex-wrap gap-x-2.5 gap-y-3">
           {facilities.map(({ name, slug }, i) => (
@@ -248,7 +227,10 @@ export default function Home() {
           ))}
         </ul>
         <Annotation className="mt-6">
-          ↳ {camps.length} summer camps ran here this year · <Link href="/programs/summer-camps" className="underline">see what we ran</Link>
+          ↳ {camps.length} summer camps ran here this year ·{" "}
+          <Link href="/programs/summer-camps" className="underline">
+            see what we ran
+          </Link>
         </Annotation>
       </section>
 
