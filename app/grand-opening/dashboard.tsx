@@ -12,7 +12,7 @@ import type {
 const POLL_MS = 15_000;
 
 const DEMO: GrandOpeningStats = {
-  guests: { status: "ok", checkedIn: 137, registered: 212 },
+  guests: { status: "ok", checkedIn: 137 },
   donations: { status: "ok", totalCents: 482_500, count: 23 },
   updatedAt: "",
 };
@@ -131,12 +131,12 @@ export function GrandOpeningDashboard() {
           accent="text-brand-blue"
           note={
             guests?.kind === "value"
-              ? `of ${n(guests.value.registered)} registered${
-                  guests.stale ? " · last good count, Luma unreachable" : ""
-                }`
+              ? guests.stale
+                ? "last good count — counter unreachable, retrying"
+                : "counted at the door tonight"
               : guests?.kind === "error"
-                ? "Luma isn't answering — retrying"
-                : "connect Luma to count check-ins"
+                ? "door counter isn't answering — retrying"
+                : "door counter not connected yet"
           }
         />
         <Tile
