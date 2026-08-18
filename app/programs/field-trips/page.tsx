@@ -9,5 +9,9 @@ export const metadata: Metadata = {
 };
 
 export default function FieldTripsPage() {
-  return <ProgramPage program={getProgram("field-trips")!} />;
+  return <ProgramPage program={
+    
+    
+    
+    getProgram("field-trips")!} />;
 }
