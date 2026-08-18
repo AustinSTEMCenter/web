@@ -8,6 +8,7 @@ export const site = {
     cityStateZip: "Austin, TX 78758",
   },
   mapUrl: "https://maps.app.goo.gl/jPFUhc7qek9uUA2cA",
+  newsletterUrl: "https://austinstemcenter.subscribepage.io/",
   scholarshipFormUrl:
     "https://docs.google.com/forms/d/e/1FAIpQLScxH5eiP_jgKMv51MsGVG7Oz_f-mNBaxzIr7iaBlu6Hkjo_hQ/viewform",
   footerBlurb:
