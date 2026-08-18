@@ -52,6 +52,14 @@ export function SiteFooter() {
             <Link href="/donate" className="underline decoration-brand-blue/50 underline-offset-[3px]">
               donate
             </Link>
+            <a
+              href={site.newsletterUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-brand-blue/50 underline-offset-[3px]"
+            >
+              newsletter
+            </a>
           </p>
         </div>
       </div>
