@@ -49,6 +49,9 @@ export function SiteFooter() {
             <Link href="/terms-and-conditions" className="underline decoration-brand-blue/50 underline-offset-[3px]">
               terms
             </Link>
+            <Link href="/waivers" className="underline decoration-brand-blue/50 underline-offset-[3px]">
+              waivers
+            </Link>
             <Link href="/donate" className="underline decoration-brand-blue/50 underline-offset-[3px]">
               donate
             </Link>
