@@ -68,34 +68,34 @@ export default function AboutPage() {
         <p className="mb-2 font-hand text-[21px] text-brand-blue">the crew</p>
         <SectionHeading>Meet the team.</SectionHeading>
         {teamGroups.map(({ group, members }) => (
-          <div key={group} className="pt-10">
+          <div key={group} className="mx-auto max-w-[820px] pt-14 text-center">
             <h3 className="text-[15px] font-semibold italic text-ink-soft">
               {group}
             </h3>
             {members.some((m) => m.image) ? (
-              <div className="mt-5 flex flex-wrap justify-evenly gap-x-6 gap-y-8">
+              <div className="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-9 sm:gap-x-24 sm:gap-y-12">
                 {members.map((m) => (
-                  <div key={m.name} className="w-[150px]">
+                  <div key={m.name} className="w-[140px] sm:w-[180px]">
                     {m.image && (
                       <Image
                         src={m.image}
                         alt={m.name}
                         width={270}
                         height={300}
-                        className="h-auto w-full border border-ink/10 [filter:grayscale(1)_sepia(0.22)_brightness(1.03)]"
+                        className="aspect-[9/10] w-full object-cover object-top border border-ink/10"
                       />
                     )}
-                    <p className="mt-2 text-[16px] leading-tight font-bold">
+                    <p className="mt-3 text-[16px] leading-tight font-bold">
                       {m.name}
                     </p>
-                    <p className="mt-0.5 text-[13px] leading-snug italic text-ink-soft">
+                    <p className="mt-1 text-[13px] leading-snug italic text-ink-soft">
                       {m.title}
                     </p>
                   </div>
                 ))}
               </div>
             ) : (
-              <p className="mt-4 flex flex-wrap gap-x-8 gap-y-1.5 text-[16px]">
+              <p className="mt-4 flex flex-wrap justify-center gap-x-8 gap-y-1.5 text-[16px]">
                 {members.map((m) => (
                   <span key={m.name}>
                     <b className="font-bold">{m.name}</b>
