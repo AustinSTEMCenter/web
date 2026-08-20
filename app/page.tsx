@@ -104,6 +104,11 @@ export default function Home() {
                   >
                     add to calendar
                   </a>
+                  {" "}
+                  ·{" "}
+                  <Link href="/waivers" className={infoLinkClass}>
+                    print the waivers
+                  </Link>
                 </p>
               </div>
             </div>
