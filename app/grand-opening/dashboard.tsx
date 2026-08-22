@@ -2,6 +2,7 @@
 
 import { useEffect, useState, type ReactNode } from "react";
 import { useSearchParams } from "next/navigation";
+import Image from "next/image";
 import { Stamp } from "@/components/notebook";
 import type {
   DonationStats,
@@ -161,6 +162,22 @@ export function GrandOpeningDashboard() {
           }
         />
       </div>
+
+      <section className="tape relative mx-auto mt-10 flex w-fit flex-col items-center border border-ink/18 bg-card px-10 pt-7 pb-5 text-center shadow-[3px_4px_0_rgba(56,52,42,0.12)] -rotate-[0.4deg]">
+        <Image
+          src="/images/grand-opening-donate-qr.png"
+          alt="QR code — scan to donate to Austin STEM Center"
+          width={184}
+          height={221}
+          priority
+        />
+        <h2 className="mt-4 font-sans text-xs font-extrabold tracking-[0.22em] uppercase text-ink-soft">
+          Scan to donate
+        </h2>
+        <p className="mt-1 font-hand text-[22px] leading-snug whitespace-nowrap text-ink-soft">
+          every gift tonight shows up on the board
+        </p>
+      </section>
 
       <p className="mt-8 font-hand text-[19px] text-ink-soft">
         {demo
