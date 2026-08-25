@@ -5,7 +5,6 @@ import { Annotation, SectionHeading } from "@/components/notebook";
 import { camps } from "@/lib/data/camps";
 import { facilities } from "@/lib/data/facilities";
 import { programs } from "@/lib/data/programs";
-import { site } from "@/lib/data/site";
 
 /* one logo-ring color per facility chip, in facilities-data order */
 const chipAccents = [
@@ -17,22 +16,8 @@ const chipAccents = [
   "border-l-ring-green",
 ];
 
-const lumaEventUrl = "https://luma.com/w5ay1e1w";
-
-const googleCalendarUrl =
-  "https://calendar.google.com/calendar/render?" +
-  new URLSearchParams({
-    action: "TEMPLATE",
-    text: "Austin STEM Center Grand Opening",
-    dates: "20260822T130000/20260822T180000",
-    ctz: "America/Chicago",
-    location: `${site.address.street}, ${site.address.cityStateZip}`,
-    details:
-      `Celebrate the Grand Opening of Austin STEM Center! Tour the facility, explore the makerspaces and workshops, and enjoy hands-on STEM activities, live demos, and local food trucks. Admission is free, but please register in advance at ${lumaEventUrl}`,
-  }).toString();
-
-const flyerAlt =
-  "Grand opening flyer: be a part of making something new. Saturday, August 22, 1–6 PM";
+const photoAlt =
+  "A student drives a FIRST Robotics robot through a field of yellow balls while a crowd watches at the Austin STEM Center grand opening";
 
 const infoLinkClass =
   "italic text-brand-blue underline decoration-brand-blue/50 underline-offset-[3px]";
@@ -42,104 +27,59 @@ export default function Home() {
     <>
       <section className="pt-5">
         <div className="tape-corners relative rotate-[0.3deg] border border-ink/18 bg-card px-8 py-7 shadow-[4px_5px_0_rgba(56,52,42,0.12)] max-md:px-4">
-          <div className="md:grid md:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] md:items-center md:gap-10">
+          <div className="md:grid md:grid-cols-2 md:items-center md:gap-9">
             <div className="max-md:text-center">
               <p className="font-hand text-[22px] text-brand-blue">
-                grand opening — saturday, august 22
+                grand opening — saturday, august&nbsp;22&nbsp;✓
               </p>
-              <h1 className="mt-2 text-[clamp(28px,3.2vw,42px)] leading-[1.1] font-bold tracking-[-0.01em] text-balance">
-                The future of STEM education{" "}
-                <span className="hl">starts here.</span>
+              <h1 className="mt-2 text-[clamp(27px,2.9vw,38px)] leading-[1.1] font-bold tracking-[-0.01em] text-balance">
+                Thank you for an{" "}
+                <span className="hl">incredible</span> grand opening.
               </h1>
-              <div className="mt-4 max-w-[56ch] space-y-3 text-[15.5px] leading-relaxed text-ink-soft max-md:mx-auto">
+              <div className="mt-3.5 max-w-[52ch] space-y-2.5 text-[15px] leading-relaxed text-ink-soft max-md:mx-auto">
                 <p>
-                  Join us <strong>August 22, 1:00&ndash;6:00 PM</strong> at
-                  11525 Stonehollow Dr., Austin as we officially celebrate the
-                  Grand Opening of Austin STEM Center!
+                  What a day! We had just over <strong>1,200 people</strong> come
+                  through our doors, and together we raised around{" "}
+                  <strong>$20,000</strong> that will go toward our STEM
+                  education programs.
                 </p>
                 <p>
-                  Be among the first to explore our brand-new facility, step
-                  inside our professional makerspaces and fabrication shop,
-                  experience hands-on STEM activities for all ages, watch
-                  live demonstrations, meet our incredible team, and see how
-                  we&rsquo;re inspiring the next generation of creators and
-                  problem solvers.
-                </p>
-                <p>
-                  Enjoy local food trucks, connect with the community, and
-                  discover everything Austin STEM Center has to offer.
-                </p>
-                <p>
-                  Admission is free, but registration is encouraged so we can
-                  plan for everyone attending.
-                </p>
-                <p className="font-hand text-[21px] leading-tight text-rust">
-                  we can&rsquo;t wait to show you around!
+                  It was amazing to see so many people and families come
+                  experience the center, try out the activities, and get a
+                  look at what we&rsquo;re bringing to the community. We are so grateful 
+                  to everyone who came out and made it an amazing day!
                 </p>
               </div>
-              <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3 max-md:justify-center">
-                <a
-                  href={lumaEventUrl}
-                  target="_blank"
-                  rel="noreferrer"
+              <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-3 max-md:justify-center">
+                <Link
+                  href="/programs"
                   className="inline-block rounded-[3px] bg-rust px-7 py-3.5 text-center text-[16.5px] font-semibold text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
                 >
-                  Save your spot →
-                </a>
-                <p className="text-[14px] text-ink-soft">
-                  <a
-                    href={site.mapUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={infoLinkClass}
-                  >
-                    get directions
-                  </a>{" "}
-                  ·{" "}
-                  <a
-                    href={googleCalendarUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={infoLinkClass}
-                  >
-                    add to calendar
-                  </a>
-                  {" "}
-                  ·{" "}
-                  <Link href="/waivers" className={infoLinkClass}>
-                    print the waivers
-                  </Link>
-                </p>
+                  Explore our programs →
+                </Link>
+                <Link href="/donate" className={`text-[14px] ${infoLinkClass}`}>
+                  support our mission
+                </Link>
               </div>
             </div>
 
-            <a
-              href={lumaEventUrl}
-              target="_blank"
-              rel="noreferrer"
-              title="RSVP for the grand opening"
-              className="mx-auto mt-7 block max-w-[420px] rotate-[1.6deg] transition-transform duration-200 hover:rotate-0 md:mt-0"
-            >
+            <div className="mx-auto mt-7 max-w-[520px] rotate-[1.6deg] transition-transform duration-200 hover:rotate-0 md:mt-0">
               <span className="tape block border border-ink/15 bg-paper p-2 shadow-[3px_4px_0_rgba(56,52,42,0.14)]">
                 <Image
-                  src="/images/grand-opening-flyer.jpg"
-                  alt={flyerAlt}
-                  width={1350}
-                  height={1800}
+                  src="/images/grand-opening-photo.jpg"
+                  alt={photoAlt}
+                  width={1600}
+                  height={1066}
                   priority
-                  sizes="(min-width: 768px) 420px, 92vw"
+                  sizes="(min-width: 768px) 520px, 92vw"
                   className="h-auto w-full border border-ink/10"
                 />
               </span>
-            </a>
+              <p className="mt-2 text-center font-hand text-[19px] text-ink-soft">
+                one for the scrapbook
+              </p>
+            </div>
           </div>
-        </div>
-
-        <div className="mt-4 text-center">
-          <Annotation>
-            ↳ can&rsquo;t make it? <Link href="/contact" className="underline">drop us a line</Link>{" "}
-            and we&rsquo;ll save you a tour.
-          </Annotation>
         </div>
       </section>
 
