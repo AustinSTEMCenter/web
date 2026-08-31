@@ -39,6 +39,7 @@ export async function submitContact(
     firstName,
     lastName: get("lastName"),
     email,
+    organization: get("organization"),
     phone: get("phone"),
     topic: get("topic"),
     source: get("source"),
