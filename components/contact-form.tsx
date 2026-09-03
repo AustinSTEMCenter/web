@@ -73,6 +73,16 @@ export function ContactForm() {
         />
       </label>
       <label className="mt-4 block text-[15px]">
+        <span className="font-semibold">Organization or school</span>
+        <input
+          type="text"
+          name="organization"
+          autoComplete="organization"
+          placeholder="If applicable"
+          className={inputClass}
+        />
+      </label>
+      <label className="mt-4 block text-[15px]">
         <span className="font-semibold">Phone</span>
         <input
           type="tel"
@@ -85,11 +95,13 @@ export function ContactForm() {
         <span className="font-semibold">What&rsquo;s this about?</span>
         <select name="topic" defaultValue="" className={inputClass}>
           <option value="">pick one…</option>
-          <option>Programs (field trips, camps, or after-school clubs)</option>
-          <option>Facility rentals (event space or classrooms)</option>
-          <option>Partnerships</option>
-          <option>Interested parent</option>
-          <option>Something else</option>
+          <option>Programs for my child</option>
+          <option>School programs or field trips</option>
+          <option>Facility rental</option>
+          <option>Partnership or sponsorship</option>
+          <option>Volunteer, advisor, or project collaboration</option>
+          <option>Donation or in-kind support</option>
+          <option>General question or something else</option>
         </select>
       </label>
       <label className="mt-4 block text-[15px]">
