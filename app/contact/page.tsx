@@ -37,16 +37,6 @@ export default function ContactPage() {
           >
             {site.phone}
           </a>{" "}
-          — or just come by:{" "}
-          <a
-            href={site.mapUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline decoration-brand-blue/50 underline-offset-[3px]"
-          >
-            {site.address.street}, {site.address.cityStateZip}
-          </a>
-          .
         </p>
       </div>
 
