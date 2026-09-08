@@ -116,7 +116,8 @@ export default function AboutPage() {
         <SectionHeading>The history of the Austin STEM Center.</SectionHeading>
         <div className="prose-note mt-6">
           <p>
-          Austin STEM Center&rsquo;s history began with ATX Robotics, Inc., a nonprofit organization 
+          Austin STEM Center&rsquo;s history began with{" "}
+          <Link href="/about/atx-robotics">ATX Robotics, Inc.</Link>, a nonprofit organization 
           founded by Evan Marchman to expand access to robotics, engineering, and hands-on STEAM 
           education. In 2025, Evan met Peter Wang and Ken Hawthorn, who shared a vision: to create 
           a place where students could truly experience STEM through hands-on learning, innovation, 
@@ -136,6 +137,15 @@ export default function AboutPage() {
         <Annotation className="mt-4">
           ↳ zero to open doors in a few short months!
         </Annotation>
+        <p className="mt-6 text-[15px] italic text-ink-soft">
+          Curious about the Howdy Bots and the North Austin Science Alliance?{" "}
+          <Link
+            href="/about/atx-robotics"
+            className="underline decoration-brand-blue/50 underline-offset-[3px]"
+          >
+            Learn more about ATX Robotics →
+          </Link>
+        </p>
       </section>
 
       {/* donate */}
