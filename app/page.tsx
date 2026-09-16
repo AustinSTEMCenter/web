@@ -63,7 +63,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mx-auto mt-7 max-w-[520px] rotate-[1.6deg] transition-transform duration-200 hover:rotate-0 md:mt-0">
+            <div className="mx-auto mt-7 max-w-[520px] rotate-[1.6deg] transition-transform duration-200 hover:rotate-[0.1deg] md:mt-0">
               <span className="tape block border border-ink/15 bg-paper p-2 shadow-[3px_4px_0_rgba(56,52,42,0.14)]">
                 <Image
                   src="/images/grand-opening-photo.jpg"
