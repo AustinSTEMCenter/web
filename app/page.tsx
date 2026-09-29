@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Gear } from "@/components/doodles";
+import { Gear, PaperPlane } from "@/components/doodles";
 import { Annotation, SectionHeading } from "@/components/notebook";
 import { camps } from "@/lib/data/camps";
 import { facilities } from "@/lib/data/facilities";
 import { programs } from "@/lib/data/programs";
+import { site } from "@/lib/data/site";
 
 /* one logo-ring color per facility chip, in facilities-data order */
 const chipAccents = [
@@ -63,29 +64,33 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mx-auto mt-7 max-w-[520px] rotate-[1.6deg] transition-transform duration-200 hover:rotate-0 md:mt-0">
-              <span className="tape block border border-ink/15 bg-paper p-2 shadow-[3px_4px_0_rgba(56,52,42,0.14)]">
-                <Image
-                  src="/images/grand-opening-photo.jpg"
-                  alt={photoAlt}
-                  width={1600}
-                  height={1066}
-                  priority
-                  sizes="(min-width: 768px) 520px, 92vw"
-                  className="h-auto w-full border border-ink/10"
-                />
-              </span>
-              <p className="mt-2 text-center font-hand text-[19px] text-ink-soft">
-                one for the scrapbook
-              </p>
+            {/* hover on the still outer div, rotate the inner one — see the
+                program cards below */}
+            <div className="group mx-auto mt-7 max-w-[520px] md:mt-0">
+              <div className="origin-top rotate-[1.6deg] transition-transform duration-200 group-hover:rotate-0">
+                <span className="tape block border border-ink/15 bg-paper p-2 shadow-[3px_4px_0_rgba(56,52,42,0.14)]">
+                  <Image
+                    src="/images/grand-opening-photo.jpg"
+                    alt={photoAlt}
+                    width={1600}
+                    height={1066}
+                    priority
+                    sizes="(min-width: 768px) 520px, 92vw"
+                    className="h-auto w-full border border-ink/10"
+                  />
+                </span>
+                <p className="mt-2 text-center font-hand text-[19px] text-ink-soft">
+                  one for the scrapbook
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* "who we are" — original tagline copy, parked until after the grand
-          opening. To restore, uncomment and re-add PaperPlane to the doodles
-          import above.
+          opening. To restore, uncomment (PaperPlane is already imported for the
+          newsletter section).
 
       <section className="relative pt-24">
         <span
@@ -124,39 +129,42 @@ export default function Home() {
         <SectionHeading>
           Programs for students, schools, and&nbsp;families.
         </SectionHeading>
+        {/* the Link stays still as the hover target and only the inner card
+            moves, so the card can't slide out from under the cursor and
+            flicker; origin-top pivots it around the tape */}
         <div className="mt-10 grid grid-cols-3 gap-7 max-md:grid-cols-1 max-md:gap-y-10">
           {programs.map((p, i) => (
-            <Link
-              key={p.slug}
-              href={p.href}
-              className={`tape relative flex flex-col border border-ink/18 bg-card p-4 pb-3.5 shadow-[3px_4px_0_rgba(56,52,42,0.12)] transition-transform duration-200 ease-out hover:-translate-y-1 hover:rotate-0 ${
-                ["-rotate-[0.8deg]", "rotate-[0.7deg]", "-rotate-[0.5deg]"][
-                  i % 3
-                ]
-              }`}
-            >
-              <Image
-                src={p.image}
-                alt=""
-                width={640}
-                height={400}
-                className="aspect-[8/5] w-full border border-ink/10 object-cover"
-              />
-              <h3 className="mt-3.5 text-[18px] leading-snug font-bold">
-                {p.title}
-              </h3>
-              <p className="mt-1.5 text-[14.5px] leading-relaxed text-ink-soft">
-                {p.teaser}
-              </p>
-              <div className="mt-auto flex items-baseline justify-between gap-3 pt-3.5">
-                <span className="text-[14px] italic text-brand-blue">
-                  read more →
-                </span>
-                {p.pricing && (
-                  <span className="font-hand text-[20px] text-rust">
-                    from {p.pricing.rows[0].price}
+            <Link key={p.slug} href={p.href} className="group block">
+              <div
+                className={`tape relative flex h-full origin-top flex-col border border-ink/18 bg-card p-4 pb-3.5 shadow-[3px_4px_0_rgba(56,52,42,0.12)] transition-transform duration-200 ease-out group-hover:-translate-y-1 group-hover:rotate-0 ${
+                  ["-rotate-[0.8deg]", "rotate-[0.7deg]", "-rotate-[0.5deg]"][
+                    i % 3
+                  ]
+                }`}
+              >
+                <Image
+                  src={p.image}
+                  alt=""
+                  width={640}
+                  height={400}
+                  className="aspect-[8/5] w-full border border-ink/10 object-cover"
+                />
+                <h3 className="mt-3.5 text-[18px] leading-snug font-bold">
+                  {p.title}
+                </h3>
+                <p className="mt-1.5 text-[14.5px] leading-relaxed text-ink-soft">
+                  {p.teaser}
+                </p>
+                <div className="mt-auto flex items-baseline justify-between gap-3 pt-3.5">
+                  <span className="text-[14px] italic text-brand-blue">
+                    read more →
                   </span>
-                )}
+                  {p.pricing && (
+                    <span className="font-hand text-[20px] text-rust">
+                      from {p.pricing.rows[0].price}
+                    </span>
+                  )}
+                </div>
               </div>
             </Link>
           ))}
@@ -195,6 +203,40 @@ export default function Home() {
         <Annotation className="mt-6">
           ↳ {camps.length} summer camps ran here this year · <Link href="/programs/summer-camps" className="underline">see what we ran</Link>
         </Annotation>
+      </section>
+
+      {/* newsletter */}
+      <section className="pt-24">
+        <div className="tape relative -rotate-[0.4deg] border border-ink/18 bg-card px-8 py-7 shadow-[4px_5px_0_rgba(56,52,42,0.12)] max-md:px-5">
+          <span
+            aria-hidden
+            className="pointer-events-none absolute -top-5 right-8 hidden md:block"
+          >
+            <PaperPlane className="h-11 -rotate-6 text-brand-blue/50" />
+          </span>
+          <div className="md:flex md:items-center md:justify-between md:gap-10">
+            <div>
+              <p className="mb-2 font-hand text-[21px] text-brand-blue">
+                stay in the loop
+              </p>
+              <SectionHeading>
+                Get <span className="hl">center news</span> in your inbox.
+              </SectionHeading>
+              <p className="mt-3 max-w-[52ch] text-[16px] leading-relaxed text-pretty text-ink-soft">
+                Camp registration dates, new programs, upcoming events, and
+                stories from the center, straight from us.
+              </p>
+            </div>
+            <a
+              href={site.newsletterUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-block shrink-0 rounded-[3px] bg-rust px-7 py-3.5 text-center text-[16.5px] font-semibold text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none md:mt-0"
+            >
+              Join our newsletter →
+            </a>
+          </div>
+        </div>
       </section>
 
       {/* blog — removed for now (2026-07-30). To restore: git-restore app/blog/,
