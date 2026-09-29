@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Gear, PaperPlane } from "@/components/doodles";
-import { Annotation, SectionHeading } from "@/components/notebook";
+import { Annotation, SectionHeading, Stamp } from "@/components/notebook";
 import { camps } from "@/lib/data/camps";
 import { facilities } from "@/lib/data/facilities";
 import { programs } from "@/lib/data/programs";
@@ -20,8 +20,8 @@ const chipAccents = [
 const photoAlt =
   "A student drives a FIRST Robotics robot through a field of yellow balls while a crowd watches at the Austin STEM Center grand opening";
 
-const infoLinkClass =
-  "italic text-brand-blue underline decoration-brand-blue/50 underline-offset-[3px]";
+const albumUrl =
+  "https://juliannajphotography.pic-time.com/client/asc-grand-opening/gallery";
 
 export default function Home() {
   return (
@@ -35,40 +35,35 @@ export default function Home() {
               </p>
               <h1 className="mt-2 text-[clamp(27px,2.9vw,38px)] leading-[1.1] font-bold tracking-[-0.01em] text-balance">
                 Thank you for an{" "}
-                <span className="hl">incredible</span> grand opening.
+                <span className="hl-teal">incredible</span> grand opening.
               </h1>
-              <div className="mt-3.5 max-w-[52ch] space-y-2.5 text-[15px] leading-relaxed text-ink-soft max-md:mx-auto">
-                <p>
-                  What a day! We had just over <strong>1,200 people</strong> come
-                  through our doors, and together we raised around{" "}
-                  <strong>$20,000</strong> that will go toward our STEM
-                  education programs.
-                </p>
-                <p>
-                  It was amazing to see so many people and families come
-                  experience the center, try out the activities, and get a
-                  look at what we&rsquo;re bringing to the community. We are so grateful 
-                  to everyone who came out and made it an amazing day!
-                </p>
+              <div className="mt-4 flex flex-wrap gap-3 max-md:justify-center">
+                <Stamp className="-rotate-2">1,200+ visitors</Stamp>
+                <Stamp className="rotate-[1.5deg]">$20K raised</Stamp>
               </div>
-              <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-3 max-md:justify-center">
-                <Link
-                  href="/programs"
-                  className="inline-block rounded-[3px] bg-rust px-7 py-3.5 text-center text-[16.5px] font-semibold text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-                >
-                  Explore our programs →
-                </Link>
-                <Link href="/donate" className={`text-[14px] ${infoLinkClass}`}>
-                  support our mission
-                </Link>
-              </div>
+              <p className="mt-4 max-w-[52ch] text-[15px] leading-relaxed text-ink-soft max-md:mx-auto">
+                What a day! Thank you to every family who came out to try the
+                activities and explore the center. Every dollar raised goes
+                straight to our STEM education programs.
+              </p>
+              <Link
+                href="/programs"
+                className="mt-5 inline-block rounded-[3px] bg-rust px-7 py-3.5 text-center text-[16.5px] font-semibold text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+              >
+                Explore our programs →
+              </Link>
             </div>
 
             {/* hover on the still outer div, rotate the inner one — see the
                 program cards below */}
             <div className="group mx-auto mt-7 max-w-[520px] md:mt-0">
               <div className="origin-top rotate-[1.6deg] transition-transform duration-200 group-hover:rotate-0">
-                <span className="tape block border border-ink/15 bg-paper p-2 shadow-[3px_4px_0_rgba(56,52,42,0.14)]">
+                <a
+                  href={albumUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="tape block border border-ink/15 bg-paper p-2 shadow-[3px_4px_0_rgba(56,52,42,0.14)]"
+                >
                   <Image
                     src="/images/grand-opening-photo.jpg"
                     alt={photoAlt}
@@ -78,9 +73,17 @@ export default function Home() {
                     sizes="(min-width: 768px) 520px, 92vw"
                     className="h-auto w-full border border-ink/10"
                   />
-                </span>
+                </a>
                 <p className="mt-2 text-center font-hand text-[19px] text-ink-soft">
-                  one for the scrapbook
+                  one for the scrapbook —{" "}
+                  <a
+                    href={albumUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-brand-blue underline decoration-brand-blue/50 underline-offset-[3px]"
+                  >
+                    flip through the whole album →
+                  </a>
                 </p>
               </div>
             </div>
