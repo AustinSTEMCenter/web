@@ -41,9 +41,16 @@ export default function BuildTheFuturePage() {
             {site.address.street}, {site.address.cityStateZip}
           </p>
           <p className="mt-4 max-w-[52ch] text-[16px] leading-relaxed">
-            Learn, create, explore, imagine, and inspire. Bring the whole
-            family for an afternoon at the center, and help us keep Austin
-            curious with a gift in support of the day.
+            If our mission resonates with you, we&rsquo;d love your support.
+            Your donation expands access to hands-on STEM learning and gives
+            more learners the chance to explore, build, and discover
+            what&rsquo;s possible.
+          </p>
+          <p className="mt-3 max-w-[52ch] text-[16px] leading-relaxed">
+            Your gift funds impact you can see and experiences you can feel.
+            From scholarship opportunities and fully funded field trips to the
+            tools, materials, and equipment that bring hands-on STEM learning
+            to life every day.
           </p>
           <a
             href="https://givebutter.com/build-the-future"

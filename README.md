@@ -103,7 +103,7 @@ app/                    Routes. Each folder = a URL. page.tsx is the page.
   api/grand-opening/    JSON endpoint for the live board
   camps/[slug]/         One page per camp in lib/data/camps.ts
   machines/             Machine index + one page per machine ([slug])
-  programs/             Programs index + classes, after-school-clubs, field-trips, summer-camps
+  programs/             Programs index + labs, after-school-clubs, field-trips, summer-camps
   facility-rentals/     Rental options + the rooms (formerly /facilities)
   tours/                Guided tours + open house
   _volunteer/           Volunteer page, hidden for now (folders starting with _ aren't routed)
@@ -146,7 +146,7 @@ Folders you may see locally that are **not** in git: `design/`, `plans/`,
 | `/machines`                | `app/machines/page.tsx`                | `lib/data/machines.ts` (+ facilities for grouping)  |
 | `/machines/<slug>`         | `app/machines/[slug]/page.tsx`         | One entry in `lib/data/machines.ts`                 |
 | `/programs`                | `app/programs/page.tsx`                | `lib/data/programs.ts`                              |
-| `/programs/classes`        | `app/programs/classes/page.tsx`        | `lib/data/programs.ts` via `ProgramPage`; class list from `lib/data/classes.ts` |
+| `/programs/labs`           | `app/programs/labs/page.tsx`           | `lib/data/programs.ts` via `ProgramPage`; lab list from `lib/data/labs.ts` |
 | `/programs/after-school-clubs` | `app/programs/after-school-clubs/page.tsx` | `lib/data/programs.ts` + club schedules from `lib/data/clubs.ts` |
 | `/programs/field-trips`    | `app/programs/field-trips/page.tsx`    | `lib/data/programs.ts` via `ProgramPage`; booking calendar from `lib/data/field-trip-availability.ts`, sent by `app/programs/field-trips/actions.ts` |
 | `/programs/summer-camps`   | `app/programs/summer-camps/page.tsx`   | `lib/data/programs.ts` + camp cards from `lib/data/camps.ts` |
@@ -210,16 +210,16 @@ Edit `lib/data/facilities.ts`. Photos live in `public/images/facilities/`.
 Facility sections on `/facility-rentals` are anchor-linkable, for example
 `/facility-rentals#wood-shop`.
 
-### Change a program (classes, clubs, field trips, summer camps)
+### Change a program (labs, clubs, field trips, summer camps)
 
 Edit `lib/data/programs.ts` for the description and pricing. Its order is the
 order on `/programs` and the homepage, and should match the tabs in
-`components/programs-nav.tsx`. Classes and field trips render through the
+`components/programs-nav.tsx`. Labs and field trips render through the
 shared `components/program-page.tsx`; clubs and summer camps have their own
 layouts.
 
-- **Classes:** one entry per class in `lib/data/classes.ts`. Set `registerUrl`
-  to the Givebutter event page to show a Register button. Classes drop off the
+- **Labs:** one entry per lab in `lib/data/labs.ts`. Set `registerUrl`
+  to the Givebutter event page to show a Register button. Labs drop off the
   page after their date.
 - **Clubs:** meeting days, times, rooms, and dates in `lib/data/clubs.ts`;
   `registerUrl` is the club's Givebutter event page.
@@ -272,7 +272,7 @@ sensible (a few hundred KB, not multi-megabyte originals).
 | ---------------------- | --------------------------------------- | ------------------------------------------------------ |
 | **Vercel**             | Hosting, preview deployments, analytics | Vercel project `web`; `<Analytics />` in `app/layout.tsx` |
 | **Google Apps Script → Google Sheet** | Contact form submissions (interim CRM) plus an email notification per submission | `lib/forms-webhook.ts`, setup steps in `docs/forms-webhook-setup.md` |
-| **Givebutter**         | Donations (nav Donate button; `/donate` redirects there) and class and club registration | `donateUrl` in `lib/data/site.ts`; `registerUrl` in `lib/data/classes.ts` and `lib/data/clubs.ts`. Amounts, tickets, and receipts are configured in the Givebutter dashboard |
+| **Givebutter**         | Donations (nav Donate button; `/donate` redirects there) and lab and club registration | `donateUrl` in `lib/data/site.ts`; `registerUrl` in `lib/data/labs.ts` and `lib/data/clubs.ts`. Amounts, tickets, and receipts are configured in the Givebutter dashboard |
 | **Stripe API**         | Donation total on the grand-opening board | `lib/grand-opening/stats.ts` (read-only key)         |
 | **Upstash Redis**      | Door-counter tally for the grand-opening board. The count is incremented by the separate admin app (`web/admin`) | `lib/grand-opening/stats.ts` |
 | **Luma**               | Event RSVPs                             | `/rsvp` redirect in `next.config.ts`                   |
