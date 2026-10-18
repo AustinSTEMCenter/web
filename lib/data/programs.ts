@@ -22,15 +22,15 @@ export type Program = {
 // same order as the programs nav tabs
 export const programs: Program[] = [
   {
-    title: "Classes",
-    slug: "classes",
-    href: "/programs/classes",
+    title: "Labs",
+    slug: "labs",
+    href: "/programs/labs",
     image: "/images/facilities/electronics-lab.jpg",
     teaser:
-      "Focused, three-hour Sunday classes in our shops and labs, from 3D design to physical computing.",
+      "Focused, three-hour Sunday labs in our shops and makerspaces, from 3D design to physical computing.",
     about: [
-      "Classes at the Austin STEM Center are hands-on, skill-focused sessions that dig into one tool, technique, or topic at a time. Learners work with real equipment in our shops and labs and leave with new skills and the know-how to keep building.",
-      "Classes meet on Sunday afternoons and are kept small, with up to 10 students in each, so everyone gets plenty of hands-on time.",
+      "Labs at the Austin STEM Center are hands-on, skill-focused sessions that dig into one tool, technique, or topic at a time. Learners work with real equipment in our shops and makerspaces and leave with new skills and the know-how to keep building.",
+      "Labs meet on Sunday afternoons and are kept small, with up to 10 students in each, so everyone gets plenty of hands-on time.",
     ],
     experienceHeading: "What learners experience",
     experience: [
@@ -43,10 +43,10 @@ export const programs: Program[] = [
       heading: "Pricing",
       rows: [
         {
-          option: "Sunday class",
+          option: "Sunday lab",
           duration: "3 hours",
-          price: "$75 / class",
-          description: "A single hands-on class for up to 10 students.",
+          price: "$75 / lab",
+          description: "A single hands-on lab for up to 10 students.",
         },
       ],
     },
@@ -125,7 +125,7 @@ export const programs: Program[] = [
             "An extended, immersive STEM experience with deeper project work and exploration.",
         },
         {
-          option: "Full-Day Experience",
+          option: "Full-Day Lab Experience",
           duration: "6 hours",
           price: "$75 / student",
           description:
