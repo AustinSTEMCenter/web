@@ -19,7 +19,74 @@ export type Program = {
   pricing?: { heading: string; rows: PricingRow[] };
 };
 
+// same order as the programs nav tabs
 export const programs: Program[] = [
+  {
+    title: "Classes",
+    slug: "classes",
+    href: "/programs/classes",
+    image: "/images/facilities/electronics-lab.jpg",
+    teaser:
+      "Focused, three-hour Sunday classes in our shops and labs, from 3D design to physical computing.",
+    about: [
+      "Classes at the Austin STEM Center are hands-on, skill-focused sessions that dig into one tool, technique, or topic at a time. Learners work with real equipment in our shops and labs and leave with new skills and the know-how to keep building.",
+      "Classes meet on Sunday afternoons and are kept small, with up to 10 students in each, so everyone gets plenty of hands-on time.",
+    ],
+    experienceHeading: "What learners experience",
+    experience: [
+      "Small-group instruction from ASC staff",
+      "Hands-on time with real tools in our shops, labs, and makerspace",
+      "A focused introduction to one tool, technique, or topic",
+      "Skills that carry into clubs, camps, and projects of their own",
+    ],
+    pricing: {
+      heading: "Pricing",
+      rows: [
+        {
+          option: "Sunday class",
+          duration: "3 hours",
+          price: "$75 / class",
+          description: "A single hands-on class for up to 10 students.",
+        },
+      ],
+    },
+  },
+  {
+    title: "After-School STEM Clubs",
+    slug: "after-school-clubs",
+    href: "/programs/after-school-clubs",
+    image: "/images/camps/build-a-synth-3.jpg",
+    teaser:
+      "Flexible after-school enrichment focused on hands-on STEM learning.",
+    about: [
+      "Our after-school STEM clubs give students a regular place to build, tinker, and explore beyond the school day. On scheduled club days, students take on hands-on projects across robotics, engineering, and making, guided by ASC staff in our real shops, labs, and maker spaces.",
+      "Come session by session, or save with a 4-session pack. Each club also meets during the school day for homeschool students.",
+    ],
+    experienceHeading: "What club members experience",
+    experience: [
+      "Hands-on STEM projects in ASC's maker spaces and labs",
+      "Flexible enrichment that fits after-school schedules",
+      "Consistent mentorship and a community of fellow makers",
+      "New challenges across robotics, engineering, and design",
+    ],
+    inquiry: "Interested in joining a STEM club?",
+    pricing: {
+      heading: "Pricing",
+      rows: [
+        {
+          option: "Single session",
+          price: "$50 / session",
+          description: "Drop in for any scheduled club session.",
+        },
+        {
+          option: "4-session pack",
+          price: "$150",
+          description:
+            "Four club sessions for the price of three, so one session is free.",
+        },
+      ],
+    },
+  },
   {
     title: "Field Trips",
     slug: "field-trips",
@@ -85,43 +152,6 @@ export const programs: Program[] = [
       "Opportunities to test ideas, iterate, and learn through doing",
       "A supportive environment that values curiosity and creativity",
     ],
-  },
-  {
-    title: "After-School STEM Clubs",
-    slug: "after-school-clubs",
-    href: "/programs/after-school-clubs",
-    image: "/images/camps/build-a-synth-3.jpg",
-    teaser:
-      "Flexible after-school enrichment focused on hands-on STEM learning.",
-    about: [
-      "Our after-school STEM clubs give students a regular place to build, tinker, and explore beyond the school day. On scheduled club days, students take on hands-on projects across robotics, engineering, and making, guided by ASC staff in our real shops, labs, and maker spaces.",
-      "Come session by session, or join as a monthly member for unlimited participation during scheduled club days.",
-    ],
-    experienceHeading: "What club members experience",
-    experience: [
-      "Hands-on STEM projects in ASC's maker spaces and labs",
-      "Flexible enrichment that fits after-school schedules",
-      "Consistent mentorship and a community of fellow makers",
-      "New challenges across robotics, engineering, and design",
-    ],
-    inquiry: "Interested in joining a STEM club?",
-    pricing: {
-      heading: "Pricing",
-      rows: [
-        {
-          option: "Single session",
-          price: "$60 / session",
-          description:
-            "Flexible after-school enrichment focused on hands-on STEM learning.",
-        },
-        {
-          option: "Monthly membership",
-          price: "$200 / month",
-          description:
-            "Unlimited participation in our after-school club program during scheduled club days.",
-        },
-      ],
-    },
   },
 ];
 

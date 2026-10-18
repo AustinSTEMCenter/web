@@ -1,16 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MobileNav } from "@/components/mobile-nav";
-import { navLinks } from "@/lib/data/site";
+import { navLinks, site } from "@/lib/data/site";
 
 function DonateLink() {
   return (
-    <Link
-      href="/donate"
+    <a
+      href={site.donateUrl}
       className="rounded border-2 border-rust/75 px-2.5 py-0.5 font-sans text-[11px] font-bold tracking-[0.14em] uppercase not-italic text-rust/85 no-underline transition-colors duration-150 hover:bg-rust/10 active:translate-y-[1px]"
     >
       Donate
-    </Link>
+    </a>
   );
 }
 

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { navLinks } from "@/lib/data/site";
+import { navLinks, site } from "@/lib/data/site";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -63,13 +63,13 @@ export function MobileNav() {
                 </li>
               ))}
               <li>
-                <Link
-                  href="/donate"
+                <a
+                  href={site.donateUrl}
                   onClick={() => setOpen(false)}
                   className="block py-3.5 font-sans text-[12px] font-bold tracking-[0.14em] uppercase not-italic text-rust/85 no-underline"
                 >
                   Donate →
-                </Link>
+                </a>
               </li>
             </ul>
             <p className="pt-2 pb-1 text-right font-hand text-[19px] text-brand-blue">

@@ -52,9 +52,9 @@ export function SiteFooter() {
             <Link href="/waivers" className="underline decoration-brand-blue/50 underline-offset-[3px]">
               waivers
             </Link>
-            <Link href="/donate" className="underline decoration-brand-blue/50 underline-offset-[3px]">
+            <a href={site.donateUrl} className="underline decoration-brand-blue/50 underline-offset-[3px]">
               donate
-            </Link>
+            </a>
             <a
               href={site.newsletterUrl}
               target="_blank"
