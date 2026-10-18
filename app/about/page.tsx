@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { Lightbulb } from "@/components/doodles";
 import { Annotation, PageIntro, SectionHeading } from "@/components/notebook";
+import { site } from "@/lib/data/site";
 import { teamGroups } from "@/lib/data/team";
 
 export const metadata: Metadata = {
@@ -148,12 +148,12 @@ export default function AboutPage() {
             more learners the chance to explore, build, and discover
             what&rsquo;s possible.
           </p>
-          <Link
-            href="/donate"
+          <a
+            href={site.donateUrl}
             className="mt-5 inline-block rounded-[3px] bg-brand-blue px-[22px] py-3 text-[15px] text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
           >
             Donate here →
-          </Link>
+          </a>
         </div>
       </section>
     </>

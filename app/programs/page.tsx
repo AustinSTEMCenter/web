@@ -8,7 +8,7 @@ import { programs } from "@/lib/data/programs";
 export const metadata: Metadata = {
   title: "Programs",
   description:
-    "Field trips, summer camps, and after-school STEM clubs at the Austin STEM Center.",
+    "Classes, summer camps, after-school STEM clubs, and field trips at the Austin STEM Center.",
 };
 
 export default function ProgramsPage() {
@@ -45,44 +45,40 @@ export default function ProgramsPage() {
         </div>
       </PageIntro>
 
-      <div className="mt-14 space-y-14">
+      <div className="mt-14 grid grid-cols-4 gap-6 max-lg:grid-cols-2 max-sm:grid-cols-1 max-sm:gap-y-10">
         {programs.map((p, i) => (
-          <section
+          <Link
             key={p.slug}
-            className={`grid items-start gap-x-10 gap-y-5 max-md:grid-cols-1 ${i % 2 ? "grid-cols-[minmax(0,3fr)_minmax(0,2fr)]" : "grid-cols-[minmax(0,2fr)_minmax(0,3fr)]"}`}
+            id={p.slug}
+            href={p.href}
+            className={`tape relative flex flex-col border border-ink/18 bg-card p-4 pb-3.5 shadow-[3px_4px_0_rgba(56,52,42,0.12)] transition-transform duration-200 ease-out hover:-translate-y-1 hover:rotate-0 ${
+              ["-rotate-[0.8deg]", "rotate-[0.7deg]", "-rotate-[0.5deg]", "rotate-[0.6deg]"][i % 4]
+            }`}
           >
-            <figure
-              className={`photo max-w-[380px] transition-transform duration-200 ease-out hover:rotate-0 ${i % 2 ? "rotate-[0.8deg] md:order-2 md:justify-self-end" : "-rotate-[0.7deg]"}`}
-            >
-              <Link href={p.href} className="block">
-                <Image
-                  src={p.image}
-                  alt={p.title}
-                  width={760}
-                  height={475}
-                  className="aspect-[8/5] w-full object-cover"
-                />
-              </Link>
-            </figure>
-            <div className={i % 2 ? "md:order-1" : ""}>
-              <h2 className="text-[24px] font-bold">
-                <Link href={p.href} className="hover:underline">
-                  {p.title}
-                </Link>
-              </h2>
-              <p className="mt-3 max-w-[58ch] text-[16px] leading-[1.75]">
-                {p.about[0]}
-              </p>
-              <p className="mt-4">
-                <Link
-                  href={p.href}
-                  className="text-[15px] italic text-brand-blue underline decoration-brand-blue/50 underline-offset-[3px]"
-                >
-                  read more →
-                </Link>
-              </p>
+            <Image
+              src={p.image}
+              alt=""
+              width={640}
+              height={400}
+              className="aspect-[8/5] w-full border border-ink/10 object-cover"
+            />
+            <h2 className="mt-3.5 text-[18px] leading-snug font-bold">
+              {p.title}
+            </h2>
+            <p className="mt-1.5 text-[14.5px] leading-relaxed text-ink-soft">
+              {p.teaser}
+            </p>
+            <div className="mt-auto flex flex-wrap items-baseline justify-between gap-x-3 pt-3.5">
+              <span className="text-[14px] italic text-brand-blue">
+                read more →
+              </span>
+              {p.pricing && (
+                <span className="font-hand text-[20px] text-rust">
+                  from {p.pricing.rows[0].price}
+                </span>
+              )}
             </div>
-          </section>
+          </Link>
         ))}
       </div>
 

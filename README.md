@@ -103,9 +103,13 @@ app/                    Routes. Each folder = a URL. page.tsx is the page.
   api/grand-opening/    JSON endpoint for the live board
   camps/[slug]/         One page per camp in lib/data/camps.ts
   machines/             Machine index + one page per machine ([slug])
-  programs/             Programs index + field-trips, after-school-clubs, summer-camps
+  programs/             Programs index + classes, after-school-clubs, field-trips, summer-camps
+  facility-rentals/     Rental options + the rooms (formerly /facilities)
+  tours/                Guided tours + open house
+  _volunteer/           Volunteer page, hidden for now (folders starting with _ aren't routed)
+  build-the-future/     Unlinked event page for the Oct 18, 2026 family day
+  frckickoff/           Unlinked FRC Kickoff page
   contact/              Contact page + actions.ts (server action that sends the form)
-  donate/               Donate page (Stripe Buy Button) + thank-you page
   grand-opening/        Live event board (not indexed by search engines)
   waivers/              Links to the liability waiver + media release PDFs
   privacy-policy/       Rendered from content/pages/privacy-policy.md
@@ -137,22 +141,25 @@ Folders you may see locally that are **not** in git: `design/`, `plans/`,
 | -------------------------- | -------------------------------------- | --------------------------------------------------- |
 | `/`                        | `app/page.tsx`                         | Copy is inline in the file                          |
 | `/about`                   | `app/about/page.tsx`                   | Copy inline; team grid from `lib/data/team.ts`      |
-| `/facilities`              | `app/facilities/page.tsx`              | `lib/data/facilities.ts`                            |
+| `/facility-rentals`        | `app/facility-rentals/page.tsx`        | Rental cards inline; rooms from `lib/data/facilities.ts` (`/facilities` redirects here) |
+| `/tours`                   | `app/tours/page.tsx`                   | Copy inline; open house date in the `openHouse` constant |
 | `/machines`                | `app/machines/page.tsx`                | `lib/data/machines.ts` (+ facilities for grouping)  |
 | `/machines/<slug>`         | `app/machines/[slug]/page.tsx`         | One entry in `lib/data/machines.ts`                 |
 | `/programs`                | `app/programs/page.tsx`                | `lib/data/programs.ts`                              |
-| `/programs/field-trips`    | `app/programs/field-trips/page.tsx`    | `lib/data/programs.ts` via the shared `ProgramPage` component |
-| `/programs/after-school-clubs` | `app/programs/after-school-clubs/page.tsx` | Same as above                               |
+| `/programs/classes`        | `app/programs/classes/page.tsx`        | `lib/data/programs.ts` via `ProgramPage`; class list from `lib/data/classes.ts` |
+| `/programs/after-school-clubs` | `app/programs/after-school-clubs/page.tsx` | `lib/data/programs.ts` + club schedules from `lib/data/clubs.ts` |
+| `/programs/field-trips`    | `app/programs/field-trips/page.tsx`    | `lib/data/programs.ts` via `ProgramPage`; booking calendar from `lib/data/field-trip-availability.ts`, sent by `app/programs/field-trips/actions.ts` |
 | `/programs/summer-camps`   | `app/programs/summer-camps/page.tsx`   | `lib/data/programs.ts` + camp cards from `lib/data/camps.ts` |
 | `/camps/<slug>`            | `app/camps/[slug]/page.tsx`            | One entry in `lib/data/camps.ts`                    |
 | `/contact`                 | `app/contact/page.tsx`                 | Form in `components/contact-form.tsx`; sending logic in `app/contact/actions.ts` |
-| `/donate`                  | `app/donate/page.tsx`                  | Copy inline; button in `components/donation-checkout.tsx` |
-| `/donate/thank-you`        | `app/donate/thank-you/page.tsx`        | Copy inline (Stripe redirects here after payment)   |
 | `/waivers`                 | `app/waivers/page.tsx`                 | PDFs in `public/forms/`                             |
 | `/privacy-policy`          | `app/privacy-policy/page.tsx`          | `content/pages/privacy-policy.md`                   |
 | `/terms-and-conditions`    | `app/terms-and-conditions/page.tsx`    | `content/pages/terms-and-conditions.md`             |
 | `/grand-opening`           | `app/grand-opening/page.tsx`           | Live data from `/api/grand-opening`                 |
 | `/rsvp`                    | `next.config.ts`                       | Temporary redirect to the Luma event                |
+| `/donate`                  | `next.config.ts`                       | Redirect to the Givebutter donation page            |
+| `/build-the-future`        | `app/build-the-future/page.tsx`        | Copy inline (unlinked event page)                   |
+| `/frckickoff`              | `app/frckickoff/page.tsx`              | Copy inline (unlinked event page)                   |
 
 Site-wide details (phone, address, map link, newsletter URL, scholarship form
 URL, footer blurb, and the **header navigation links**) live in `lib/data/site.ts`.
@@ -200,15 +207,25 @@ room. The `related` list holds other machine slugs. Adding an entry creates
 ### Add or edit a facility (room)
 
 Edit `lib/data/facilities.ts`. Photos live in `public/images/facilities/`.
-Facility sections on `/facilities` are anchor-linkable, for example
-`/facilities#wood-shop`.
+Facility sections on `/facility-rentals` are anchor-linkable, for example
+`/facility-rentals#wood-shop`.
 
-### Change a program (field trips, after-school clubs, summer camps)
+### Change a program (classes, clubs, field trips, summer camps)
 
-Edit `lib/data/programs.ts`. Field trips and after-school clubs render
-through the shared `components/program-page.tsx`, so changing the data is
-enough. The summer camps page has its own layout in
-`app/programs/summer-camps/page.tsx` because it also lists the camps.
+Edit `lib/data/programs.ts` for the description and pricing. Its order is the
+order on `/programs` and the homepage, and should match the tabs in
+`components/programs-nav.tsx`. Classes and field trips render through the
+shared `components/program-page.tsx`; clubs and summer camps have their own
+layouts.
+
+- **Classes:** one entry per class in `lib/data/classes.ts`. Set `registerUrl`
+  to the Givebutter event page to show a Register button. Classes drop off the
+  page after their date.
+- **Clubs:** meeting days, times, rooms, and dates in `lib/data/clubs.ts`;
+  `registerUrl` is the club's Givebutter event page.
+- **Field trips:** open hours, lead time, and closed dates (holidays and days
+  already booked) are in `lib/data/field-trip-availability.ts`. Requests land
+  in the contact-form Google Sheet with Form = `field-trip`.
 
 ### Edit the privacy policy or terms
 
@@ -255,7 +272,7 @@ sensible (a few hundred KB, not multi-megabyte originals).
 | ---------------------- | --------------------------------------- | ------------------------------------------------------ |
 | **Vercel**             | Hosting, preview deployments, analytics | Vercel project `web`; `<Analytics />` in `app/layout.tsx` |
 | **Google Apps Script → Google Sheet** | Contact form submissions (interim CRM) plus an email notification per submission | `lib/forms-webhook.ts`, setup steps in `docs/forms-webhook-setup.md` |
-| **Stripe Buy Button**  | Donations on `/donate`                  | `components/donation-checkout.tsx` (button ID + publishable key). Amounts and the thank-you redirect are configured in the Stripe dashboard, not in code |
+| **Givebutter**         | Donations (nav Donate button; `/donate` redirects there) and class and club registration | `donateUrl` in `lib/data/site.ts`; `registerUrl` in `lib/data/classes.ts` and `lib/data/clubs.ts`. Amounts, tickets, and receipts are configured in the Givebutter dashboard |
 | **Stripe API**         | Donation total on the grand-opening board | `lib/grand-opening/stats.ts` (read-only key)         |
 | **Upstash Redis**      | Door-counter tally for the grand-opening board. The count is incremented by the separate admin app (`web/admin`) | `lib/grand-opening/stats.ts` |
 | **Luma**               | Event RSVPs                             | `/rsvp` redirect in `next.config.ts`                   |
@@ -285,8 +302,7 @@ are gitignored; never commit them.
 | `STRIPE_SECRET_KEY`             | Grand-opening board | A **restricted** key with `charges:read` is enough       |
 | `GRAND_OPENING_DONATIONS_SINCE` | Optional  | ISO date; only count Stripe charges after this date                |
 
-Nothing else needs secrets. The Stripe publishable key in the donate button is
-public by design.
+Nothing else needs secrets.
 
 To pull production values into a local `.env.local`, install the Vercel CLI,
 run `vercel link` once, then `vercel env pull`.
@@ -352,7 +368,7 @@ accents. Light theme only. It is the light counterpart to the dark admin dashboa
   `PaperPlane`, `Lightbulb`, `Bolt`, `Heart`) used as page decorations.
 - `site-header.tsx`, `mobile-nav.tsx`, `site-footer.tsx` — chrome.
 - `program-page.tsx` — the shared layout for program pages.
-- `contact-form.tsx`, `donation-checkout.tsx` — the two interactive pieces.
+- `contact-form.tsx`, `field-trip-booking.tsx` — the interactive pieces.
 
 CSS helper classes worth knowing (all in `globals.css`): `tape` and
 `tape-corners` (the taped-on card effect), `hl-*` (highlighter marks behind

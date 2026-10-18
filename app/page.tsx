@@ -121,7 +121,7 @@ export default function Home() {
         </Link>
         <br />
         <Annotation className="mt-6">
-          ↳ ask about the <Link href="/facilities" className="underline">FIRST Arena</Link>, it&rsquo;s the good stuff!
+          ↳ ask about the <Link href="/facility-rentals#first-arena" className="underline">FIRST Arena</Link>, it&rsquo;s the good stuff!
         </Annotation>
       </section>
       */}
@@ -135,7 +135,7 @@ export default function Home() {
         {/* the Link stays still as the hover target and only the inner card
             moves, so the card can't slide out from under the cursor and
             flicker; origin-top pivots it around the tape */}
-        <div className="mt-10 grid grid-cols-3 gap-7 max-md:grid-cols-1 max-md:gap-y-10">
+        <div className="mt-10 grid grid-cols-2 gap-7 max-md:grid-cols-1 max-md:gap-y-10">
           {programs.map((p, i) => (
             <Link key={p.slug} href={p.href} className="group block">
               <div
@@ -195,7 +195,7 @@ export default function Home() {
           {facilities.map(({ name, slug }, i) => (
             <li key={slug}>
               <Link
-                href={`/facilities#${slug}`}
+                href={`/facility-rentals#${slug}`}
                 className={`inline-block rounded-[3px] border border-ink/25 border-l-[3px] bg-card px-3 py-1.5 text-[14px] italic shadow-[2px_2px_0_rgba(56,52,42,0.08)] transition-transform duration-150 hover:-translate-y-0.5 ${chipAccents[i % chipAccents.length]}`}
               >
                 {name}

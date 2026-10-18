@@ -50,7 +50,7 @@ export async function submitContact(
   try {
     await postToFormsWebhook(payload);
   } catch (err) {
-    console.error("Contact webhook failed:", err, payload);
+    console.error("Contact webhook failed:", err);
     return { status: "error", message: fallbackMessage };
   }
 

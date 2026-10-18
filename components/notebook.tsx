@@ -38,7 +38,7 @@ export function PageIntro({
   doodle,
   children,
 }: {
-  note: string;
+  note?: string;
   title: ReactNode;
   doodle?: ReactNode;
   children?: ReactNode;
@@ -53,7 +53,9 @@ export function PageIntro({
           {doodle}
         </span>
       )}
-      <p className="mb-2.5 font-hand text-[21px] text-brand-blue">{note}</p>
+      {note && (
+        <p className="mb-2.5 font-hand text-[21px] text-brand-blue">{note}</p>
+      )}
       <h1 className="text-[clamp(30px,4.2vw,46px)] leading-[1.1] font-bold tracking-[-0.01em] text-balance">
         {title}
       </h1>
@@ -75,5 +77,14 @@ export function SectionHeading({
     >
       {children}
     </h2>
+  );
+}
+
+/** Visible placeholder for copy we don't have yet — grep `<Tbd` before launch. */
+export function Tbd({ children }: { children: ReactNode }) {
+  return (
+    <span className="rounded-[3px] border border-dashed border-rust/60 bg-rust/5 px-1.5 font-sans text-[0.85em] not-italic text-rust">
+      TBD: {children}
+    </span>
   );
 }

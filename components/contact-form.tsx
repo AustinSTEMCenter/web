@@ -97,6 +97,7 @@ export function ContactForm() {
           <option value="">pick one…</option>
           <option>Programs for my child</option>
           <option>School programs or field trips</option>
+          <option>Tour or open house</option>
           <option>Facility rental</option>
           <option>Partnership or sponsorship</option>
           <option>Volunteer, advisor, or project collaboration</option>
