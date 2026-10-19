@@ -107,7 +107,6 @@ app/                    Routes. Each folder = a URL. page.tsx is the page.
   facility-rentals/     Rental options + the rooms (formerly /facilities)
   tours/                Guided tours + open house
   _volunteer/           Volunteer page, hidden for now (folders starting with _ aren't routed)
-  build-the-future/     Unlinked event page for the Oct 18, 2026 family day
   frckickoff/           Unlinked FRC Kickoff page
   contact/              Contact page + actions.ts (server action that sends the form)
   grand-opening/        Live event board (not indexed by search engines)
@@ -158,7 +157,7 @@ Folders you may see locally that are **not** in git: `design/`, `plans/`,
 | `/grand-opening`           | `app/grand-opening/page.tsx`           | Live data from `/api/grand-opening`                 |
 | `/rsvp`                    | `next.config.ts`                       | Temporary redirect to the Luma event                |
 | `/donate`                  | `next.config.ts`                       | Redirect to the Givebutter donation page            |
-| `/build-the-future`        | `app/build-the-future/page.tsx`        | Copy inline (unlinked event page)                   |
+| `/build-the-future`        | `next.config.ts`                       | Redirect to the Givebutter donation page (event ended) |
 | `/frckickoff`              | `app/frckickoff/page.tsx`              | Copy inline (unlinked event page)                   |
 
 Site-wide details (phone, address, map link, newsletter URL, scholarship form

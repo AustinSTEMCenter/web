@@ -42,6 +42,9 @@ const nextConfig: NextConfig = {
       // Donations moved to Givebutter (2026-10); keep old /donate links working.
       { source: "/donate", destination: site.donateUrl, permanent: false },
       { source: "/donate/thank-you", destination: "/", permanent: false },
+      // Build the Future family day (2026-10-18) is over; send its flyer links to
+      // the donation page. Temporary so the path can be reused next year.
+      { source: "/build-the-future", destination: site.donateUrl, permanent: false },
     ];
   },
 };
