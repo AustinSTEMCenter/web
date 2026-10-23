@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PaperPlane } from "@/components/doodles";
 import { PageIntro } from "@/components/notebook";
-import { todayInAustin } from "@/lib/dates";
 
 export const metadata: Metadata = {
   title: "Tours & Open House",
@@ -10,15 +9,7 @@ export const metadata: Metadata = {
     "Visit the Austin STEM Center: book a guided tour of our shops, labs, and FIRST Robotics arena, or drop in at our next open house.",
 };
 
-// re-render hourly so the open house drops off once it has passed
-export const revalidate = 3600;
-
-// TODO(content): add the start/end time once leadership confirms it.
-const openHouse = { date: "2026-10-23", label: "Friday, October 23" };
-
 export default function ToursPage() {
-  const openHouseUpcoming = openHouse.date >= todayInAustin();
-
   return (
     <>
       <PageIntro
@@ -71,15 +62,9 @@ export default function ToursPage() {
             Explore the center and learn about opportunities for your child
             to build curiosity, creativity, and problem-solving skills.
           </p>
-          {openHouseUpcoming ? (
-            <p className="mt-4 font-hand text-[23px] leading-tight text-rust">
-              {openHouse.label} · free
-            </p>
-          ) : (
-            <p className="mt-4 font-hand text-[21px] text-rust">
-              next open house date coming soon
-            </p>
-          )}
+          <p className="mt-4 font-hand text-[21px] text-rust">
+            next open house date coming soon
+          </p>
         </section>
       </div>
     </>

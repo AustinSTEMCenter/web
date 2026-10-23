@@ -141,7 +141,7 @@ Folders you may see locally that are **not** in git: `design/`, `plans/`,
 | `/`                        | `app/page.tsx`                         | Copy is inline in the file                          |
 | `/about`                   | `app/about/page.tsx`                   | Copy inline; team grid from `lib/data/team.ts`      |
 | `/facility-rentals`        | `app/facility-rentals/page.tsx`        | Rental cards inline; rooms from `lib/data/facilities.ts` (`/facilities` redirects here) |
-| `/tours`                   | `app/tours/page.tsx`                   | Copy inline; open house date in the `openHouse` constant |
+| `/tours`                   | `app/tours/page.tsx`                   | Copy inline |
 | `/machines`                | `app/machines/page.tsx`                | `lib/data/machines.ts` (+ facilities for grouping)  |
 | `/machines/<slug>`         | `app/machines/[slug]/page.tsx`         | One entry in `lib/data/machines.ts`                 |
 | `/programs`                | `app/programs/page.tsx`                | `lib/data/programs.ts`                              |
