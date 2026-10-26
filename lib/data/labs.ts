@@ -15,18 +15,6 @@ export type LabSession = {
 // Sunday labs from the Fall 2026 programming calendar (October – December).
 export const labs: LabSession[] = [
   {
-    name: "Visualizing Sound",
-    slug: "visualizing-sound",
-    registerUrl: "https://givebutter.com/visualizing-sound",
-    date: "2026-11-01",
-    time: "1:00–4:00 pm",
-    ages: "Ages 13–15",
-    price: "$75",
-    capacity: 10,
-    description:
-      "What can sound show us? Students explore how vibrations create sound and how sound can be represented visually, building skills in scientific observation, pattern recognition, and creative problem-solving.",
-  },
-  {
     name: "Tinkercad 101",
     slug: "tinkercad-101",
     registerUrl: "https://givebutter.com/tinkercad-101",
