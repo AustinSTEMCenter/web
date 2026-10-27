@@ -25,12 +25,14 @@ export function SiteFooter() {
           </p>
         </div>
         <div className="text-[15px]">
+          {/* Phone hidden until someone is staffing it again.
           <p>
             <a href={site.phoneHref} className="underline decoration-brand-blue/50 underline-offset-[3px]">
               {site.phone}
             </a>
           </p>
-          <p className="mt-1 text-ink-soft">
+          */}
+          <p className="text-ink-soft">
             <a
               href={site.mapUrl}
               target="_blank"

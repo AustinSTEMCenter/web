@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Annotation, PageIntro } from "@/components/notebook";
-import { site } from "@/lib/data/site";
+// import { site } from "@/lib/data/site"; // re-enable with the phone number
 
 export const metadata: Metadata = {
   title: "Waivers & Forms",
@@ -81,8 +81,9 @@ export default function WaiversPage() {
             — not every visit.
           </li>
           <li>
-            Questions about either form? <Link href="/contact">Send us a note</Link>{" "}
-            or call <a href={site.phoneHref}>{site.phone}</a>.
+            Questions about either form? <Link href="/contact">Send us a note</Link>.
+            {/* Phone hidden until someone is staffing it again.
+            {" "}or call <a href={site.phoneHref}>{site.phone}</a>. */}
           </li>
         </ul>
         <p className="mt-8">

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact-form";
 import { PaperPlane } from "@/components/doodles";
 import { Annotation, PageIntro } from "@/components/notebook";
-import { site } from "@/lib/data/site";
+// import { site } from "@/lib/data/site"; // re-enable with the phone number
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -28,6 +28,7 @@ export default function ContactPage() {
         <ContactForm />
       </div>
 
+      {/* Phone hidden until someone is staffing it again.
       <div className="mt-12 max-w-[520px] border-t border-ink/15 pt-6">
         <p className="text-[15px] leading-relaxed text-ink-soft">
           Prefer to talk? Call{" "}
@@ -39,6 +40,7 @@ export default function ContactPage() {
           </a>{" "}
         </p>
       </div>
+      */}
 
       <div className="pt-10 pb-4">
         <Annotation>
