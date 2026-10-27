@@ -8,7 +8,7 @@ import {
   getFieldTripAvailability,
   startTimes,
 } from "@/lib/data/field-trip-availability";
-import { site } from "@/lib/data/site";
+// import { site } from "@/lib/data/site"; // re-enable with the phone number
 import { postToFormsWebhook } from "@/lib/forms-webhook";
 
 export type FieldTripState =
@@ -16,9 +16,13 @@ export type FieldTripState =
   | { status: "success"; firstName: string; when: string }
   | { status: "error"; message: string; slotUnavailable?: boolean };
 
+// Phone hidden until someone is staffing it again.
+// const fallbackMessage =
+//   `Something went wrong on our end, sorry! Give us a call at ${site.phone} ` +
+//   "and we'll get your field trip on the calendar.";
 const fallbackMessage =
-  `Something went wrong on our end, sorry! Give us a call at ${site.phone} ` +
-  "and we'll get your field trip on the calendar.";
+  "Something went wrong on our end, sorry! Please try again in a few minutes, " +
+  "or send us a note on the contact page.";
 
 export async function requestFieldTrip(
   _prev: FieldTripState,

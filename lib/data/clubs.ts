@@ -1,6 +1,22 @@
+/** Each club runs the same program twice a week, for two kinds of students. */
+export type ClubAudience = "after-school" | "homeschool";
+
+export const audiences: Record<
+  ClubAudience,
+  { label: string; who: string }
+> = {
+  "after-school": {
+    label: "After-school",
+    who: "For students in school: weekday afternoons and evenings",
+  },
+  homeschool: {
+    label: "Homeschool",
+    who: "For homeschool students: daytime, during school hours",
+  },
+};
+
 export type ClubMeeting = {
-  /** "Maker Impact Club" meets after school; "Homeschool Club" during the day */
-  group: string;
+  audience: ClubAudience;
   ages: string;
   /** usual meeting day, 0 = Sunday — dates on another day get flagged */
   weekday: number;
@@ -19,7 +35,7 @@ export type Club = {
   description: string;
   /** tools and topics, shown as tags under the description */
   tools: string[];
-  /** Givebutter event page, with a ticket for each group's dates */
+  /** Givebutter event page, with a ticket for each meeting's dates */
   registerUrl?: string;
   meetings: ClubMeeting[];
 };
@@ -39,7 +55,7 @@ export const clubs: Club[] = [
     tools: ["3D printing", "laser cutting", "makerspace tools"],
     meetings: [
       {
-        group: "Maker Impact Club",
+        audience: "after-school",
         ages: "Ages 10–13",
         weekday: 1,
         day: "Mondays",
@@ -57,7 +73,7 @@ export const clubs: Club[] = [
         ],
       },
       {
-        group: "Homeschool Club",
+        audience: "homeschool",
         ages: "Ages 13–15",
         weekday: 2,
         day: "Tuesdays",
@@ -85,7 +101,7 @@ export const clubs: Club[] = [
     tools: ["circuits", "sensors", "motors", "coding"],
     meetings: [
       {
-        group: "Maker Impact Club",
+        audience: "after-school",
         ages: "Ages 13–15",
         weekday: 4,
         day: "Thursdays",
@@ -103,7 +119,7 @@ export const clubs: Club[] = [
         ],
       },
       {
-        group: "Homeschool Club",
+        audience: "homeschool",
         ages: "Ages 10–12",
         weekday: 3,
         day: "Wednesdays",

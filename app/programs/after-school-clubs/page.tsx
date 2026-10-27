@@ -2,14 +2,19 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { PageIntro, SectionHeading } from "@/components/notebook";
-import { CLUB_CAPACITY, clubs } from "@/lib/data/clubs";
+import {
+  audiences,
+  CLUB_CAPACITY,
+  type ClubAudience,
+  clubs,
+} from "@/lib/data/clubs";
 import { getProgram } from "@/lib/data/programs";
 import { dateParts, todayInAustin, weekday } from "@/lib/dates";
 
 export const metadata: Metadata = {
-  title: "After-School STEM Clubs",
+  title: "STEM Clubs",
   description:
-    "Maker Impact Clubs at the Austin STEM Center: Design & Build and Spark & Motion, meeting after school and during the day for homeschool students. $50 a session or $150 for four.",
+    "STEM Clubs at the Austin STEM Center: Design & Build and Spark & Motion, meeting after school and during the day for homeschool students. $50 a session or $150 for four.",
 };
 
 // drop past club dates as the season goes on
@@ -18,27 +23,59 @@ export const revalidate = 3600;
 const labelClass =
   "font-sans text-[11px] font-semibold tracking-[0.12em] uppercase text-ink-soft";
 
+// after-school is blue, homeschool is purple, everywhere a meeting shows up
+const audienceStyle: Record<
+  ClubAudience,
+  { badge: string; top: string; side: string }
+> = {
+  "after-school": {
+    badge: "bg-brand-blue",
+    top: "border-t-brand-blue",
+    side: "border-l-brand-blue",
+  },
+  homeschool: {
+    badge: "bg-ring-purple",
+    top: "border-t-ring-purple",
+    side: "border-l-ring-purple",
+  },
+};
+
+function AudienceBadge({ audience }: { audience: ClubAudience }) {
+  return (
+    <span
+      className={`inline-block rounded-[3px] px-2.5 py-1 font-sans text-[12px] leading-none font-semibold tracking-[0.1em] text-paper uppercase ${audienceStyle[audience].badge}`}
+    >
+      {audiences[audience].label}
+    </span>
+  );
+}
+
 export default function AfterSchoolClubsPage() {
   const program = getProgram("after-school-clubs")!;
   const today = todayInAustin();
 
-  // one entry per weekly meeting, in weekday order, for the at-a-glance strip
-  const week = clubs
-    .flatMap((club) =>
-      club.meetings
-        .filter((m) => m.dates.some((d) => d >= today))
-        .map((m) => ({ club, meeting: m })),
-    )
-    .sort((a, b) => a.meeting.weekday - b.meeting.weekday);
+  // upcoming weekly meetings split by audience, in weekday order, for the
+  // at-a-glance strip
+  const week = (Object.keys(audiences) as ClubAudience[])
+    .map((audience) => ({
+      audience,
+      meetings: clubs
+        .flatMap((club) =>
+          club.meetings
+            .filter(
+              (m) =>
+                m.audience === audience && m.dates.some((d) => d >= today),
+            )
+            .map((m) => ({ club, meeting: m })),
+        )
+        .sort((a, b) => a.meeting.weekday - b.meeting.weekday),
+    }))
+    .filter((group) => group.meetings.length > 0);
 
   return (
     <>
       <PageIntro
-        title={
-          <>
-            After-school <span className="hl-green">STEM clubs.</span>
-          </>
-        }
+        title={<span className="hl-green">STEM clubs.</span>}
       >
         {program.about.map((p, i) => (
           <p
@@ -56,37 +93,46 @@ export default function AfterSchoolClubsPage() {
         </p>
         <SectionHeading>Pick your club.</SectionHeading>
         <p className="mt-3 max-w-[60ch] text-[17px] text-ink-soft">
-          Two clubs, each meeting weekly: after school as a Maker Impact Club
-          and during the day as a Homeschool Club. Groups are capped at{" "}
+          Two clubs, each running the same projects on two schedules: after
+          school, and during the day for homeschool students. Groups are capped at{" "}
           {CLUB_CAPACITY} students, so register at least a week before each
           session.
         </p>
 
         {/* week at a glance */}
         {week.length > 0 && (
-          <ol className="mt-8 grid grid-cols-4 gap-4 max-lg:grid-cols-2 max-sm:grid-cols-1">
-            {week.map(({ club, meeting }) => (
-              <li key={`${club.slug}-${meeting.group}`}>
-                <Link
-                  href={`#${club.slug}`}
-                  className="block h-full border border-ink/18 border-t-[3px] border-t-brand-blue bg-card px-4 pt-3 pb-3.5 shadow-[2px_3px_0_rgba(56,52,42,0.1)] transition-transform duration-150 hover:-translate-y-0.5"
-                >
-                  <p className={labelClass}>{meeting.day}</p>
-                  <p className="mt-1 text-[18px] leading-tight font-bold">
-                    {club.name}
-                  </p>
-                  <p className="font-hand text-[19px] leading-tight text-brand-blue">
-                    {meeting.group}
-                  </p>
-                  <p className="mt-2 text-[14.5px] leading-snug text-ink-soft">
-                    {meeting.time}
-                    <br />
-                    {meeting.ages}
-                  </p>
-                </Link>
-              </li>
+          <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-10 max-lg:grid-cols-1">
+            {week.map(({ audience, meetings }) => (
+              <div key={audience}>
+                <h3>
+                  <AudienceBadge audience={audience} />
+                </h3>
+                <p className="mt-2 text-[15px] italic text-ink-soft">
+                  {audiences[audience].who}
+                </p>
+                <ol className="mt-3 grid grid-cols-2 gap-4 max-sm:grid-cols-1">
+                  {meetings.map(({ club, meeting }) => (
+                    <li key={`${club.slug}-${meeting.weekday}`}>
+                      <Link
+                        href={`#${club.slug}`}
+                        className={`block h-full border border-ink/18 border-t-[3px] bg-card px-4 pt-3 pb-3.5 shadow-[2px_3px_0_rgba(56,52,42,0.1)] transition-transform duration-150 hover:-translate-y-0.5 ${audienceStyle[audience].top}`}
+                      >
+                        <p className={labelClass}>{meeting.day}</p>
+                        <p className="mt-1 text-[18px] leading-tight font-bold">
+                          {club.name}
+                        </p>
+                        <p className="mt-2 text-[14.5px] leading-snug text-ink-soft">
+                          {meeting.time}
+                          <br />
+                          {meeting.ages}
+                        </p>
+                      </Link>
+                    </li>
+                  ))}
+                </ol>
+              </div>
             ))}
-          </ol>
+          </div>
         )}
 
         <div className="mt-14 grid grid-cols-2 gap-x-10 gap-y-14 max-md:grid-cols-1">
@@ -98,7 +144,7 @@ export default function AfterSchoolClubsPage() {
             >
               <Image
                 src={club.image}
-                alt={`Maker Impact Club: ${club.name} poster`}
+                alt={`STEM Club: ${club.name} poster`}
                 width={880}
                 height={880}
                 sizes="(max-width: 768px) 100vw, 440px"
@@ -133,9 +179,12 @@ export default function AfterSchoolClubsPage() {
                     const upcoming = meeting.dates.filter((d) => d >= today);
                     return (
                       upcoming.length > 0 && (
-                        <div key={meeting.group}>
-                          <h4 className="font-hand text-[22px] leading-none text-brand-blue">
-                            {meeting.group}
+                        <div
+                          key={meeting.audience}
+                          className={`border-l-[3px] pl-4 ${audienceStyle[meeting.audience].side}`}
+                        >
+                          <h4>
+                            <AudienceBadge audience={meeting.audience} />
                           </h4>
                           <dl className="mt-3 grid grid-cols-[auto_minmax(0,1fr)] gap-x-5 gap-y-2 text-[15.5px]">
                             <dt className={`${labelClass} pt-[3px]`}>When</dt>

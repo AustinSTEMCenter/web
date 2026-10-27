@@ -8,7 +8,7 @@ import { programs } from "@/lib/data/programs";
 export const metadata: Metadata = {
   title: "Programs",
   description:
-    "Labs, summer camps, after-school STEM clubs, and field trips at the Austin STEM Center.",
+    "Labs, summer camps, STEM clubs, and field trips at the Austin STEM Center.",
 };
 
 export default function ProgramsPage() {

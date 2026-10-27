@@ -52,20 +52,20 @@ export const programs: Program[] = [
     },
   },
   {
-    title: "After-School STEM Clubs",
+    title: "STEM Clubs",
     slug: "after-school-clubs",
     href: "/programs/after-school-clubs",
     image: "/images/camps/build-a-synth-3.jpg",
     teaser:
-      "Flexible after-school enrichment focused on hands-on STEM learning.",
+      "Hands-on STEM clubs, meeting after school and during the day for homeschoolers.",
     about: [
-      "Our after-school STEM clubs give students a regular place to build, tinker, and explore beyond the school day. On scheduled club days, students take on hands-on projects across robotics, engineering, and making, guided by ASC staff in our real shops, labs, and maker spaces.",
-      "Come session by session, or save with a 4-session pack. Each club also meets during the school day for homeschool students.",
+      "Our STEM clubs give students a regular place to build, tinker, and explore. On scheduled club days, students take on hands-on projects across robotics, engineering, and making, guided by ASC staff in our real shops, labs, and maker spaces.",
+      "Each club runs twice a week with the same projects: once after school, and once during the day for homeschool students. Come session by session, or save with a 4-session pack.",
     ],
     experienceHeading: "What club members experience",
     experience: [
       "Hands-on STEM projects in ASC's maker spaces and labs",
-      "Flexible enrichment that fits after-school schedules",
+      "Flexible enrichment that fits after-school or homeschool schedules",
       "Consistent mentorship and a community of fellow makers",
       "New challenges across robotics, engineering, and design",
     ],
