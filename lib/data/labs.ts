@@ -27,15 +27,15 @@ export const labs: LabSession[] = [
       "Turn simple shapes into big ideas! Students learn the basics of 3D design in Tinkercad while practicing spatial reasoning, measurement, and the engineering process of designing and refining a model.",
   },
   {
-    name: "Cardboard Design Challenge: Build an Ornament",
-    slug: "cardboard-ornament",
+    name: "Design Challenge: Build a Mechanical Snow Globe",
+    slug: "mechanical-snow-globe",
     date: "2026-12-06",
     time: "1:00–4:00 pm",
     ages: "Ages 13–15",
     price: "$75",
     capacity: 10,
     description:
-      "Give engineering a festive twist! Students design and build a cardboard ornament, using measurement, geometry, and creative construction to test and improve their holiday designs.",
+      "Shake up a winter classic! Students design and build a snow globe that moves on its own, using gears, cranks, and simple mechanisms to bring a wintry scene to life while testing and refining their designs.",
   },
   {
     name: "Intro to Physical Computing: Holiday Edition",
