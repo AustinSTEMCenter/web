@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Annotation, PageIntro } from "@/components/notebook";
+import { Annotation, NoteCard, PageIntro } from "@/components/notebook";
 // import { site } from "@/lib/data/site"; // re-enable with the phone number
 
 export const metadata: Metadata = {
@@ -32,7 +32,7 @@ export default function WaiversPage() {
   return (
     <>
       <PageIntro note="field notes — before you build" title="Waivers and forms.">
-        <p className="mt-5 max-w-[62ch] text-[17px] leading-[1.7] text-ink-soft">
+        <p className="text-[17px] leading-[1.7] text-ink-soft">
           Anyone taking part in hands-on activities at the center needs two
           signed forms on file. Download them below, print and sign ahead of
           time, and bring them along — or fill out a paper copy at the front
@@ -69,27 +69,29 @@ export default function WaiversPage() {
         ))}
       </ul>
 
-      <div className="prose-note mt-12">
-        <h2>A few notes</h2>
-        <ul>
-          <li>
-            Austin STEM Center is a program of ATX Robotics, Inc., so both forms
-            name ATX Robotics as the legal entity.
-          </li>
-          <li>
-            Forms stay on file, so you only need to sign once per participant
-            — not every visit.
-          </li>
-          <li>
-            Questions about either form? <Link href="/contact">Send us a note</Link>.
-            {/* Phone hidden until someone is staffing it again.
-            {" "}or call <a href={site.phoneHref}>{site.phone}</a>. */}
-          </li>
-        </ul>
-        <p className="mt-8">
-          <Annotation>— sign once, build all year</Annotation>
-        </p>
-      </div>
+      <NoteCard className="mt-12 max-w-[680px] rotate-[0.3deg]">
+        <div className="prose-note">
+          <h2>A few notes</h2>
+          <ul>
+            <li>
+              Austin STEM Center is a program of ATX Robotics, Inc., so both forms
+              name ATX Robotics as the legal entity.
+            </li>
+            <li>
+              Forms stay on file, so you only need to sign once per participant
+              — not every visit.
+            </li>
+            <li>
+              Questions about either form? <Link href="/contact">Send us a note</Link>.
+              {/* Phone hidden until someone is staffing it again.
+              {" "}or call <a href={site.phoneHref}>{site.phone}</a>. */}
+            </li>
+          </ul>
+          <p className="mt-8">
+            <Annotation>— sign once, build all year</Annotation>
+          </p>
+        </div>
+      </NoteCard>
     </>
   );
 }

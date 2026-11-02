@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Atom } from "@/components/doodles";
 import {
   Annotation,
+  NoteCard,
   PageIntro,
   SectionHeading,
   Stamp,
@@ -43,7 +44,7 @@ export default function FacilityRentalsPage() {
         }
         doodle={<Atom className="h-14 rotate-12 text-ring-teal/60" />}
       >
-        <p className="mt-5 max-w-[56ch] text-[17px] text-ink-soft">
+        <p className="text-[17px] text-ink-soft">
           Austin STEM Center offers unique spaces for meetings, trainings,
           educational events, and community gatherings, all inside a working
           center for robotics, engineering, fabrication, and design.
@@ -52,19 +53,21 @@ export default function FacilityRentalsPage() {
 
       {/* the spaces */}
       <section className="pt-14">
-        <p className="mb-2 font-hand text-[21px] text-brand-blue">
-          the building
-        </p>
-        <SectionHeading>
-          Where learning <span className="hl-purple">comes to life.</span>
-        </SectionHeading>
-        <p className="mt-4 max-w-[56ch] text-[17px] text-ink-soft">
-          Austin STEM Center was designed to inspire curiosity through
-          hands-on experiences. Under one roof, learners can explore
-          robotics, engineering, fabrication, design, electronics, and more in
-          purpose-built spaces that encourage them to create, experiment,
-          and learn by doing.
-        </p>
+        <NoteCard className="max-w-[680px] rotate-[0.3deg]">
+          <p className="mb-2 font-hand text-[21px] text-brand-blue">
+            the building
+          </p>
+          <SectionHeading>
+            Where learning <span className="hl-purple">comes to life.</span>
+          </SectionHeading>
+          <p className="mt-4 text-[17px] text-ink-soft">
+            Austin STEM Center was designed to inspire curiosity through
+            hands-on experiences. Under one roof, learners can explore
+            robotics, engineering, fabrication, design, electronics, and more in
+            purpose-built spaces that encourage them to create, experiment,
+            and learn by doing.
+          </p>
+        </NoteCard>
 
         <div className="mt-14 space-y-16">
           {facilities.map((f, i) => (
@@ -94,14 +97,14 @@ export default function FacilityRentalsPage() {
                   {f.note}
                 </figcaption>
               </figure>
-              <div className={i % 2 ? "md:order-1" : ""}>
+              <NoteCard flat className={i % 2 ? "md:order-1" : ""}>
                 <h3 className="text-[24px] font-bold">{f.name}</h3>
                 <div className="prose-note mt-3 text-[16px]">
                   {f.paragraphs.map((p) => (
                     <p key={p.slice(0, 32)}>{p}</p>
                   ))}
                 </div>
-              </div>
+              </NoteCard>
             </section>
           ))}
         </div>
@@ -130,7 +133,7 @@ export default function FacilityRentalsPage() {
           ))}
         </div>
 
-        <div className="mt-10 max-w-[62ch] text-[16px] leading-[1.75]">
+        <NoteCard flat className="mt-10 max-w-[680px] text-[16px] leading-[1.75]">
           <h2 className="text-[15px] font-semibold tracking-[0.08em] uppercase text-ink-soft">
             How booking works
           </h2>
@@ -140,14 +143,13 @@ export default function FacilityRentalsPage() {
             date, group size, and the space you have in mind. We&rsquo;ll
             follow up with availability and pricing.
           </p>
-        </div>
-
-        <Link
-          href="/contact"
-          className="mt-8 inline-block rounded-[3px] bg-brand-blue px-[22px] py-3 text-[15px] text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-        >
-          Request a rental →
-        </Link>
+          <Link
+            href="/contact"
+            className="mt-6 inline-block rounded-[3px] bg-brand-blue px-[22px] py-3 text-[15px] text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+          >
+            Request a rental →
+          </Link>
+        </NoteCard>
       </section>
 
       <div className="pt-12 pb-4">

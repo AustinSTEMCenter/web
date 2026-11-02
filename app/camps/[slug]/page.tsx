@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { PageIntro, Stamp } from "@/components/notebook";
+import { NoteCard, PageIntro, Stamp } from "@/components/notebook";
 import { camps, getCamp } from "@/lib/data/camps";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -31,7 +31,9 @@ export default async function CampPage({ params }: Props) {
 
       {/* description beside the banner image */}
       <div className="mt-8 grid grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-start gap-x-12 gap-y-8 max-md:grid-cols-1">
-        <p className="max-w-[54ch] text-[17px] text-ink-soft">{camp.pitch}</p>
+        <NoteCard className="-rotate-[0.3deg]">
+          <p className="text-[17px] text-ink-soft">{camp.pitch}</p>
+        </NoteCard>
         <figure className="photo max-w-[400px] rotate-[0.9deg]">
           <Image
             src={camp.photos[0].src}
@@ -47,14 +49,16 @@ export default async function CampPage({ params }: Props) {
       {/* "what to expect" beside the at-a-glance card */}
       <div className="mt-12 grid grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-start gap-x-12 gap-y-8 max-md:grid-cols-1">
         <div>
-          <h2 className="text-[15px] font-semibold tracking-[0.08em] uppercase text-ink-soft">
-            What to expect
-          </h2>
-          <ul className="mt-3 max-w-[62ch] list-disc pl-5 text-[16px] leading-[1.9]">
-            {camp.expect.map((item) => (
-              <li key={item.slice(0, 32)}>{item}</li>
-            ))}
-          </ul>
+          <NoteCard flat>
+            <h2 className="text-[15px] font-semibold tracking-[0.08em] uppercase text-ink-soft">
+              What to expect
+            </h2>
+            <ul className="mt-3 max-w-[62ch] list-disc pl-5 text-[16px] leading-[1.9]">
+              {camp.expect.map((item) => (
+                <li key={item.slice(0, 32)}>{item}</li>
+              ))}
+            </ul>
+          </NoteCard>
 
           <div className="tape relative mt-12 max-w-[480px] -rotate-[0.5deg] border border-ink/18 bg-card px-6 pt-6 pb-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)]">
             <h3 className="text-[16px] font-bold">

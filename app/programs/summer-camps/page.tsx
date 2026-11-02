@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Annotation, PageIntro, Stamp } from "@/components/notebook";
+import { Annotation, NoteCard, PageIntro, Stamp } from "@/components/notebook";
 import { camps } from "@/lib/data/camps";
 import { getProgram } from "@/lib/data/programs";
 
@@ -28,10 +28,10 @@ export default function SummerCampsPage() {
           </>
         }
       >
-        <p className="mt-5 max-w-[54ch] text-[17px] text-ink-soft">
+        <p className="text-[17px] text-ink-soft">
           {program.about[0]}
         </p>
-        <p className="mt-4 max-w-[54ch] text-[17px] text-ink-soft">
+        <p className="mt-4 text-[17px] text-ink-soft">
           {program.about[1]}
         </p>
       </PageIntro>
@@ -72,7 +72,7 @@ export default function SummerCampsPage() {
                 {camp.ageRange.toLowerCase()} · {camp.schedule}
               </figcaption>
             </figure>
-            <div className={i % 2 ? "md:order-1" : ""}>
+            <NoteCard flat className={i % 2 ? "md:order-1" : ""}>
               <h2 className="text-[24px] font-bold">
                 <Link href={`/camps/${camp.slug}`} className="hover:underline">
                   {camp.name}
@@ -89,7 +89,7 @@ export default function SummerCampsPage() {
                   camp details →
                 </Link>
               </p>
-            </div>
+            </NoteCard>
           </section>
         ))}
       </div>

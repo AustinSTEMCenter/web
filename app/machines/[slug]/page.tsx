@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Annotation, PageIntro, Stamp } from "@/components/notebook";
+import { Annotation, NoteCard, PageIntro, Stamp } from "@/components/notebook";
 import { facilities } from "@/lib/data/facilities";
 import { getMachine, machines } from "@/lib/data/machines";
 
@@ -41,9 +41,9 @@ export default async function MachinePage({ params }: Props) {
 
       {/* what it is, beside the photo (or the tagline while photos are pending) */}
       <div className="mt-8 grid grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-start gap-x-12 gap-y-8 max-md:grid-cols-1">
-        <p className="max-w-[54ch] text-[17px] text-ink-soft">
-          {machine.whatItIs}
-        </p>
+        <NoteCard className="-rotate-[0.3deg]">
+          <p className="text-[17px] text-ink-soft">{machine.whatItIs}</p>
+        </NoteCard>
         {hero ? (
           <figure className="photo max-w-[400px] rotate-[0.9deg]">
             <Image
@@ -67,7 +67,7 @@ export default async function MachinePage({ params }: Props) {
 
       {/* what it does, beside the at-a-glance card */}
       <div className="mt-12 grid grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-start gap-x-12 gap-y-8 max-md:grid-cols-1">
-        <div>
+        <NoteCard flat>
           <h2 className="text-[15px] font-semibold tracking-[0.08em] uppercase text-ink-soft">
             What it does
           </h2>
@@ -101,7 +101,7 @@ export default async function MachinePage({ params }: Props) {
               <li key={item.slice(0, 32)}>{item}</li>
             ))}
           </ul>
-        </div>
+        </NoteCard>
 
         <div className="space-y-8">
           {machine.facts && (

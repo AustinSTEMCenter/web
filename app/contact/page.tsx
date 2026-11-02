@@ -18,7 +18,7 @@ export default function ContactPage() {
         title="Contact us."
         doodle={<PaperPlane className="h-12 -rotate-6 text-brand-blue/55" />}
       >
-        <p className="mt-5 max-w-[52ch] text-[17px] text-ink-soft">
+        <p className="text-[17px] text-ink-soft">
           Questions about programs, partnerships, or visiting the center?
           Drop us a note below and we&rsquo;ll get back to you.
         </p>

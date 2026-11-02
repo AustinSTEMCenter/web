@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { FieldTripBooking } from "@/components/field-trip-booking";
-import { SectionHeading } from "@/components/notebook";
+import { NoteCard, SectionHeading } from "@/components/notebook";
 import { ProgramPage } from "@/components/program-page";
 import { getFieldTripAvailability } from "@/lib/data/field-trip-availability";
 import { getProgram } from "@/lib/data/programs";
@@ -20,11 +20,13 @@ export default async function FieldTripsPage() {
   return (
     <ProgramPage program={getProgram("field-trips")!}>
       <section id="book" className="mt-16">
-        <SectionHeading>Plan a field trip</SectionHeading>
-        <p className="mt-3 max-w-[60ch] text-[17px] text-ink-soft">
-          Pick an open date, choose a session and start time, and tell us
-          about your group. We&rsquo;ll follow up by email to confirm.
-        </p>
+        <NoteCard flat className="max-w-[680px]">
+          <SectionHeading>Plan a field trip</SectionHeading>
+          <p className="mt-3 text-[17px] text-ink-soft">
+            Pick an open date, choose a session and start time, and tell us
+            about your group. We&rsquo;ll follow up by email to confirm.
+          </p>
+        </NoteCard>
         <FieldTripBooking availability={availability} />
       </section>
     </ProgramPage>

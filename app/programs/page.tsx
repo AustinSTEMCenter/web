@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Rocket } from "@/components/doodles";
-import { PageIntro, SectionHeading } from "@/components/notebook";
+import { NoteCard, PageIntro, SectionHeading } from "@/components/notebook";
 import { programs } from "@/lib/data/programs";
 
 export const metadata: Metadata = {
@@ -24,7 +24,7 @@ export default function ProgramsPage() {
         }
         doodle={<Rocket className="h-16 -rotate-12 text-rust/45" />}
       >
-        <div className="prose-note mt-6 max-w-[56ch] text-[17px] text-ink-soft">
+        <div className="prose-note text-[17px] text-ink-soft">
           <p>
             Every program at Austin STEM Center is designed around one simple
             belief: people learn best by doing.
@@ -96,7 +96,7 @@ export default function ProgramsPage() {
             lego donation from GASE
           </figcaption> */}
         </figure>
-        <div className="md:order-1">
+        <NoteCard className="-rotate-[0.3deg] md:order-1">
           <p className="mb-2 font-hand text-[21px] text-brand-blue">
             want to team up?
           </p>
@@ -121,7 +121,7 @@ export default function ProgramsPage() {
           >
             Contact us →
           </Link>
-        </div>
+        </NoteCard>
       </section>
     </>
   );

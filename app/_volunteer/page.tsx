@@ -49,7 +49,7 @@ export default function VolunteerPage() {
         }
         doodle={<Heart className="h-14 -rotate-6 text-rust/45" />}
       >
-        <p className="mt-5 max-w-[56ch] text-[17px] text-ink-soft">
+        <p className="max-w-[56ch] text-[17px] text-ink-soft">
           Austin STEM Center runs on people who love to make things and want
           to pass that on. Whether you have an afternoon a month or deep
           expertise in your field, there&rsquo;s a place for you here.

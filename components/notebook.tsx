@@ -32,6 +32,34 @@ export function Annotation({
   );
 }
 
+/**
+ * Card that keeps body text readable against the graph paper. Taped by default;
+ * use `flat` for repeated rows, where a strip of tape on each gets too busy.
+ */
+export function NoteCard({
+  children,
+  className = "",
+  id,
+  flat = false,
+}: {
+  children: ReactNode;
+  className?: string;
+  id?: string;
+  flat?: boolean;
+}) {
+  const variant = flat
+    ? "px-6 py-5 shadow-[2px_3px_0_rgba(56,52,42,0.1)] max-sm:px-4"
+    : "tape px-8 py-7 shadow-[4px_5px_0_rgba(56,52,42,0.12)] max-md:px-5";
+  return (
+    <div
+      id={id}
+      className={`relative border border-ink/18 bg-card [&_.prose-note>:first-child]:mt-0! [&_.prose-note>:last-child]:mb-0! ${variant} ${className}`}
+    >
+      {children}
+    </div>
+  );
+}
+
 export function PageIntro({
   note,
   title,
@@ -59,7 +87,11 @@ export function PageIntro({
       <h1 className="text-[clamp(30px,4.2vw,46px)] leading-[1.1] font-bold tracking-[-0.01em] text-balance">
         {title}
       </h1>
-      {children}
+      {children && (
+        <NoteCard className="mt-7 max-w-[680px] -rotate-[0.3deg]">
+          {children}
+        </NoteCard>
+      )}
     </header>
   );
 }
