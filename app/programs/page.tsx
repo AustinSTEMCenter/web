@@ -8,7 +8,7 @@ import { programs } from "@/lib/data/programs";
 export const metadata: Metadata = {
   title: "Programs",
   description:
-    "Labs, summer camps, STEM clubs, and field trips at the Austin STEM Center.",
+    "Labs, summer camps, STEM clubs, field trips, and the Howdy Bots robotics team at the Austin STEM Center.",
 };
 
 export default function ProgramsPage() {
@@ -45,7 +45,7 @@ export default function ProgramsPage() {
         </div>
       </PageIntro>
 
-      <div className="mt-14 grid grid-cols-4 gap-6 max-lg:grid-cols-2 max-sm:grid-cols-1 max-sm:gap-y-10">
+      <div className="mt-14 grid grid-cols-3 gap-6 max-lg:grid-cols-2 max-sm:grid-cols-1 max-sm:gap-y-10">
         {programs.map((p, i) => (
           <Link
             key={p.slug}

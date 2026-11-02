@@ -136,7 +136,8 @@ export default function Home() {
             moves, so the card can't slide out from under the cursor and
             flicker; origin-top pivots it around the tape */}
         <div className="mt-10 grid grid-cols-2 gap-7 max-md:grid-cols-1 max-md:gap-y-10">
-          {programs.map((p, i) => (
+          {/* Howdy Bots stays on /programs so this grid keeps its even rows */}
+          {programs.filter((p) => p.slug !== "howdy-bots").map((p, i) => (
             <Link key={p.slug} href={p.href} className="group block">
               <div
                 className={`tape relative flex h-full origin-top flex-col border border-ink/18 bg-card p-4 pb-3.5 shadow-[3px_4px_0_rgba(56,52,42,0.12)] transition-transform duration-200 ease-out group-hover:-translate-y-1 group-hover:rotate-0 ${

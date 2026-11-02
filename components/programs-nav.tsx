@@ -8,6 +8,7 @@ const tabs = [
   { label: "clubs", href: "/programs/after-school-clubs" },
   { label: "field trips", href: "/programs/field-trips" },
   { label: "camps", href: "/programs/summer-camps" },
+  { label: "howdy bots", href: "/programs/howdy-bots" },
 ];
 
 /** Index tabs shared by every /programs page, so you can hop between them. */
