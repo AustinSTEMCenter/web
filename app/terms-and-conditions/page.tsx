@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageIntro } from "@/components/notebook";
+import { NoteCard, PageIntro } from "@/components/notebook";
 import { getLegalPage } from "@/lib/data/posts";
 
 export const metadata: Metadata = {
@@ -12,10 +12,12 @@ export default function TermsPage() {
   return (
     <>
       <PageIntro note="field notes — the fine print" title="Terms and conditions." />
-      <div
-        className="prose-note mt-8"
-        dangerouslySetInnerHTML={{ __html: page.html }}
-      />
+      <NoteCard className="mt-8 max-w-[760px]">
+        <div
+          className="prose-note"
+          dangerouslySetInnerHTML={{ __html: page.html }}
+        />
+      </NoteCard>
     </>
   );
 }
