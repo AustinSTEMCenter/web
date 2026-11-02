@@ -4,6 +4,49 @@ export type TeamMember = {
   image?: string;
 };
 
+export const boardOfDirectors: TeamMember[] = [
+  {
+    name: "Chirag Dhruv",
+    title: "President",
+    image: "/images/team/board/chirag-dhruv.jpg",
+  },
+  {
+    name: "Evan Marchman",
+    title: "Treasurer",
+    image: "/images/team/board/evan-marchman.jpg",
+  },
+  {
+    name: "Oscar Fonseca",
+    title: "Secretary",
+    image: "/images/team/board/oscar-fonseca.jpg",
+  },
+  {
+    name: "Scott Brondel",
+    title: "Board Member",
+    image: "/images/team/board/scott-brondel.jpg",
+  },
+  {
+    name: "Peter Anzalone",
+    title: "Board Member",
+    image: "/images/team/board/peter-anzalone.jpg",
+  },
+  {
+    name: "Amanda Merced",
+    title: "Board Member",
+    image: "/images/team/board/amanda-merced.jpg",
+  },
+  {
+    name: "Andre Espada",
+    title: "Board Member",
+    image: "/images/team/board/andre-espada.jpg",
+  },
+  {
+    name: "Leah Silen",
+    title: "Board Member, Executive Director of Austin STEM Center",
+    image: "/images/team/leah-silen.jpg",
+  },
+];
+
 export const teamGroups: { group: string; members: TeamMember[] }[] = [
   {
     group: "Leadership",
