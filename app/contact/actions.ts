@@ -1,6 +1,6 @@
 "use server";
 
-import { site } from "@/lib/data/site";
+// import { site } from "@/lib/data/site"; // re-enable with the phone number
 import { postToFormsWebhook } from "@/lib/forms-webhook";
 
 export type ContactState =
@@ -8,9 +8,12 @@ export type ContactState =
   | { status: "success"; firstName: string }
   | { status: "error"; message: string };
 
+// Phone hidden until someone is staffing it again.
+// const fallbackMessage =
+//   `Something went wrong on our end, sorry! Give us a call at ${site.phone} ` +
+//   "and we'll help you out the old-fashioned way.";
 const fallbackMessage =
-  `Something went wrong on our end, sorry! Give us a call at ${site.phone} ` +
-  "and we'll help you out the old-fashioned way.";
+  "Something went wrong on our end, sorry! Please try again in a few minutes.";
 
 export async function submitContact(
   _prev: ContactState,
@@ -39,6 +42,7 @@ export async function submitContact(
     firstName,
     lastName: get("lastName"),
     email,
+    organization: get("organization"),
     phone: get("phone"),
     topic: get("topic"),
     source: get("source"),
@@ -49,7 +53,7 @@ export async function submitContact(
   try {
     await postToFormsWebhook(payload);
   } catch (err) {
-    console.error("Contact webhook failed:", err, payload);
+    console.error("Contact webhook failed:", err);
     return { status: "error", message: fallbackMessage };
   }
 

@@ -79,3 +79,12 @@ export function SectionHeading({
     </h2>
   );
 }
+
+/** Visible placeholder for copy we don't have yet — grep `<Tbd` before launch. */
+export function Tbd({ children }: { children: ReactNode }) {
+  return (
+    <span className="rounded-[3px] border border-dashed border-rust/60 bg-rust/5 px-1.5 font-sans text-[0.85em] not-italic text-rust">
+      TBD: {children}
+    </span>
+  );
+}

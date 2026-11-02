@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { site } from "./lib/data/site";
 
 // 301 map from the old WordPress URLs — see plans/website-plan-02.md §9.2.
 // WP-cruft catch-alls (/tag/*, /wp-content/*, feeds, …) get added at cutover.
@@ -33,6 +34,17 @@ const nextConfig: NextConfig = {
       // Grand-opening RSVPs live on Luma now; temporary so /rsvp can be
       // repurposed or dropped after the event.
       { source: "/rsvp", destination: "https://luma.com/w5ay1e1w", permanent: false },
+      // Facilities folded into Facility Rentals (2026-10). Temporary until the
+      // new nav settles; flip to permanent once it's final.
+      { source: "/facilities", destination: "/facility-rentals", permanent: false },
+      // Classes were renamed Labs (2026-10); keep shared /programs/classes links working.
+      { source: "/programs/classes", destination: "/programs/labs", permanent: false },
+      // Donations moved to Givebutter (2026-10); keep old /donate links working.
+      { source: "/donate", destination: site.donateUrl, permanent: false },
+      { source: "/donate/thank-you", destination: "/", permanent: false },
+      // Build the Future family day (2026-10-18) is over; send its flyer links to
+      // the donation page. Temporary so the path can be reused next year.
+      { source: "/build-the-future", destination: site.donateUrl, permanent: false },
     ];
   },
 };

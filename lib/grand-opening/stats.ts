@@ -16,10 +16,8 @@
  *                                count (unset = all charges on the account)
  *
  * Scope note: the Stripe total is every succeeded USD charge on the account
- * (optionally since the cutoff), net of refunds. Today the account only takes donations
- * via the /donate Buy Button, so that equals "donations raised"; if the
- * account ever takes other payments (camp registrations, Phase 2), narrow
- * this to Checkout Sessions filtered by the donation payment link.
+ * (optionally since the cutoff), net of refunds. Donations moved to Givebutter
+ * in Oct 2026, so this total no longer includes new gifts made through the site.
  */
 
 export type SourceResult<T> =

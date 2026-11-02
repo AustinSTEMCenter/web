@@ -39,7 +39,7 @@ body {
   background-size: 26px 26px;
 }
 
-/* keep anchored sections (e.g. /facilities#wood-shop) clear of the header */
+/* keep anchored sections (e.g. /facility-rentals#wood-shop) clear of the header */
 [id] {
   scroll-margin-top: 96px;
 }

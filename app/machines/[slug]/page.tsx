@@ -119,7 +119,7 @@ export default async function MachinePage({ params }: Props) {
                 <p className="mt-4 font-hand text-[19px] text-brand-blue">
                   you&apos;ll find it in the{" "}
                   <Link
-                    href={`/facilities#${room.slug}`}
+                    href={`/facility-rentals#${room.slug}`}
                     className="underline"
                   >
                     {room.name.toLowerCase()}

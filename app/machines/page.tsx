@@ -45,26 +45,32 @@ export default function MachinesPage() {
               {machines
                 .filter((m) => m.facility === room.slug)
                 .map((m, i) => (
+                  // still Link as hover target, moving inner card — see the
+                  // homepage program cards
                   <Link
                     key={m.slug}
                     href={`/machines/${m.slug}`}
-                    className={`tape group relative block border border-ink/18 bg-card px-6 pt-6 pb-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)] transition-transform hover:-translate-y-0.5 ${i % 2 ? "rotate-[0.6deg]" : "-rotate-[0.5deg]"}`}
+                    className="group block"
                   >
-                    <p className="text-[12px] font-semibold tracking-[0.14em] uppercase text-ink-soft">
-                      {m.kind}
-                    </p>
-                    <h3 className="mt-1 text-[19px] font-bold group-hover:underline">
-                      {m.name}
-                    </h3>
-                    <p className="mt-1 font-hand text-[20px] text-brand-blue">
-                      {m.tagline}
-                    </p>
-                    <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
-                      {m.whatItIs}
-                    </p>
-                    <p className="mt-3 text-[14px] font-semibold text-brand-blue">
-                      read the field notes →
-                    </p>
+                    <div
+                      className={`tape relative h-full origin-top border border-ink/18 bg-card px-6 pt-6 pb-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)] transition-transform group-hover:-translate-y-0.5 ${i % 2 ? "rotate-[0.6deg]" : "-rotate-[0.5deg]"}`}
+                    >
+                      <p className="text-[12px] font-semibold tracking-[0.14em] uppercase text-ink-soft">
+                        {m.kind}
+                      </p>
+                      <h3 className="mt-1 text-[19px] font-bold group-hover:underline">
+                        {m.name}
+                      </h3>
+                      <p className="mt-1 font-hand text-[20px] text-brand-blue">
+                        {m.tagline}
+                      </p>
+                      <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
+                        {m.whatItIs}
+                      </p>
+                      <p className="mt-3 text-[14px] font-semibold text-brand-blue">
+                        read the field notes →
+                      </p>
+                    </div>
                   </Link>
                 ))}
             </div>

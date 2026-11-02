@@ -16,12 +16,11 @@ export default function SummerCampsPage() {
 
   return (
     <>
-      <Stamp className="absolute top-[46px] right-5 z-10 rotate-[7deg] max-md:static max-md:mt-5 max-md:-rotate-2 max-md:px-2 max-md:py-1 max-md:text-[10px]">
+      <Stamp className="absolute top-0 right-5 z-10 rotate-[7deg] max-md:static max-md:mt-5 max-md:-rotate-2 max-md:px-2 max-md:py-1 max-md:text-[10px]">
         Summer 2026 · logged
       </Stamp>
 
       <PageIntro
-        note="field notes — camps"
         title={
           <>
             Camps where <span className="hl-green">real things</span> get
