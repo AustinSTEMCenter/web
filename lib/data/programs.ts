@@ -153,6 +153,25 @@ export const programs: Program[] = [
       "A supportive environment that values curiosity and creativity",
     ],
   },
+  {
+    title: "Howdy Bots",
+    slug: "howdy-bots",
+    href: "/programs/howdy-bots",
+    image: "/images/facilities/first-arena.jpg",
+    teaser:
+      "Our FIRST Robotics Competition team, providing students ages 13–18 with hands-on engineering and business experience.",
+    about: [
+      "We are a co-ed community robotics team comprised of 13 to 18-year-olds from Austin, TX that participates in FRC (FIRST Robotics Competition).",
+      "We have a passion for STEM education, and we love sharing it with everyone we can in our community. Our mentors are professional engineers, business leaders, and Howdy Bot alumni.",
+    ],
+    experienceHeading: "What team members experience",
+    experience: [
+      "Competing as FRC Team 6377 in the FIRST Robotics Competition",
+      "Hands-on engineering and business experience",
+      "Mentorship from professional engineers, business leaders, and Howdy Bot alumni",
+      "A team open to students who are homeschooled, non-traditionally enrolled, or attend schools without a team",
+    ],
+  },
 ];
 
 export const getProgram = (slug: string) =>
