@@ -27,7 +27,7 @@ export default function MachinesPage() {
         }
         doodle={<Gear className="h-14 rotate-12 text-ring-teal/60" />}
       >
-        <p className="mt-5 max-w-[56ch] text-[17px] text-ink-soft">
+        <p className="text-[17px] text-ink-soft">
           Every machine in our shop has a story: what it is, how it works,
           and what you can make with it. Scan the plaque next to any machine
           and it lands you right here — or browse the whole lineup below.

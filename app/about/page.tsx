@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Lightbulb } from "@/components/doodles";
-import { Annotation, PageIntro, SectionHeading } from "@/components/notebook";
+import {
+  Annotation,
+  NoteCard,
+  PageIntro,
+  SectionHeading,
+} from "@/components/notebook";
 import { site } from "@/lib/data/site";
 import { teamGroups } from "@/lib/data/team";
 
@@ -24,7 +29,7 @@ export default function AboutPage() {
         }
         doodle={<Lightbulb className="h-16 rotate-6 text-gold/70" />}
       >
-        <div className="prose-note mt-6">
+        <div className="prose-note">
           <p>
             Austin STEM Center (ASC) is a nonprofit STEM education and innovation hub 
             dedicated to making STEM accessible, exciting, and hands-on for learners of all ages.
@@ -65,77 +70,84 @@ export default function AboutPage() {
 
       {/* team */}
       <section className="pt-20">
-        <p className="mb-2 font-hand text-[21px] text-brand-blue">the crew</p>
-        <SectionHeading>Meet the team.</SectionHeading>
-        {teamGroups.map(({ group, members }) => (
-          <div key={group} className="mx-auto max-w-[820px] pt-14 text-center">
-            <h3 className="text-[15px] font-semibold italic text-ink-soft">
-              {group}
-            </h3>
-            {members.some((m) => m.image) ? (
-              <div className="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-9 sm:gap-x-24 sm:gap-y-12">
-                {members.map((m) => (
-                  <div key={m.name} className="w-[140px] sm:w-[180px]">
-                    {m.image && (
-                      <Image
-                        src={m.image}
-                        alt={m.name}
-                        width={270}
-                        height={300}
-                        className="aspect-[9/10] w-full object-cover object-top border border-ink/10"
-                      />
-                    )}
-                    <p className="mt-3 text-[16px] leading-tight font-bold">
-                      {m.name}
-                    </p>
-                    <p className="mt-1 text-[13px] leading-snug italic text-ink-soft">
-                      {m.title}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <p className="mt-4 flex flex-wrap justify-center gap-x-8 gap-y-1.5 text-[16px]">
-                {members.map((m) => (
-                  <span key={m.name}>
-                    <b className="font-bold">{m.name}</b>
-                    <span className="italic text-ink-soft"> · {m.title}</span>
-                  </span>
-                ))}
-              </p>
-            )}
-          </div>
-        ))}
+        <NoteCard>
+          <p className="mb-2 font-hand text-[21px] text-brand-blue">the crew</p>
+          <SectionHeading>Meet the team.</SectionHeading>
+          {teamGroups.map(({ group, members }) => (
+            <div key={group} className="mx-auto max-w-[820px] pt-14 text-center">
+              <h3 className="text-[15px] font-semibold italic text-ink-soft">
+                {group}
+              </h3>
+              {members.some((m) => m.image) ? (
+                <div className="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-9 sm:gap-x-24 sm:gap-y-12">
+                  {members.map((m) => (
+                    <div
+                      key={m.name}
+                      className="w-[calc(50%-11px)] max-w-[140px] sm:w-[180px] sm:max-w-none"
+                    >
+                      {m.image && (
+                        <Image
+                          src={m.image}
+                          alt={m.name}
+                          width={270}
+                          height={300}
+                          className="aspect-[9/10] w-full object-cover object-top border border-ink/10"
+                        />
+                      )}
+                      <p className="mt-3 text-[16px] leading-tight font-bold">
+                        {m.name}
+                      </p>
+                      <p className="mt-1 text-[13px] leading-snug italic text-ink-soft">
+                        {m.title}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p className="mt-4 flex flex-wrap justify-center gap-x-8 gap-y-1.5 text-[16px]">
+                  {members.map((m) => (
+                    <span key={m.name}>
+                      <b className="font-bold">{m.name}</b>
+                      <span className="italic text-ink-soft"> · {m.title}</span>
+                    </span>
+                  ))}
+                </p>
+              )}
+            </div>
+          ))}
+        </NoteCard>
       </section>
 
       {/* history */}
       <section className="pt-20">
-        <p className="mb-2 font-hand text-[21px] text-brand-blue">
-          how it started
-        </p>
-        <SectionHeading>The history of the Austin STEM Center.</SectionHeading>
-        <div className="prose-note mt-6">
-          <p>
-          Austin STEM Center&rsquo;s history began with ATX Robotics, Inc., a nonprofit organization 
-          founded by Evan Marchman to expand access to robotics, engineering, and hands-on STEAM 
-          education. In 2025, Evan met Peter Wang and Ken Hawthorn, who shared a vision: to create 
-          a place where students could truly experience STEM through hands-on learning, innovation, 
-          and real-world opportunity. Each founder brought different skills, experience, and perspective 
-          to the table, along with foundational support and investment from Peter Wang.
+        <NoteCard className="max-w-[720px] rotate-[0.3deg]">
+          <p className="mb-2 font-hand text-[21px] text-brand-blue">
+            how it started
           </p>
-          <p>
-          Within just a few short months, ATX Robotics, Inc., d/b/a Austin STEM Center was created. 
-          A building was secured, an incredible team was assembled, and ASC began building programs 
-          designed to ignite curiosity, creativity, and confidence in students of all backgrounds.
-          </p>
-          <p>
-          Today, Austin STEM Center exists to inspire the next generation of innovators, problem-solvers, 
-          engineers, and leaders by making STEM education accessible, engaging, and impactful for the community.
-          </p>
-        </div>
-        <Annotation className="mt-4">
-          ↳ zero to open doors in a few short months!
-        </Annotation>
+          <SectionHeading>The history of the Austin STEM Center.</SectionHeading>
+          <div className="prose-note mt-6">
+            <p>
+            Austin STEM Center&rsquo;s history began with ATX Robotics, Inc., a nonprofit organization 
+            founded by Evan Marchman to expand access to robotics, engineering, and hands-on STEAM 
+            education. In 2025, Evan met Peter Wang and Ken Hawthorn, who shared a vision: to create 
+            a place where students could truly experience STEM through hands-on learning, innovation, 
+            and real-world opportunity. Each founder brought different skills, experience, and perspective 
+            to the table, along with foundational support and investment from Peter Wang.
+            </p>
+            <p>
+            Within just a few short months, ATX Robotics, Inc., d/b/a Austin STEM Center was created. 
+            A building was secured, an incredible team was assembled, and ASC began building programs 
+            designed to ignite curiosity, creativity, and confidence in students of all backgrounds.
+            </p>
+            <p>
+            Today, Austin STEM Center exists to inspire the next generation of innovators, problem-solvers, 
+            engineers, and leaders by making STEM education accessible, engaging, and impactful for the community.
+            </p>
+          </div>
+          <Annotation className="mt-4">
+            ↳ zero to open doors in a few short months!
+          </Annotation>
+        </NoteCard>
       </section>
 
       {/* donate */}

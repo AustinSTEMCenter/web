@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Gear, PaperPlane } from "@/components/doodles";
-import { Annotation, SectionHeading, Stamp } from "@/components/notebook";
+import { Annotation, NoteCard, SectionHeading, Stamp } from "@/components/notebook";
 import { camps } from "@/lib/data/camps";
 import { facilities } from "@/lib/data/facilities";
 import { programs } from "@/lib/data/programs";
@@ -175,37 +175,39 @@ export default function Home() {
       </section>
 
       {/* facilities */}
-      <section className="relative pt-24">
-        <span
-          aria-hidden
-          className="pointer-events-none absolute top-24 right-10 hidden md:block"
-        >
-          <Gear className="h-12 rotate-12 text-ink/25" />
-        </span>
-        <p className="mb-2 font-hand text-[21px] text-brand-blue">the space</p>
-        <SectionHeading>Where Learning Comes to Life</SectionHeading>
-        <p className="mt-4 max-w-[56ch] text-[17px] text-ink-soft">
-        Austin STEM Center was designed to inspire curiosity through
-          hands-on experiences. Under one roof, learners can explore
-          robotics, engineering, fabrication, design, electronics, and more in
-          purpose-built spaces that encourage them to create, experiment,
-          and learn by doing.
-        </p>
-        <ul className="mt-6 flex flex-wrap gap-x-2.5 gap-y-3">
-          {facilities.map(({ name, slug }, i) => (
-            <li key={slug}>
-              <Link
-                href={`/facility-rentals#${slug}`}
-                className={`inline-block rounded-[3px] border border-ink/25 border-l-[3px] bg-card px-3 py-1.5 text-[14px] italic shadow-[2px_2px_0_rgba(56,52,42,0.08)] transition-transform duration-150 hover:-translate-y-0.5 ${chipAccents[i % chipAccents.length]}`}
-              >
-                {name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <Annotation className="mt-6">
-          ↳ {camps.length} summer camps ran here this year · <Link href="/programs/summer-camps" className="underline">see what we ran</Link>
-        </Annotation>
+      <section className="pt-24">
+        <NoteCard className="-rotate-[0.3deg]">
+          <span
+            aria-hidden
+            className="pointer-events-none absolute top-6 right-8 hidden md:block"
+          >
+            <Gear className="h-12 rotate-12 text-ink/25" />
+          </span>
+          <p className="mb-2 font-hand text-[21px] text-brand-blue">the space</p>
+          <SectionHeading>Where Learning Comes to Life</SectionHeading>
+          <p className="mt-4 max-w-[56ch] text-[17px] text-ink-soft">
+          Austin STEM Center was designed to inspire curiosity through
+            hands-on experiences. Under one roof, learners can explore
+            robotics, engineering, fabrication, design, electronics, and more in
+            purpose-built spaces that encourage them to create, experiment,
+            and learn by doing.
+          </p>
+          <ul className="mt-6 flex flex-wrap gap-x-2.5 gap-y-3">
+            {facilities.map(({ name, slug }, i) => (
+              <li key={slug}>
+                <Link
+                  href={`/facility-rentals#${slug}`}
+                  className={`inline-block rounded-[3px] border border-ink/25 border-l-[3px] bg-card px-3 py-1.5 text-[14px] italic shadow-[2px_2px_0_rgba(56,52,42,0.08)] transition-transform duration-150 hover:-translate-y-0.5 ${chipAccents[i % chipAccents.length]}`}
+                >
+                  {name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <Annotation className="mt-6">
+            ↳ {camps.length} summer camps ran here this year · <Link href="/programs/summer-camps" className="underline">see what we ran</Link>
+          </Annotation>
+        </NoteCard>
       </section>
 
       {/* newsletter */}

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { PageIntro } from "@/components/notebook";
+import { NoteCard, PageIntro } from "@/components/notebook";
 import type { Program } from "@/lib/data/programs";
 
 const subheadClass =
@@ -21,6 +21,7 @@ export function ProgramPage({
 }) {
   const about = (
     <>
+      <p className="mb-6 text-[17px] text-ink-soft">{program.teaser}</p>
       <h2 className={subheadClass}>About this program</h2>
       <div className="prose-note mt-3 [&>p:last-child]:mb-0!">
         {program.about.map((p) => (
@@ -111,16 +112,12 @@ export function ProgramPage({
 
   return (
     <>
-      <PageIntro title={program.title}>
-        <p className="mt-5 max-w-[52ch] text-[17px] text-ink-soft">
-          {program.teaser}
-        </p>
-      </PageIntro>
+      <PageIntro title={program.title} />
 
       {children ? (
         <>
           <div className={`mt-12 ${gridClass}`}>
-            <div>{about}</div>
+            <NoteCard className="-rotate-[0.3deg]">{about}</NoteCard>
             <div className="max-md:order-first">{photo}</div>
           </div>
           {children}
@@ -130,10 +127,10 @@ export function ProgramPage({
         </>
       ) : (
         <div className={`mt-12 ${gridClass}`}>
-          <div>
+          <NoteCard className="-rotate-[0.3deg]">
             {about}
             <div className="mt-10">{details}</div>
-          </div>
+          </NoteCard>
           <div className="max-md:order-first">
             {photo}
             {inquiryCard && <div className="mt-12">{inquiryCard}</div>}

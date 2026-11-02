@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SectionHeading } from "@/components/notebook";
+import { NoteCard, SectionHeading } from "@/components/notebook";
 import { ProgramPage } from "@/components/program-page";
 import { labs } from "@/lib/data/labs";
 import { getProgram } from "@/lib/data/programs";
@@ -79,20 +79,24 @@ export default function LabsPage() {
             })}
           </div>
         ) : (
-          <p className="mt-3 max-w-[60ch] text-[17px] text-ink-soft">
-            New labs are on the way. Get in touch and we&rsquo;ll let you
-            know when the next ones are scheduled.
-          </p>
+          <NoteCard flat className="mt-5 max-w-[760px]">
+            <p className="text-[17px] text-ink-soft">
+              New labs are on the way. Get in touch and we&rsquo;ll let you
+              know when the next ones are scheduled.
+            </p>
+          </NoteCard>
         )}
-        <p className="mt-6 text-[16px]">
-          Registration and payment happen on Givebutter. Questions first?{" "}
-          <Link
-            href="/contact"
-            className="italic text-brand-blue underline decoration-brand-blue/50 underline-offset-[3px]"
-          >
-            Get in touch →
-          </Link>
-        </p>
+        <NoteCard flat className="mt-5 max-w-[760px]">
+          <p className="text-[16px]">
+            Registration and payment happen on Givebutter. Questions first?{" "}
+            <Link
+              href="/contact"
+              className="italic text-brand-blue underline decoration-brand-blue/50 underline-offset-[3px]"
+            >
+              Get in touch →
+            </Link>
+          </p>
+        </NoteCard>
       </section>
     </ProgramPage>
   );

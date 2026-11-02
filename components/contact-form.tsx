@@ -32,7 +32,10 @@ export function ContactForm() {
   }
 
   return (
-    <form action={formAction} className="relative max-w-[520px]">
+    <form
+      action={formAction}
+      className="tape relative max-w-[560px] border border-ink/18 bg-card px-7 pt-8 pb-7 shadow-[3px_4px_0_rgba(56,52,42,0.12)] max-md:px-5"
+    >
       {/* honeypot — hidden from people, tempting to bots */}
       <div aria-hidden="true" className="absolute -left-[9999px] top-0">
         <label>

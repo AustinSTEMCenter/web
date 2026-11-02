@@ -11,10 +11,10 @@ export default function FrcKickoffPage() {
   return (
     <>
       <PageIntro note="field notes — coming soon" title="FRC Kickoff.">
-        <p className="mt-5 max-w-[62ch] text-[17px] leading-[1.7] text-ink-soft">
+        <p className="text-[17px] leading-[1.7] text-ink-soft">
           Join us for the 2027 Austin area FRC Kickoff on January 9!
         </p>
-        <p className="mt-4 max-w-[62ch] text-[17px] leading-[1.7] text-ink-soft">
+        <p className="mt-4 text-[17px] leading-[1.7] text-ink-soft">
           More details will be posted here as they are available.
         </p>
       </PageIntro>

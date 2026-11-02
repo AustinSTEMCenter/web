@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { PageIntro, SectionHeading } from "@/components/notebook";
+import { NoteCard, PageIntro, SectionHeading } from "@/components/notebook";
 import {
   audiences,
   CLUB_CAPACITY,
@@ -80,7 +80,7 @@ export default function AfterSchoolClubsPage() {
         {program.about.map((p, i) => (
           <p
             key={p.slice(0, 32)}
-            className={`${i ? "mt-4" : "mt-5"} max-w-[56ch] text-[17px] text-ink-soft`}
+            className={`${i ? "mt-4" : ""} text-[17px] text-ink-soft`}
           >
             {p}
           </p>
@@ -88,22 +88,24 @@ export default function AfterSchoolClubsPage() {
       </PageIntro>
 
       <section className="pt-14">
-        <p className="mb-2 font-hand text-[21px] text-brand-blue">
-          fall 2026 schedule
-        </p>
-        <SectionHeading>Pick your club.</SectionHeading>
-        <p className="mt-3 max-w-[60ch] text-[17px] text-ink-soft">
-          Two clubs, each running the same projects on two schedules: after
-          school, and during the day for homeschool students. Groups are capped at{" "}
-          {CLUB_CAPACITY} students, so register at least a week before each
-          session.
-        </p>
+        <NoteCard className="max-w-[680px] rotate-[0.3deg]">
+          <p className="mb-2 font-hand text-[21px] text-brand-blue">
+            fall 2026 schedule
+          </p>
+          <SectionHeading>Pick your club.</SectionHeading>
+          <p className="mt-3 text-[17px] text-ink-soft">
+            Two clubs, each running the same projects on two schedules: after
+            school, and during the day for homeschool students. Groups are capped at{" "}
+            {CLUB_CAPACITY} students, so register at least a week before each
+            session.
+          </p>
+        </NoteCard>
 
         {/* week at a glance */}
         {week.length > 0 && (
           <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-10 max-lg:grid-cols-1">
             {week.map(({ audience, meetings }) => (
-              <div key={audience}>
+              <NoteCard flat key={audience}>
                 <h3>
                   <AudienceBadge audience={audience} />
                 </h3>
@@ -130,7 +132,7 @@ export default function AfterSchoolClubsPage() {
                     </li>
                   ))}
                 </ol>
-              </div>
+              </NoteCard>
             ))}
           </div>
         )}
@@ -245,7 +247,7 @@ export default function AfterSchoolClubsPage() {
       </section>
 
       <div className="mt-20 grid grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-start gap-x-12 gap-y-12 max-md:grid-cols-1">
-        <div>
+        <NoteCard className="-rotate-[0.3deg]">
           {program.pricing && (
             <>
               <h2 className="text-[15px] font-semibold tracking-[0.08em] uppercase text-ink-soft">
@@ -277,7 +279,7 @@ export default function AfterSchoolClubsPage() {
               <li key={item.slice(0, 32)}>{item}</li>
             ))}
           </ul>
-        </div>
+        </NoteCard>
 
         <div className="tape relative max-w-[380px] -rotate-[0.7deg] border border-ink/18 bg-card px-6 pt-6 pb-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)] max-md:mx-auto">
           <h3 className="text-[17px] font-bold">{program.inquiry}</h3>

@@ -21,7 +21,7 @@ export default function ToursPage() {
         }
         doodle={<PaperPlane className="h-11 -rotate-6 text-brand-blue/50" />}
       >
-        <p className="mt-5 max-w-[56ch] text-[17px] text-ink-soft">
+        <p className="text-[17px] text-ink-soft">
           The best way to understand Austin STEM Center is to walk through
           it. See the FIRST Robotics arena, the wood and machine shops, the
           electronics lab, and the makerspace, and meet the people who run
