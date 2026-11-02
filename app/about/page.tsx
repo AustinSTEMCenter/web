@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { Lightbulb } from "@/components/doodles";
 import {
   Annotation,
@@ -14,7 +13,7 @@ import { teamGroups } from "@/lib/data/team";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Austin STEM Center is a nonprofit innovation hub partnered with ATX Robotics Inc., bringing schools, companies, and communities together to grow real talent and solve real problems.",
+    "Austin STEM Center is a nonprofit innovation hub and a program of ATX Robotics, Inc., bringing schools, companies, and communities together to grow real talent and solve real problems.",
 };
 
 export default function AboutPage() {

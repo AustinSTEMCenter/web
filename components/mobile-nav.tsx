@@ -50,8 +50,9 @@ export function MobileNav() {
             id="mobile-menu"
             className="tape absolute inset-x-0 top-full z-50 mt-4 -rotate-[0.4deg] animate-[menu-in_160ms_ease-out] border border-ink/18 bg-card px-6 pt-5 pb-4 shadow-[3px_4px_0_rgba(56,52,42,0.18)]"
           >
-            <ul className="divide-y divide-ink/10">
-              {navLinks.map(({ label, href }) => (
+            {/* scroll here, not on the panel, so the tape strip isn't clipped */}
+            <ul className="max-h-[calc(100dvh-11rem)] divide-y divide-ink/10 overflow-y-auto">
+              {navLinks.map(({ label, href, children }) => (
                 <li key={href}>
                   <Link
                     href={href}
@@ -60,6 +61,21 @@ export function MobileNav() {
                   >
                     {label}
                   </Link>
+                  {children && (
+                    <ul className="-mt-1 pb-2 pl-4">
+                      {children.map((child) => (
+                        <li key={child.href}>
+                          <Link
+                            href={child.href}
+                            onClick={() => setOpen(false)}
+                            className="block py-2 text-[15px] italic underline decoration-brand-blue/50 underline-offset-[3px]"
+                          >
+                            {child.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </li>
               ))}
               <li>

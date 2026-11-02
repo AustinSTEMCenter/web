@@ -44,7 +44,7 @@ export function SiteFooter() {
               {site.address.cityStateZip}
             </a>
           </p>
-          <p className="mt-4 flex flex-wrap gap-x-4 gap-y-1 italic">
+          <p className="mt-4 flex gap-4 italic">
             <Link href="/privacy-policy" className="underline decoration-brand-blue/50 underline-offset-[3px]">
               privacy
             </Link>
@@ -57,9 +57,6 @@ export function SiteFooter() {
             <a href={site.donateUrl} className="underline decoration-brand-blue/50 underline-offset-[3px]">
               donate
             </a>
-            <Link href="/about/atx-robotics" className="underline decoration-brand-blue/50 underline-offset-[3px]">
-              atx robotics
-            </Link>
             <a
               href={site.newsletterUrl}
               target="_blank"

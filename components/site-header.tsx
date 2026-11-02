@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MobileNav } from "@/components/mobile-nav";
+import { NavDropdown } from "@/components/nav-dropdown";
 import { navLinks, site } from "@/lib/data/site";
 
 function DonateLink() {
@@ -16,7 +17,7 @@ function DonateLink() {
 
 export function SiteHeader() {
   return (
-    <nav className="relative flex items-center justify-between gap-4 text-sm italic md:justify-start md:gap-x-6">
+    <nav className="relative flex items-center justify-between gap-4 text-sm italic lg:justify-start lg:gap-x-6">
       <Link href="/" className="shrink-0 not-italic no-underline">
         <Image
           src="/images/brand/asc-logo-horizontal.png"
@@ -28,19 +29,23 @@ export function SiteHeader() {
           className="h-11 w-auto"
         />
       </Link>
-      <span className="hidden flex-wrap items-baseline gap-x-6 gap-y-2.5 md:flex">
-        {navLinks.map(({ label, href }) => (
-          <Link
-            key={href}
-            href={href}
-            className="underline decoration-brand-blue/50 underline-offset-[3px] hover:decoration-rust/70"
-          >
-            {label}
-          </Link>
-        ))}
+      <div className="hidden flex-wrap items-baseline gap-x-6 gap-y-2.5 lg:flex">
+        {navLinks.map(({ label, href, children }) =>
+          children ? (
+            <NavDropdown key={href} link={{ label, href, children }} />
+          ) : (
+            <Link
+              key={href}
+              href={href}
+              className="underline decoration-brand-blue/50 underline-offset-[3px] hover:decoration-rust/70"
+            >
+              {label}
+            </Link>
+          ),
+        )}
         <DonateLink />
-      </span>
-      <span className="flex items-center gap-3 md:hidden">
+      </div>
+      <span className="flex items-center gap-3 lg:hidden">
         <DonateLink />
         <MobileNav />
       </span>
