@@ -27,6 +27,18 @@ export const labs: LabSession[] = [
       "Turn simple shapes into big ideas! Students learn the basics of 3D design in Tinkercad while practicing spatial reasoning, measurement, and the engineering process of designing and refining a model.",
   },
   {
+    name: "Visualizing Sound",
+    slug: "visualizing-sound",
+    registerUrl: "https://givebutter.com/visualizing-sound",
+    date: "2026-11-15",
+    time: "1:00–4:00 pm",
+    ages: "Ages 13–15",
+    price: "$75",
+    capacity: 10,
+    description:
+      "What can sound show us? Students explore how vibrations create sound and how sound can be represented visually, building skills in scientific observation, pattern recognition, and creative problem-solving.",
+  },
+  {
     name: "Design Challenge: Build a Mechanical Snow Globe",
     slug: "mechanical-snow-globe",
     date: "2026-12-06",
