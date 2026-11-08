@@ -9,7 +9,7 @@ import {
   clubs,
 } from "@/lib/data/clubs";
 import { getProgram } from "@/lib/data/programs";
-import { dateParts, todayInAustin, weekday } from "@/lib/dates";
+import { dateParts, todayInAustin, weekday, weekdayName } from "@/lib/dates";
 
 export const metadata: Metadata = {
   title: "STEM Clubs",
@@ -75,7 +75,8 @@ export default function AfterSchoolClubsPage() {
   return (
     <>
       <PageIntro
-        title={<span className="hl-green">STEM clubs.</span>}
+        note="field notes — our programs"
+        title={<span className="hl-green">STEM Clubs.</span>}
       >
         {program.about.map((p, i) => (
           <p
@@ -87,62 +88,62 @@ export default function AfterSchoolClubsPage() {
         ))}
       </PageIntro>
 
-      <section className="pt-14">
-        <NoteCard className="max-w-[680px] rotate-[0.3deg]">
+      <section className="pt-12">
+        <NoteCard className="rotate-[0.2deg]">
           <p className="mb-2 font-hand text-[21px] text-brand-blue">
             fall 2026 schedule
           </p>
           <SectionHeading>Pick your club.</SectionHeading>
-          <p className="mt-3 text-[17px] text-ink-soft">
+          <p className="mt-3 max-w-[68ch] text-[17px] text-ink-soft">
             Two clubs, each running the same projects on two schedules: after
             school, and during the day for homeschool students. Groups are capped at{" "}
             {CLUB_CAPACITY} students, so register at least a week before each
             session.
           </p>
-        </NoteCard>
 
-        {/* week at a glance */}
-        {week.length > 0 && (
-          <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-10 max-lg:grid-cols-1">
-            {week.map(({ audience, meetings }) => (
-              <NoteCard flat key={audience}>
-                <h3>
-                  <AudienceBadge audience={audience} />
-                </h3>
-                <p className="mt-2 text-[15px] italic text-ink-soft">
-                  {audiences[audience].who}
-                </p>
-                <ol className="mt-3 grid grid-cols-2 gap-4 max-sm:grid-cols-1">
-                  {meetings.map(({ club, meeting }) => (
-                    <li key={`${club.slug}-${meeting.weekday}`}>
-                      <Link
-                        href={`#${club.slug}`}
-                        className={`block h-full border border-ink/18 border-t-[3px] bg-card px-4 pt-3 pb-3.5 shadow-[2px_3px_0_rgba(56,52,42,0.1)] transition-transform duration-150 hover:-translate-y-0.5 ${audienceStyle[audience].top}`}
-                      >
-                        <p className={labelClass}>{meeting.day}</p>
-                        <p className="mt-1 text-[18px] leading-tight font-bold">
-                          {club.name}
-                        </p>
-                        <p className="mt-2 text-[14.5px] leading-snug text-ink-soft">
-                          {meeting.time}
-                          <br />
-                          {meeting.ages}
-                        </p>
-                      </Link>
-                    </li>
-                  ))}
-                </ol>
-              </NoteCard>
-            ))}
-          </div>
-        )}
+          {/* week at a glance */}
+          {week.length > 0 && (
+            <div className="mt-7 grid grid-cols-2 gap-x-10 gap-y-8 border-t border-ink/20 pt-7 max-lg:grid-cols-1">
+              {week.map(({ audience, meetings }) => (
+                <div key={audience}>
+                  <h3>
+                    <AudienceBadge audience={audience} />
+                  </h3>
+                  <p className="mt-2 text-[15px] italic text-ink-soft">
+                    {audiences[audience].who}
+                  </p>
+                  <ol className="mt-3 grid grid-cols-2 gap-4 max-sm:grid-cols-1">
+                    {meetings.map(({ club, meeting }) => (
+                      <li key={`${club.slug}-${meeting.weekday}`}>
+                        <Link
+                          href={`#${club.slug}`}
+                          className={`block h-full border border-ink/18 border-t-[3px] bg-card px-4 pt-3 pb-3.5 shadow-[2px_3px_0_rgba(56,52,42,0.1)] transition-transform duration-150 hover:-translate-y-0.5 ${audienceStyle[audience].top}`}
+                        >
+                          <p className={labelClass}>{meeting.day}</p>
+                          <p className="mt-1 text-[18px] leading-tight font-bold">
+                            {club.name}
+                          </p>
+                          <p className="mt-2 text-[14.5px] leading-snug text-ink-soft">
+                            {meeting.time}
+                            <br />
+                            {meeting.ages}
+                          </p>
+                        </Link>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              ))}
+            </div>
+          )}
+        </NoteCard>
 
         <div className="mt-14 grid grid-cols-2 gap-x-10 gap-y-14 max-md:grid-cols-1">
           {clubs.map((club) => (
             <article
               key={club.slug}
               id={club.slug}
-              className="mx-auto w-full max-w-[440px] border border-ink/18 bg-card shadow-[2px_3px_0_rgba(56,52,42,0.1)]"
+              className="mx-auto flex w-full max-w-[440px] flex-col border border-ink/18 bg-card shadow-[2px_3px_0_rgba(56,52,42,0.1)]"
             >
               <Image
                 src={club.image}
@@ -153,7 +154,7 @@ export default function AfterSchoolClubsPage() {
                 loading="eager"
                 className="aspect-square w-full border-b border-ink/18 object-cover"
               />
-              <div className="px-6 pt-5 pb-6 max-sm:px-4">
+              <div className="flex flex-1 flex-col px-6 pt-5 pb-6 max-sm:px-4">
                 <h3 className="text-[24px] font-bold">{club.name}</h3>
                 <p className="mt-2 text-[16px] leading-[1.75]">
                   {club.description}
@@ -168,7 +169,7 @@ export default function AfterSchoolClubsPage() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-6 space-y-6 border-t border-ink/20 pt-6">
+                <div className="mt-6 flex flex-1 flex-col space-y-6 border-t border-ink/20 pt-6">
                   {club.meetings.every((m) =>
                     m.dates.every((d) => d < today),
                   ) && (
@@ -201,25 +202,33 @@ export default function AfterSchoolClubsPage() {
                             <dd>
                               <ul className="flex flex-wrap gap-1.5">
                                 {upcoming.map((date) => {
-                                  const offDay =
-                                    weekday(date) !== meeting.weekday;
-                                  const { weekday: wd, month, day } =
-                                    dateParts(date);
+                                  const { month, day } = dateParts(date);
                                   return (
                                     <li
                                       key={date}
-                                      className={`rounded-[3px] border px-2 py-0.5 text-[13.5px] ${
-                                        offDay
-                                          ? "border-rust/60 bg-rust/5 text-rust"
-                                          : "border-ink/20 bg-card"
-                                      }`}
+                                      className="rounded-[3px] border border-ink/20 bg-card px-2 py-0.5 text-[13.5px]"
                                     >
-                                      {offDay && `${wd} `}
                                       {month} {day}
                                     </li>
                                   );
                                 })}
                               </ul>
+                              {/* a date off the usual day would otherwise read
+                                  as just another session on that day */}
+                              {upcoming
+                                .filter((d) => weekday(d) !== meeting.weekday)
+                                .map((date) => {
+                                  const { month, day } = dateParts(date);
+                                  return (
+                                    <p
+                                      key={date}
+                                      className="mt-2 text-[14px] italic text-rust"
+                                    >
+                                      {month} {day} is a {weekdayName(date)}, not
+                                      the usual {meeting.day.replace(/s$/, "")}.
+                                    </p>
+                                  );
+                                })}
                             </dd>
                           </dl>
                         </div>
@@ -234,7 +243,7 @@ export default function AfterSchoolClubsPage() {
                         href={club.registerUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block rounded-[3px] bg-rust px-6 py-3 text-[15.5px] font-semibold text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+                        className="btn btn-rust mt-auto self-start"
                       >
                         Register for {club.name} →
                       </a>
@@ -282,7 +291,7 @@ export default function AfterSchoolClubsPage() {
         </NoteCard>
 
         <div className="tape relative max-w-[380px] -rotate-[0.7deg] border border-ink/18 bg-card px-6 pt-6 pb-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)] max-md:mx-auto">
-          <h3 className="text-[17px] font-bold">{program.inquiry}</h3>
+          <h3 className="text-[19px] font-bold">{program.inquiry}</h3>
           <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
             Register above for the dates you want; each club&rsquo;s page on
             Givebutter has a ticket for every session. Not sure which club
@@ -290,7 +299,7 @@ export default function AfterSchoolClubsPage() {
           </p>
           <Link
             href="/contact"
-            className="mt-4 inline-block rounded-[3px] bg-brand-blue px-5 py-2.5 text-[15px] text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)]"
+            className="btn btn-blue mt-4"
           >
             Get in touch →
           </Link>

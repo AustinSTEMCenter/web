@@ -34,7 +34,7 @@ export default function MachinesPage() {
         </p>
       </PageIntro>
 
-      <div className="mt-14 space-y-16">
+      <div className="mt-12 space-y-16">
         {rooms.map((room) => (
           <section key={room.slug}>
             <p className="mb-2 font-hand text-[21px] text-brand-blue">
@@ -55,7 +55,7 @@ export default function MachinesPage() {
                     <div
                       className={`tape relative h-full origin-top border border-ink/18 bg-card px-6 pt-6 pb-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)] transition-transform group-hover:-translate-y-0.5 ${i % 2 ? "rotate-[0.6deg]" : "-rotate-[0.5deg]"}`}
                     >
-                      <p className="text-[12px] font-semibold tracking-[0.14em] uppercase text-ink-soft">
+                      <p className="font-sans text-[11px] font-semibold tracking-[0.12em] uppercase text-ink-soft">
                         {m.kind}
                       </p>
                       <h3 className="mt-1 text-[19px] font-bold group-hover:underline">
@@ -67,7 +67,7 @@ export default function MachinesPage() {
                       <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
                         {m.whatItIs}
                       </p>
-                      <p className="mt-3 text-[14px] font-semibold text-brand-blue">
+                      <p className="mt-3 text-[14px] italic text-brand-blue">
                         read the field notes →
                       </p>
                     </div>

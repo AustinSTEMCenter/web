@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Lightbulb } from "@/components/doodles";
 import {
   Annotation,
@@ -31,31 +32,30 @@ export default function AboutPage() {
       >
         <div className="prose-note">
           <p>
-            Austin STEM Center (ASC) is a nonprofit STEM education and innovation hub 
+            Austin STEM Center (ASC) is a nonprofit STEM education and innovation hub
             dedicated to making STEM accessible, exciting, and hands-on for learners of all ages.
           </p>
           <p>
-            We adamantly believe meaningful learning happens through experience. When people are 
-            given the opportunity to launch curiosity through fearless exploration, they not only 
-            gain technical skills, but also become empowered to think critically, solve problems creatively, 
-            and shape their future. We break down barriers to help every learner discover that STEM is a 
-            mindset that applies to the things they already love.
-          </p>
-          <p>
-            Working alongside educators, schools, families, and industry partners, Austin STEM Center is 
-            building a community where learners discover their passions, develop their skills, and prepare 
-            for the rapidly evolving future of technology and robotics. As the leading robotics hub in Central 
-            Texas, we connect students with competitive robotics, engineering, and hands-on experiences that 
-            inspire innovation and lifelong learning.
-          </p>
-          <p>
-            Together, we&rsquo;re creating a future where everyone has the confidence 
+            Together, we&rsquo;re creating a future where everyone has the confidence
             to build, innovate, and shape the world around them.
           </p>
         </div>
+        {/* the way onward: most visitors read this page before picking a
+            program or a visit, so give them both without scrolling to donate */}
+        <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
+          <Link
+            href="/programs"
+            className="btn btn-blue"
+          >
+            Explore our programs →
+          </Link>
+          <Link href="/tours" className="text-link">
+            book a tour →
+          </Link>
+        </div>
       </PageIntro>
 
-      <figure className="photo mt-10 max-w-[480px] -rotate-[0.8deg]">
+      <figure className="photo mt-7 max-w-[480px] -rotate-[0.8deg]">
         <Image
           src="/images/about/team.jpg"
           alt="The Austin STEM Center team"
@@ -68,18 +68,46 @@ export default function AboutPage() {
         </figcaption>
       </figure>
 
+      {/* what we believe */}
+      <section className="pt-20">
+        <NoteCard className="max-w-[680px] -rotate-[0.3deg]">
+          <p className="mb-2 font-hand text-[21px] text-brand-blue">
+            what we believe
+          </p>
+          <SectionHeading>Meaningful learning happens through experience.</SectionHeading>
+          <div className="prose-note mt-6">
+            <p>
+              We adamantly believe meaningful learning happens through experience. When people are
+              given the opportunity to launch curiosity through fearless exploration, they not only
+              gain technical skills, but also become empowered to think critically, solve problems creatively,
+              and shape their future. We break down barriers to help every learner discover that STEM is a
+              mindset that applies to the things they already love.
+            </p>
+            <p>
+              Working alongside educators, schools, families, and industry partners, Austin STEM Center is
+              building a community where learners discover their passions, develop their skills, and prepare
+              for the rapidly evolving future of technology and robotics. As the leading robotics hub in Central
+              Texas, we connect students with competitive robotics, engineering, and hands-on experiences that
+              inspire innovation and lifelong learning.
+            </p>
+          </div>
+        </NoteCard>
+      </section>
+
       {/* team */}
       <section className="pt-20">
         <NoteCard>
           <p className="mb-2 font-hand text-[21px] text-brand-blue">the crew</p>
           <SectionHeading>Meet the team.</SectionHeading>
           {teamGroups.map(({ group, members }) => (
-            <div key={group} className="mx-auto max-w-[820px] pt-14 text-center">
+            <div key={group} className="mx-auto max-w-[920px] pt-14 text-center">
               <h3 className="text-[15px] font-semibold italic text-ink-soft">
                 {group}
               </h3>
               {members.some((m) => m.image) ? (
-                <div className="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-9 sm:gap-x-24 sm:gap-y-12">
+                /* four 180px portraits plus three 48px gaps fit in 920px, so a
+                   four-person group stays on one row instead of orphaning one */
+                <div className="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-9 sm:gap-x-12 sm:gap-y-12">
                   {members.map((m) => (
                     <div
                       key={m.name}
@@ -120,27 +148,27 @@ export default function AboutPage() {
 
       {/* history */}
       <section className="pt-20">
-        <NoteCard className="max-w-[720px] rotate-[0.3deg]">
+        <NoteCard className="max-w-[680px] rotate-[0.3deg]">
           <p className="mb-2 font-hand text-[21px] text-brand-blue">
             how it started
           </p>
           <SectionHeading>The history of the Austin STEM Center.</SectionHeading>
           <div className="prose-note mt-6">
             <p>
-            Austin STEM Center&rsquo;s history began with ATX Robotics, Inc., a nonprofit organization 
-            founded by Evan Marchman to expand access to robotics, engineering, and hands-on STEAM 
-            education. In 2025, Evan met Peter Wang and Ken Hawthorn, who shared a vision: to create 
-            a place where students could truly experience STEM through hands-on learning, innovation, 
-            and real-world opportunity. Each founder brought different skills, experience, and perspective 
+            Austin STEM Center&rsquo;s history began with ATX Robotics, Inc., a nonprofit organization
+            founded by Evan Marchman to expand access to robotics, engineering, and hands-on STEAM
+            education. In 2025, Evan met Peter Wang and Ken Hawthorn, who shared a vision: to create
+            a place where students could truly experience STEM through hands-on learning, innovation,
+            and real-world opportunity. Each founder brought different skills, experience, and perspective
             to the table, along with foundational support and investment from Peter Wang.
             </p>
             <p>
-            Within just a few short months, ATX Robotics, Inc., d/b/a Austin STEM Center was created. 
-            A building was secured, an incredible team was assembled, and ASC began building programs 
+            Within just a few short months, ATX Robotics, Inc., d/b/a Austin STEM Center was created.
+            A building was secured, an incredible team was assembled, and ASC began building programs
             designed to ignite curiosity, creativity, and confidence in students of all backgrounds.
             </p>
             <p>
-            Today, Austin STEM Center exists to inspire the next generation of innovators, problem-solvers, 
+            Today, Austin STEM Center exists to inspire the next generation of innovators, problem-solvers,
             engineers, and leaders by making STEM education accessible, engaging, and impactful for the community.
             </p>
           </div>
@@ -152,20 +180,25 @@ export default function AboutPage() {
 
       {/* donate */}
       <section className="pt-20 pb-4">
-        <div className="tape relative max-w-[560px] rotate-[0.6deg] border border-ink/18 bg-card px-7 pt-8 pb-7 shadow-[3px_4px_0_rgba(56,52,42,0.12)]">
-          <h2 className="text-[21px] font-bold">Support this work</h2>
+        <div className="tape relative max-w-[560px] rotate-[0.6deg] border border-ink/18 bg-card px-6 pt-6 pb-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)]">
+          <h2 className="text-[19px] font-bold">Support this work.</h2>
           <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">
             If our mission resonates with you, we&rsquo;d love your support.
             Your donation expands access to hands-on STEM learning and gives
             more learners the chance to explore, build, and discover
             what&rsquo;s possible.
           </p>
-          <a
-            href={site.donateUrl}
-            className="mt-5 inline-block rounded-[3px] bg-brand-blue px-[22px] py-3 text-[15px] text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-          >
-            Donate here →
-          </a>
+          <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3">
+            <a
+              href={site.donateUrl}
+              className="btn btn-blue"
+            >
+              Donate here →
+            </a>
+            <Link href="/contact" className="text-link">
+              or get in touch →
+            </Link>
+          </div>
         </div>
       </section>
     </>

@@ -93,14 +93,14 @@ export function ProgramPage({
 
   const inquiryCard = program.inquiry && (
     <div className="tape relative max-w-[380px] -rotate-[0.7deg] border border-ink/18 bg-card px-6 pt-6 pb-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)]">
-      <h3 className="text-[17px] font-bold">{program.inquiry}</h3>
+      <h3 className="text-[19px] font-bold">{program.inquiry}</h3>
       <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
         Tell us about your group and what you&rsquo;re hoping to do, and
         we&rsquo;ll take it from there.
       </p>
       <Link
         href="/contact"
-        className="mt-4 inline-block rounded-[3px] bg-brand-blue px-5 py-2.5 text-[15px] text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)]"
+        className="btn btn-blue mt-4"
       >
         Get in touch →
       </Link>
@@ -112,7 +112,7 @@ export function ProgramPage({
 
   return (
     <>
-      <PageIntro title={program.title} />
+      <PageIntro note="field notes — our programs" title={`${program.title}.`} />
 
       {children ? (
         <>
@@ -121,9 +121,9 @@ export function ProgramPage({
             <div className="max-md:order-first">{photo}</div>
           </div>
           {children}
-          <div className="mt-16 max-w-[760px] border border-ink/18 bg-card shadow-[2px_3px_0_rgba(56,52,42,0.1)] px-7 pt-6 pb-7 max-sm:px-4">
+          <NoteCard flat className="mt-16 max-w-[760px]">
             {details}
-          </div>
+          </NoteCard>
         </>
       ) : (
         <div className={`mt-12 ${gridClass}`}>

@@ -21,12 +21,12 @@ export const metadata: Metadata = {
 // confirms rental details.
 const rentals = [
   {
-    name: "Event Space Rental",
+    name: "Event space rental",
     blurb:
       "Ideal for corporate events, meetings, networking events, workshops, and community gatherings.",
   },
   {
-    name: "Classroom Rental",
+    name: "Classroom rental",
     blurb:
       "Ideal for trainings, classes, tutoring, homeschool groups, meetings, team-building, executive development, and educational programming.",
   },
@@ -52,7 +52,7 @@ export default function FacilityRentalsPage() {
       </PageIntro>
 
       {/* the spaces */}
-      <section className="pt-14">
+      <section className="pt-12">
         <NoteCard className="max-w-[680px] rotate-[0.3deg]">
           <p className="mb-2 font-hand text-[21px] text-brand-blue">
             the building
@@ -111,7 +111,7 @@ export default function FacilityRentalsPage() {
       </section>
 
       {/* rental options */}
-      <section id="rentals" className="pt-24">
+      <section id="rentals" className="pt-20">
         <p className="mb-2 font-hand text-[21px] text-brand-blue">
           rent our space
         </p>
@@ -145,7 +145,7 @@ export default function FacilityRentalsPage() {
           </p>
           <Link
             href="/contact"
-            className="mt-6 inline-block rounded-[3px] bg-brand-blue px-[22px] py-3 text-[15px] text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+            className="btn btn-blue mt-6"
           >
             Request a rental →
           </Link>

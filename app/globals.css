@@ -208,3 +208,49 @@ body {
   border: 0;
   border-top: 1px solid rgba(56, 52, 42, 0.25);
 }
+
+/* the one button: rust for doing something (register, send, download), blue
+   for going somewhere. Spacing stays on the element. */
+.btn {
+  display: inline-block;
+  border-radius: 3px;
+  padding: 12px 22px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-paper);
+  box-shadow: 2px 2px 0 rgba(56, 52, 42, 0.65);
+  transition:
+    transform 100ms,
+    box-shadow 100ms;
+}
+.btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+.btn:disabled {
+  opacity: 0.6;
+}
+.btn-rust {
+  background: var(--color-rust);
+}
+.btn-blue {
+  background: var(--color-brand-blue);
+}
+.btn-lg {
+  padding: 14px 28px;
+  font-size: 16.5px;
+}
+
+/* standalone "keep going →" link */
+.text-link {
+  font-size: 15px;
+  font-style: italic;
+  color: var(--color-brand-blue);
+  text-decoration: underline;
+  text-decoration-color: rgba(67, 92, 126, 0.5);
+  text-underline-offset: 3px;
+}
+.text-link:hover {
+  text-decoration-color: rgba(230, 69, 25, 0.7);
+}

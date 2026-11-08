@@ -17,6 +17,9 @@ export const weekday = (date: string) => asUtcNoon(date).getUTCDay();
 const format = (date: string, options: Intl.DateTimeFormatOptions) =>
   asUtcNoon(date).toLocaleDateString("en-US", { ...options, timeZone: "UTC" });
 
+/** "2026-11-01" → "Sunday" */
+export const weekdayName = (date: string) => format(date, { weekday: "long" });
+
 /** "2026-11-01" → { weekday: "Sun", month: "Nov", day: "1" } */
 export function dateParts(date: string) {
   return {

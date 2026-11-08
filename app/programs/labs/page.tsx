@@ -22,7 +22,7 @@ export default function LabsPage() {
   return (
     <ProgramPage program={getProgram("labs")!}>
       <section id="upcoming" className="mt-16">
-        <SectionHeading>Upcoming Labs</SectionHeading>
+        <SectionHeading>Upcoming labs.</SectionHeading>
         {upcoming.length > 0 ? (
           <div className="mt-6 max-w-[760px] space-y-5">
             {upcoming.map((lab) => {
@@ -64,7 +64,7 @@ export default function LabsPage() {
                         href={lab.registerUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-4 inline-block rounded-[3px] bg-rust px-5 py-2.5 text-[15px] font-semibold text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+                        className="btn btn-rust mt-4"
                       >
                         Register →
                       </a>
@@ -87,11 +87,11 @@ export default function LabsPage() {
           </NoteCard>
         )}
         <NoteCard flat className="mt-5 max-w-[760px]">
-          <p className="text-[16px]">
+          <p className="text-[15px]">
             Registration and payment happen on Givebutter. Questions first?{" "}
             <Link
               href="/contact"
-              className="italic text-brand-blue underline decoration-brand-blue/50 underline-offset-[3px]"
+              className="text-link"
             >
               Get in touch →
             </Link>

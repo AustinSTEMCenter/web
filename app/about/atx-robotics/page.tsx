@@ -33,6 +33,7 @@ export default function AtxRoboticsPage() {
   return (
     <div className="pb-4">
       <PageIntro
+        note="field notes — the nonprofit"
         title={
           <>
             About <span className="hl">ATX Robotics.</span>
@@ -42,9 +43,9 @@ export default function AtxRoboticsPage() {
       />
 
       {/* legal structure */}
-      <section className="pt-16">
+      <section className="pt-12">
         <NoteCard id="legal-structure" className="max-w-[680px] rotate-[0.3deg]">
-          <SectionHeading>Our Legal Structure.</SectionHeading>
+          <SectionHeading>Our legal structure.</SectionHeading>
           <div className="prose-note mt-6">
             <p>
               ATX Robotics, Inc. is a Texas nonprofit corporation and federally
@@ -64,9 +65,9 @@ export default function AtxRoboticsPage() {
       </section>
 
       {/* mission */}
-      <section className="pt-16">
+      <section className="pt-20">
         <NoteCard id="mission" className="max-w-[680px] -rotate-[0.4deg]">
-          <SectionHeading>Our Mission.</SectionHeading>
+          <SectionHeading>Our mission.</SectionHeading>
           <div className="prose-note mt-6">
             <p>
               The mission of ATX Robotics is to expand access to hands-on
@@ -92,9 +93,9 @@ export default function AtxRoboticsPage() {
       </section>
 
       {/* program areas */}
-      <section className="pt-16">
+      <section className="pt-20">
         <NoteCard id="program-areas" className="rotate-[0.3deg]">
-          <SectionHeading>Our Program Areas.</SectionHeading>
+          <SectionHeading>Our program areas.</SectionHeading>
           <p className="mt-4 text-[17px] text-ink-soft">
             ATX Robotics delivers its mission through three program areas:
           </p>
@@ -112,12 +113,12 @@ export default function AtxRoboticsPage() {
       </section>
 
       {/* board of directors */}
-      <section className="pt-16">
+      <section className="pt-20">
         <NoteCard
           id="board-of-directors"
           className="max-w-[680px] -rotate-[0.3deg]"
         >
-          <SectionHeading>Board of Directors.</SectionHeading>
+          <SectionHeading>Board of directors.</SectionHeading>
           <div className="prose-note mt-6">
             <p>
               ATX Robotics is overseen by a Board of Directors that is actively
@@ -154,7 +155,7 @@ export default function AtxRoboticsPage() {
 
       {/* documents: stays hidden until a PDF is listed in lib/data/site.ts */}
       {publishedDocuments.length > 0 && (
-        <section className="pt-16">
+        <section className="pt-20">
           <NoteCard className="max-w-[680px] rotate-[0.3deg]">
             <SectionHeading>Documents.</SectionHeading>
             <ul className="mt-5 divide-y divide-ink/15">
@@ -167,7 +168,7 @@ export default function AtxRoboticsPage() {
                         key={file.href}
                         href={file.href}
                         download
-                        className="underline decoration-brand-blue/50 underline-offset-[3px]"
+                        className="text-link"
                       >
                         {file.label} ↓
                       </a>

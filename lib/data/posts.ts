@@ -10,6 +10,8 @@ export type Post = {
   author: string;
   excerpt: string;
   cover?: string;
+  /** "event" marks a recap of something we hosted, so the log of events can be picked out of the notebook. */
+  kind?: "event";
   html: string;
 };
 
@@ -44,6 +46,7 @@ function loadPost(file: string): Post {
     author: meta.author ?? "Austin STEM Center",
     excerpt: meta.excerpt ?? "",
     cover: meta.cover,
+    kind: meta.kind === "event" ? "event" : undefined,
     html: marked.parse(body, { async: false }),
   };
 }

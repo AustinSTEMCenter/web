@@ -1,12 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Gear, PaperPlane } from "@/components/doodles";
-import { Annotation, NoteCard, SectionHeading, Stamp } from "@/components/notebook";
-import { camps } from "@/lib/data/camps";
+import {
+  Annotation,
+  NoteCard,
+  SectionHeading,
+  Stamp,
+} from "@/components/notebook";
 import { facilities } from "@/lib/data/facilities";
-import { programs } from "@/lib/data/programs";
+import { getProgram, programs } from "@/lib/data/programs";
 import { site } from "@/lib/data/site";
-import { todayInAustin } from "@/lib/dates";
 
 /* one logo-ring color per facility chip, in facilities-data order */
 const chipAccents = [
@@ -18,64 +21,70 @@ const chipAccents = [
   "border-l-ring-green",
 ];
 
-const photoAlt =
-  "A student drives a FIRST Robotics robot through a field of yellow balls while a crowd watches at the Austin STEM Center grand opening";
-
 const albumUrl =
   "https://juliannajphotography.pic-time.com/client/asc-grand-opening/gallery";
 
-// the hero swaps on the day, so re-render hourly like the labs page
-export const revalidate = 3600;
-
-/** National STEM Day: the STEM Day hero replaces the grand-opening one for this date only */
-const STEM_DAY = "2026-11-08";
-
 export default function Home() {
+  const fieldTrips = getProgram("field-trips");
+
   return (
     <>
-      {todayInAustin() === STEM_DAY ? <StemDayHero /> : <GrandOpeningHero />}
+      {/* hero — programs and field trips lead */}
+      <section className="pt-5">
+        <div className="tape-corners relative rotate-[0.3deg] border border-ink/18 bg-card px-8 py-7 shadow-[4px_5px_0_rgba(56,52,42,0.12)] max-md:px-4">
+          <div className="md:grid md:grid-cols-2 md:items-center md:gap-9">
+            <div className="max-md:text-center">
+              <p className="font-hand text-[22px] text-brand-blue">
+                field notes — Stonehollow Dr., Austin, TX
+              </p>
+              <h1 className="mt-2 text-[clamp(27px,2.9vw,38px)] leading-[1.1] font-bold tracking-[-0.01em] text-balance">
+                Hands-on STEM programs for{" "}
+                <span className="hl">students, schools, and families.</span>
+              </h1>
+              <p className="mt-4 max-w-[52ch] text-[15px] leading-relaxed text-ink-soft max-md:mx-auto">
+                Sunday labs, after-school clubs, summer camps, and school
+                field trips, all in real shops, labs, and a FIRST Robotics
+                arena. A nonprofit where everyone learns by making real
+                things.
+              </p>
+              <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-3 max-md:justify-center">
+                <Link href="/programs" className="btn btn-rust btn-lg">
+                  Explore our programs →
+                </Link>
+                <Link href="/programs/field-trips#book" className="btn btn-blue">
+                  Book a field trip →
+                </Link>
+              </div>
+            </div>
 
-      {/* "who we are" — original tagline copy, parked until after the grand
-          opening. To restore, uncomment (PaperPlane is already imported for the
-          newsletter section).
-
-      <section className="relative pt-24">
-        <span
-          aria-hidden
-          className="pointer-events-none absolute top-20 right-6 hidden md:block"
-        >
-          <PaperPlane className="h-11 -rotate-6 text-brand-blue/50" />
-        </span>
-        <p className="mb-2 font-hand text-[21px] text-brand-blue">
-          field notes — Stonehollow Dr., Austin, TX
-        </p>
-        <SectionHeading>
-          Turning questions into <span className="hl">joyful discovery.</span>
-        </SectionHeading>
-        <p className="mt-4 max-w-[56ch] text-[17px] text-ink-soft">
-          Hands-on experiences in science, art, engineering, and creative
-          exploration: a nonprofit innovation hub where students, educators,
-          and professionals all learn by making real things.
-        </p>
-        <Link
-          href="/programs/field-trips"
-          className="mt-6 inline-block rounded-[3px] bg-brand-blue px-[22px] py-3 text-[15px] text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-        >
-          Book a field trip →
-        </Link>
-        <br />
-        <Annotation className="mt-6">
-          ↳ ask about the <Link href="/facility-rentals#first-arena" className="underline">FIRST Arena</Link>, it&rsquo;s the good stuff!
-        </Annotation>
+            {/* hover on the still outer div, rotate the inner one — see the
+                program cards below */}
+            <div className="group mx-auto mt-7 max-w-[520px] md:mt-0">
+              <div className="origin-top rotate-[1.6deg] transition-transform duration-200 group-hover:rotate-0">
+                <div className="tape relative border border-ink/15 bg-paper p-2 shadow-[3px_4px_0_rgba(56,52,42,0.14)]">
+                  <Image
+                    src="/images/camps/build-a-synth-1.jpg"
+                    alt="Two students wearing headphones build and test synthesizer circuits at a bench in the electronics lab"
+                    width={1600}
+                    height={1066}
+                    priority
+                    sizes="(min-width: 768px) 520px, 92vw"
+                    className="h-auto w-full border border-ink/10"
+                  />
+                </div>
+                <p className="mt-2 text-center font-hand text-[19px] text-ink-soft">
+                  real tools, real projects — every program, every age
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
-      */}
 
       {/* programs */}
       <section className="relative pt-24">
-        <p className="mb-2 font-hand text-[21px] text-brand-blue">what we do</p>
-        <SectionHeading>
-          Programs for students, schools, and&nbsp;families.
-        </SectionHeading>
+        <p className="mb-2 font-hand text-[21px] text-brand-blue">what we run</p>
+        <SectionHeading>Pick a program.</SectionHeading>
         {/* the Link stays still as the hover target and only the inner card
             moves, so the card can't slide out from under the cursor and
             flicker; origin-top pivots it around the tape */}
@@ -117,7 +126,68 @@ export default function Home() {
             </Link>
           ))}
         </div>
+        <p className="mt-7">
+          <Link
+            href="/programs"
+            className="text-link"
+          >
+            all programs, including Howdy Bots →
+          </Link>
+        </p>
       </section>
+
+      {/* field trips — the school-facing offer gets its own spread */}
+      {fieldTrips && (
+        <section className="pt-24">
+          <NoteCard className="max-w-[680px] -rotate-[0.3deg]">
+            <p className="mb-2 font-hand text-[21px] text-brand-blue">
+              for schools &amp; groups
+            </p>
+            <SectionHeading>Bring your class to the center.</SectionHeading>
+            <p className="mt-4 max-w-[56ch] text-[17px] text-ink-soft">
+              {fieldTrips.teaser}
+            </p>
+            {fieldTrips.why && (
+              <p className="mt-3 max-w-[56ch] text-[15px] leading-relaxed text-ink-soft">
+                {fieldTrips.why}
+              </p>
+            )}
+            {fieldTrips.pricing && (
+              <ul className="mt-6 max-w-[56ch] border-t border-ink/20">
+                {fieldTrips.pricing.rows.map((row) => (
+                  <li
+                    key={row.option}
+                    className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-0.5 border-b border-ink/20 py-2.5"
+                  >
+                    <span className="text-[15px] font-bold">
+                      {row.option}
+                      {row.duration && (
+                        <span className="ml-2 text-[13px] font-normal italic text-ink-soft">
+                          {row.duration}
+                        </span>
+                      )}
+                    </span>
+                    <span className="font-hand text-[21px] text-rust">
+                      {row.price}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            )}
+            <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
+              <Link href="/programs/field-trips#book" className="btn btn-rust">
+                Book a field trip →
+              </Link>
+              <Link
+                href="/tours"
+                className="text-link"
+              >
+                or book a tour first →
+              </Link>
+            </div>
+          </NoteCard>
+        </section>
+      )}
 
       {/* facilities */}
       <section className="pt-24">
@@ -129,9 +199,9 @@ export default function Home() {
             <Gear className="h-12 rotate-12 text-ink/25" />
           </span>
           <p className="mb-2 font-hand text-[21px] text-brand-blue">the space</p>
-          <SectionHeading>Where Learning Comes to Life</SectionHeading>
+          <SectionHeading>Where learning comes to life.</SectionHeading>
           <p className="mt-4 max-w-[56ch] text-[17px] text-ink-soft">
-          Austin STEM Center was designed to inspire curiosity through
+            Austin STEM Center was designed to inspire curiosity through
             hands-on experiences. Under one roof, learners can explore
             robotics, engineering, fabrication, design, electronics, and more in
             purpose-built spaces that encourage them to create, experiment,
@@ -150,10 +220,115 @@ export default function Home() {
             ))}
           </ul>
           <Annotation className="mt-6">
-            ↳ {camps.length} summer camps ran here this year · <Link href="/programs/summer-camps" className="underline">see what we ran</Link>
+            ↳ not sure where to start? <Link href="/tours" className="underline">book a tour</Link>
           </Annotation>
         </NoteCard>
       </section>
+
+      {/* scrapbook — the grand opening, kept small; the full recap is the
+          grand-opening-2026 post in content/posts */}
+      <section className="pt-24">
+        <div className="grid items-center gap-x-10 gap-y-5 max-md:grid-cols-1 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
+          <a
+            href={albumUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="photo block max-w-[360px] -rotate-[1.2deg] transition-transform duration-200 hover:rotate-0"
+          >
+            <Image
+              src="/images/grand-opening-photo.jpg"
+              alt="A student drives a FIRST Robotics robot through a field of yellow balls while a crowd watches at the Austin STEM Center grand opening"
+              width={1600}
+              height={1066}
+              sizes="(min-width: 768px) 360px, 92vw"
+              className="aspect-[3/2] w-full object-cover"
+            />
+          </a>
+          <div>
+            <p className="mb-2 font-hand text-[21px] text-brand-blue">
+              one for the scrapbook
+            </p>
+            <SectionHeading>Grand opening, August 22.</SectionHeading>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <Stamp className="-rotate-2">1,200+ visitors</Stamp>
+              <Stamp className="rotate-[1.5deg]">$20K raised</Stamp>
+            </div>
+            <p className="mt-4 max-w-[48ch] text-[15px] leading-relaxed text-ink-soft">
+              Thank you to every family who came out, tried the activities,
+              and explored the center. Every dollar raised goes straight to
+              our STEM education programs.
+            </p>
+            <p className="mt-3">
+              <a
+                href={albumUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-link"
+              >
+                flip through the whole album →
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* field notes — parked until the blog gets another pass. To restore:
+          re-add `Bolt` to the doodles import, `formatDate, getPublishedPosts`
+          from lib/data/posts, `const posts = getPublishedPosts().slice(0, 3)`
+          above, the "blog" navLink in lib/data/site.ts, and uncomment.
+
+      <section className="relative pt-24">
+        <span
+          aria-hidden
+          className="pointer-events-none absolute top-[88px] right-14 hidden md:block"
+        >
+          <Bolt className="h-11 rotate-6 text-gold/80" />
+        </span>
+        <p className="mb-2 font-hand text-[21px] text-brand-blue">
+          from the notebook
+        </p>
+        <SectionHeading>Field notes and event recaps.</SectionHeading>
+        <div className="mt-10 grid grid-cols-3 gap-7 max-md:grid-cols-1 max-md:gap-y-10">
+          {posts.map((post, i) => (
+            <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
+              <div
+                className={`tape relative flex h-full origin-top flex-col border border-ink/18 bg-card p-4 pb-3.5 shadow-[3px_4px_0_rgba(56,52,42,0.12)] transition-transform duration-200 ease-out group-hover:-translate-y-1 group-hover:rotate-0 ${
+                  ["rotate-[0.6deg]", "-rotate-[0.7deg]", "rotate-[0.5deg]"][i % 3]
+                }`}
+              >
+                {post.cover && (
+                  <Image
+                    src={post.cover}
+                    alt=""
+                    width={640}
+                    height={400}
+                    className="aspect-[8/5] w-full border border-ink/10 object-cover"
+                  />
+                )}
+                <p className="mt-3.5 flex flex-wrap items-center gap-x-3 gap-y-2 font-hand text-[17px] text-brand-blue">
+                  {formatDate(post.date)}
+                  {post.kind === "event" && (
+                    <Stamp className="-rotate-2 text-[10px]">event recap</Stamp>
+                  )}
+                </p>
+                <h3 className="mt-1 text-[18px] leading-snug font-bold">{post.title}</h3>
+                <span className="mt-auto pt-3.5 text-[14px] italic text-brand-blue">
+                  read the note →
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+        <p className="mt-7">
+          <Link
+            href="/blog"
+            className="text-link"
+          >
+            all field notes →
+          </Link>
+        </p>
+      </section>
+      */}
 
       {/* newsletter */}
       <section className="pt-24">
@@ -181,189 +356,13 @@ export default function Home() {
               href={site.newsletterUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-5 inline-block shrink-0 rounded-[3px] bg-rust px-7 py-3.5 text-center text-[16.5px] font-semibold text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none md:mt-0"
+              className="btn btn-rust mt-5 shrink-0 md:mt-0"
             >
               Join our newsletter →
             </a>
           </div>
         </div>
       </section>
-
-      {/* blog — removed for now (2026-07-30). To restore: git-restore app/blog/,
-          re-add the "blog" navLink in lib/data/site.ts, re-add Bolt to the
-          doodles import, `formatDate, getPublishedPosts` from lib/data/posts,
-          and `const posts = getPublishedPosts().slice(0, 3)` above, then
-          uncomment this section.
-
-      <section className="relative pt-24">
-        <span
-          aria-hidden
-          className="pointer-events-none absolute top-[88px] right-14 hidden md:block"
-        >
-          <Bolt className="h-11 rotate-6 text-gold/80" />
-        </span>
-        <p className="mb-2 font-hand text-[21px] text-brand-blue">
-          from the notebook
-        </p>
-        <SectionHeading>Field notes.</SectionHeading>
-        <p className="mt-4 max-w-[56ch] text-[17px] text-ink-soft">
-          Practical insights, bold ideas, and behind-the-scenes stories from
-          ASC&rsquo;s work with students, educators, and industry leaders.
-        </p>
-        <div className="mt-8 space-y-7">
-          {posts.map((post) => (
-            <article key={post.slug} className="max-w-[64ch]">
-              <p className="font-hand text-[19px] text-brand-blue">
-                {formatDate(post.date)} · {post.author}
-              </p>
-              <h3 className="mt-1 text-[19px] leading-snug font-bold">
-                <Link href={`/blog/${post.slug}`} className="hover:underline">
-                  {post.title}
-                </Link>
-              </h3>
-            </article>
-          ))}
-        </div>
-        <p className="mt-7">
-          <Link href="/blog" className="text-[15px] italic text-brand-blue underline decoration-brand-blue/50 underline-offset-[3px]">
-            all field notes →
-          </Link>
-        </p>
-      </section>
-      */}
     </>
-  );
-}
-
-function GrandOpeningHero() {
-  return (
-    <section className="pt-5">
-      <div className="tape-corners relative rotate-[0.3deg] border border-ink/18 bg-card px-8 py-7 shadow-[4px_5px_0_rgba(56,52,42,0.12)] max-md:px-4">
-        <div className="md:grid md:grid-cols-2 md:items-center md:gap-9">
-          <div className="max-md:text-center">
-            <p className="font-hand text-[22px] text-brand-blue">
-              grand opening — saturday, august&nbsp;22&nbsp;✓
-            </p>
-            <h1 className="mt-2 text-[clamp(27px,2.9vw,38px)] leading-[1.1] font-bold tracking-[-0.01em] text-balance">
-              Thank you for an{" "}
-              <span className="hl-teal">incredible</span> grand opening.
-            </h1>
-            <div className="mt-4 flex flex-wrap gap-3 max-md:justify-center">
-              <Stamp className="-rotate-2">1,200+ visitors</Stamp>
-              <Stamp className="rotate-[1.5deg]">$20K raised</Stamp>
-            </div>
-            <p className="mt-4 max-w-[52ch] text-[15px] leading-relaxed text-ink-soft max-md:mx-auto">
-              What a day! Thank you to every family who came out to try the
-              activities and explore the center. Every dollar raised goes
-              straight to our STEM education programs.
-            </p>
-            <Link
-              href="/programs"
-              className="mt-5 inline-block rounded-[3px] bg-rust px-7 py-3.5 text-center text-[16.5px] font-semibold text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-            >
-              Explore our programs →
-            </Link>
-          </div>
-
-          {/* hover on the still outer div, rotate the inner one — see the
-              program cards below */}
-          <div className="group mx-auto mt-7 max-w-[520px] md:mt-0">
-            <div className="origin-top rotate-[1.6deg] transition-transform duration-200 group-hover:rotate-0">
-              <a
-                href={albumUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="tape relative block border border-ink/15 bg-paper p-2 shadow-[3px_4px_0_rgba(56,52,42,0.14)]"
-              >
-                <Image
-                  src="/images/grand-opening-photo.jpg"
-                  alt={photoAlt}
-                  width={1600}
-                  height={1066}
-                  priority
-                  sizes="(min-width: 768px) 520px, 92vw"
-                  className="h-auto w-full border border-ink/10"
-                />
-              </a>
-              <p className="mt-2 text-center font-hand text-[19px] text-ink-soft">
-                one for the scrapbook —{" "}
-                <a
-                  href={albumUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-brand-blue underline decoration-brand-blue/50 underline-offset-[3px]"
-                >
-                  flip through the whole album →
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function StemDayHero() {
-  return (
-    <section className="pt-5">
-      <div className="tape-corners relative rotate-[0.3deg] border border-ink/18 bg-card px-8 py-7 shadow-[4px_5px_0_rgba(56,52,42,0.12)] max-md:px-4">
-        <div className="md:grid md:grid-cols-2 md:items-center md:gap-9">
-          <div className="max-md:text-center">
-            <p className="font-hand text-[22px] text-brand-blue">
-              sunday, november 8 — happy national STEM&nbsp;day!
-            </p>
-            <h1 className="mt-2 text-[clamp(27px,2.9vw,38px)] leading-[1.1] font-bold tracking-[-0.01em] text-balance">
-              Get curious, ask a big question, and{" "}
-              <span className="hl-teal">make something new.</span>
-            </h1>
-            <div className="mt-4 flex flex-wrap gap-3 max-md:justify-center">
-              <Stamp className="-rotate-2">STEM day · nov 8</Stamp>
-              <Stamp className="rotate-[1.5deg]">Tinkercad 101 · today</Stamp>
-            </div>
-            <p className="mt-4 max-w-[52ch] text-[15px] leading-relaxed text-ink-soft max-md:mx-auto">
-              We create, build, test, and explore here every single day, and
-              today is no exception: the Tinkercad 101 lab (ages 10–12) runs
-              from 1 to 4&nbsp;pm. Sunday labs, STEM clubs, and field trips
-              continue through the end of the year — come join us.
-            </p>
-            <Link
-              href="/programs"
-              className="mt-5 inline-block rounded-[3px] bg-rust px-7 py-3.5 text-center text-[16.5px] font-semibold text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-            >
-              Register for a program →
-            </Link>
-          </div>
-
-          <div className="group mx-auto mt-7 max-w-[520px] md:mt-0">
-            <div className="origin-top rotate-[1.6deg] transition-transform duration-200 group-hover:rotate-0">
-              <Link
-                href="/programs/labs"
-                className="tape relative block border border-ink/15 bg-paper p-2 shadow-[3px_4px_0_rgba(56,52,42,0.14)]"
-              >
-                <Image
-                  src="/images/facilities/machine-shop.jpg"
-                  alt="Students gather around the Haas CNC mill in the machine shop with an instructor. See the Sunday labs"
-                  width={1198}
-                  height={1600}
-                  priority
-                  sizes="(min-width: 768px) 520px, 92vw"
-                  className="aspect-[4/3] w-full border border-ink/10 object-cover object-[50%_55%]"
-                />
-              </Link>
-              <p className="mt-2 text-center font-hand text-[19px] text-ink-soft">
-                this is what every day looks like here —{" "}
-                <Link
-                  href="/programs/labs"
-                  className="text-brand-blue underline decoration-brand-blue/50 underline-offset-[3px]"
-                >
-                  see the Sunday labs →
-                </Link>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   );
 }

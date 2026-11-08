@@ -302,7 +302,7 @@ export function FieldTripBooking({
           <button
             type="submit"
             disabled={pending}
-            className="mt-4 inline-block rounded-[3px] bg-rust px-[22px] py-3 text-[15px] text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none disabled:opacity-60"
+            className="btn btn-rust mt-4"
           >
             {pending ? "Sending…" : "Request this date →"}
           </button>

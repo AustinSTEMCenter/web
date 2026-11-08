@@ -40,7 +40,7 @@ export default async function MachinePage({ params }: Props) {
       />
 
       {/* what it is, beside the photo (or the tagline while photos are pending) */}
-      <div className="mt-8 grid grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-start gap-x-12 gap-y-8 max-md:grid-cols-1">
+      <div className="mt-12 grid grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-start gap-x-12 gap-y-8 max-md:grid-cols-1">
         <NoteCard className="-rotate-[0.3deg]">
           <p className="text-[17px] text-ink-soft">{machine.whatItIs}</p>
         </NoteCard>
@@ -105,7 +105,7 @@ export default async function MachinePage({ params }: Props) {
 
         <div className="space-y-8">
           {machine.facts && (
-            <div className="max-w-[400px] border border-ink/18 bg-card px-6 py-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)]">
+            <div className="max-w-[400px] border border-ink/18 bg-card px-6 py-5 shadow-[2px_3px_0_rgba(56,52,42,0.1)]">
               <h3 className="text-[15px] font-semibold italic">At a glance</h3>
               <dl className="mt-3 space-y-2 text-[15px]">
                 {machine.facts.map((fact) => (
@@ -130,7 +130,7 @@ export default async function MachinePage({ params }: Props) {
           )}
 
           <div className="tape relative max-w-[400px] -rotate-[0.5deg] border border-ink/18 bg-card px-6 pt-6 pb-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)]">
-            <h3 className="text-[16px] font-bold">
+            <h3 className="text-[19px] font-bold">
               Want to run it, not just read about it?
             </h3>
             <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
@@ -143,7 +143,7 @@ export default async function MachinePage({ params }: Props) {
               </Link>{" "}
               — or{" "}
               <Link
-                href="/contact"
+                href="/tours"
                 className="text-brand-blue underline decoration-brand-blue/50 underline-offset-[3px]"
               >
                 book a tour
