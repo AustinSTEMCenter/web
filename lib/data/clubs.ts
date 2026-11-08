@@ -74,7 +74,7 @@ export const clubs: Club[] = [
       },
       {
         audience: "homeschool",
-        ages: "Ages 13–15",
+        ages: "Ages 10–13",
         weekday: 3,
         day: "Wednesdays",
         time: "1:00–3:00 pm",
@@ -120,7 +120,7 @@ export const clubs: Club[] = [
       },
       {
         audience: "homeschool",
-        ages: "Ages 10–12",
+        ages: "Ages 13–15",
         weekday: 2,
         day: "Tuesdays",
         time: "9:30–11:30 am",
