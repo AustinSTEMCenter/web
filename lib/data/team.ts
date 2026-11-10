@@ -40,18 +40,12 @@ export const boardOfDirectors: TeamMember[] = [
     title: "Board Member",
     image: "/images/team/board/andre-espada.jpg",
   },
-  {
-    name: "Leah Silen",
-    title: "Board Member, Executive Director of Austin STEM Center",
-    image: "/images/team/leah-silen.jpg",
-  },
 ];
 
 export const teamGroups: { group: string; members: TeamMember[] }[] = [
   {
     group: "Leadership",
     members: [
-      { name: "Leah Silen", title: "Executive Director", image: "/images/team/leah-silen.jpg" },
       { name: "Lexi Little", title: "Director of People and Operations", image: "/images/team/lexi-little.jpg" },
       { name: "Luke Spence", title: "Director of Technical Programming", image: "/images/team/luke-spence.jpg" },
     ],
@@ -69,7 +63,6 @@ export const teamGroups: { group: string; members: TeamMember[] }[] = [
     group: "Steering Committee",
     members: [
       { name: "Peter Wang", title: "Co-Founder", image: "/images/team/peter-wangASC.jpg" },
-      { name: "Leah Silen", title: "Executive Director", image: "/images/team/leah-silen.jpg" },
       { name: "Evan Marchman", title: "Co-Founder", image: "/images/team/evan-marchmanASC.jpg" },
     ],
   },
