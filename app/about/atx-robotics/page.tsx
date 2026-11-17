@@ -56,7 +56,7 @@ export default function AtxRoboticsPage() {
               registered Assumed Names (DBAs) in the State of Texas:
             </p>
             <ul>
-              <li>Howdy Bots - FRC 6377</li>
+              <li>Howdy Bots</li>
               <li>Austin STEM Center (ASC)</li>
             </ul>
           </div>
