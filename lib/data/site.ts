@@ -59,30 +59,21 @@ export type NavLink = {
   children?: { label: string; href: string }[];
 };
 
-const atxRoboticsHref = "/about/atx-robotics";
+// One list feeds both the header dropdown and the tab row on /programs.
+export const programLinks = [
+  { label: "Labs", href: "/programs/labs" },
+  { label: "STEM Clubs", href: "/programs/after-school-clubs" },
+  { label: "Field Trips", href: "/programs/field-trips" },
+  { label: "Summer Camps", href: "/programs/summer-camps" },
+  { label: "Howdy Bots", href: "/programs/howdy-bots" },
+];
 
 export const navLinks: NavLink[] = [
   { label: "about", href: "/about" },
-  { label: "programs", href: "/programs" },
+  { label: "programs", href: "/programs", children: programLinks },
   { label: "facility rentals", href: "/facility-rentals" },
   // { label: "volunteer", href: "/volunteer" }, // hidden until roles are confirmed (app/_volunteer)
   { label: "tours", href: "/tours" },
+  // { label: "blog", href: "/blog" }, // parked until the blog gets another pass (app/blog still serves)
   { label: "contact", href: "/contact" },
-  {
-    label: "ATX Robotics",
-    href: atxRoboticsHref,
-    children: [
-      { label: "Our Legal Structure", href: `${atxRoboticsHref}#legal-structure` },
-      { label: "Our Mission", href: `${atxRoboticsHref}#mission` },
-      { label: "Our Program Areas", href: `${atxRoboticsHref}#program-areas` },
-      {
-        label: "Board of Directors",
-        href: `${atxRoboticsHref}#board-of-directors`,
-      },
-      ...publishedDocuments.map(({ id, label }) => ({
-        label,
-        href: `${atxRoboticsHref}#${id}`,
-      })),
-    ],
-  },
 ];

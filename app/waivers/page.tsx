@@ -32,7 +32,7 @@ export default function WaiversPage() {
   return (
     <>
       <PageIntro note="field notes — before you build" title="Waivers and forms.">
-        <p className="text-[17px] leading-[1.7] text-ink-soft">
+        <p className="text-[17px] text-ink-soft">
           Anyone taking part in hands-on activities at the center needs two
           signed forms on file. Download them below, print and sign ahead of
           time, and bring them along — or fill out a paper copy at the front
@@ -40,18 +40,18 @@ export default function WaiversPage() {
         </p>
       </PageIntro>
 
-      <ul className="mt-10 grid gap-8 md:grid-cols-2">
+      <ul className="mt-12 grid gap-8 md:grid-cols-2">
         {forms.map((form, i) => (
           <li
             key={form.file}
-            className={`tape relative border border-ink/15 bg-paper p-6 shadow-[3px_4px_0_rgba(56,52,42,0.14)] ${
+            className={`tape relative border border-ink/18 bg-card px-6 pt-6 pb-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)] ${
               i % 2 ? "md:rotate-[0.6deg]" : "md:-rotate-[0.6deg]"
             }`}
           >
-            <p className="font-sans text-xs font-extrabold tracking-[0.18em] uppercase text-ink-soft">
+            <p className="font-sans text-[11px] font-semibold tracking-[0.12em] uppercase text-ink-soft">
               PDF · {form.pages}
             </p>
-            <h2 className="mt-2 text-[22px] leading-tight font-bold text-balance">
+            <h2 className="mt-2 text-[19px] leading-snug font-bold text-balance">
               {form.title}
             </h2>
             <p className="mt-3 text-[16px] leading-[1.65]">{form.summary}</p>
@@ -61,7 +61,7 @@ export default function WaiversPage() {
             <a
               href={form.file}
               download
-              className="mt-5 inline-block rounded-[3px] bg-rust px-6 py-3 text-[15.5px] font-semibold text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+              className="btn btn-rust mt-5"
             >
               Download PDF ↓
             </a>

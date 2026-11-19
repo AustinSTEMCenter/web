@@ -64,15 +64,17 @@ export function PageIntro({
   note,
   title,
   doodle,
+  centered = false,
   children,
 }: {
   note?: string;
   title: ReactNode;
   doodle?: ReactNode;
+  centered?: boolean;
   children?: ReactNode;
 }) {
   return (
-    <header className="relative pt-12">
+    <header className={`relative pt-12 ${centered ? "text-center" : ""}`}>
       {doodle && (
         <span
           aria-hidden
@@ -88,7 +90,9 @@ export function PageIntro({
         {title}
       </h1>
       {children && (
-        <NoteCard className="mt-7 max-w-[680px] -rotate-[0.3deg]">
+        <NoteCard
+          className={`mt-7 max-w-[680px] -rotate-[0.3deg] ${centered ? "mx-auto" : ""}`}
+        >
           {children}
         </NoteCard>
       )}

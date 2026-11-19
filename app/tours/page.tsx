@@ -29,7 +29,7 @@ export default function ToursPage() {
         </p>
       </PageIntro>
 
-      <div className="mt-14 grid grid-cols-2 gap-x-8 gap-y-10 max-md:grid-cols-1">
+      <div className="mt-12 grid grid-cols-2 gap-x-8 gap-y-10 max-md:grid-cols-1">
         <section
           id="tours"
           className="tape relative -rotate-[0.5deg] border border-ink/18 bg-card px-6 pt-6 pb-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)]"
@@ -46,7 +46,7 @@ export default function ToursPage() {
           </p>
           <Link
             href="/contact"
-            className="mt-5 inline-block rounded-[3px] bg-brand-blue px-5 py-2.5 text-[15px] text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)]"
+            className="btn btn-blue mt-5"
           >
             Book a tour →
           </Link>

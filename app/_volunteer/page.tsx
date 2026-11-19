@@ -79,7 +79,7 @@ export default function VolunteerPage() {
       <div className="pt-12">
         <Link
           href="/contact"
-          className="inline-block rounded-[3px] bg-brand-blue px-[22px] py-3 text-[15px] text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+          className="btn btn-blue"
         >
           Reach out about volunteering →
         </Link>

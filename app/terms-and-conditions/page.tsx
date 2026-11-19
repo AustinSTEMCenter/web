@@ -12,7 +12,7 @@ export default function TermsPage() {
   return (
     <>
       <PageIntro note="field notes — the fine print" title="Terms and conditions." />
-      <NoteCard className="mt-8 max-w-[760px]">
+      <NoteCard className="mt-12 max-w-[760px]">
         <div
           className="prose-note"
           dangerouslySetInnerHTML={{ __html: page.html }}

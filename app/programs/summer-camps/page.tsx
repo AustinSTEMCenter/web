@@ -16,11 +16,12 @@ export default function SummerCampsPage() {
 
   return (
     <>
-      <Stamp className="absolute top-0 right-5 z-10 rotate-[7deg] max-md:static max-md:mt-5 max-md:-rotate-2 max-md:px-2 max-md:py-1 max-md:text-[10px]">
+      <Stamp className="absolute top-[46px] right-5 z-10 rotate-[7deg] max-md:static max-md:mt-5 max-md:-rotate-2 max-md:px-2 max-md:py-1 max-md:text-[10px]">
         Summer 2026 · logged
       </Stamp>
 
       <PageIntro
+        note="field notes — our programs"
         title={
           <>
             Camps where <span className="hl-green">real things</span> get
@@ -36,8 +37,8 @@ export default function SummerCampsPage() {
         </p>
       </PageIntro>
 
-      <div className="tape relative mx-auto mt-10 max-w-[560px] -rotate-[0.5deg] border border-ink/18 bg-card px-6 pt-6 pb-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)]">
-        <h2 className="text-[17px] font-bold">
+      <div className="tape relative mt-7 max-w-[680px] rotate-[0.4deg] border border-ink/18 bg-card px-6 pt-6 pb-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)]">
+        <h2 className="text-[19px] font-bold">
           Summer 2026 is a wrap. Thanks for an amazing first season!
         </h2>
         <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
@@ -84,7 +85,7 @@ export default function SummerCampsPage() {
               <p className="mt-4">
                 <Link
                   href={`/camps/${camp.slug}`}
-                  className="text-[15px] italic text-brand-blue underline decoration-brand-blue/50 underline-offset-[3px]"
+                  className="text-link"
                 >
                   camp details →
                 </Link>

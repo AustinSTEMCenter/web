@@ -21,7 +21,7 @@ export default async function FieldTripsPage() {
     <ProgramPage program={getProgram("field-trips")!}>
       <section id="book" className="mt-16">
         <NoteCard flat className="max-w-[680px]">
-          <SectionHeading>Plan a field trip</SectionHeading>
+          <SectionHeading>Plan a field trip.</SectionHeading>
           <p className="mt-3 text-[17px] text-ink-soft">
             Pick an open date, choose a session and start time, and tell us
             about your group. We&rsquo;ll follow up by email to confirm.

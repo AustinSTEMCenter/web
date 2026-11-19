@@ -5,7 +5,7 @@ import { site } from "@/lib/data/site";
 export function SiteFooter() {
   return (
     <footer className="border-t border-ink/25">
-      <div className="mx-auto grid w-full max-w-[1100px] gap-8 pt-8 pb-10 pr-5 pl-[88px] max-sm:pl-[52px] md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
+      <div className="mx-auto grid w-full max-w-[1100px] gap-8 pt-8 pb-10 pr-5 pl-[88px] max-sm:pl-[40px] md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
         <div>
           <Link href="/" className="inline-block">
             <Image
@@ -44,7 +44,7 @@ export function SiteFooter() {
               {site.address.cityStateZip}
             </a>
           </p>
-          <p className="mt-4 flex gap-4 italic">
+          <p className="mt-4 flex flex-wrap gap-x-4 gap-y-1 italic">
             <Link href="/privacy-policy" className="underline decoration-brand-blue/50 underline-offset-[3px]">
               privacy
             </Link>
@@ -65,6 +65,9 @@ export function SiteFooter() {
             >
               newsletter
             </a>
+            <Link href="/about/atx-robotics" className="underline decoration-brand-blue/50 underline-offset-[3px]">
+              ATX Robotics
+            </Link>
           </p>
         </div>
       </div>

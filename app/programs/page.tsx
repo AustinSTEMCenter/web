@@ -11,6 +11,11 @@ export const metadata: Metadata = {
     "Labs, summer camps, STEM clubs, field trips, and the Howdy Bots robotics team at the Austin STEM Center.",
 };
 
+const cardClass =
+  "tape relative flex flex-col border border-ink/18 bg-card p-4 pb-3.5 shadow-[3px_4px_0_rgba(56,52,42,0.12)] transition-transform duration-200 ease-out hover:-translate-y-1 hover:rotate-0";
+
+const tilts = ["-rotate-[0.8deg]", "rotate-[0.7deg]", "-rotate-[0.5deg]", "rotate-[0.6deg]"];
+
 export default function ProgramsPage() {
   return (
     <>
@@ -23,37 +28,22 @@ export default function ProgramsPage() {
           </>
         }
         doodle={<Rocket className="h-16 -rotate-12 text-rust/45" />}
+        centered
       >
-        <div className="prose-note text-[17px] text-ink-soft">
-          <p>
-            Every program at Austin STEM Center is designed around one simple
-            belief: people learn best by doing.
-          </p>
-          <p>
-            Whether they&rsquo;re building a robot, designing a prototype,
-            programming electronics, or tackling an engineering challenge,
-            participants gain more than technical skills. They build
-            confidence, strengthen problem-solving abilities, spark
-            curiosity, and discover what&rsquo;s possible when they&rsquo;re
-            given the opportunity to create.
-          </p>
-          <p>
-            Our programs don&rsquo;t just teach STEM. They prepare people to
-            think critically, collaborate, and solve the challenges of
-            tomorrow.
-          </p>
-        </div>
+        <p className="text-[17px] text-ink-soft">
+          Every program at Austin STEM Center is designed around one simple
+          belief: people learn best by doing.
+        </p>
       </PageIntro>
 
-      <div className="mt-14 grid grid-cols-3 gap-6 max-lg:grid-cols-2 max-sm:grid-cols-1 max-sm:gap-y-10">
+      {/* the cards come first: this is what people arrive here to compare */}
+      <div className="mt-12 grid grid-cols-3 gap-6 max-lg:grid-cols-2 max-sm:grid-cols-1 max-sm:gap-y-10">
         {programs.map((p, i) => (
           <Link
             key={p.slug}
             id={p.slug}
             href={p.href}
-            className={`tape relative flex flex-col border border-ink/18 bg-card p-4 pb-3.5 shadow-[3px_4px_0_rgba(56,52,42,0.12)] transition-transform duration-200 ease-out hover:-translate-y-1 hover:rotate-0 ${
-              ["-rotate-[0.8deg]", "rotate-[0.7deg]", "-rotate-[0.5deg]", "rotate-[0.6deg]"][i % 4]
-            }`}
+            className={`${cardClass} ${tilts[i % tilts.length]}`}
           >
             <Image
               src={p.image}
@@ -80,7 +70,60 @@ export default function ProgramsPage() {
             </div>
           </Link>
         ))}
+
+        {/* fills the sixth slot of the grid and gives undecided visitors a
+            next step that isn't a program */}
+        <Link
+          href="/tours"
+          className={`${cardClass} ${tilts[programs.length % tilts.length]}`}
+        >
+          <Image
+            src="/images/facilities/machine-shop.jpg"
+            alt=""
+            width={640}
+            height={400}
+            className="aspect-[8/5] w-full border border-ink/10 object-cover"
+          />
+          <p className="mt-3.5 font-hand text-[19px] leading-none text-brand-blue">
+            not sure where to start?
+          </p>
+          <h2 className="mt-1.5 text-[18px] leading-snug font-bold">
+            Come see the space.
+          </h2>
+          <p className="mt-1.5 text-[14.5px] leading-relaxed text-ink-soft">
+            Walk through the shops, labs, and FIRST Arena with the people who
+            run them, then pick the program that fits.
+          </p>
+          <span className="mt-auto pt-3.5 text-[14px] italic text-brand-blue">
+            book a tour →
+          </span>
+        </Link>
       </div>
+
+      {/* why hands-on */}
+      <section className="pt-20">
+        <NoteCard className="mx-auto max-w-[680px] rotate-[0.3deg] text-center">
+          <p className="mb-2 font-hand text-[21px] text-brand-blue">
+            why we teach this way
+          </p>
+          <SectionHeading>More than technical skills.</SectionHeading>
+          <div className="prose-note mx-auto mt-6">
+            <p>
+              Whether they&rsquo;re building a robot, designing a prototype,
+              programming electronics, or tackling an engineering challenge,
+              participants gain more than technical skills. They build
+              confidence, strengthen problem-solving abilities, spark
+              curiosity, and discover what&rsquo;s possible when they&rsquo;re
+              given the opportunity to create.
+            </p>
+            <p>
+              Our programs don&rsquo;t just teach STEM. They prepare people to
+              think critically, collaborate, and solve the challenges of
+              tomorrow.
+            </p>
+          </div>
+        </NoteCard>
+      </section>
 
       {/* partnerships */}
       <section className="grid items-start gap-x-10 gap-y-5 pt-20 pb-4 max-md:grid-cols-1 grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
@@ -117,7 +160,7 @@ export default function ProgramsPage() {
           </div>
           <Link
             href="/contact"
-            className="mt-6 inline-block rounded-[3px] bg-brand-blue px-[22px] py-3 text-[15px] text-paper shadow-[2px_2px_0_rgba(56,52,42,0.65)] transition-[transform,box-shadow] duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+            className="btn btn-blue mt-6"
           >
             Contact us →
           </Link>
