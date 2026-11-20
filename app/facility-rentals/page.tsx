@@ -12,6 +12,7 @@ import {
 import { facilities } from "@/lib/data/facilities";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/facility-rentals" },
   title: "Facility Rentals",
   description:
     "Rent event space and classrooms at the Austin STEM Center, home to a FIRST Robotics arena, wood shop with a 4×8 CNC router, machine shop, electronics lab, makerspace, and teaching kitchen.",

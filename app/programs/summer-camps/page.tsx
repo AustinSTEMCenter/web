@@ -6,6 +6,7 @@ import { camps } from "@/lib/data/camps";
 import { getProgram } from "@/lib/data/programs";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/programs/summer-camps" },
   title: "Summer Camps",
   description:
     "Immersive, multi-day STEM summer camps at the Austin STEM Center. Summer 2026 has concluded. Join the list to hear about fall programming.",

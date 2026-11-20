@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Annotation, PageIntro } from "@/components/notebook";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/frckickoff" },
   title: "FRC Kickoff",
   description:
     "Join us for the 2027 Austin area FRC Kickoff on January 9 at Austin STEM Center. More details coming soon.",

@@ -83,7 +83,7 @@ export function ProgramPage({
     <figure className="photo max-w-[420px] rotate-[0.9deg]">
       <Image
         src={program.image}
-        alt={program.title}
+        alt={program.imageAlt}
         width={840}
         height={560}
         className="aspect-[3/2] w-full object-cover"

@@ -5,6 +5,7 @@ date: 2025-07-08
 author: "Ken Hawthorn"
 excerpt: "Building on the powerful idea of a “first FIRST” experience — where a single hands-on moment can ignite a lifelong passion for STEM — this next chapter is about empowering people of all ages to tackle real-world problems at ever-growing scales."
 cover: /images/blog/from-first-first-to-second-third-and-beyond/rsw_1280-1.webp
+coverAlt: "Robot-building tools and parts laid out on a workbench: anvil pruner, quarter-inch punch, calipers, speedserts, and nylon hardware"
 ---
 
 Danny Beesly, FabLab and Workforce Development, ASC

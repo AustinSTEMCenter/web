@@ -6,6 +6,7 @@ date: 2025-07-08
 author: "Ken Hawthorn"
 excerpt: "There’s a special electricity that crackles through a room when someone experiences a first. Today, that spark leapt thirty-five miles up the road to the Taylor Public Library, where ASC ran its very first out-bound field trip."
 cover: /images/blog/ascs-first-outbound-field-trip-lands-in-taylor-texas/rsw_1280-1-1.webp
+coverAlt: "Collage of students and instructors building hands-on projects during the Taylor, Texas field trip"
 ---
 
 There’s a special electricity that crackles through a room when someone experiences a *first*—the same charge we wrote about in our inaugural post on why “[everyone needs a first FIRST experience](/blogf/everyone-needs-a-first-first-experience).” Today, that spark leapt thirty-five miles up the road to the Taylor Public Library, where the Austin STEM Center ran its very first out-bound field trip.

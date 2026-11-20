@@ -4,6 +4,7 @@ import { PaperPlane } from "@/components/doodles";
 import { PageIntro } from "@/components/notebook";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/tours" },
   title: "Tours & Open House",
   description:
     "Visit the Austin STEM Center: book a guided tour of our shops, labs, and FIRST Robotics arena, or drop in at our next open house.",

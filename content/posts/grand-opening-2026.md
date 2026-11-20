@@ -6,6 +6,7 @@ date: 2026-08-25
 author: "Austin STEM Center"
 excerpt: "On Saturday, August 22 we opened the doors for the first time. Just over 1,200 people came through, and together we raised around $20,000 for STEM education programs."
 cover: /images/blog/grand-opening-2026/howdy-bots-first-arena.jpg
+coverAlt: "A Howdy Bots robot collecting yellow foam balls in the FIRST arena while grand opening visitors watch"
 ---
 
 On Saturday, August 22, 2026, from 1 to 6 PM, we opened the doors at 11525 Stonehollow Dr. for the first time and invited Austin to come see where STEM education meets the moment.

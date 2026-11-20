@@ -6,6 +6,7 @@ import { facilities } from "@/lib/data/facilities";
 import { machines } from "@/lib/data/machines";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/machines" },
   title: "Machines",
   description:
     "A field guide to the machines in our shop: CO₂ lasers, a fiber laser that cuts steel, a 4×8 CNC router, laser welding, and a full wood shop — what each one is, what it does, and what you can make with it.",

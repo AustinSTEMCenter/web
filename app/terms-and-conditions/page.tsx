@@ -3,6 +3,7 @@ import { NoteCard, PageIntro } from "@/components/notebook";
 import { getLegalPage } from "@/lib/data/posts";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/terms-and-conditions" },
   title: "Terms and Conditions",
   description: "Terms and conditions for the Austin STEM Center website.",
 };

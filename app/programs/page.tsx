@@ -6,6 +6,7 @@ import { NoteCard, PageIntro, SectionHeading } from "@/components/notebook";
 import { programs } from "@/lib/data/programs";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/programs" },
   title: "Programs",
   description:
     "Labs, summer camps, STEM clubs, field trips, and the Howdy Bots robotics team at the Austin STEM Center.",
@@ -47,7 +48,7 @@ export default function ProgramsPage() {
           >
             <Image
               src={p.image}
-              alt=""
+              alt={p.imageAlt}
               width={640}
               height={400}
               className="aspect-[8/5] w-full border border-ink/10 object-cover"
@@ -79,7 +80,7 @@ export default function ProgramsPage() {
         >
           <Image
             src="/images/facilities/machine-shop.jpg"
-            alt=""
+            alt="Students and a mentor at the CNC mill in the machine shop"
             width={640}
             height={400}
             className="aspect-[8/5] w-full border border-ink/10 object-cover"

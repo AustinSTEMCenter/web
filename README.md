@@ -54,9 +54,8 @@ Useful commands:
 | `pnpm start`   | Serve the production build locally (after `pnpm build`)        |
 | `pnpm exec tsc --noEmit` | Type-check without building                          |
 
-No environment variables are required just to run the site. The contact form,
-donation counter, and grand-opening board degrade gracefully when their
-variables are missing (see [Environment variables](#environment-variables)).
+No environment variables are required just to run the site. The contact form
+degrades gracefully when its variables are missing (see [Environment variables](#environment-variables)).
 
 ---
 
@@ -80,12 +79,10 @@ The three layers:
    handwritten annotations, doodles). `app/globals.css` defines the theme
    tokens (colors, fonts) and the graph-paper page styling.
 
-Three things run on the server at request time:
+Two things run on the server at request time:
 
 - The **contact form** submits through a Next.js Server Action that forwards
   the submission to a Google Apps Script webhook (writes to a Google Sheet and emails Joseph).
-- The **grand-opening live board** (`/grand-opening`) polls `/api/grand-opening`,
-  which reads a door-counter value from Upstash Redis and a donation total from Stripe.
 - **Redirects** from old WordPress URLs are handled by Next.js config (`next.config.ts`).
 
 Donations use a hosted **Stripe Buy Button**, so no payment code runs here.
@@ -100,7 +97,6 @@ app/                    Routes. Each folder = a URL. page.tsx is the page.
   globals.css           Theme tokens (@theme) + notebook/graph-paper styles
   page.tsx              Homepage
   not-found.tsx         404 page
-  api/grand-opening/    JSON endpoint for the live board
   camps/[slug]/         One page per camp in lib/data/camps.ts
   machines/             Machine index + one page per machine ([slug])
   programs/             Programs index + labs, after-school-clubs, field-trips, summer-camps
@@ -109,7 +105,6 @@ app/                    Routes. Each folder = a URL. page.tsx is the page.
   _volunteer/           Volunteer page, hidden for now (folders starting with _ aren't routed)
   frckickoff/           Unlinked FRC Kickoff page
   contact/              Contact page + actions.ts (server action that sends the form)
-  grand-opening/        Live event board (not indexed by search engines)
   waivers/              Links to the liability waiver + media release PDFs
   privacy-policy/       Rendered from content/pages/privacy-policy.md
   terms-and-conditions/ Rendered from content/pages/terms-and-conditions.md
@@ -120,7 +115,6 @@ content/
 lib/
   data/                 THE CONTENT. camps, machines, facilities, programs, team, site
   forms-webhook.ts      Sends form submissions to the Google Apps Script webhook
-  grand-opening/        Fetches + caches counter and Stripe stats for the live board
 public/
   images/               All images, organized by section (about, camps, facilities, team, ...)
   forms/                Waiver + media release PDFs
@@ -154,7 +148,6 @@ Folders you may see locally that are **not** in git: `design/`, `plans/`,
 | `/waivers`                 | `app/waivers/page.tsx`                 | PDFs in `public/forms/`                             |
 | `/privacy-policy`          | `app/privacy-policy/page.tsx`          | `content/pages/privacy-policy.md`                   |
 | `/terms-and-conditions`    | `app/terms-and-conditions/page.tsx`    | `content/pages/terms-and-conditions.md`             |
-| `/grand-opening`           | `app/grand-opening/page.tsx`           | Live data from `/api/grand-opening`                 |
 | `/rsvp`                    | `next.config.ts`                       | Temporary redirect to the Luma event                |
 | `/donate`                  | `next.config.ts`                       | Redirect to the Givebutter donation page            |
 | `/build-the-future`        | `next.config.ts`                       | Redirect to the Givebutter donation page (event ended) |
@@ -272,8 +265,6 @@ sensible (a few hundred KB, not multi-megabyte originals).
 | **Vercel**             | Hosting, preview deployments, analytics | Vercel project `web`; `<Analytics />` in `app/layout.tsx` |
 | **Google Apps Script → Google Sheet** | Contact form submissions (interim CRM) plus an email notification per submission | `lib/forms-webhook.ts`, setup steps in `docs/forms-webhook-setup.md` |
 | **Givebutter**         | Donations (nav Donate button; `/donate` redirects there) and lab and club registration | `donateUrl` in `lib/data/site.ts`; `registerUrl` in `lib/data/labs.ts` and `lib/data/clubs.ts`. Amounts, tickets, and receipts are configured in the Givebutter dashboard |
-| **Stripe API**         | Donation total on the grand-opening board | `lib/grand-opening/stats.ts` (read-only key)         |
-| **Upstash Redis**      | Door-counter tally for the grand-opening board. The count is incremented by the separate admin app (`web/admin`) | `lib/grand-opening/stats.ts` |
 | **Luma**               | Event RSVPs                             | `/rsvp` redirect in `next.config.ts`                   |
 | **Google Fonts**       | Caveat (handwriting font)               | `app/layout.tsx` via `next/font`                       |
 | **MailerLite (subscribepage)** | Newsletter signup                | `newsletterUrl` in `lib/data/site.ts`                  |
@@ -295,11 +286,6 @@ are gitignored; never commit them.
 | ------------------------------- | --------- | ------------------------------------------------------------------ |
 | `FORMS_WEBHOOK_URL`             | For the contact form | Google Apps Script web-app URL that receives submissions   |
 | `RSVP_WEBHOOK_URL`              | Legacy    | Older name for the same thing; used as a fallback if the above is unset |
-| `KV_REST_API_URL`               | Grand-opening board | Upstash REST endpoint (added automatically by the Vercel ↔ Upstash integration) |
-| `KV_REST_API_READ_ONLY_TOKEN`   | Grand-opening board | Preferred token; this site only reads the counter        |
-| `KV_REST_API_TOKEN`             | Grand-opening board | Fallback if the read-only token is not set               |
-| `STRIPE_SECRET_KEY`             | Grand-opening board | A **restricted** key with `charges:read` is enough       |
-| `GRAND_OPENING_DONATIONS_SINCE` | Optional  | ISO date; only count Stripe charges after this date                |
 
 Nothing else needs secrets.
 
@@ -389,9 +375,10 @@ workspace, outside this repo). The horizontal logo used on the site is
   `git checkout 8b4a698^ -- app/blog`. The WordPress-era
   blog URLs in `next.config.ts` still redirect to `/blog/...`, so they will 404
   until the blog is restored.
-- **`/grand-opening` is an event-day live board.** It is hidden from search
-  engines and polls the API every 15 seconds. It can be deleted after the
-  event along with `app/api/grand-opening/` and `lib/grand-opening/`.
+- **The grand-opening live board was removed** from this public site in Nov 2026
+  because its page and API were publicly reachable. It belongs in the signed-in
+  admin app (`web/admin`); the old code is in git history under
+  `app/grand-opening/`, `app/api/grand-opening/`, and `lib/grand-opening/`.
 - **`/rsvp` is a temporary redirect** to Luma. Repurpose or remove it when the
   event is over.
 - **Camps are shown as information only.** There is no registration flow on

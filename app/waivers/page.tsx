@@ -4,6 +4,7 @@ import { Annotation, NoteCard, PageIntro } from "@/components/notebook";
 // import { site } from "@/lib/data/site"; // re-enable with the phone number
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/waivers" },
   title: "Waivers & Forms",
   description:
     "Download the Austin STEM Center liability waiver and media release. Print, sign, and bring them with you, or sign at the front desk.",

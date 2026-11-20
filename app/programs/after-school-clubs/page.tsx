@@ -12,6 +12,7 @@ import { getProgram } from "@/lib/data/programs";
 import { dateParts, todayInAustin, weekday, weekdayName } from "@/lib/dates";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/programs/after-school-clubs" },
   title: "STEM Clubs",
   description:
     "STEM Clubs at the Austin STEM Center: Design & Build and Spark & Motion, meeting after school and during the day for homeschool students. $50 a session or $150 for four.",

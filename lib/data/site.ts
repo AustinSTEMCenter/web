@@ -1,11 +1,17 @@
 export const site = {
   name: "Austin STEM Center",
+  url: "https://www.austinstemcenter.org",
+  /** The 501(c)(3) that operates Austin STEM Center (ASC is a DBA). */
+  legalName: "ATX Robotics, Inc.",
+  ein: "81-3604667",
   tagline: "We're redesigning how the world learns.",
   phone: "(512) 220-1698",
   phoneHref: "tel:+15122201698",
   address: {
     street: "11525 Stonehollow Dr., Suite A100",
-    cityStateZip: "Austin, TX 78758",
+    city: "Austin",
+    state: "TX",
+    zip: "78758",
   },
   mapUrl: "https://maps.app.goo.gl/jPFUhc7qek9uUA2cA",
   donateUrl: "https://givebutter.com/austin-stem-center",
