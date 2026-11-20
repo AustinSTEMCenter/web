@@ -39,6 +39,8 @@ const nextConfig: NextConfig = {
       { source: "/facilities", destination: "/facility-rentals", permanent: false },
       // Classes were renamed Labs (2026-10); keep shared /programs/classes links working.
       { source: "/programs/classes", destination: "/programs/labs", permanent: false },
+      // ATX Robotics page renamed per the Nov 2026 website audit.
+      { source: "/about/atx-robotics", destination: "/about/financials-and-governance", permanent: true },
       // Donations moved to Givebutter (2026-10); keep old /donate links working.
       { source: "/donate", destination: site.donateUrl, permanent: false },
       { source: "/donate/thank-you", destination: "/", permanent: false },

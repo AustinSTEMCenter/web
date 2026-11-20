@@ -7,7 +7,7 @@ import { site } from "@/lib/data/site";
 const pages = [
   "/",
   "/about",
-  "/about/atx-robotics",
+  "/about/financials-and-governance",
   "/programs",
   "/programs/labs",
   "/programs/after-school-clubs",

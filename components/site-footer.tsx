@@ -70,8 +70,8 @@ export function SiteFooter() {
             >
               newsletter
             </a>
-            <Link href="/about/atx-robotics" className="underline decoration-brand-blue/50 underline-offset-[3px]">
-              ATX Robotics
+            <Link href="/about/financials-and-governance" className="underline decoration-brand-blue/50 underline-offset-[3px]">
+              financials &amp; governance
             </Link>
           </p>
         </div>
