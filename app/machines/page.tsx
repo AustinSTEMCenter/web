@@ -7,9 +7,9 @@ import { machines } from "@/lib/data/machines";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/machines" },
-  title: "Machines",
+  title: "Laser Cutters, CNC & Shop Machines",
   description:
-    "A field guide to the machines in our shop: CO₂ lasers, a fiber laser that cuts steel, a 4×8 CNC router, laser welding, and a full wood shop — what each one is, what it does, and what you can make with it.",
+    "A field guide to our shop: CO₂ and fiber laser cutters, a 4×8 CNC router, a CNC mill, laser welding, and a wood shop, plus what you can make with each.",
 };
 
 export default function MachinesPage() {

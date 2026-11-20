@@ -13,6 +13,9 @@ import { getProgram, programs } from "@/lib/data/programs";
 import { site } from "@/lib/data/site";
 
 export const metadata: Metadata = {
+  title: {
+    absolute: "Austin STEM Center: Hands-On STEM Programs for Kids in Austin, TX",
+  },
   alternates: { canonical: "/" },
 };
 

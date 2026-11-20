@@ -8,7 +8,7 @@ import { dateParts, todayInAustin } from "@/lib/dates";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/programs/labs" },
-  title: "Labs",
+  title: "Sunday STEM Labs for Kids & Teens",
   description:
     "Hands-on, three-hour Sunday STEM labs in the shops and makerspaces at the Austin STEM Center.",
 };

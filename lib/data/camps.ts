@@ -1,6 +1,8 @@
 export type Camp = {
   name: string;
   slug: string;
+  /** What the camp is about, for the page title (e.g. "Electronics & Music"). */
+  topic: string;
   /** illustrated title card — used on the camps listing */
   image: string;
   /** real photos from camp, lead photo first — used on the detail page */
@@ -20,6 +22,7 @@ export const camps: Camp[] = [
   {
     name: "Fort Minecrafters",
     slug: "fort-minecrafters",
+    topic: "Minecraft Engineering",
     image: "/images/camps/fort-minecrafters.png",
     photos: [
       {
@@ -63,6 +66,7 @@ export const camps: Camp[] = [
   {
     name: "Race Lab",
     slug: "race-lab",
+    topic: "RC Car Engineering",
     image: "/images/camps/race-lab.png",
     photos: [
       {
@@ -107,6 +111,7 @@ export const camps: Camp[] = [
   {
     name: "Build-A-Synth",
     slug: "build-a-synth",
+    topic: "Electronics & Music",
     image: "/images/camps/build-a-synth.png",
     photos: [
       {

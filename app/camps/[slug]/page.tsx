@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const camp = getCamp((await params).slug);
   if (!camp) return {};
   return {
-    title: `${camp.name} Summer Camp`,
+    title: `${camp.name}: ${camp.topic} Summer Camp`,
     description: camp.pitch,
     alternates: { canonical: `/camps/${camp.slug}` },
   };

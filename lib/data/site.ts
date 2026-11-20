@@ -19,7 +19,7 @@ export const site = {
   scholarshipFormUrl:
     "https://docs.google.com/forms/d/e/1FAIpQLScxH5eiP_jgKMv51MsGVG7Oz_f-mNBaxzIr7iaBlu6Hkjo_hQ/viewform",
   footerBlurb:
-    "Austin STEM Center (ASC) is a nonprofit innovation hub where schools, companies, and communities come together to solve real problems and grow real talent.",
+    "Austin STEM Center is a nonprofit in North Austin where kids and teens learn STEM by building real projects in labs, clubs, camps, and school field trips.",
 };
 
 export type GovernanceDocument = {
