@@ -15,7 +15,11 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const machine = getMachine((await params).slug);
   if (!machine) return {};
-  return { title: machine.name, description: machine.whatItIs };
+  return {
+    title: machine.name,
+    description: machine.whatItIs,
+    alternates: { canonical: `/machines/${machine.slug}` },
+  };
 }
 
 export default async function MachinePage({ params }: Props) {

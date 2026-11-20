@@ -6,6 +6,7 @@ date: 2025-07-22
 author: "Ken Hawthorn"
 excerpt: "Most adults do not study the technical process of microchip fabrication, so most ten year olds are not exposed to it. An ASC field trip can fix this."
 cover: /images/blog/discussing-backside-power-with-middle-school-students/rsw_1280-2.webp
+coverAlt: "An imec chip technology roadmap slide showing transistor generations and backside power delivery"
 ---
 
 Most adults do not study the technical process of microchip fabrication, so most ten year olds are not exposed to it. An ASC field trip can fix this.

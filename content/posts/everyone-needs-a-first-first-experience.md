@@ -6,6 +6,7 @@ date: 2025-06-10
 author: "Ken Hawthorn"
 excerpt: "Dean Kamen famously declared FIRST robotics “the only sport where every kid can turn pro.” When students join FIRST, they don’t just build robots — they build identities. Here’s why that first hands-on moment matters so much."
 cover: /images/blog/everyone-needs-a-first-first-experience/rsw_1280-3.webp
+coverAlt: "Labeled diagram of a standard hobby servo, showing its gear train, DC motor, and control board"
 ---
 
 #### From “I am not-Technical” to a “First FIRST” Moment: Why Austin STEM Center Matters

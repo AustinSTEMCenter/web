@@ -3,6 +3,7 @@ import { NoteCard, PageIntro } from "@/components/notebook";
 import { getLegalPage } from "@/lib/data/posts";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/privacy-policy" },
   title: "Privacy Policy",
   description: "Privacy policy for the Austin STEM Center website.",
 };

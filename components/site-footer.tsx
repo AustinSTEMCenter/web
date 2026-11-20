@@ -41,8 +41,13 @@ export function SiteFooter() {
             >
               {site.address.street}
               <br />
-              {site.address.cityStateZip}
+              {site.address.city}, {site.address.state} {site.address.zip}
             </a>
+          </p>
+          <p className="mt-4 text-[13.5px] leading-snug text-ink-soft">
+            Operated by {site.legalName}, a 501(c)(3) nonprofit.
+            <br />
+            EIN {site.ein}
           </p>
           <p className="mt-4 flex flex-wrap gap-x-4 gap-y-1 italic">
             <Link href="/privacy-policy" className="underline decoration-brand-blue/50 underline-offset-[3px]">

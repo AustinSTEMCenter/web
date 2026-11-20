@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { NoteCard, Stamp } from "@/components/notebook";
 import { formatDate, getPost, getPublishedPosts } from "@/lib/data/posts";
+import { sharedOpenGraph } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -14,7 +15,19 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPost((await params).slug);
   if (!post) return {};
-  return { title: post.title, description: post.excerpt };
+  return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: { canonical: `/blog/${post.slug}` },
+    openGraph: {
+      ...sharedOpenGraph,
+      type: "article",
+      publishedTime: post.date,
+      ...(post.cover && {
+        images: [{ url: post.cover, alt: post.coverAlt ?? post.title }],
+      }),
+    },
+  };
 }
 
 export default async function BlogPostPage({ params }: Props) {
@@ -37,7 +50,7 @@ export default async function BlogPostPage({ params }: Props) {
         <figure className="photo mt-8 max-w-[620px] -rotate-[0.5deg]">
           <Image
             src={post.cover}
-            alt=""
+            alt={post.coverAlt ?? ""}
             width={1240}
             height={775}
             sizes="(min-width: 768px) 620px, 92vw"

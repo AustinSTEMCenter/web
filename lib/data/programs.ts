@@ -10,6 +10,7 @@ export type Program = {
   slug: string;
   href: string;
   image: string;
+  imageAlt: string;
   teaser: string;
   about: string[];
   experienceHeading: string;
@@ -26,6 +27,7 @@ export const programs: Program[] = [
     slug: "labs",
     href: "/programs/labs",
     image: "/images/facilities/electronics-lab.jpg",
+    imageAlt: "Students working at round tables in the Austin STEM Center electronics lab",
     teaser:
       "Focused, three-hour Sunday labs in our shops and makerspaces, from 3D design to physical computing.",
     about: [
@@ -56,6 +58,7 @@ export const programs: Program[] = [
     slug: "after-school-clubs",
     href: "/programs/after-school-clubs",
     image: "/images/camps/build-a-synth-3.jpg",
+    imageAlt: "An instructor helping students assemble synthesizer kits",
     teaser:
       "Hands-on STEM clubs, meeting after school and during the day for homeschoolers.",
     about: [
@@ -92,6 +95,7 @@ export const programs: Program[] = [
     slug: "field-trips",
     href: "/programs/field-trips",
     image: "/images/camps/race-lab-1.jpg",
+    imageAlt: "Students working on laptops around a table during a Race Lab session",
     teaser:
       "Hands-on STEM experiences that connect classroom learning to real-world tools, careers, and problem-solving.",
     about: [
@@ -139,6 +143,7 @@ export const programs: Program[] = [
     slug: "summer-camps",
     href: "/programs/summer-camps",
     image: "/images/camps/fort-minecrafters-1.jpg",
+    imageAlt: "Campers building a life-size fort out of cardboard boxes",
     teaser:
       "Hands-on camps where creativity, STEM, fun, and real-world skills come together.",
     about: [
@@ -158,6 +163,7 @@ export const programs: Program[] = [
     slug: "howdy-bots",
     href: "/programs/howdy-bots",
     image: "/images/facilities/first-arena.jpg",
+    imageAlt: "Howdy Bots team members driving their competition robot in the FIRST arena",
     teaser:
       "Our FIRST Robotics Competition team, providing students ages 13–18 with hands-on engineering and business experience.",
     about: [

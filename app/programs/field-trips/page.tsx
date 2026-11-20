@@ -6,6 +6,7 @@ import { getFieldTripAvailability } from "@/lib/data/field-trip-availability";
 import { getProgram } from "@/lib/data/programs";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/programs/field-trips" },
   title: "Field Trips",
   description:
     "Immersive, hands-on STEM field trips for elementary, middle, and high school groups at the Austin STEM Center.",

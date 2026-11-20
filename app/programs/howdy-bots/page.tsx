@@ -4,6 +4,7 @@ import { ProgramPage } from "@/components/program-page";
 import { getProgram } from "@/lib/data/programs";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/programs/howdy-bots" },
   title: "Howdy Bots",
   description:
     "Howdy Bots FRC 6377 is a co-ed community robotics team for 13 to 18-year-olds from Austin, TX, competing in the FIRST Robotics Competition.",

@@ -5,6 +5,7 @@ date: 2026-03-24
 author: "Rylee Lippenholz"
 excerpt: "There are moments you don’t realize you’ve been waiting for… until they finally arrive. This is one of those moments. After years of dreaming, months of planning, and a team…"
 cover: /images/blog/something-big-just-opened-in-central-texas-and-its-about-to-change-how-your-kids-learn/IMG_8602.jpg
+coverAlt: "Four young women working together on worksheets around a table at Austin STEM Center"
 ---
 
 [Learn more about our camps, and Register Now!](/programs/summer-camps)

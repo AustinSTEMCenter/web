@@ -6,6 +6,7 @@ import { NoteCard, PageIntro, Stamp } from "@/components/notebook";
 import { formatDate, getPublishedPosts } from "@/lib/data/posts";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/blog" },
   title: "Field Notes — Blog",
   description:
     "Event recaps, practical insights, and behind-the-scenes stories from ASC's work with students, educators, and industry leaders.",
@@ -45,7 +46,7 @@ export default function BlogPage() {
               >
                 <Image
                   src={post.cover}
-                  alt=""
+                  alt={post.coverAlt ?? ""}
                   width={720}
                   height={450}
                   className="aspect-[8/5] w-full object-cover"

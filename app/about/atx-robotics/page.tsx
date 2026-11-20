@@ -6,6 +6,7 @@ import { publishedDocuments } from "@/lib/data/site";
 import { boardOfDirectors } from "@/lib/data/team";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/about/atx-robotics" },
   title: "About ATX Robotics",
   description:
     "ATX Robotics, Inc. is a Texas nonprofit corporation and 501(c)(3) organization expanding access to hands-on robotics and STEAM education through Austin STEM Center, Howdy Bots FRC 6377, and the North Austin Science Alliance.",

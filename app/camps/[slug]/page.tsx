@@ -14,7 +14,11 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const camp = getCamp((await params).slug);
   if (!camp) return {};
-  return { title: `${camp.name} Summer Camp`, description: camp.pitch };
+  return {
+    title: `${camp.name} Summer Camp`,
+    description: camp.pitch,
+    alternates: { canonical: `/camps/${camp.slug}` },
+  };
 }
 
 export default async function CampPage({ params }: Props) {

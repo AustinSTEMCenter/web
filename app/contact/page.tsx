@@ -5,6 +5,7 @@ import { Annotation, PageIntro } from "@/components/notebook";
 // import { site } from "@/lib/data/site"; // re-enable with the phone number
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/contact" },
   title: "Contact",
   description:
     "Get in touch with the Austin STEM Center about programs, partnerships, parent questions, and everything else.",

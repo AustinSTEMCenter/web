@@ -5,6 +5,7 @@ date: 2025-09-08
 author: "Ken Hawthorn"
 excerpt: "Students learn the chemistry of watercolor paint while studying the remarkable global story behind one of history’s most sought-after colors: scarlet red."
 cover: /images/blog/painting-stem-into-history/rsw_1280.webp
+coverAlt: "Two pans of red honey watercolor paint in front of a red watercolor swatch"
 ---
 
 At ASC, we look for ways to activate STEM in young artists by giving them agency in a medium they already know well. Paint. We do this to reveal the depth and complexity of STEM that’s hidden inside that medium.

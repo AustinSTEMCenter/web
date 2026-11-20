@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Gear, PaperPlane } from "@/components/doodles";
@@ -10,6 +11,10 @@ import {
 import { facilities } from "@/lib/data/facilities";
 import { getProgram, programs } from "@/lib/data/programs";
 import { site } from "@/lib/data/site";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 /* one logo-ring color per facility chip, in facilities-data order */
 const chipAccents = [
@@ -101,7 +106,7 @@ export default function Home() {
               >
                 <Image
                   src={p.image}
-                  alt=""
+                  alt={p.imageAlt}
                   width={640}
                   height={400}
                   className="aspect-[8/5] w-full border border-ink/10 object-cover"
@@ -299,7 +304,7 @@ export default function Home() {
                 {post.cover && (
                   <Image
                     src={post.cover}
-                    alt=""
+                    alt={post.coverAlt ?? ""}
                     width={640}
                     height={400}
                     className="aspect-[8/5] w-full border border-ink/10 object-cover"
