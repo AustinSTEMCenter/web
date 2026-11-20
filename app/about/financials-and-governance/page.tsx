@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Link from "next/link";
 import { Gear } from "@/components/doodles";
 import { NoteCard, PageIntro, SectionHeading } from "@/components/notebook";
-import { publishedDocuments } from "@/lib/data/site";
-import { boardOfDirectors } from "@/lib/data/team";
+import { publishedDocuments, site } from "@/lib/data/site";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/about/atx-robotics" },
-  title: "About ATX Robotics",
-  description:
-    "ATX Robotics, Inc. is a Texas nonprofit corporation and 501(c)(3) organization expanding access to hands-on robotics and STEAM education through Austin STEM Center, Howdy Bots FRC 6377, and the North Austin Science Alliance.",
+  alternates: { canonical: "/about/financials-and-governance" },
+  title: "Financials and Governance",
+  description: `Austin STEM Center is operated by ${site.legalName}, a Texas nonprofit corporation and 501(c)(3) organization (EIN ${site.ein}). Legal structure, tax documents, and governance.`,
 };
 
 const programAreas = [
@@ -30,14 +28,14 @@ const programAreas = [
   },
 ];
 
-export default function AtxRoboticsPage() {
+export default function FinancialsAndGovernancePage() {
   return (
     <div className="pb-4">
       <PageIntro
         note="field notes — the nonprofit"
         title={
           <>
-            About <span className="hl">ATX Robotics.</span>
+            Financials and <span className="hl">governance.</span>
           </>
         }
         doodle={<Gear className="h-16 -rotate-12 text-gold/70" />}
@@ -49,8 +47,10 @@ export default function AtxRoboticsPage() {
           <SectionHeading>Our legal structure.</SectionHeading>
           <div className="prose-note mt-6">
             <p>
-              ATX Robotics, Inc. is a Texas nonprofit corporation and federally
-              recognized 501(c)(3) tax-exempt organization.
+              Austin STEM Center is operated by {site.legalName}, a Texas
+              nonprofit corporation and federally recognized 501(c)(3)
+              tax-exempt organization. Donations are tax-deductible to the
+              extent allowed by law.
             </p>
             <p>
               To serve our communities effectively through specialized
@@ -62,12 +62,48 @@ export default function AtxRoboticsPage() {
               <li>Austin STEM Center (ASC)</li>
             </ul>
           </div>
+          <dl className="mt-6 grid grid-cols-[auto_1fr] gap-x-6 gap-y-1.5 border-t border-ink/15 pt-5 text-[15px]">
+            <dt className="italic text-ink-soft">Legal name</dt>
+            <dd className="font-bold">{site.legalName}</dd>
+            <dt className="italic text-ink-soft">EIN</dt>
+            <dd className="font-bold">{site.ein}</dd>
+            <dt className="italic text-ink-soft">Status</dt>
+            <dd className="font-bold">501(c)(3) tax-exempt</dd>
+          </dl>
         </NoteCard>
       </section>
 
+      {/* documents: stays hidden until a PDF is listed in lib/data/site.ts */}
+      {publishedDocuments.length > 0 && (
+        <section className="pt-20">
+          <NoteCard id="documents" className="max-w-[680px] -rotate-[0.3deg]">
+            <SectionHeading>Documents.</SectionHeading>
+            <ul className="mt-5 divide-y divide-ink/15">
+              {publishedDocuments.map(({ id, label, files }) => (
+                <li key={id} id={id} className="py-4">
+                  <h3 className="text-[17px] leading-snug font-bold">{label}</h3>
+                  <p className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-[15px]">
+                    {files.map((file) => (
+                      <a
+                        key={file.href}
+                        href={file.href}
+                        download
+                        className="text-link"
+                      >
+                        {file.label} ↓
+                      </a>
+                    ))}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </NoteCard>
+        </section>
+      )}
+
       {/* mission */}
       <section className="pt-20">
-        <NoteCard id="mission" className="max-w-[680px] -rotate-[0.4deg]">
+        <NoteCard id="mission" className="max-w-[680px] rotate-[0.4deg]">
           <SectionHeading>Our mission.</SectionHeading>
           <div className="prose-note mt-6">
             <p>
@@ -95,7 +131,7 @@ export default function AtxRoboticsPage() {
 
       {/* program areas */}
       <section className="pt-20">
-        <NoteCard id="program-areas" className="rotate-[0.3deg]">
+        <NoteCard id="program-areas" className="-rotate-[0.3deg]">
           <SectionHeading>Our program areas.</SectionHeading>
           <p className="mt-4 text-[17px] text-ink-soft">
             ATX Robotics delivers its mission through three program areas:
@@ -113,12 +149,9 @@ export default function AtxRoboticsPage() {
         </NoteCard>
       </section>
 
-      {/* board of directors */}
+      {/* board lives on /about now; keep the governance link for funders */}
       <section className="pt-20">
-        <NoteCard
-          id="board-of-directors"
-          className="max-w-[680px] -rotate-[0.3deg]"
-        >
+        <NoteCard id="board-of-directors" className="max-w-[680px] rotate-[0.3deg]">
           <SectionHeading>Board of directors.</SectionHeading>
           <div className="prose-note mt-6">
             <p>
@@ -130,57 +163,11 @@ export default function AtxRoboticsPage() {
               organizations, representing engineering, business, and education.
             </p>
           </div>
-          <ul className="mt-6 grid gap-x-8 gap-y-5 sm:grid-cols-2">
-            {boardOfDirectors.map(({ name, title, image }) => (
-              <li key={name} className="flex items-center gap-4">
-                {image && (
-                  <Image
-                    src={image}
-                    alt={name}
-                    width={160}
-                    height={160}
-                    className="size-20 shrink-0 border border-ink/10 object-cover object-top"
-                  />
-                )}
-                <div>
-                  <p className="text-[17px] leading-snug font-bold">{name}</p>
-                  <p className="mt-0.5 text-[15px] leading-snug text-ink-soft">
-                    {title}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ul>
+          <Link href="/about#board" className="text-link mt-4 inline-block">
+            meet the board →
+          </Link>
         </NoteCard>
       </section>
-
-      {/* documents: stays hidden until a PDF is listed in lib/data/site.ts */}
-      {publishedDocuments.length > 0 && (
-        <section className="pt-20">
-          <NoteCard className="max-w-[680px] rotate-[0.3deg]">
-            <SectionHeading>Documents.</SectionHeading>
-            <ul className="mt-5 divide-y divide-ink/15">
-              {publishedDocuments.map(({ id, label, files }) => (
-                <li key={id} id={id} className="py-4">
-                  <h3 className="text-[17px] leading-snug font-bold">{label}</h3>
-                  <p className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-[15px]">
-                    {files.map((file) => (
-                      <a
-                        key={file.href}
-                        href={file.href}
-                        download
-                        className="text-link"
-                      >
-                        {file.label} ↓
-                      </a>
-                    ))}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </NoteCard>
-        </section>
-      )}
     </div>
   );
 }

@@ -8,8 +8,9 @@ import {
   PageIntro,
   SectionHeading,
 } from "@/components/notebook";
+import { programs } from "@/lib/data/programs";
 import { site } from "@/lib/data/site";
-import { teamGroups } from "@/lib/data/team";
+import { boardOfDirectors, teamGroups, type TeamMember } from "@/lib/data/team";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/about" },
@@ -95,6 +96,41 @@ export default function AboutPage() {
         </NoteCard>
       </section>
 
+      {/* programs */}
+      <section className="pt-20">
+        <p className="mb-2 font-hand text-[21px] text-brand-blue">what we run</p>
+        <SectionHeading>Our programs.</SectionHeading>
+        <ul className="mt-8 grid grid-cols-3 gap-5 max-lg:grid-cols-2 max-sm:grid-cols-1">
+          {programs.map((p) => (
+            <li key={p.slug}>
+              <Link
+                href={p.href}
+                className="block h-full border border-ink/18 bg-card px-5 pt-4 pb-4 shadow-[2px_3px_0_rgba(56,52,42,0.1)] transition-transform duration-150 hover:-translate-y-0.5"
+              >
+                <h3 className="text-[18px] leading-snug font-bold">{p.title}</h3>
+                <p className="mt-1.5 text-[15px] leading-relaxed text-ink-soft">
+                  {p.teaser}
+                </p>
+                <span className="text-link mt-2 inline-block">read more →</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* board */}
+      <section id="board" className="scroll-mt-24 pt-20">
+        <NoteCard>
+          <p className="mb-2 font-hand text-[21px] text-brand-blue">who we answer to</p>
+          <SectionHeading>Board of directors.</SectionHeading>
+          <p className="mt-4 max-w-[60ch] text-[16px] leading-relaxed text-ink-soft">
+            Leaders in engineering, business, and education who oversee{" "}
+            {site.legalName}, the nonprofit that operates Austin STEM Center.
+          </p>
+          <PeopleGrid members={boardOfDirectors} />
+        </NoteCard>
+      </section>
+
       {/* team */}
       <section className="pt-20">
         <NoteCard>
@@ -105,43 +141,7 @@ export default function AboutPage() {
               <h3 className="text-[15px] font-semibold italic text-ink-soft">
                 {group}
               </h3>
-              {members.some((m) => m.image) ? (
-                /* four 180px portraits plus three 48px gaps fit in 920px, so a
-                   four-person group stays on one row instead of orphaning one */
-                <div className="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-9 sm:gap-x-12 sm:gap-y-12">
-                  {members.map((m) => (
-                    <div
-                      key={m.name}
-                      className="w-[calc(50%-11px)] max-w-[140px] sm:w-[180px] sm:max-w-none"
-                    >
-                      {m.image && (
-                        <Image
-                          src={m.image}
-                          alt={m.name}
-                          width={270}
-                          height={300}
-                          className="aspect-[9/10] w-full object-cover object-top border border-ink/10"
-                        />
-                      )}
-                      <p className="mt-3 text-[16px] leading-tight font-bold">
-                        {m.name}
-                      </p>
-                      <p className="mt-1 text-[13px] leading-snug italic text-ink-soft">
-                        {m.title}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <p className="mt-4 flex flex-wrap justify-center gap-x-8 gap-y-1.5 text-[16px]">
-                  {members.map((m) => (
-                    <span key={m.name}>
-                      <b className="font-bold">{m.name}</b>
-                      <span className="italic text-ink-soft"> · {m.title}</span>
-                    </span>
-                  ))}
-                </p>
-              )}
+              <PeopleGrid members={members} />
             </div>
           ))}
         </NoteCard>
@@ -179,6 +179,21 @@ export default function AboutPage() {
         </NoteCard>
       </section>
 
+      {/* governance: funders get sent here directly, so keep it short */}
+      <section className="pt-20">
+        <NoteCard flat className="max-w-[680px]">
+          <h2 className="text-[19px] font-bold">Financials and governance.</h2>
+          <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">
+            Austin STEM Center is operated by {site.legalName}, a 501(c)(3)
+            nonprofit (EIN {site.ein}). Our legal structure, tax documents, and
+            governance details are all in one place.
+          </p>
+          <Link href="/about/financials-and-governance" className="text-link mt-3 inline-block">
+            financials &amp; governance →
+          </Link>
+        </NoteCard>
+      </section>
+
       {/* donate */}
       <section className="pt-20 pb-4">
         <div className="tape relative max-w-[560px] rotate-[0.6deg] border border-ink/18 bg-card px-6 pt-6 pb-5 shadow-[3px_4px_0_rgba(56,52,42,0.12)]">
@@ -203,5 +218,47 @@ export default function AboutPage() {
         </div>
       </section>
     </>
+  );
+}
+
+/** Portrait grid when anyone has a photo, otherwise a name list. */
+function PeopleGrid({ members }: { members: TeamMember[] }) {
+  if (!members.some((m) => m.image)) {
+    return (
+      <p className="mt-4 flex flex-wrap justify-center gap-x-8 gap-y-1.5 text-[16px]">
+        {members.map((m) => (
+          <span key={m.name}>
+            <b className="font-bold">{m.name}</b>
+            <span className="italic text-ink-soft"> · {m.title}</span>
+          </span>
+        ))}
+      </p>
+    );
+  }
+  /* four 180px portraits plus three 48px gaps fit in 920px, so a four-person
+     group stays on one row instead of orphaning one */
+  return (
+    <div className="mx-auto mt-6 flex max-w-[920px] flex-wrap justify-center gap-x-5 gap-y-9 text-center sm:gap-x-12 sm:gap-y-12">
+      {members.map((m) => (
+        <div
+          key={m.name}
+          className="w-[calc(50%-11px)] max-w-[140px] sm:w-[180px] sm:max-w-none"
+        >
+          {m.image && (
+            <Image
+              src={m.image}
+              alt={m.name}
+              width={270}
+              height={300}
+              className="aspect-[9/10] w-full border border-ink/10 object-cover object-top"
+            />
+          )}
+          <p className="mt-3 text-[16px] leading-tight font-bold">{m.name}</p>
+          <p className="mt-1 text-[13px] leading-snug italic text-ink-soft">
+            {m.title}
+          </p>
+        </div>
+      ))}
+    </div>
   );
 }
