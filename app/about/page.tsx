@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about" },
   title: "About",
   description:
-    "Austin STEM Center is a nonprofit innovation hub and a program of ATX Robotics, Inc., bringing schools, companies, and communities together to grow real talent and solve real problems.",
+    "Austin STEM Center is a nonprofit STEM hub and a program of ATX Robotics, Inc., bringing schools, families, and industry together to grow real talent.",
 };
 
 export default function AboutPage() {

@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const machine = getMachine((await params).slug);
   if (!machine) return {};
   return {
-    title: machine.name,
+    title: machine.title,
     description: machine.whatItIs,
     alternates: { canonical: `/machines/${machine.slug}` },
   };
@@ -40,7 +40,7 @@ export default async function MachinePage({ params }: Props) {
 
       <PageIntro
         note={`field notes — the shop / ${room ? room.name.toLowerCase() : "machines"}`}
-        title={machine.name}
+        title={machine.title}
       />
 
       {/* what it is, beside the photo (or the tagline while photos are pending) */}
@@ -73,7 +73,7 @@ export default async function MachinePage({ params }: Props) {
       <div className="mt-12 grid grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-start gap-x-12 gap-y-8 max-md:grid-cols-1">
         <NoteCard flat>
           <h2 className="text-[15px] font-semibold tracking-[0.08em] uppercase text-ink-soft">
-            What it does
+            {machine.doesHeading}
           </h2>
           <div className="prose-note mt-3 max-w-[62ch] text-[16px]">
             {machine.whatItDoes.map((p) => (
@@ -98,7 +98,7 @@ export default async function MachinePage({ params }: Props) {
           )}
 
           <h2 className="mt-10 text-[15px] font-semibold tracking-[0.08em] uppercase text-ink-soft">
-            Things you can make
+            {machine.makeHeading}
           </h2>
           <ul className="mt-3 max-w-[62ch] list-disc pl-5 text-[16px] leading-[1.9]">
             {machine.youCanMake.map((item) => (

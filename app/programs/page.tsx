@@ -7,7 +7,7 @@ import { programs } from "@/lib/data/programs";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/programs" },
-  title: "Programs",
+  title: "STEM Programs for Kids in Austin",
   description:
     "Labs, summer camps, STEM clubs, field trips, and the Howdy Bots robotics team at the Austin STEM Center.",
 };

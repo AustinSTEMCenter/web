@@ -1,6 +1,11 @@
 export type Machine = {
   name: string;
   slug: string;
+  /** Search-friendly page title and headline: what it is first, model second. */
+  title: string;
+  /** Section headings, specific to this machine so search and AI tools can match them. */
+  doesHeading: string;
+  makeHeading: string;
   kind: string;
   facility: string; // slug from lib/data/facilities.ts
   tagline: string;
@@ -17,6 +22,9 @@ export const machines: Machine[] = [
   {
     name: "Full Spectrum PS48",
     slug: "ps48",
+    title: "CO₂ Laser Cutter (Full Spectrum PS48)",
+    doesHeading: "What a CO₂ laser cutter does",
+    makeHeading: "What you can make with a CO₂ laser cutter",
     kind: "CO₂ laser",
     facility: "machine-shop",
     tagline: "cuts with a beam of light",
@@ -44,6 +52,9 @@ export const machines: Machine[] = [
   {
     name: "Thunder Laser Nova 51",
     slug: "nova-51",
+    title: "Large CO₂ Laser Cutter (Thunder Laser Nova 51)",
+    doesHeading: "What a large CO₂ laser cutter does",
+    makeHeading: "What you can make with a large CO₂ laser cutter",
     kind: "CO₂ laser",
     facility: "machine-shop",
     tagline: "our biggest CO₂ laser",
@@ -71,6 +82,9 @@ export const machines: Machine[] = [
   {
     name: "BesCutter Cube 1313",
     slug: "cube-1313",
+    title: "Fiber Laser Metal Cutter (BesCutter Cube 1313)",
+    doesHeading: "What a fiber laser cutter does",
+    makeHeading: "What you can make with a fiber laser cutter",
     kind: "fiber laser",
     facility: "machine-shop",
     tagline: "a laser that cuts steel",
@@ -98,6 +112,9 @@ export const machines: Machine[] = [
   {
     name: "ShopSabre PRO 408",
     slug: "pro-408",
+    title: "4×8 CNC Router (ShopSabre PRO 408)",
+    doesHeading: "What a 4×8 CNC router does",
+    makeHeading: "What you can make with a 4×8 CNC router",
     kind: "CNC router",
     facility: "wood-shop",
     tagline: "carves full 4×8 sheets",
@@ -125,6 +142,9 @@ export const machines: Machine[] = [
   {
     name: "Haas VF-0E",
     slug: "vf-0e",
+    title: "CNC Mill for Metal (Haas VF-0E)",
+    doesHeading: "What a CNC mill does",
+    makeHeading: "What you can make with a CNC mill",
     kind: "CNC mill",
     facility: "machine-shop",
     tagline: "carves solid metal",
@@ -152,6 +172,9 @@ export const machines: Machine[] = [
   {
     name: "Welding Area",
     slug: "welding",
+    title: "Laser Welding",
+    doesHeading: "What laser welding does",
+    makeHeading: "What you can make with laser welding",
     kind: "laser welding",
     facility: "machine-shop",
     tagline: "welding with light",
@@ -179,6 +202,9 @@ export const machines: Machine[] = [
   {
     name: "Wood Shop",
     slug: "wood-shop",
+    title: "Wood Shop",
+    doesHeading: "What our wood shop does",
+    makeHeading: "What you can make in our wood shop",
     kind: "the whole room",
     facility: "wood-shop",
     tagline: "sawdust and real tools",
